@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Auto Scale In Lightmap (ライトマップ自動スケーリング)
 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">Auto Scale In Lightmap | ライトマップ自動スケーリング | การปรับขนาด Lightmap อัตโนมัติ <a href="https://twitter.com/hashtag/vrchat?src=hash&amp;ref_src=twsrc%5Etfw">#vrchat</a> <a href="https://twitter.com/hashtag/unity?src=hash&amp;ref_src=twsrc%5Etfw">#unity</a> <a href="https://twitter.com/hashtag/vcc?src=hash&amp;ref_src=twsrc%5Etfw">#vcc</a> <a href="https://twitter.com/hashtag/lightmap?src=hash&amp;ref_src=twsrc%5Etfw">#lightmap</a> <a href="https://t.co/YxtXZwSjqx">pic.twitter.com/YxtXZwSjqx</a></p>&mdash; LogicCuteGuy (@LogicCuteGuy) <a href="https://twitter.com/LogicCuteGuy/status/2045964665222807878?ref_src=twsrc%5Etfw">April 19, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 **メニューパス**: `GameObject > LogicCuteGuy > Auto Scale In Lightmap`
 
 **Auto Scale In Lightmap** ツールは、シーン内のオブジェクト間でテクセル密度が不一致になる問題を解決します。MeshRenderer の `Scale In Lightmap` プロパティを正規化または調整するための、2 つの高度なアルゴリズムを提供します。
