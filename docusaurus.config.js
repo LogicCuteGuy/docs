@@ -4,14 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'LogicCuteGuy Help Tools',
-  tagline: 'Streamline your Unity workflow with powerful scene management and optimization tools.',
+  title: 'LogicCuteGuy Docs',
+  tagline: 'Documentation for LogicCuteGuy products.',
   favicon: 'img/icon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -37,7 +37,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja', 'th'],
   },
 
   presets: [
@@ -48,10 +48,6 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: '/',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -70,7 +66,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Help Tools',
+        title: 'LogicCuteGuy Docs',
         logo: {
           alt: 'LogicCuteGuy Logo',
           src: 'img/icon.jpg',
@@ -83,8 +79,7 @@ const config = {
             label: 'Unity/VRC',
           },
           {
-            href: 'https://github.com/LogicCuteGuy/com.logiccuteguy.helptools',
-            label: 'GitHub',
+            type: 'localeDropdown',
             position: 'right',
           },
         ],
@@ -105,21 +100,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/logiccuteguy',
-              },
-              {
                 label: 'Website',
                 href: 'https://profile.logiccuteguy.com/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/LogicCuteGuy/com.logiccuteguy.helptools',
               },
             ],
           },
@@ -127,8 +109,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} LogicCuteGuy. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.oneLight,
+        darkTheme: prismThemes.oneDark,
       },
     }),
 };

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "LogicCuteGuy Docs",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "LogicCuteGuy Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Unity/VRC": {
+    "message": "Unity/VRC",
+    "description": "Navbar item with label Unity/VRC"
+  }
+}
