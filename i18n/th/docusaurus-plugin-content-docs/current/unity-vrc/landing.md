@@ -15,7 +15,7 @@ slug: /
   <h2 style={{margin: 0, fontSize: '1.8rem', fontWeight: 800}}>การติดตั้งอย่างรวดเร็ว</h2>
   <p style={{opacity: 0.8, textAlign: 'center', maxWidth: '500px'}}>เพิ่มคลังเครื่องมือของเราลงใน VRChat Creator Companion (VCC) เพื่อเข้าถึงและอัปเดตเครื่องมือทั้งหมดด้วยการคลิกเพียงครั้งเดียว</p>
   
-  <a href="vcc://https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc" style={{fontSize: '1.2rem', padding: '16px 36px'}}>
+  <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc" style={{fontSize: '1.2rem', padding: '16px 36px'}}>
     <span>ติดตั้งผ่าน VCC</span>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
   </a>

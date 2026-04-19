@@ -11,7 +11,7 @@ To install **LogicCuteGuy Help Tools** into your Unity project, we recommend usi
 If you have the VRChat Creator Companion installed, you can click the button below to add our repository and install the package with one click.
 
 <div style={{textAlign: 'center', padding: '2rem 0'}}>
-  <a href="vcc://https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
+  <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
     <span>Install via VCC</span>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
   </a>

@@ -15,7 +15,7 @@ slug: /
   <h2 style={{margin: 0, fontSize: '1.8rem', fontWeight: 800}}>クイックインストール</h2>
   <p style={{opacity: 0.8, textAlign: 'center', maxWidth: '500px'}}>VRChat Creator Companion (VCC) にリポジトリを追加して、ワンクリックですべてのツールにアクセスし、更新できます。</p>
   
-  <a href="vcc://https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc" style={{fontSize: '1.2rem', padding: '16px 36px'}}>
+  <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc" style={{fontSize: '1.2rem', padding: '16px 36px'}}>
     <span>VCC でインストール</span>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
   </a>

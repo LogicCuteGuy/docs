@@ -11,7 +11,7 @@ sidebar_position: 1
 VRChat Creator Companion がインストールされている場合は、以下のボタンをクリックしてリポジトリを追加し、ワンクリックでパッケージをインストールできます。
 
 <div style={{textAlign: 'center', padding: '2rem 0'}}>
-  <a href="vcc://https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
+  <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
     <span>VCC でインストール</span>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
   </a>
