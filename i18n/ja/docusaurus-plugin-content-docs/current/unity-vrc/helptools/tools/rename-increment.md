@@ -3,6 +3,8 @@ sidebar_position: 5
 ---
 
 # Rename Children Increment (子の連番リネーム)
+ 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">Rename Children Increment | 子の連番リネーム | เปลี่ยนชื่อออบเจกต์ลูกพร้อมเลขลำดับ <a href="https://twitter.com/hashtag/unity?src=hash&amp;ref_src=twsrc%5Etfw">#unity</a> <a href="https://twitter.com/hashtag/vrchat?src=hash&amp;ref_src=twsrc%5Etfw">#vrchat</a> <a href="https://twitter.com/hashtag/vcc?src=hash&amp;ref_src=twsrc%5Etfw">#vcc</a> <a href="https://t.co/rename123">pic.twitter.com/rename123</a></p>&mdash; LogicCuteGuy (@LogicCuteGuy) <a href="https://twitter.com/LogicCuteGuy/status/2046370648537395297?ref_src=twsrc%5Etfw">April 20, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 **メニューパス**: `GameObject > LogicCuteGuy > Rename Children Increment...`
 
