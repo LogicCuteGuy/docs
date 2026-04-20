@@ -8,7 +8,7 @@
   --ifm-color-primary-lightest: #93c5fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  
+
   /* Custom Variables */
   --bg-color: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.7);
@@ -27,7 +27,7 @@
 
   /* Deep Dark Palette */
   --ifm-background-color: #0c0c0e;
-  --ifm-navbar-background-color: rgba(12, 12, 14, 0.8);
+  --ifm-navbar-background-color: #0c0c0e;
   --ifm-footer-background-color: #08080a;
   --bg-color: #0c0c0e;
   --glass-bg: rgba(22, 22, 26, 0.6);
@@ -40,11 +40,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism Navbar */
+/* Glassmorphism Navbar — desktop only to avoid breaking mobile sidebar */
 .navbar {
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
   box-shadow: none;
+}
+
+@media (min-width: 997px) {
+  .navbar {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@media (max-width: 996px) {
+  .navbar {
+    background-color: #ffffff !important;
+  }
+  [data-theme='dark'] .navbar {
+    background-color: #1b1b1d !important;
+  }
 }
 
 /* Hero Section Enhancement */
@@ -53,8 +68,8 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(12, 12, 14, 0.7), rgba(12, 12, 14, 0.7)), 
-              url('/img/bg.jpeg');
+  background: linear-gradient(rgba(12, 12, 14, 0.7), rgba(12, 12, 14, 0.7)),
+    url('/img/bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -149,4 +164,23 @@ body {
   background: linear-gradient(to right, rgba(37, 99, 235, 0.1), transparent);
   border-left: 3px solid var(--ifm-color-primary);
   border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Mobile Sidebar — force opaque background */
+.navbar-sidebar,
+.navbar-sidebar__brand,
+.navbar-sidebar__items {
+  background-color: #ffffff !important;
+}
+
+[data-theme='dark'] .navbar-sidebar,
+[data-theme='dark'] .navbar-sidebar__brand,
+[data-theme='dark'] .navbar-sidebar__items {
+  background-color: #1b1b1d !important;
+}
+
+/* Ensure the backdrop overlay is visible */
+.navbar-sidebar__backdrop {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  opacity: 1 !important;
 }
