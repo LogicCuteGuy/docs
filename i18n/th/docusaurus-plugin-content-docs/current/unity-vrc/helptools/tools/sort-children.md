@@ -3,6 +3,8 @@ sidebar_position: 4
 ---
 
 # จัดเรียงออบเจกต์ลูก (Sort Parent Children)
+ 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">Sort Parent Children | 親オブジェクトの子をソート | จัดเรียงออบเจกต์ลูก <a href="https://twitter.com/hashtag/unity?src=hash&amp;ref_src=twsrc%5Etfw">#unity</a> <a href="https://twitter.com/hashtag/vrchat?src=hash&amp;ref_src=twsrc%5Etfw">#vrchat</a> <a href="https://twitter.com/hashtag/sort?src=hash&amp;ref_src=twsrc%5Etfw">#sort</a> <a href="https://twitter.com/hashtag/vcc?src=hash&amp;ref_src=twsrc%5Etfw">#vcc</a> <a href="https://t.co/eGuBBSyOEI">pic.twitter.com/eGuBBSyOEI</a></p>&mdash; LogicCuteGuy (@LogicCuteGuy) <a href="https://twitter.com/LogicCuteGuy/status/2046207151677542581?ref_src=twsrc%5Etfw">April 20, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 **เมนู**: `GameObject > LogicCuteGuy > Sort Parent Children`
 
