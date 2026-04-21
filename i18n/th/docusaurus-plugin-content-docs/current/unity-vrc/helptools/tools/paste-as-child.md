@@ -4,6 +4,8 @@ sidebar_position: 6
 
 # วางเป็นออบเจกต์ลูกให้กับ Parent ทั้งหมดที่เลือก (Paste As Child To All Selected Parents)
 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">Paste As Child To All Selected Parents | 全選択中の親に子として貼り付け | วางเป็นออบเจกต์ลูกให้กับ Parent ทั้งหมดที่เลือก<a href="https://twitter.com/hashtag/Vrchat?src=hash&amp;ref_src=twsrc%5Etfw">#Vrchat</a> <a href="https://twitter.com/hashtag/VCC?src=hash&amp;ref_src=twsrc%5Etfw">#VCC</a> <a href="https://twitter.com/hashtag/unity?src=hash&amp;ref_src=twsrc%5Etfw">#unity</a> <a href="https://twitter.com/hashtag/Paste?src=hash&amp;ref_src=twsrc%5Etfw">#Paste</a> <a href="https://twitter.com/hashtag/Selected?src=hash&amp;ref_src=twsrc%5Etfw">#Selected</a> <a href="https://twitter.com/hashtag/Copy?src=hash&amp;ref_src=twsrc%5Etfw">#Copy</a> <a href="https://t.co/Cz0tsYrBXT">pic.twitter.com/Cz0tsYrBXT</a></p>&mdash; LogicCuteGuy (@LogicCuteGuy) <a href="https://twitter.com/LogicCuteGuy/status/2046669419951300893?ref_src=twsrc%5Etfw">April 21, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 **เมนู**: `GameObject > LogicCuteGuy > Paste As Child To All Selected Parents...`
 
 เครื่องมือนี้ช่วยเพิ่มประสิทธิภาพเวิร์กโฟลว์ "Copy-Paste" ของคุณ โดยอนุญาตให้เลือกออบเจกต์ "ต้นทาง" หนึ่งชิ้นหรือมากกว่า แล้ววางสำเนาของพวกมันลงในออบเจกต์ "ต้นทางปลายทาง" (Parents) หลาย ๆ ชิ้นพร้อมกัน
