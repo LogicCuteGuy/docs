@@ -19,6 +19,13 @@ For a seamless setup, we recommend using the **VRChat Creator Companion (VCC)**.
 
 ## Getting Started
 
-Once installed, all tools are accessible from the top menu under **LogicCuteGuy > HelpTools**.
+Once installed, the tools are available from the **GameObject**, **Assets**, **Window**, and component **context** menus under **LogicCuteGuy**:
 
-Most tools are designed to work on the current selection in the Hierarchy or Project view. Select the objects you want to modify, then run the desired tool from the menu.
+| Menu | Tools |
+|---|---|
+| **GameObject > LogicCuteGuy** | Auto Scale In Lightmap, Paste As Child To All Selected Parents, Random Rotate Children, Random Spawn Children On NavMesh, Rename Children Increment, Replace Or Remove Child Materials, Select Children By Pattern, Sort Parent Children |
+| **Assets** | Check Usage in Scene, Fix Missing Shaders (Prefab → Standard) |
+| **Window > LogicCuteGuy** | Shader Texture Mapper |
+| **Component context menu** (right-click a component) | Open Fix Cloned Component References (MonoBehaviour), Switch Child Lightmap Mode (MeshRenderer), Terrain Swap (Terrain) |
+
+Most tools are designed to work on the current selection in the Hierarchy or Project view. Select the objects you want to modify, then run the desired tool from the menu. The tool windows include a built-in language switcher (English / 日本語 / ไทย).

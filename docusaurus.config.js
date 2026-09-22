@@ -104,6 +104,14 @@ const config = {
                 label: 'Website',
                 href: 'https://profile.logiccuteguy.com/',
               },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/LogicCuteGuy',
+              },
+              {
+                label: 'VPM Listing',
+                href: 'https://vpm.logiccuteguy.com/index.json',
+              },
             ],
           },
         ],

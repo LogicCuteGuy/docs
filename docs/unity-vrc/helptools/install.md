@@ -8,7 +8,7 @@ To install **LogicCuteGuy Help Tools** into your Unity project, we recommend usi
 
 ## Quick Install (VCC)
 
-If you have the VRChat Creator Companion installed, you can click the button below to add our repository and install the package with one click.
+If you have the VRChat Creator Companion installed, you can click the button below to add our repository and install the package with one click. You can also add the listing manually in **Settings > Packages > Add Repository** with `https://vpm.logiccuteguy.com/index.json`.
 
 <div style={{textAlign: 'center', padding: '2rem 0'}}>
   <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
@@ -27,9 +27,11 @@ If you have the VRChat Creator Companion installed, you can click the button bel
 4. Select `Add package from git URL...`.
 5. Paste the following URL:
    ```text
-   https://github.com/LogicCuteGuy/com.logiccuteguy.helptools.git
+   https://github.com/LogicCuteGuy/UnityHelpTools.git
    ```
 6. Click **Add**.
+
+Alternatively, add the package from disk: select **Add package from disk...** and pick the `package.json` inside the `com.logiccuteguy.helptools` folder.
 
 ## Requirements
 - **Unity 2022.3.x** (VRChat Recommended)

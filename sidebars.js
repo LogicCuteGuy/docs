@@ -17,6 +17,7 @@
 const sidebars = {
   unityVrcSidebar: [
     'unity-vrc/landing',
+    'unity-vrc/packages',
     {
       type: 'category',
       label: 'Help Tools',
@@ -38,6 +39,22 @@ const sidebars = {
         'unity-vrc/helptools/tools/terrain-swap',
         'unity-vrc/helptools/tools/check-asset-usage',
         'unity-vrc/helptools/tools/remap-references',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'LCGUdonSharp',
+      collapsed: false,
+      items: [
+        'unity-vrc/lcgudonsharp/intro',
+        'unity-vrc/lcgudonsharp/install',
+        'unity-vrc/lcgudonsharp/interfaces',
+        'unity-vrc/lcgudonsharp/async-await',
+        'unity-vrc/lcgudonsharp/exceptions',
+        'unity-vrc/lcgudonsharp/extended-language',
+        'unity-vrc/lcgudonsharp/networking',
+        'unity-vrc/lcgudonsharp/examples',
+        'unity-vrc/lcgudonsharp/troubleshooting',
       ],
     },
   ],
