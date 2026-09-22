@@ -6,7 +6,7 @@ slug: /
 # LogicCuteGuy VRC/Unity
 
 <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-  <img src="/img/icon.jpg" style={{borderRadius: '50%', width: '150px', height: '150px', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
+  <img src="https://avatars.githubusercontent.com/u/156688153?s=400&u=d7463f24a0c0512b5d4499ef51e783ad29be8a16&v=4" style={{borderRadius: '50%', width: '150px', height: '150px', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
 </div>
 
 Welcome to the central repository for **LogicCuteGuy** Unity and VRChat development tools. We provide a suite of utilities designed to enhance workflows, optimize performance, and simplify world-building.
