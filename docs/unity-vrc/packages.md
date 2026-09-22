@@ -19,11 +19,7 @@ Every package published in the **LogicCuteGuy VPM Listing** — the repository u
 2. Go to **Settings > Packages > Add Repository**.
 3. Paste `https://vpm.logiccuteguy.com/index.json` (or use the **Install via VCC** button on the site landing page).
 
-Alternatively, add the listing via `vpm.json`:
-
-```text
-https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json
-```
+This VPM listing is the **only supported way** to install and update our packages — Git URL and "add package from disk" installs are not supported.
 
 ## Package details
 

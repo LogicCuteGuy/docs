@@ -15,7 +15,7 @@ The **LogicCuteGuy Help Tools** suite is a collection of professional-grade Unit
 
 ## Installation
 
-For a seamless setup, we recommend using the **VRChat Creator Companion (VCC)**. Click the install button above for a quick one-click setup, or visit our [Detailed Installation Guide](./install.md) for manual steps using Git URLs.
+The **VRChat Creator Companion (VCC)** is the only supported way to install. Click the install button above for a quick one-click setup, or visit our [Detailed Installation Guide](./install.md) for step-by-step instructions.
 
 ## Getting Started
 

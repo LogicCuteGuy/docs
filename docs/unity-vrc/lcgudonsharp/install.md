@@ -9,21 +9,13 @@ sidebar_position: 2
 - **Unity 2022.3**
 - **VRChat Worlds SDK 3.10.5** (strict — other versions are refused)
 
-## Install via VPM (recommended)
+## Install via VCC (only supported method)
 
-Add the [LogicCuteGuy VPM listing](../packages.md) in the VRChat Creator Companion (or click **Install via VCC** on the site landing page), then add **LCGUdonSharp** to your project. The VCC resolves `com.vrchat.worlds` 3.10.5 automatically as a VPM dependency.
-
-## Manual installation
-
-Add the package to your project via a VPM manifest or local package reference:
-
-```json
-"com.logiccuteguy.lcgudonsharp": "file:../path/to/com.logiccuteguy.lcgudonsharp"
-```
+Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) in the VRChat Creator Companion (or click **Install via VCC** on the site landing page), then add **LCGUdonSharp** to your project. The VCC resolves `com.vrchat.worlds` 3.10.5 automatically as a VPM dependency. Other installation methods (Git URL, local file reference) are not supported.
 
 ## Setup steps
 
-1. Add the package to your project (VPM manifest, VCC, or local package reference).
+1. Add the package to your project via VCC from the LogicCuteGuy VPM listing.
 2. Open Unity and let it compile. The installer verifies the SDK, backs up the bundled UdonSharp, and installs the compiler automatically.
 3. *(Optional)* Force setup any time via **Tools > LCGUdonSharp > Install or Repair**.
 4. Build/test your world as usual.

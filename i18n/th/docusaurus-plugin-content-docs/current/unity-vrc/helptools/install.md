@@ -8,28 +8,16 @@ sidebar_position: 1
 
 ## การติดตั้งอย่างรวดเร็ว (VCC)
 
-หากคุณติดตั้ง VRChat Creator Companion อยู่แล้ว คุณสามารถคลิกปุ่มด้านล่างเพื่อเพิ่มคลังเครื่องมือของเราและติดตั้งแพ็กเกจด้วยการคลิกเพียงครั้งเดียว
+หากคุณติดตั้ง VRChat Creator Companion อยู่แล้ว คุณสามารถคลิกปุ่มด้านล่างเพื่อเพิ่มคลังเครื่องมือของเรา (`https://vpm.logiccuteguy.com/index.json`) และติดตั้งแพ็กเกจด้วยการคลิกเพียงครั้งเดียว รองรับการติดตั้งผ่าน VCC เท่านั้น
 
 <div style={{textAlign: 'center', padding: '2rem 0'}}>
-  <a href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/LogicCuteGuy/LogicCuteGuy/refs/heads/main/vpm.json" className="button--vcc">
+  <a href="vcc://vpm/addRepo?url=https://vpm.logiccuteguy.com/index.json" className="button--vcc">
     <span>ติดตั้งผ่าน VCC</span>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
   </a>
 </div>
 
 ---
-
-## การติดตั้งด้วยตนเอง
-
-1. เปิดโปรเจกต์ Unity ของคุณ
-2. ไปที่ `Window` > `Package Manager`
-3. คลิกปุ่ม `+` ที่มุมซ้ายบน
-4. เลือก `Add package from git URL...`
-5. วาง URL ต่อไปนี้:
-   ```text
-   https://github.com/LogicCuteGuy/com.logiccuteguy.helptools.git
-   ```
-6. คลิก **Add**
 
 ## ความต้องการของระบบ
 - **Unity 2022.3.x** (แนะนำสำหรับ VRChat)
