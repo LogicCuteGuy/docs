@@ -6,7 +6,7 @@ slug: /
 # LogicCuteGuy VRC/Unity
 
 <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-  <img src="/img/icon.jpg" style={{borderRadius: '50%', width: '150px', height: '150px', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
+  <img src="/img/icon.jpg" alt="อวตาร LogicCuteGuy" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
 </div>
 
 ยินดีต้อนรับสู่คลังเครื่องมือพัฒนา Unity และ VRChat ของ **LogicCuteGuy** เรานำเสนอชุดเครื่องมือที่ออกแบบมาเพื่อเพิ่มประสิทธิภาพเวิร์กโฟลว์ ปรับปรุงประสิทธิภาพ และทำให้การสร้างโลกเป็นเรื่องง่าย
@@ -25,8 +25,15 @@ slug: /
 
 ## โปรเจกต์ที่พร้อมใช้งาน
 
-### [Help Tools (เครื่องมือช่วยเหลือ)](./helptools/intro.md)
+แพ็กเกจทั้งหมดเผยแพร่ผ่าน [รายการ VPM ของ LogicCuteGuy](./packages.md) (`https://vpm.logiccuteguy.com/index.json`)
+
+### [Help Tools (เครื่องมือช่วยเหลือ)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ชุดเครื่องมือ Editor ระดับมืออาชีพกว่า 15 รายการ สำหรับการปรับขนาด Lightmap, การวิเคราะห์การใช้งาน Asset, การจัดการ Shader และการจัดระเบียบ Hierarchy
+
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.4
+คอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, async/await ตอน build, exception แบบ synchronous, collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง
+
+ดูเวอร์ชัน การพึ่งพา และ repository ได้ที่[รายการแพ็กเกจ](./packages.md)
 
 ---
 
