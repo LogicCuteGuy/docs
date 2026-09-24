@@ -52,6 +52,7 @@ const sidebars = {
         'unity-vrc/lcgudonsharp/async-await',
         'unity-vrc/lcgudonsharp/exceptions',
         'unity-vrc/lcgudonsharp/extended-language',
+        'unity-vrc/lcgudonsharp/collections-json',
         'unity-vrc/lcgudonsharp/networking',
         'unity-vrc/lcgudonsharp/examples',
         'unity-vrc/lcgudonsharp/troubleshooting',

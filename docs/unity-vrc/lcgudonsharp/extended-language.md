@@ -4,6 +4,8 @@ sidebar_position: 6
 
 # Extended Language
 
+> Documentation version: **0.3.4**
+
 LCGUdonSharp lowers extended C# constructs at build time to concrete Udon-friendly code — loops, arrays, and locals instead of runtime abstractions.
 
 ## ref / out
@@ -36,9 +38,10 @@ int[] result = values
 
 ## Build-time diagnostics
 
-Unsupported or ambiguous forms are rejected at build time with targeted diagnostics rather than failing at runtime. `Example/GenericRestrictions` contains the accepted/rejected pairs for open generics, `List<T>`, interface contracts, multiple bases, and `Task<T>`.
+Unsupported or ambiguous forms are rejected at build time with targeted diagnostics rather than failing at runtime. `Example/GenericRestrictions` contains the accepted/rejected pairs for open generics, generic heap objects, collection restrictions, interface contracts, multiple bases, and `Task<T>`.
 
 ## See also
 
 - [C# Interfaces](./interfaces.md)
+- [Collections, JSON, Bytes & Bits](./collections-json.md)
 - [Examples](./examples.md) — `Example/ExtendedLanguage` covers try/catch, ref/out, generics, LINQ, `dynamic`, `Span<T>`

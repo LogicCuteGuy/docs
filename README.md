@@ -1,41 +1,39 @@
-# Website
+# LogicCuteGuy Docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [docs.logiccuteguy.com](https://docs.logiccuteguy.com).
 
-## Installation
+## Documented packages
 
-```bash
-yarn
-```
+| Package | Current version | Documentation |
+|---|---:|---|
+| [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
+| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.4` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 
-## Local Development
+Packages are distributed through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json).
 
-```bash
-yarn start
-```
+## Local development
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+Requires Node.js 20 or newer.
 
 ```bash
-yarn build
+npm ci
+npm start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+Create a production build with:
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
 ```
 
-Not using SSH:
+## Repository layout
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+- `docs/` — English source documentation.
+- `i18n/ja/` and `i18n/th/` — Japanese and Thai translations.
+- `static/img/` — site icons and static images.
+- `docusaurus.config.js` — site and navigation configuration.
+- `sidebars.js` — documentation sidebar order.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## License
+
+Documentation and site content © 2026 LogicCuteGuy. Individual packages retain the licenses declared in their repositories.

@@ -6,7 +6,7 @@ slug: /
 # LogicCuteGuy VRC/Unity
 
 <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-  <img src="https://avatars.githubusercontent.com/u/156688153?s=400&u=d7463f24a0c0512b5d4499ef51e783ad29be8a16&v=4" style={{borderRadius: '50%', width: '150px', height: '150px', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
+  <img src="/img/icon.jpg" alt="LogicCuteGuy avatar" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
 </div>
 
 Welcome to the central repository for **LogicCuteGuy** Unity and VRChat development tools. We provide a suite of utilities designed to enhance workflows, optimize performance, and simplify world-building.
@@ -30,8 +30,8 @@ All packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`ht
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.2.0
-An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, ref/out, closed generics, LINQ closures, and manual packet networking, installed as its own package instead of patching the Worlds SDK.
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.4
+An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered C# collections and JSON, ref/out, closed generics, LINQ closures, and manual packet networking, installed as its own package instead of patching the Worlds SDK.
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 
