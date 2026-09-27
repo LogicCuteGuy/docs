@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# แพ็กเกจ (รายการ VPM)
+# แพ็กเกจ
 
 **URL รายการ**: [`https://vpm.logiccuteguy.com/index.json`](https://vpm.logiccuteguy.com/index.json)
 
@@ -35,3 +35,16 @@ sidebar_position: 2
 - [ภาพรวม](./lcgudonsharp/intro.md) · [การติดตั้ง](./lcgudonsharp/install.md)
 
 LCGUdonSharp ติดตั้งคอมไพเลอร์จาก `Payload~/UdonSharp` โดยไม่แก้ไขแพ็กเกจ Worlds SDK
+
+## แพ็กเกจจาก GitHub
+
+### DigHoleIt `0.4.0`
+
+- Unity 2022.3 และ Built-in Render Pipeline
+- Dependency สำหรับ VRChat: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
+- [Repository](https://github.com/LogicCuteGuy/DigHoleIt) · [Release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+- License: MIT
+
+ติดตั้งผ่าน Unity Package Manager ด้วย `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0`, วาง repository ที่ `Packages/com.logiccuteguy.digholeit` หรือแตกไฟล์ `com.logiccuteguy.digholeit-0.4.0.zip` ที่มีชื่อชัดเจน ปัจจุบัน DigHoleIt ยังไม่อยู่ในรายการ VPM ของ LogicCuteGuy
+
+[ภาพรวม](./digholeit/intro.md) · [เริ่มต้นใช้งาน](./digholeit/getting-started.md)

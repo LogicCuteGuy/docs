@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# パッケージ（VPM リスト）
+# パッケージ
 
 **リスト URL**: [`https://vpm.logiccuteguy.com/index.json`](https://vpm.logiccuteguy.com/index.json)
 
@@ -35,3 +35,16 @@ VCC/ALCOM からのインストールを推奨します。LCGUdonSharp は GitHu
 - [概要](./lcgudonsharp/intro.md) · [インストール](./lcgudonsharp/install.md)
 
 LCGUdonSharp は Worlds SDK を変更せず、`Payload~/UdonSharp` からコンパイラーをインストールします。
+
+## GitHub パッケージ
+
+### DigHoleIt `0.4.0`
+
+- Unity 2022.3、Built-in Render Pipeline
+- VRChat 依存関係: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.4`
+- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+- ライセンス: MIT
+
+Unity Package Manager で `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0` を追加するか、`Packages/com.logiccuteguy.digholeit` に配置するか、名前付き `com.logiccuteguy.digholeit-0.4.0.zip` を展開します。現在は LogicCuteGuy VPM リストに含まれていません。
+
+[概要](./digholeit/intro.md) · [はじめに](./digholeit/getting-started.md)

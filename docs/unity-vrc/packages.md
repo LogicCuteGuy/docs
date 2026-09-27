@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Packages (VPM Listing)
+# Packages
 
-Every package published in the **LogicCuteGuy VPM Listing** — the repository used by the VRChat Creator Companion (VCC) and Unity Package Manager.
+Packages published through the **LogicCuteGuy VPM Listing**, plus packages installed directly from GitHub.
 
 **Listing URL**: [`https://vpm.logiccuteguy.com/index.json`](https://vpm.logiccuteguy.com/index.json)
 
@@ -47,3 +47,17 @@ Docs: [Overview](helptools/intro) · [Installation](helptools/install)
 Adds interfaces, compiler-managed exceptions, async lowering, C# collection/JSON lowering, extended language features, and experimental packet networking to UdonSharp. The compiler is installed from `Payload~/UdonSharp` without modifying the Worlds SDK package. See [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md) for release history.
 
 Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
+
+## GitHub packages
+
+### `com.logiccuteguy.digholeit` — DigHoleIt
+
+- **Latest version**: 0.4.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+- **Unity**: 2022.3, Built-in Render Pipeline
+- **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
+- **License**: MIT
+- **Repository**: [LogicCuteGuy/DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt)
+
+Install through Unity Package Manager with the Git URL `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0`, embed the repository at `Packages/com.logiccuteguy.digholeit`, or extract the named `com.logiccuteguy.digholeit-0.4.0.zip` release asset. DigHoleIt is not currently included in the LogicCuteGuy VPM listing.
+
+Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started)

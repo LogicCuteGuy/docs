@@ -58,6 +58,22 @@ const sidebars = {
         'unity-vrc/lcgudonsharp/troubleshooting',
       ],
     },
+    {
+      type: 'category',
+      label: 'DigHoleIt',
+      collapsed: false,
+      items: [
+        'unity-vrc/digholeit/intro',
+        'unity-vrc/digholeit/getting-started',
+        'unity-vrc/digholeit/dig-zones',
+        'unity-vrc/digholeit/editor-brushes',
+        'unity-vrc/digholeit/vrchat-runtime',
+        'unity-vrc/digholeit/standalone-runtime',
+        'unity-vrc/digholeit/how-it-works',
+        'unity-vrc/digholeit/performance',
+        'unity-vrc/digholeit/troubleshooting',
+      ],
+    },
   ],
 };
 

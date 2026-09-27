@@ -25,13 +25,16 @@ slug: /
 
 ## 利用可能なプロジェクト
 
-すべてのパッケージは [LogicCuteGuy VPM リスト](./packages.md)（`https://vpm.logiccuteguy.com/index.json`）で公開されています。
+Help Tools と LCGUdonSharp は [LogicCuteGuy VPM リスト](./packages.md)（`https://vpm.logiccuteguy.com/index.json`）で公開されています。DigHoleIt は Git または GitHub Releases の名前付きパッケージからインストールします。
 
 ### [Help Tools (ヘルプツール)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ライトマップのスケーリング、アセット分析、シェーダーマッピング、および階層の整理のための 15 以上のプロフェッショナルなエディターユーティリティのコレクション。
 
 ### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.4
 C# インターフェース、ビルド時の async/await、同期例外処理、C# コレクションと JSON、拡張言語機能、手動パケット通信を備えた VRChat 向け UdonSharp コンパイラーです。
+
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.4.0
+Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrain layer のペイントを提供する voxel terrain システムです。VRChat 同期と standalone C# runtime に対応します。
 
 バージョン、依存関係、リポジトリについては[パッケージ一覧](./packages.md)をご覧ください。
 
