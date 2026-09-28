@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # VRChat runtime
 
-> ドキュメントバージョン: **0.5.0**
+> ドキュメントバージョン: **0.6.0 source**
 
 VRChat runtime は UdonSharp で書かれ、LCGUdonSharp で compile されます。Zone を Bake した後 **Add VRChat Runtime** を押すと、edit/meshing を行う `DigZoneRuntime` と、network 同期を行う子 GameObject の `DigSync` が追加されます。
 

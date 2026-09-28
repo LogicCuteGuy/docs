@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # はじめに
 
-> ドキュメントバージョン: **0.5.0**
+> ドキュメントバージョン: **0.6.0 source** · 公開済みの GitHub/VPM package は 0.5.0 です。
 
 ## 要件
 
@@ -24,9 +24,19 @@ Git からインストールする場合は Unity Package Manager の **Add pack
 https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0
 ```
 
-または repository を `Packages/com.logiccuteguy.digholeit` に配置します。VRChat project では先に LCGUdonSharp をインストールしてください。
+または repository を `Packages/com.logiccuteguy.digholeit` に配置します。VRChat project では先に LCGUdonSharp をインストールしてください。現在の `main` は 0.6.0 ですが、0.6.0 の tag/release はまだ公開されていません。
 
-## Demo scene
+## Example scene
+
+0.6.0 source には、Project window の *Packages > DigHoleIt - Diggable Voxel Terrain > Example* に次の scene が含まれます。
+
+- **`VRChat/DigHoleItVRChatDemo`**: Bake 済み Dig Zone、VRCWorld spawn、dig/add/paint 用の 3 本の shovel。ClientSim で Play し、shovel を持って Use を押します。
+- **`Standalone/DigHoleItStandaloneDemo`**: Bake 済み zone と `DigToolStandalone` 付き camera。左 click で dig、右で add、middle で paint します。VRChat project では standalone runtime が compile されないため script は missing 表示になります。
+- **`Showcase/DigHoleItShowcase`**: README screenshot 用の 200 m forest terrain、pit、rock 下の cave、内部の tree/grass を含む scene。Runtime はなく、無効な *Shot Pit* / *Shot Cave* camera が撮影 view を保持します。
+
+各 example は専用の terrain、zone data、material を同じ folder に保持します。Git URL package は read-only のため、編集または Re-bake する前に example folder を `Assets` へ copy してください。VCC install では `Packages` 内を編集できます。
+
+新しい demo scene を project に生成することもできます。
 
 - **Tools > DigHoleIt > Create VRChat Demo Scene**: terrain、Bake 済み zone、spawn、dig/add/paint の shovel を作成します。ClientSim で Play し、shovel を持って Use を押します。
 - **Tools > DigHoleIt > Create Standalone Demo Scene**: terrain、zone、`DigToolStandalone` 付き camera を作成します。左 click で dig、右で add、middle で paint します。

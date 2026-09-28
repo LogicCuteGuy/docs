@@ -12,7 +12,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.5` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits and foliage support |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` released (`0.6.0` source) | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage support and packaged example scenes in 0.6.0 source |
 
 ## Add the repository in VCC
 
@@ -52,11 +52,14 @@ Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 ### `com.logiccuteguy.digholeit` — DigHoleIt
 
 - **Latest version**: 0.5.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
+- **Current source version**: 0.6.0 on [`main`](https://github.com/LogicCuteGuy/DigHoleIt) — includes packaged VRChat, standalone and showcase example scenes; no 0.6.0 tag, GitHub Release or VPM entry is published yet
 - **Unity**: 2022.3, Built-in Render Pipeline
 - **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
 - **License**: MIT
 - **Repository**: [LogicCuteGuy/DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt)
 
 Install 0.5.0 through VCC from the LogicCuteGuy VPM listing, add `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0` through Unity Package Manager, embed the repository at `Packages/com.logiccuteguy.digholeit`, or extract the named `com.logiccuteguy.digholeit-0.5.0.zip` release asset. Do not use GitHub's automatic source archive as a Unity package.
+
+The 0.6.0 documentation describes the current source tree. Until 0.6.0 is released, use the untagged Git URL only if you intentionally want the moving `main` branch.
 
 Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started)

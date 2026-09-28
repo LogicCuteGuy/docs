@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # วิธีทำงาน
 
-> เวอร์ชันเอกสาร: **0.5.0**
+> เวอร์ชันเอกสาร: **0.6.0 source**
 
 ## Grid และ compression
 

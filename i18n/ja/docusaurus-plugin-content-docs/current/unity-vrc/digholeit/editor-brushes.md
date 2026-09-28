@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brush
 
-> ドキュメントバージョン: **0.5.0**
+> ドキュメントバージョン: **0.6.0 source**
 
 Bake 済み zone は 2 つの方法で編集できます。
 

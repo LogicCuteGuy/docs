@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> ドキュメントバージョン: **0.5.0**
+> ドキュメントバージョン: **0.6.0 source**
 
 Dig Zone は 1 つの Unity Terrain 上に置く axis-aligned box です。内部の terrain は、掘る・埋める・paint できる voxel grid に置き換わります。
 

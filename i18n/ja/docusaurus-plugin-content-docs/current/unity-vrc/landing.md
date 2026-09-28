@@ -33,7 +33,7 @@ slug: /
 ### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.5
 C# インターフェース、ビルド時の async/await、同期例外処理、C# コレクションと JSON、拡張言語機能、手動パケット通信を備えた VRChat 向け UdonSharp コンパイラーです。
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.5.0
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.5.0 release / v0.6.0 source
 Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrain layer のペイントを提供する voxel terrain システムです。VRChat 同期と standalone C# runtime に対応します。
 
 バージョン、依存関係、リポジトリについては[パッケージ一覧](./packages.md)をご覧ください。

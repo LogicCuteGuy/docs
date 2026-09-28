@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zones
 
-> Documentation version: **0.5.0**
+> Documentation version: **0.6.0 source**
 
 A Dig Zone is an axis-aligned box over one Unity Terrain. Inside it the terrain is replaced by a voxel grid that can be dug, filled and painted.
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brushes
 
-> Documentation version: **0.5.0**
+> Documentation version: **0.6.0 source**
 
 There are two ways to sculpt and paint a baked zone in the editor. Both use the same brush settings.
 
