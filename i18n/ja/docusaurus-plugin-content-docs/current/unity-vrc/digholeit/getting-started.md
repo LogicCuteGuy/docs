@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # はじめに
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 ## 要件
 
@@ -16,10 +16,12 @@ sidebar_position: 2
 
 ## インストール
 
-Unity Package Manager の **Add package from git URL** に次を入力します。
+VCC の **Settings > Packages > Add Repository** に `https://vpm.logiccuteguy.com/index.json` を追加し、DigHoleIt 0.5.0 を project へ追加できます。
+
+Git からインストールする場合は Unity Package Manager の **Add package from git URL** に次を入力します。
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0
 ```
 
 または repository を `Packages/com.logiccuteguy.digholeit` に配置します。VRChat project では先に LCGUdonSharp をインストールしてください。
@@ -38,4 +40,4 @@ https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0
 5. 必要に応じて [Editor brush](editor-brushes.md) で sculpt/paint します。
 6. Baked light を使う場合は **Add Light Probes** を実行して lighting を Bake します。
 
-0.3 から更新する場合は各 zone を一度 Bake し、空 chunk object の削除、最大 16 terrain layer、lightmap UV を反映してください。Sculpt と paint は保持されます。
+0.4 から 0.5 へ更新する場合は、木・detail と新しい zone height data を取り込むため各 zone を一度 Re-bake してください。Voxel size と lattice が同じなら sculpt と paint は保持されます。

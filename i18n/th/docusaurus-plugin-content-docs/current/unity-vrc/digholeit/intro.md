@@ -4,14 +4,20 @@ sidebar_position: 1
 
 # เอกสาร DigHoleIt
 
-> เวอร์ชันเอกสาร: **0.4.0** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+> เวอร์ชันเอกสาร: **0.5.0** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
 
-DigHoleIt เปลี่ยนพื้นที่ส่วนหนึ่งของ Unity Terrain ให้เป็น voxel terrain ที่ขุดได้ วาง **Dig Zone** เหนือ terrain แล้ว Bake จากนั้นผู้เล่นสามารถขุดหลุม อุโมงค์ ถ้ำ เติมดินกลับ และระบาย terrain layer บนผิว voxel ได้ ใน VRChat การแก้ไขจะ sync ไปยังผู้เล่นทุกคนรวมถึง late joiner
+DigHoleIt เปลี่ยนพื้นที่ส่วนหนึ่งของ Unity Terrain ให้เป็น voxel terrain ที่ขุดได้ วาง **Dig Zone** เหนือ terrain แล้ว Bake จากนั้นผู้เล่นสามารถขุดหลุม อุโมงค์ ถ้ำ เติมดินกลับ และระบาย terrain layer บนผิว voxel ได้ เวอร์ชัน 0.5.0 รองรับ tree/detail ใน zone, การ paint foliage ภายในหลุม บนผนังและเพดาน และการขยายความสูงของ zone อัตโนมัติ ใน VRChat การแก้ไขจะ sync ไปยังผู้เล่นทุกคนรวมถึง late joiner
+
+![Terrain และโซนขุดของ DigHoleIt](/img/digholeit/hero.jpg)
+
+| หลุมที่ขุด | อุโมงค์ผ่าน terrain |
+|---|---|
+| ![หลุมที่ขุดใน Unity Terrain](/img/digholeit/pit.jpg) | ![อุโมงค์ voxel ผ่าน Unity Terrain](/img/digholeit/tunnel.jpg) |
 
 | หน้า | เนื้อหา |
 |---|---|
 | [เริ่มต้นใช้งาน](getting-started.md) | การติดตั้ง demo scene และสร้าง zone บน terrain ของคุณ |
-| [Dig Zone](dig-zones.md) | การตั้งค่า Bake ย้าย resize terrain hole ติดตาม terrain layer และ baked lighting |
+| [Dig Zone](dig-zones.md) | การตั้งค่า Bake, zone height, tree/detail, ย้าย resize terrain hole ติดตาม terrain layer และ baked lighting |
 | [Editor brush](editor-brushes.md) | Sculpt และ paint zone ใน Editor |
 | [VRChat runtime](vrchat-runtime.md) | `DigZoneRuntime`, `DigTool`, `DigSync` บน UdonSharp |
 | [Standalone runtime](standalone-runtime.md) | Runtime C# ปกติ พร้อม save และ multiplayer hook |

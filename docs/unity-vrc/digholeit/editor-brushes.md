@@ -4,12 +4,16 @@ sidebar_position: 4
 
 # Editor brushes
 
-> Documentation version: **0.4.0**
+> Documentation version: **0.5.0**
 
 There are two ways to sculpt and paint a baked zone in the editor. Both use the same brush settings.
 
 - **From the Terrain:** Terrain component > Paint Terrain > **DigHoleIt: Dig Voxels** (Dig, Add, Smooth, Reset) or **DigHoleIt: Paint Voxels**. The brush shape comes from Unity's terrain brush list. The brush works on every baked zone that uses the terrain.
 - **From the zone:** select the Dig Zone and click **Sculpt Tool**. An overlay in the Scene view has the modes (Dig, Add, Paint, Smooth, Reset), the paint layer, and the shape (Sphere, Soft, Flat or a custom mask texture).
+
+<img src="/img/digholeit/terrain-dig-voxels.png" alt="The DigHoleIt: Dig Voxels terrain tool in the Terrain inspector, in Add mode with the Grass layer as the added soil texture" width="390" />
+
+![Sculpting a Dig Zone in the Scene view](/img/digholeit/editor-sculpt.jpg)
 
 ## Modes
 
@@ -45,4 +49,4 @@ The brush axis is the surface normal by default. World up and view direction are
 
 ## Undo and the runtime
 
-Every stroke is one undo step. In a VRChat project, the stroke is copied into the zone's `DigZoneRuntime` when you release the mouse, so the uploaded world starts with your sculpting.
+Every stroke is one undo step. Undo and redo remesh only the chunks the stroke changed, and zones whose terrain the undo didn't touch aren't re-synced, so they stay quick on large zones. In a VRChat project, the stroke is copied into the zone's `DigZoneRuntime` when you release the mouse, so the uploaded world starts with your sculpting.

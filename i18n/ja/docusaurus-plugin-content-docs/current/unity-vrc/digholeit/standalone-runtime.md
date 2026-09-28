@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Standalone runtime
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 Standalone runtime は通常の C# (`LogicCuteGuy.DigHoleIt.Standalone`) です。VRChat SDK がない project、または `DIGHOLEIT_STANDALONE` define を追加した VRChat project で compile されます。
 
@@ -25,6 +25,8 @@ Zone を Bake して **Add Standalone Runtime** を押します。
 | `EditLog` | 最後の reset 以降の全 edit。 |
 
 `DigToolStandalone` は camera から ray を飛ばし、左 mouse で dig、右で add、middle で paint します。
+
+Zone 内の terrain tree と detail は、足元の surface が掘られた、または埋められたとき非表示になり、`ResetToBaked()` で戻ります。Detail renderer は MaterialPropertyBlock の live foliage mask を使うため material asset は変更しません。
 
 ## Save と multiplayer
 

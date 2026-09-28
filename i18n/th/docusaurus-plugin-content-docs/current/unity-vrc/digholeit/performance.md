@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ประสิทธิภาพและข้อจำกัด
 
-> เวอร์ชันเอกสาร: **0.4.0**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 ## ค่าที่แนะนำ
 
@@ -34,3 +34,4 @@ sidebar_position: 8
 - Shading สูงสุด 16 layer (Lite 8, Standard บน mobile 4) และ painted layer ต่อ chunk สูงสุด 4
 - Chunk ที่ขุดตอน runtime ใช้ light probe ไม่ใช่ lightmap
 - Terrain material ต้องรองรับ hole
+- Tree แต่ละต้นเป็น GameObject ส่วน detail ใช้หนึ่ง renderer ต่อ chunk column (หนึ่ง draw call ต่อ detail type) บน Quest ควรลด density และ Detail Distance

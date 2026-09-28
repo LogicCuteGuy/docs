@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # 性能と制限
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 ## 推奨設定
 
@@ -34,3 +34,4 @@ Quest では 1 つの大きな zone より複数の小さな zone を推奨し�
 - Shading は最大 16 layer（Lite は 8、mobile Standard は 4）、chunk の painted layer は最大 4 です。
 - Runtime で掘られた chunk は lightmap ではなく light probe を使います。
 - Terrain material は hole を support する必要があります。
+- Tree は 1 本ごとに GameObject、detail は chunk column ごとに renderer（detail type ごとに draw call）を使います。Quest では density と Detail Distance を控えめにします。

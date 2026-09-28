@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Standalone runtime
 
-> Documentation version: **0.4.0**
+> Documentation version: **0.5.0**
 
 The standalone runtime is plain C# (`LogicCuteGuy.DigHoleIt.Standalone`). It compiles in any project without the VRChat SDK, or in a VRChat project with the `DIGHOLEIT_STANDALONE` scripting define.
 
@@ -30,6 +30,8 @@ Bake the zone as usual, then click **Add Standalone Runtime** in the zone inspec
 | `maxChunksPerFrame` | Chunks remeshed per frame. 0 remeshes every dirty chunk at once. |
 
 Radii are in metres and are capped by the zone's Max Brush Radius.
+
+Terrain trees and details in the zone go away where the ground under them is dug away or buried, and come back on `ResetToBaked`. The detail renderers get a live foliage mask through a MaterialPropertyBlock, so the materials (assets) are never changed.
 
 ## DigToolStandalone
 

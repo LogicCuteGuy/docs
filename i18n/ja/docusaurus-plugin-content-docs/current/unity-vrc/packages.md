@@ -10,6 +10,7 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.4` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` | 2022.3 | 同期 runtime edit と foliage に対応した Unity Terrain 用の掘削可能な voxel zone |
 
 ## VCC にリポジトリを追加する
 
@@ -36,15 +37,14 @@ VCC/ALCOM からのインストールを推奨します。LCGUdonSharp は GitHu
 
 LCGUdonSharp は Worlds SDK を変更せず、`Payload~/UdonSharp` からコンパイラーをインストールします。
 
-## GitHub パッケージ
+### DigHoleIt
 
-### DigHoleIt `0.4.0`
-
+- 最新版: `0.5.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
 - Unity 2022.3、Built-in Render Pipeline
 - VRChat 依存関係: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
 - ライセンス: MIT
 
-Unity Package Manager で `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0` を追加するか、`Packages/com.logiccuteguy.digholeit` に配置するか、名前付き `com.logiccuteguy.digholeit-0.4.0.zip` を展開します。現在は LogicCuteGuy VPM リストに含まれていません。
+VCC の VPM リスト、Unity Package Manager の `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0`、`Packages/com.logiccuteguy.digholeit` への配置、または名前付き `com.logiccuteguy.digholeit-0.5.0.zip` release asset から 0.5.0 をインストールできます。GitHub 自動生成の source archive を Unity package として使用しないでください。
 
 [概要](./digholeit/intro.md) · [はじめに](./digholeit/getting-started.md)

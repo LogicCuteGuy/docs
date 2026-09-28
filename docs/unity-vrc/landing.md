@@ -25,7 +25,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-Help Tools and LCGUdonSharp are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt is currently installed from Git or its named GitHub release package.
+All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -33,7 +33,7 @@ A collection of 15+ professional editor utilities for lightmap scaling, asset an
 ### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.4
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered C# collections and JSON, ref/out, closed generics, LINQ closures, and manual packet networking, installed as its own package instead of patching the Worlds SDK.
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.4.0
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.5.0
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.

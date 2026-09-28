@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # VRChat runtime
 
-> เวอร์ชันเอกสาร: **0.4.0**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 VRChat runtime เขียนด้วย UdonSharp และ compile ด้วย LCGUdonSharp หลัง Bake zone ให้กด **Add VRChat Runtime** เพื่อเพิ่ม `DigZoneRuntime` ที่ทำ edit/mesh และ `DigSync` บน GameObject ลูกสำหรับ network sync
 
@@ -23,6 +23,8 @@ Pickup สำหรับ dig/add/paint ในทิศที่ชี้ ตั
 - `_ResetToOriginal`: คืน Bake state เฉพาะ local ทันที หาก reset ทุกคนใช้ `DigSync._RequestReset()`
 
 `budgetMsDesktop` / `budgetMsMobile` คือ frame budget สำหรับ edit และ mesh ค่าเริ่มต้น 2.5 / 1.2 ms
+
+`foliageMask`, `detailRenderers` และ `treeObjects` คือข้อมูล foliage ใน zone ที่ bridge ใส่ให้ หลัง remesh หากพื้นใต้ tree/detail ถูกขุดออกหรือฝัง ระบบจะปิด tree และอัปเดต detail mask การ Reset จะคืน foliage กลับมา
 
 ## DigSync
 

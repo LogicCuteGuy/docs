@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # VRChat runtime
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 VRChat runtime は UdonSharp で書かれ、LCGUdonSharp で compile されます。Zone を Bake した後 **Add VRChat Runtime** を押すと、edit/meshing を行う `DigZoneRuntime` と、network 同期を行う子 GameObject の `DigSync` が追加されます。
 
@@ -23,6 +23,8 @@ Pickup が向いている場所を dig、add、paint します。`zones`、ray o
 - `_ResetToOriginal`: Local だけを Bake 状態へ即時復元します。全員の reset は `DigSync._RequestReset()` を使います。
 
 `budgetMsDesktop` / `budgetMsMobile` は edit と meshing の frame budget（default 2.5 / 1.2 ms）です。
+
+`foliageMask`、`detailRenderers`、`treeObjects` は bridge が設定する zone 内 foliage data です。Remesh 後に木や detail の足元が掘られた、または埋められた場合、木を無効化し detail mask を更新します。Reset で復元されます。
 
 ## DigSync
 

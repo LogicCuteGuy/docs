@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 Dig Zone は 1 つの Unity Terrain 上に置く axis-aligned box です。内部の terrain は、掘る・埋める・paint できる voxel grid に置き換わります。
 
@@ -20,8 +20,23 @@ Dig Zone は 1 つの Unity Terrain 上に置く axis-aligned box です。内�
 | **Max Brush Radius** | Player から受け付ける最大 brush 半径。 |
 | **Baked Lighting** | Chunk に lightmap UV と Contribute GI を設定します。 |
 | **Lightmap Scale** | Chunk の lightmap resolution 倍率。 |
+| **Trees / Details** | Zone 内の terrain tree と detail を表示し、掘削面に追従させます。 |
 
 Scene view の orange box が zone、green box が実際に掘れる領域です。
+
+## Zone height
+
+Terrain や sculpt が現在の上端に近づくと、Bake と Editor brush は zone を上方向へ voxel 単位で自動拡張します。底面と terrain hole の footprint は変わりません。不要な空間を減らすには **Fit To Terrain** を使ってから Bake します。
+
+## 木と detail
+
+Bake 時に terrain hole 内の tree は zone data へ移され、元の回転・幅・高さ、collider、LOD を保持した prefab copy として配置されます。Re-bake しても位置を保ち、Clear または Delete Zone で terrain へ戻ります。Terrain detail は上面では元の detail map に従い、穴の床・壁・天井に paint した detail は zone data に保存され、surface から生える mesh として描画されます。
+
+Terrain の **Paint Terrain** から **DigHoleIt: Paint Trees** / **DigHoleIt: Paint Details** を使うと、Unity 標準 brush が届かない zone 内にも paint できます。
+
+![穴の中にペイントした foliage](/img/digholeit/paint-in-hole.jpg)
+
+![洞窟の床と天井にペイントした foliage](/img/digholeit/paint-in-cave.jpg)
 
 ## 操作
 
@@ -39,6 +54,6 @@ Terrain layer は最大 16、DigTerrain Lite は最大 8 layer を shading し�
 
 ## 移動、resize、terrain 追従
 
-Box face の handle は voxel 単位で snap します。Re-bake は voxel size と lattice が同じなら sculpt/paint を保持します。**Follow terrain edits** が有効なら、Unity Terrain の height/paint stroke 完了後に未 sculpt voxel を更新し、sculpt と voxel paint は維持します。
+Box face の handle は voxel 単位で snap します。Re-bake は voxel size と lattice が同じなら sculpt/paint を保持します。**Follow terrain edits** が有効なら、Unity Terrain の height、paint、tree、detail の変更完了後に zone を更新し、sculpt と voxel paint は維持します。
 
 各 zone は terrain hole を管理し、削除や Clear で復元します。古い zone が残した hole は Terrain tool の **Fix Leftover Holes** で修復できます。

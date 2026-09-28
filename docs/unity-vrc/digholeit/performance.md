@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Performance and limits
 
-> Documentation version: **0.4.0**
+> Documentation version: **0.5.0**
 
 ## Recommended settings
 

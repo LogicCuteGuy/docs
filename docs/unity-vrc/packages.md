@@ -12,6 +12,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.4` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits and foliage support |
 
 ## Add the repository in VCC
 
@@ -48,16 +49,14 @@ Adds interfaces, compiler-managed exceptions, async lowering, C# collection/JSON
 
 Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 
-## GitHub packages
-
 ### `com.logiccuteguy.digholeit` — DigHoleIt
 
-- **Latest version**: 0.4.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.4.0)
+- **Latest version**: 0.5.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
 - **Unity**: 2022.3, Built-in Render Pipeline
 - **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
 - **License**: MIT
 - **Repository**: [LogicCuteGuy/DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt)
 
-Install through Unity Package Manager with the Git URL `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0`, embed the repository at `Packages/com.logiccuteguy.digholeit`, or extract the named `com.logiccuteguy.digholeit-0.4.0.zip` release asset. DigHoleIt is not currently included in the LogicCuteGuy VPM listing.
+Install 0.5.0 through VCC from the LogicCuteGuy VPM listing, add `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0` through Unity Package Manager, embed the repository at `Packages/com.logiccuteguy.digholeit`, or extract the named `com.logiccuteguy.digholeit-0.5.0.zip` release asset. Do not use GitHub's automatic source archive as a Unity package.
 
 Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started)

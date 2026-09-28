@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # วิธีทำงาน
 
-> เวอร์ชันเอกสาร: **0.4.0**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 ## Grid และ compression
 
@@ -23,6 +23,10 @@ VRChat runtime เก็บ compressed data และ offset ต่อ chunk แ
 Standard shader ใช้ terrain splat/normal สูงสุด 16 layer ส่วน DigTerrain Lite สำหรับ Quest ใช้สูงสุด 8 แต่ละ chunk เก็บ painted terrain layer ได้สูงสุด 4 พร้อม dug soil
 
 เมื่อเปิด Baked Lighting chunk จะมี lightmap UV และ static flag Chunk ที่ remesh ตอน runtime เปลี่ยนไปใช้ light probe และ Reset จะคืน lightmap index กับ scale/offset เดิม
+
+## Tree และ detail
+
+`DigFoliageBaker` ย้าย tree ใน terrain hole เข้า `DigZoneData` และรวม detail instance เป็น mesh ต่อ chunk column แต่ละ instance มี surface anchor Runtime ตรวจ signed-distance field รอบ anchor; หาก surface ถูกขุดออกหรือฝัง ระบบจะปิด tree และซ่อน detail ผ่าน RGBA foliage mask การ Reset จะคืน mask และ object state ตอน Bake
 
 ## Network
 

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # เริ่มต้นใช้งาน
 
-> เวอร์ชันเอกสาร: **0.4.0**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 ## ข้อกำหนด
 
@@ -16,10 +16,12 @@ sidebar_position: 2
 
 ## การติดตั้ง
 
-ใส่ URL นี้ใน Unity Package Manager ที่ **Add package from git URL**:
+เพิ่ม `https://vpm.logiccuteguy.com/index.json` ที่ **Settings > Packages > Add Repository** ใน VCC แล้วเพิ่ม DigHoleIt 0.5.0 เข้า project ได้
+
+หากติดตั้งจาก Git ให้ใส่ URL นี้ใน Unity Package Manager ที่ **Add package from git URL**:
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0
 ```
 
 หรือวาง repository ที่ `Packages/com.logiccuteguy.digholeit` ใน VRChat project ให้ติดตั้ง LCGUdonSharp ก่อน
@@ -38,4 +40,4 @@ https://github.com/LogicCuteGuy/DigHoleIt.git#v0.4.0
 5. ใช้ [Editor brush](editor-brushes.md) เพื่อ sculpt/paint ตามต้องการ
 6. หากใช้ baked light ให้กด **Add Light Probes** แล้ว Bake lighting
 
-เมื่ออัปเกรดจาก 0.3 ให้ Bake แต่ละ zone หนึ่งครั้งเพื่อเอา empty chunk object ออก รองรับ terrain layer สูงสุด 16 และสร้าง lightmap UV โดย sculpt/paint จะยังอยู่
+เมื่ออัปเกรดจาก 0.4 เป็น 0.5 ให้ Re-bake แต่ละ zone หนึ่งครั้งเพื่อรับ tree/detail และข้อมูล zone height ใหม่ หาก voxel size และ lattice เหมือนเดิม sculpt/paint จะยังอยู่

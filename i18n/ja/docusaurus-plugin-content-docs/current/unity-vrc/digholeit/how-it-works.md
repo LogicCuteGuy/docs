@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # 仕組み
 
-> ドキュメントバージョン: **0.4.0**
+> ドキュメントバージョン: **0.5.0**
 
 ## Grid と圧縮
 
@@ -23,6 +23,10 @@ Surface がある chunk だけ GameObject、mesh、collider を持ちます。Ru
 Standard shader は terrain の splat/normal を最大 16 layer、DigTerrain Lite は Quest 向けに最大 8 layer shading します。Paint slot は chunk ごとに最大 4 terrain layer と dug soil です。
 
 Baked Lighting が有効なら chunk は lightmap UV と static flag を持ちます。Runtime で remesh された chunk は light probe に切り替わり、Reset で元の lightmap index と scale/offset を復元します。
+
+## 木と detail
+
+`DigFoliageBaker` は terrain hole 内の木を `DigZoneData` に移し、detail instance を chunk column ごとの mesh にまとめます。各 instance は surface anchor を持ちます。Runtime が anchor 周辺の signed-distance field を調べ、surface が掘られた、または埋められた場合は木を無効化し、RGBA foliage mask 経由で detail を隠します。Reset で Bake 時の mask と object state を復元します。
 
 ## Network
 
