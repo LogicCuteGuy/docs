@@ -7,7 +7,7 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | Package | Current version | Documentation |
 |---|---:|---|
 | [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
-| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.4` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
+| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.5` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.5.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
 
 All three packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its Git tag or named GitHub Release package.

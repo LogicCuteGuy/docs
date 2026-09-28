@@ -11,7 +11,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | Package ID | Display Name | Latest | Unity | Description |
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
-| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.4` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
+| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.5` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits and foliage support |
 
 ## Add the repository in VCC
@@ -40,7 +40,7 @@ Docs: [Overview](helptools/intro) · [Installation](helptools/install)
 
 ### `com.logiccuteguy.lcgudonsharp` — LCGUdonSharp
 
-- **Latest version**: 0.3.4 — [all releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases)
+- **Latest version**: 0.3.5 — [release](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
 - **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `3.10.5` (strict)
 - **Repository**: [LogicCuteGuy/LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp)

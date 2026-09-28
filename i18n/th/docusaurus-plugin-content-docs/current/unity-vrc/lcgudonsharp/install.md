@@ -4,10 +4,10 @@ sidebar_position: 2
 
 # การติดตั้งและตั้งค่า
 
-> เวอร์ชันเอกสาร: **0.3.4** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.4)
+> เวอร์ชันเอกสาร: **0.3.5** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
 
 :::warning อัปเกรดจาก 0.3.2
-แพ็กเกจ `0.3.2` ถูกจัดชุดไม่ถูกต้อง ทำให้โปรเจกต์ใหม่อาจไม่มี compiler payload ให้อัปเดตเป็น `0.3.4`; installer จะซ่อมให้หลัง Unity refresh
+แพ็กเกจ `0.3.2` ถูกจัดชุดไม่ถูกต้อง ทำให้โปรเจกต์ใหม่อาจไม่มี compiler payload ให้อัปเดตเป็น `0.3.5`; installer จะซ่อมให้หลัง Unity refresh
 :::
 
 ## ข้อกำหนด
@@ -17,13 +17,13 @@ sidebar_position: 2
 
 ## แนะนำ: VCC หรือ ALCOM
 
-เพิ่ม[รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วติดตั้ง LCGUdonSharp `0.3.4`
+เพิ่ม[รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วติดตั้ง LCGUdonSharp `0.3.5`
 
-หากใช้ local package ให้ดาวน์โหลดและแตก `com.logiccuteguy.lcgudonsharp-0.3.4.zip` จาก [GitHub Releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.4) ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
+หากใช้ local package ให้ดาวน์โหลดและแตก `com.logiccuteguy.lcgudonsharp-0.3.5.zip` จาก [GitHub Releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5) ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
 
 ## ขั้นตอนตั้งค่า
 
-1. ติดตั้ง `0.3.4` ผ่าน VCC/ALCOM หรือไฟล์ ZIP ที่มีชื่อชัดเจน
+1. ติดตั้ง `0.3.5` ผ่าน VCC/ALCOM หรือไฟล์ ZIP ที่มีชื่อชัดเจน
 2. เปิด Unity และรอ compile ให้เสร็จ
 3. หากจำเป็น ใช้ **Tools > LCGUdonSharp > Install or Repair**
 4. Build และทดสอบ world ตามปกติ

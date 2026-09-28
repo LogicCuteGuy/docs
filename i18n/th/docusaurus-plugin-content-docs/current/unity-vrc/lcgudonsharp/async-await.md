@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Async / Await
 
-> เวอร์ชันเอกสาร: **0.3.4**
+> เวอร์ชันเอกสาร: **0.3.5**
 
 LCGUdonSharp แปลง `async`/`await` เป็น frame-pool continuation ตอน build โดยรองรับ `async void` ที่ไม่มี parameter, `Task.Yield()` แบบลำดับตรง, `Task.Delay(int)` ที่ใช้ค่าคงที่บวก และ VRChat SDK await หนึ่งรายการต่อ behaviour
 

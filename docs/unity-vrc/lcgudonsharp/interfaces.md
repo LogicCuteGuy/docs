@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # C# Interfaces
 
-> Documentation version: **0.3.4**
+> Documentation version: **0.3.5**
 
 Define a plain C# interface and implement it on `UdonSharpBehaviour` classes. Method calls dispatch through the interface — with parameters, return values, properties, multiple implementations, and interface arrays.
 

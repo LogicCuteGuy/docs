@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Manual Packet Networking
 
-> Documentation version: **0.3.4**
+> Documentation version: **0.3.5**
 
 :::caution Experimental
 `[LCGPacket]` / `LCGNetworkZone` networking is experimental — its wire protocol may change between versions (currently protocol v2).
@@ -70,7 +70,9 @@ Zone rules:
 - Zone colliders in **separate hierarchies** may overlap — each scene object belongs to its nearest ancestor zone.
 - Zone colliders in the **same parent/child hierarchy** may not overlap; that configuration fails the build before helpers are generated.
 
-Zones fail closed on Continuous bodies, Udon Graph behaviours, overlapping parent/child zones, `[UdonSynced]` under a zone, and PlayerObject templates sharing a hierarchy.
+Third-party behaviours that use native `[UdonSynced]` fields remain fail-closed by default. For compatibility with an existing hierarchy, enable **Allow Native Sync Passthrough** (`LCGNetworkZone.allowNativeSyncPassthrough`). This preserves native VRChat synchronization while the zone still scopes LCG packets, ownership, and converted `VRC_ObjectSync` traffic. Those native fields remain instance-wide rather than zone-scoped, and the build emits a warning.
+
+Continuous Udon behaviours with **no synced fields** are accepted automatically. Zones still fail closed on Udon Graph behaviours, native synced fields without the opt-in passthrough, overlapping parent/child zones, and PlayerObject templates sharing a hierarchy.
 
 ## Diagnostics
 

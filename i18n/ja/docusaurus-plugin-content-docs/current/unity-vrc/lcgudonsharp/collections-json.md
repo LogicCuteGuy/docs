@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # コレクション、JSON、バイト、ビット
 
-> ドキュメントバージョン: **0.3.4**
+> ドキュメントバージョン: **0.3.5**
 
 正確な `List<T>` と `Dictionary<TKey,TValue>` は VRChat の `DataList`、`DataDictionary`、`DataToken` 操作へ変換されます。SDK 型や `VRCJson` を直接使用する既存コードは変更されません。
 

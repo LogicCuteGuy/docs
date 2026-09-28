@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ระบบ Packet Network แบบกำหนดเอง
 
-> เวอร์ชันเอกสาร: **0.3.4**
+> เวอร์ชันเอกสาร: **0.3.5**
 
 :::caution ฟีเจอร์ทดลอง
 Wire protocol ของ `[LCGPacket]` / `LCGNetworkZone` ปัจจุบันคือ v2 และอาจเปลี่ยนในอนาคต
@@ -31,6 +31,8 @@ public void OnScoreChanged(VRCPlayerApi sender) { }
 
 เพิ่ม `LCGNetworkZone` ใน trigger collider เพื่อจำกัดผู้รับและ ownership ของ object ลูกไว้เฉพาะ player ใน zone โดย `VRC_ObjectSync` ภายใน zone จะถูกแทนด้วย manual relay
 
-Continuous sync, Udon Graph behaviour, zone แบบ parent/child ที่ซ้อนกัน และ `[UdonSynced]` มาตรฐานใต้ zone จะถูกปฏิเสธแบบ fail-closed แต่ zone ในคนละ hierarchy ซ้อนกันได้
+Behaviour จาก third party ที่ใช้ field `[UdonSynced]` แบบ native จะถูกปฏิเสธแบบ fail-closed ตามค่าเริ่มต้น หากต้องรองรับ hierarchy เดิม ให้เปิด **Allow Native Sync Passthrough** (`allowNativeSyncPassthrough`) ที่ zone ระบบยังจำกัด LCG packet, ownership และ `VRC_ObjectSync` ที่แปลงแล้วตาม zone แต่ field แบบ native จะคง semantics ของ VRChat และ broadcast ทั้ง instance ไม่ได้จำกัดเฉพาะ zone โดย build จะแสดงคำเตือนเรื่องขอบเขตนี้
+
+Continuous Udon behaviour ที่ **ไม่มี synced field** ใช้ใน zone ได้อัตโนมัติ ส่วน Udon Graph behaviour, native synced field ที่ไม่เปิด passthrough, zone แบบ parent/child ที่ซ้อนกัน และ PlayerObject template ใน hierarchy เดียวกันยังคง fail-closed แต่ zone ในคนละ hierarchy ซ้อนกันได้
 
 หลังอัปเกรดให้ compile UdonSharp program ทั้งหมดและ build world ใหม่

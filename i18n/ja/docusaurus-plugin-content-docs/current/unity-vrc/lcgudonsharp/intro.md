@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # LCGUdonSharp の概要
 
-> ドキュメントバージョン: **0.3.4** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.4)
+> ドキュメントバージョン: **0.3.5** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) は VRChat 向けのインターフェース対応 UdonSharp コンパイラーです。C# インターフェース、ビルド時の `async`/`await`、同期 `try`/`catch`/`finally`、C# コレクションと JSON、拡張言語機能、手動パケット通信を追加します。変更されたソースは Worlds SDK や `Assets` ではなく、すべて `Packages/com.logiccuteguy.lcgudonsharp` 内に保持されます。
 
@@ -22,6 +22,7 @@ sidebar_position: 1
 | 拡張言語 | `ref`/`out`、閉じたジェネリック、LINQ クロージャ、`dynamic`、配列ベースの `Span<T>` |
 | コレクションと JSON | `List<T>` / `Dictionary<TKey,TValue>` を VRChat データコンテナーへ変換し、`System.Text.Json` 互換 API を提供 |
 | 手動パケット通信 | バージョン付きフレーム、権限確認、リプレイ保護、送信の集約、対象プレイヤーへの配信 |
+| Network Zone | `LCGNetworkZone` で packet と ownership を trigger volume 内に限定します。Synced field のない Continuous behaviour と、明示的な instance-wide native sync passthrough に対応します。 |
 | クリーンなインストール | SDK 内を変更せず、自動バックアップ・復元を行う冪等セットアップ |
 
 ## 重要な用語

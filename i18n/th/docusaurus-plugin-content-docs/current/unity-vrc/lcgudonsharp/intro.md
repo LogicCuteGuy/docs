@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # ภาพรวม LCGUdonSharp
 
-> เวอร์ชันเอกสาร: **0.3.4** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.4)
+> เวอร์ชันเอกสาร: **0.3.5** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) คือคอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, `async`/`await` ตอน build, `try`/`catch`/`finally` แบบ synchronous, C# collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง ไฟล์ที่แก้ไขทั้งหมดอยู่ใน `Packages/com.logiccuteguy.lcgudonsharp` โดยไม่แก้ Worlds SDK หรือ `Assets`
 
@@ -22,6 +22,7 @@ Interface, synchronous exception, async lowering และความสาม�
 | Extended Language | `ref`/`out`, closed generic, LINQ closure, `dynamic`, `Span<T>` บน array |
 | Collection และ JSON | แปลง `List<T>` / `Dictionary<TKey,TValue>` เป็น VRChat data container พร้อม API แบบ `System.Text.Json` |
 | Manual Packet Network | Frame มีเวอร์ชัน, ตรวจ authority, ป้องกัน replay, รวมการส่ง และส่งถึง player ที่ระบุ |
+| Network Zone | `LCGNetworkZone` จำกัด packet และ ownership ตาม trigger volume รองรับ Continuous behaviour ที่ไม่มี synced field และมี native sync passthrough แบบ instance-wide ให้เปิดใช้อย่างชัดเจน |
 | การติดตั้งแบบสะอาด | Setup อัตโนมัติที่ทำซ้ำได้ พร้อม backup/restore โดยไม่แก้ SDK |
 
 ## คำสำคัญ

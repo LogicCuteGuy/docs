@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # คอลเลกชัน, JSON, ไบต์ และบิต
 
-> เวอร์ชันเอกสาร: **0.3.4**
+> เวอร์ชันเอกสาร: **0.3.5**
 
 `List<T>` และ `Dictionary<TKey,TValue>` แบบตรงชนิดจะถูกแปลงเป็นการทำงานของ VRChat `DataList`, `DataDictionary` และ `DataToken` ส่วนโค้ดที่ใช้ชนิด SDK หรือ `VRCJson` โดยตรงจะไม่ถูกเปลี่ยน
 
