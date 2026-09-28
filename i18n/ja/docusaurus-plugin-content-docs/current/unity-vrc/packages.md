@@ -10,7 +10,7 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.5` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.5.0` release（`0.6.0` source） | 2022.3 | 同期 runtime edit、foliage、0.6.0 source の package example scene に対応した Unity Terrain 用の掘削可能な voxel zone |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 
 ## VCC にリポジトリを追加する
 
@@ -39,15 +39,14 @@ LCGUdonSharp は Worlds SDK を変更せず、`Payload~/UdonSharp` からコン�
 
 ### DigHoleIt
 
-- 最新版: `0.5.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
-- 現在の source version: [`main`](https://github.com/LogicCuteGuy/DigHoleIt) の `0.6.0` — package 内の VRChat、standalone、showcase example scene を追加。0.6.0 の tag、GitHub Release、VPM entry はまだ公開されていません。
+- 最新版: `0.6.1` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 - Unity 2022.3、Built-in Render Pipeline
 - VRChat 依存関係: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
+- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 - ライセンス: MIT
 
-VCC の VPM リスト、Unity Package Manager の `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0`、`Packages/com.logiccuteguy.digholeit` への配置、または名前付き `com.logiccuteguy.digholeit-0.5.0.zip` release asset から 0.5.0 をインストールできます。GitHub 自動生成の source archive を Unity package として使用しないでください。
+VCC の VPM リスト、Unity Package Manager の `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1`、`Packages/com.logiccuteguy.digholeit` への配置、または名前付き `com.logiccuteguy.digholeit-0.6.1.zip` release asset から 0.6.1 をインストールできます。GitHub 自動生成の source archive を Unity package として使用しないでください。
 
-0.6.0 documentation は現在の source tree を説明します。0.6.0 が release されるまでは、変化する `main` branch を意図的に使う場合だけ tag なし Git URL を使用してください。
+0.6.1 は Bake/move/resize の Undo、terrain-hole seam、foliage shading、無効な edge collision mesh を修正します。
 
 [概要](./digholeit/intro.md) · [はじめに](./digholeit/getting-started.md)

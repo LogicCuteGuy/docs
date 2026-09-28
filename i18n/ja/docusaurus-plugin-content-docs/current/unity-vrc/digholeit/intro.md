@@ -4,9 +4,16 @@ sidebar_position: 1
 
 # DigHoleIt ドキュメント
 
-> ドキュメントバージョン: **0.6.0 source** · [source changelog](https://github.com/LogicCuteGuy/DigHoleIt/blob/main/CHANGELOG.md) · 公開済み最新 package: [0.5.0](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
+> ドキュメントバージョン: **0.6.1** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 
 DigHoleIt は Unity Terrain の一部を掘削可能な voxel terrain にします。Terrain 上へ **Dig Zone** を配置して Bake すると、プレイヤーは穴、トンネル、洞窟を掘り、土を追加し、terrain layer を voxel surface にペイントできます。0.5.0 では zone 内の木と detail、穴・壁・天井への foliage paint、zone height の自動拡張に対応しました。VRChat では late joiner を含む全プレイヤーへ編集が同期されます。
+
+## 0.6.1 の更新内容
+
+- Bake、resize、移動、または sculpt による chunk 作成後も、Undo/Redo が chunk object と mesh を正しく復元します。
+- **Hole Overlap** が zone surface を terrain edge の下へ既定 0.1 m 延長し、距離によって terrain detail が変化しても seam を閉じます。
+- Zone 内の grass が terrain の healthy/dry colour、暗い root、wind tint、wind phase と一致します。Diffuse Remap は対応する terrain shader でのみ使用します。
+- Hole edge の面積ゼロ triangle を collision mesh 作成前に除去します。
 
 ![DigHoleIt の terrain と掘削 zone](/img/digholeit/hero.jpg)
 

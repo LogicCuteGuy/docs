@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # เริ่มต้นใช้งาน
 
-> เวอร์ชันเอกสาร: **0.6.0 source** · package สาธารณะล่าสุดใน GitHub/VPM คือ 0.5.0
+> เวอร์ชันเอกสาร: **0.6.1** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 
 ## ข้อกำหนด
 
@@ -16,19 +16,19 @@ sidebar_position: 2
 
 ## การติดตั้ง
 
-เพิ่ม `https://vpm.logiccuteguy.com/index.json` ที่ **Settings > Packages > Add Repository** ใน VCC แล้วเพิ่ม DigHoleIt 0.5.0 เข้า project ได้
+เพิ่ม `https://vpm.logiccuteguy.com/index.json` ที่ **Settings > Packages > Add Repository** ใน VCC แล้วเพิ่ม DigHoleIt 0.6.1 เข้า project ได้
 
 หากติดตั้งจาก Git ให้ใส่ URL นี้ใน Unity Package Manager ที่ **Add package from git URL**:
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1
 ```
 
-หรือวาง repository ที่ `Packages/com.logiccuteguy.digholeit` ใน VRChat project ให้ติดตั้ง LCGUdonSharp ก่อน ขณะนี้ branch `main` ระบุ 0.6.0 แต่ยังไม่มี tag/release 0.6.0 สาธารณะ
+หรือวาง repository ที่ `Packages/com.logiccuteguy.digholeit` ใน VRChat project ให้ติดตั้ง LCGUdonSharp ก่อน
 
 ## Example scene
 
-0.6.0 source มี scene ตัวอย่างใน *Packages > DigHoleIt - Diggable Voxel Terrain > Example* ที่ Project window:
+0.6.0 ขึ้นไปมี scene ตัวอย่างใน *Packages > DigHoleIt - Diggable Voxel Terrain > Example* ที่ Project window:
 
 - **`VRChat/DigHoleItVRChatDemo`**: Dig Zone ที่ Bake แล้ว, VRCWorld spawn และ shovel 3 อันสำหรับ dig/add/paint เล่นผ่าน ClientSim แล้วถือ shovel และกด Use
 - **`Standalone/DigHoleItStandaloneDemo`**: zone ที่ Bake แล้วกับ camera ที่มี `DigToolStandalone` คลิกซ้าย dig, ขวา add, กลาง paint ใน VRChat project script ของ standalone จะแสดง missing เพราะ runtime นี้ไม่ compile

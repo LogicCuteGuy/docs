@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brush
 
-> เวอร์ชันเอกสาร: **0.6.0 source**
+> เวอร์ชันเอกสาร: **0.6.1**
 
 แก้ zone ที่ Bake แล้วได้สองทาง:
 

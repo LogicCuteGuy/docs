@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # VRChat runtime
 
-> เวอร์ชันเอกสาร: **0.6.0 source**
+> เวอร์ชันเอกสาร: **0.6.1**
 
 VRChat runtime เขียนด้วย UdonSharp และ compile ด้วย LCGUdonSharp หลัง Bake zone ให้กด **Add VRChat Runtime** เพื่อเพิ่ม `DigZoneRuntime` ที่ทำ edit/mesh และ `DigSync` บน GameObject ลูกสำหรับ network sync
 

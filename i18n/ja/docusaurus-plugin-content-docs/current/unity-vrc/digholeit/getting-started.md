@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # はじめに
 
-> ドキュメントバージョン: **0.6.0 source** · 公開済みの GitHub/VPM package は 0.5.0 です。
+> ドキュメントバージョン: **0.6.1** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 
 ## 要件
 
@@ -16,19 +16,19 @@ sidebar_position: 2
 
 ## インストール
 
-VCC の **Settings > Packages > Add Repository** に `https://vpm.logiccuteguy.com/index.json` を追加し、DigHoleIt 0.5.0 を project へ追加できます。
+VCC の **Settings > Packages > Add Repository** に `https://vpm.logiccuteguy.com/index.json` を追加し、DigHoleIt 0.6.1 を project へ追加できます。
 
 Git からインストールする場合は Unity Package Manager の **Add package from git URL** に次を入力します。
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.5.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1
 ```
 
-または repository を `Packages/com.logiccuteguy.digholeit` に配置します。VRChat project では先に LCGUdonSharp をインストールしてください。現在の `main` は 0.6.0 ですが、0.6.0 の tag/release はまだ公開されていません。
+または repository を `Packages/com.logiccuteguy.digholeit` に配置します。VRChat project では先に LCGUdonSharp をインストールしてください。
 
 ## Example scene
 
-0.6.0 source には、Project window の *Packages > DigHoleIt - Diggable Voxel Terrain > Example* に次の scene が含まれます。
+0.6.0 以降には、Project window の *Packages > DigHoleIt - Diggable Voxel Terrain > Example* に次の scene が含まれます。
 
 - **`VRChat/DigHoleItVRChatDemo`**: Bake 済み Dig Zone、VRCWorld spawn、dig/add/paint 用の 3 本の shovel。ClientSim で Play し、shovel を持って Use を押します。
 - **`Standalone/DigHoleItStandaloneDemo`**: Bake 済み zone と `DigToolStandalone` 付き camera。左 click で dig、右で add、middle で paint します。VRChat project では standalone runtime が compile されないため script は missing 表示になります。

@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Troubleshooting
 
-> Documentation version: **0.6.0 source**
+> Documentation version: **0.6.1**
 
 **A gray strip or gap shows through the terrain next to a zone.**
 The terrain has a hole that no zone covers, usually left by an older bake. Holes from deleted zones can be filled with **Fix Leftover Holes** in the terrain tools. For a hole no zone knows about, open the terrain's **Paint Holes** tool and paint the area back in, then bake the zone again.

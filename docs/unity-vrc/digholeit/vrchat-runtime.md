@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # VRChat runtime
 
-> Documentation version: **0.6.0 source**
+> Documentation version: **0.6.1**
 
 The VRChat runtime is written in UdonSharp and compiled with LCGUdonSharp. Bake the zone, then click **Add VRChat Runtime** in its inspector. That adds:
 

@@ -33,7 +33,7 @@ slug: /
 ### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.5
 คอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, async/await ตอน build, exception แบบ synchronous, collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.5.0 release / v0.6.0 source
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
 ระบบ voxel terrain ที่ขุดได้สำหรับ Unity รองรับหลุม อุโมงค์ ถ้ำ การเติมดิน และระบาย terrain layer ตอน runtime พร้อมการ sync ใน VRChat และ runtime C# สำหรับเกม standalone
 
 ดูเวอร์ชัน การพึ่งพา และ repository ได้ที่[รายการแพ็กเกจ](./packages.md)

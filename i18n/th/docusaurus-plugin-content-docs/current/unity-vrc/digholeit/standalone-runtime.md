@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Standalone runtime
 
-> เวอร์ชันเอกสาร: **0.6.0 source**
+> เวอร์ชันเอกสาร: **0.6.1**
 
 Standalone runtime เป็น C# ปกติ (`LogicCuteGuy.DigHoleIt.Standalone`) Compile ใน project ที่ไม่มี VRChat SDK หรือ VRChat project ที่เพิ่ม define `DIGHOLEIT_STANDALONE`
 

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting started
 
-> Documentation version: **0.6.0 source** · The latest public GitHub/VPM package is 0.5.0.
+> Documentation version: **0.6.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 
 ## Requirements
 
@@ -22,14 +22,14 @@ Pick one:
   `https://vpm.logiccuteguy.com/index.json` in *Settings > Packages > Add Repository*. Then add **DigHoleIt** to your project; VCC installs LCGUdonSharp with it. The listing may lag behind the newest GitHub release.
 - **Git URL:** *Window > Package Manager > + > Add package from git URL* and enter
   `https://github.com/LogicCuteGuy/DigHoleIt.git`.
-  Add `#v0.5.0` (or another published tag) to the end to pin a released version. The repository's current `main` branch reports 0.6.0, but no 0.6.0 tag or release is published yet.
+  Add `#v0.6.1` (or another published tag) to the end to pin a released version.
 - **Embedded:** clone or copy the repository into your project's `Packages/com.logiccuteguy.digholeit` folder.
 
 With a Git URL or embedded install in a VRChat project, install LCGUdonSharp first. The Udon runtime does not compile without it.
 
 ## Example scenes
 
-DigHoleIt 0.6.0 source includes example scenes under *Packages > DigHoleIt - Diggable Voxel Terrain > Example* in the Project window:
+DigHoleIt 0.6.0 and later include example scenes under *Packages > DigHoleIt - Diggable Voxel Terrain > Example* in the Project window:
 
 - **`VRChat/DigHoleItVRChatDemo`** (VRChat projects): a baked Dig Zone, a VRCWorld spawn and three shovels for dig, add and paint. Press Play with ClientSim, pick up a shovel and hold Use.
 - **`Standalone/DigHoleItStandaloneDemo`** (non-VRChat projects): a baked zone and a camera with `DigToolStandalone`. The left mouse button digs, the right adds and the middle paints. Its runtime scripts appear missing in a VRChat project because the standalone runtime is disabled there.

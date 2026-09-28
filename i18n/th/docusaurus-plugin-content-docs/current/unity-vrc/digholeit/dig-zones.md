@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> เวอร์ชันเอกสาร: **0.6.0 source**
+> เวอร์ชันเอกสาร: **0.6.1**
 
 Dig Zone คือกล่อง axis-aligned เหนือ Unity Terrain หนึ่งอัน ภายในกล่อง terrain จะถูกแทนด้วย voxel grid ที่ขุด เติม และ paint ได้
 
@@ -51,6 +51,8 @@ Dig Zone คือกล่อง axis-aligned เหนือ Unity Terrain ห
 ## Terrain layer และ lighting
 
 รองรับ terrain layer สูงสุด 16; DigTerrain Lite รองรับ 8 แต่ละ chunk เก็บ painted layer ได้สูงสุด 4 พร้อม dug soil หากใช้ Baked Lighting ให้ Bake zone, เพิ่ม Light Probe Group แล้ว Bake lighting ของ scene Chunk ที่เปลี่ยนตอน runtime จะใช้ light probe และกลับไปใช้ lightmap หลัง Reset
+
+Chunk mesh ยื่นเลยขอบ terrain hole ตามค่า **Hole Overlap** ของ material (ค่าเริ่มต้น 0.1 m) เพื่อปิด seam เมื่อระดับ detail ของ terrain เปลี่ยนตามระยะ โดย overlap น้อยพอที่จะไม่ทอดเงาบน terrain ใน lightmapper
 
 ## ย้าย resize และติดตาม terrain
 

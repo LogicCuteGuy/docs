@@ -33,7 +33,7 @@ A collection of 15+ professional editor utilities for lightmap scaling, asset an
 ### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.5
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered C# collections and JSON, ref/out, closed generics, LINQ closures, and manual packet networking, installed as its own package instead of patching the Worlds SDK.
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.5.0 release / v0.6.0 source
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> ドキュメントバージョン: **0.6.0 source**
+> ドキュメントバージョン: **0.6.1**
 
 Dig Zone は 1 つの Unity Terrain 上に置く axis-aligned box です。内部の terrain は、掘る・埋める・paint できる voxel grid に置き換わります。
 
@@ -51,6 +51,8 @@ Terrain の **Paint Terrain** から **DigHoleIt: Paint Trees** / **DigHoleIt: P
 ## Terrain layer と lighting
 
 Terrain layer は最大 16、DigTerrain Lite は最大 8 layer を shading します。各 chunk は painted layer を最大 4 つと dug soil を保持します。Baked Lighting を使う場合は zone を Bake し、Light Probe Group を追加してから scene lighting を Bake してください。Runtime で変更された chunk は light probe に切り替わり、Reset で lightmap に戻ります。
+
+Chunk mesh は material の **Hole Overlap**（既定 0.1 m）だけ terrain hole edge の先まで伸びます。Terrain に影を落とすほど大きく重ねず、距離による terrain detail の変化で見える seam を閉じます。
 
 ## 移動、resize、terrain 追従
 

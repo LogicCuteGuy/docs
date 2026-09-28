@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Standalone runtime
 
-> Documentation version: **0.6.0 source**
+> Documentation version: **0.6.1**
 
 The standalone runtime is plain C# (`LogicCuteGuy.DigHoleIt.Standalone`). It compiles in any project without the VRChat SDK, or in a VRChat project with the `DIGHOLEIT_STANDALONE` scripting define.
 

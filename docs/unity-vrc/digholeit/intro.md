@@ -4,9 +4,16 @@ sidebar_position: 1
 
 # DigHoleIt documentation
 
-> Documentation version: **0.6.0 source** · [Source changelog](https://github.com/LogicCuteGuy/DigHoleIt/blob/main/CHANGELOG.md) · Latest public package: [0.5.0](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.5.0)
+> Documentation version: **0.6.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
 
 DigHoleIt turns part of a Unity Terrain into diggable voxel terrain. You place a **Dig Zone** over the terrain and bake it. Players can then dig holes, tunnels and caves, add soil back, and paint terrain layers onto the voxel surface. In VRChat, every edit syncs to all players, including late joiners.
+
+## What's new in 0.6.1
+
+- Undo and redo now restore chunk objects and meshes correctly after baking, resizing, moving, or creating a chunk through sculpting.
+- **Hole Overlap** extends the zone surface 0.1 m under the terrain edge by default, closing visible seams as terrain detail changes with distance.
+- Grass inside zones now matches the terrain's healthy/dry colours, darker roots, wind tint and wind phase; terrain-layer Diffuse Remap is only used with terrain shaders that support it.
+- Zero-area triangles at the hole edge are removed before collision meshes are built.
 
 ![DigHoleIt terrain and dig zone](/img/digholeit/hero.jpg)
 
