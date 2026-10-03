@@ -6,7 +6,7 @@ slug: /
 # LogicCuteGuy VRC/Unity
 
 <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-  <img src="/img/icon.jpg" alt="LogicCuteGuy アバター" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
+  <img src="/img/icon.png" alt="LogicCuteGuy アバター" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
 </div>
 
 **LogicCuteGuy** の Unity および VRChat 開発ツールのセントラルリポジトリへようこそ。ワークフローの強化、パフォーマンスの最適化、およびワールド構築の簡素化を実現するために設計された一連のユーティリティを提供します。
@@ -30,8 +30,8 @@ slug: /
 ### [Help Tools (ヘルプツール)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ライトマップのスケーリング、アセット分析、シェーダーマッピング、および階層の整理のための 15 以上のプロフェッショナルなエディターユーティリティのコレクション。
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.5
-C# インターフェース、ビルド時の async/await、同期例外処理、C# コレクションと JSON、拡張言語機能、手動パケット通信を備えた VRChat 向け UdonSharp コンパイラーです。
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.6
+C# インターフェース、ビルド時の async/await、同期例外処理、コレクション/JSON、拡張言語機能、bounded object-motion batching と zone recovery を備えた手動パケット通信に対応する VRChat 向け UdonSharp コンパイラーです。
 
 ### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
 Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrain layer のペイントを提供する voxel terrain システムです。VRChat 同期と standalone C# runtime に対応します。

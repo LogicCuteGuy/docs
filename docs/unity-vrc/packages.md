@@ -11,7 +11,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | Package ID | Display Name | Latest | Unity | Description |
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
-| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.5` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
+| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.6` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 
 ## Add the repository in VCC
@@ -40,12 +40,12 @@ Docs: [Overview](helptools/intro) · [Installation](helptools/install)
 
 ### `com.logiccuteguy.lcgudonsharp` — LCGUdonSharp
 
-- **Latest version**: 0.3.5 — [release](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
+- **Latest version**: 0.3.6 — [release](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
 - **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `3.10.5` (strict)
 - **Repository**: [LogicCuteGuy/LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp)
 
-Adds interfaces, compiler-managed exceptions, async lowering, C# collection/JSON lowering, extended language features, and experimental packet networking to UdonSharp. The compiler is installed from `Payload~/UdonSharp` without modifying the Worlds SDK package. See [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md) for release history.
+Adds interfaces, compiler-managed exceptions, async lowering, C# collection/JSON lowering, extended language features, and experimental packet networking to UdonSharp. Version 0.3.6 adds bounded object-motion batching, snapshot and disconnect recovery, ownership repair, and wired native/LCG load examples. Rebuild worlds after updating because older builds cannot decode the new motion batch envelope. The compiler is installed from `Payload~/UdonSharp` without modifying the Worlds SDK package. See [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md) for release history.
 
 Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 

@@ -4,10 +4,10 @@ sidebar_position: 2
 
 # LCGUdonSharp Installation & Setup
 
-> Documentation version: **0.3.5** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
+> Documentation version: **0.3.6** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
 
 :::warning Upgrade from 0.3.2
-The `0.3.2` distribution was packaged incorrectly and could leave new projects without the compiler payload. Update to `0.3.5`; the installer repairs the compiler after Unity refreshes.
+The `0.3.2` distribution was packaged incorrectly and could leave new projects without the compiler payload. Update to `0.3.6`; the installer repairs the compiler after Unity refreshes.
 :::
 
 ## Requirements
@@ -17,13 +17,13 @@ The `0.3.2` distribution was packaged incorrectly and could leave new projects w
 
 ## Install via VCC or ALCOM (recommended)
 
-Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) in VCC or ALCOM, then install or update **LCGUdonSharp** to `0.3.5`. The package manager resolves `com.vrchat.worlds` 3.10.5 as a VPM dependency.
+Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) in VCC or ALCOM, then install or update **LCGUdonSharp** to `0.3.6`. The package manager resolves `com.vrchat.worlds` 3.10.5 as a VPM dependency.
 
-For a local package reference, download and extract the named `com.logiccuteguy.lcgudonsharp-0.3.5.zip` asset from [GitHub Releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5), then reference the extracted folder. Do not use GitHub's automatic **Source code (zip)** archive: it is not an installable Unity package.
+For a local package reference, download and extract the named `com.logiccuteguy.lcgudonsharp-0.3.6.zip` asset from [GitHub Releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6), then reference the extracted folder. Do not use GitHub's automatic **Source code (zip)** archive: it is not an installable Unity package.
 
 ## Setup steps
 
-1. Install or update the package to `0.3.5` through VCC/ALCOM, or extract the named release ZIP for a local package reference.
+1. Install or update the package to `0.3.6` through VCC/ALCOM, or extract the named release ZIP for a local package reference.
 2. Open Unity and let it compile. The installer verifies the SDK, backs up the bundled UdonSharp, and installs the compiler automatically.
 3. *(Optional)* Force setup any time via **Tools > LCGUdonSharp > Install or Repair**.
 4. Build/test your world as usual.

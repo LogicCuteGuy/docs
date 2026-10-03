@@ -6,7 +6,7 @@ slug: /
 # LogicCuteGuy VRC/Unity
 
 <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-  <img src="/img/icon.jpg" alt="LogicCuteGuy avatar" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
+  <img src="/img/icon.png" alt="LogicCuteGuy avatar" style={{borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover', border: '4px solid var(--ifm-color-primary)', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'}} />
 </div>
 
 Welcome to the central repository for **LogicCuteGuy** Unity and VRChat development tools. We provide a suite of utilities designed to enhance workflows, optimize performance, and simplify world-building.
@@ -30,8 +30,8 @@ All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.5
-An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered C# collections and JSON, ref/out, closed generics, LINQ closures, and manual packet networking, installed as its own package instead of patching the Worlds SDK.
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.6
+An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
 
 ### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.

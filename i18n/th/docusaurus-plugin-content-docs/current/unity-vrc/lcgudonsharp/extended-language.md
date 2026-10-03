@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # ความสามารถภาษาเพิ่มเติม
 
-> เวอร์ชันเอกสาร: **0.3.5**
+> เวอร์ชันเอกสาร: **0.3.6**
 
 LCGUdonSharp แปลงรูปแบบ C# เพิ่มเติมเป็น loop, array และ local variable ที่ Udon ใช้งานได้ตอน build
 

@@ -4,13 +4,23 @@ sidebar_position: 1
 
 # LCGUdonSharp Overview
 
-> Documentation version: **0.3.5** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
+> Documentation version: **0.3.6** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) is an interface-enabled UdonSharp compiler for VRChat. It extends UdonSharp with C# interfaces, build-time `async`/`await`, synchronous `try`/`catch`/`finally`, C# collections and JSON, extended language constructs, and a manual packet networking layer — while keeping every modified source file inside `Packages/com.logiccuteguy.lcgudonsharp` instead of the VRChat SDK or `Assets`.
 
 :::info Status
 Interfaces, synchronous exceptions, async lowering, and extended-language support are ready for world testing. Manual packet networking (`[LCGPacket]` / `LCGNetworkZone`) is **experimental** — its wire protocol may change between versions.
 :::
+
+## What's new in 0.3.6
+
+- Object motion now uses a bounded latest-state queue with per-recipient batching, congestion backoff, remote interpolation and bounded prediction.
+- Zone entry and `OnPlayerRestored` recover scene-field and object snapshots with bounded retries that stop when the player exits.
+- Disconnect ownership recovery preserves valid member ownership and repairs reassignment through ownership callbacks; player departure matching prefers identity over reused or invalid IDs.
+- Packet receivers can recover their binding from serialized compiled programs after a domain reload clears the source-program cache.
+- New native/LCG lamp, moving-cube and opt-in high-bandwidth examples include wired prefabs and Thai setup guidance.
+
+Recompile all UdonSharp programs and rebuild the world after updating. Older builds cannot decode the 0.3.6 motion batch envelope.
 
 ## Features
 

@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Manual Packet Networking
 
-> Documentation version: **0.3.5**
+> Documentation version: **0.3.6**
 
 :::caution Experimental
 `[LCGPacket]` / `LCGNetworkZone` networking is experimental — its wire protocol may change between versions (currently protocol v2).
@@ -65,6 +65,20 @@ Public `void` methods support up to eight supported arguments.
 
 Add `LCGNetworkZone` to a trigger collider to restrict descendant packet recipients and ownership to players inside the trigger. Inside zones, `VRC_ObjectSync` is replaced with a manual relay; script transforms sync on demand via `LCGNetwork.RequestObjectSync(gameObject)` (pickups sync automatically while held).
 
+### Snapshot and ownership recovery
+
+- Entering a zone and `OnPlayerRestored` request current scene-field and object snapshots. Recovery makes up to five additional attempts with bounded backoff, stops on exit, and restarts after a relevant restore event.
+- When a player disconnects, ownership callbacks repair VRChat reassignment to an outside player during a finite recovery window. Valid ownership by an existing member is preserved; an empty zone keeps VRChat's fallback owner until a member enters.
+- Departing players are matched by identity before player ID, preventing invalid or reused ID collisions from removing the wrong member.
+
+### Object motion transport
+
+Object motion uses a latest-state queue separate from the gameplay RPC FIFO. An unsent sample for the same object and recipient replaces the older sample, while teleport and re-entry discontinuities are preserved. Batches carry up to 900 bytes for one recipient. The scene-wide motion scheduler sends at most 40 events per second and budgets approximately 6 KB per second; it backs off when networking is clogged or the SDK outgoing queue exceeds eight events.
+
+These limits apply to LCG motion, not unrelated gameplay packets or native Udon traffic. More recipients share the same budget, so the delivered sample rate falls as a zone fills. Remote objects interpolate samples with bounded velocity prediction, and remote rigidbodies stay kinematic until local ownership begins.
+
+`LCGRuntime.PendingMotionCount`, `MotionBatchesSent`, and `LastMotionBatchBytes` expose local transport diagnostics. They are implementation diagnostics, not delivery acknowledgements or a public throughput guarantee. Validate crowded-world FPS and latency with multiple VRChat clients.
+
 Zone rules:
 
 - Zone colliders in **separate hierarchies** may overlap — each scene object belongs to its nearest ancestor zone.
@@ -80,7 +94,7 @@ LCG network logging is off by default. Enable **Edit > Project Settings > Udon S
 
 ## Upgrades
 
-The packet protocol is versioned (v2). After upgrading LCGUdonSharp, recompile all UdonSharp programs and rebuild the world.
+The packet protocol is versioned (v2). After upgrading LCGUdonSharp, recompile all UdonSharp programs and rebuild the world. Builds older than 0.3.6 cannot decode the motion batch envelope.
 
 ## See also
 

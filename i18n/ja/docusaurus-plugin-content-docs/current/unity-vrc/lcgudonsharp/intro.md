@@ -4,13 +4,23 @@ sidebar_position: 1
 
 # LCGUdonSharp の概要
 
-> ドキュメントバージョン: **0.3.5** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
+> ドキュメントバージョン: **0.3.6** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) は VRChat 向けのインターフェース対応 UdonSharp コンパイラーです。C# インターフェース、ビルド時の `async`/`await`、同期 `try`/`catch`/`finally`、C# コレクションと JSON、拡張言語機能、手動パケット通信を追加します。変更されたソースは Worlds SDK や `Assets` ではなく、すべて `Packages/com.logiccuteguy.lcgudonsharp` 内に保持されます。
 
 :::info ステータス
 インターフェース、同期例外、async lowering、拡張言語機能はワールドテストに使用できます。`[LCGPacket]` / `LCGNetworkZone` は実験的機能であり、バージョン間でプロトコルが変わる場合があります。
 :::
+
+## 0.3.6 の更新内容
+
+- Object motion は recipient ごとに最新 state を保持する bounded queue、batch 配信、congestion backoff、remote interpolation、bounded prediction を使用します。
+- Zone entry と `OnPlayerRestored` は scene field/object snapshot を bounded retry で復旧し、player が退出すると停止します。
+- Disconnect 時の ownership recovery は有効な member ownership を保持し、ownership callback で再割り当てを修復します。退出 player は再利用・無効 ID より identity を優先して照合します。
+- Domain reload で source program cache が消えても、serialized compiled program から packet receiver を再 bind できます。
+- Native/LCG lamp、moving cube、任意実行の high-bandwidth example、配線済み prefab、タイ語 setup guide を追加しました。
+
+更新後はすべての UdonSharp program を再コンパイルし、world を再ビルドしてください。古い build は 0.3.6 の motion batch envelope を decode できません。
 
 ## 主な機能
 

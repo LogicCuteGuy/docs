@@ -4,13 +4,23 @@ sidebar_position: 1
 
 # ภาพรวม LCGUdonSharp
 
-> เวอร์ชันเอกสาร: **0.3.5** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.5)
+> เวอร์ชันเอกสาร: **0.3.6** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) คือคอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, `async`/`await` ตอน build, `try`/`catch`/`finally` แบบ synchronous, C# collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง ไฟล์ที่แก้ไขทั้งหมดอยู่ใน `Packages/com.logiccuteguy.lcgudonsharp` โดยไม่แก้ Worlds SDK หรือ `Assets`
 
 :::info สถานะ
 Interface, synchronous exception, async lowering และความสามารถภาษาเพิ่มเติมพร้อมสำหรับทดสอบใน world ส่วน `[LCGPacket]` / `LCGNetworkZone` ยังเป็นฟีเจอร์ทดลองและ protocol อาจเปลี่ยนระหว่างเวอร์ชัน
 :::
+
+## สิ่งใหม่ใน 0.3.6
+
+- Object motion ใช้ bounded queue ที่เก็บ state ล่าสุดแยกตาม recipient พร้อม batch delivery, congestion backoff, remote interpolation และ bounded prediction
+- ตอนเข้า zone และ `OnPlayerRestored` ระบบกู้ scene field/object snapshot ด้วย retry ที่จำกัดและหยุดเมื่อ player ออก
+- การกู้ ownership หลัง disconnect จะรักษา ownership ของ member ที่ยังถูกต้องและซ่อมการโอนผ่าน ownership callback โดยจับคู่ผู้เล่นที่ออกด้วย identity ก่อน ID ที่อาจซ้ำหรือไม่ valid
+- Packet receiver bind กลับจาก serialized compiled program ได้เมื่อ domain reload ล้าง source program cache
+- เพิ่มตัวอย่าง native/LCG lamp, moving cube, high-bandwidth แบบ opt-in, prefab ที่ต่อครบ และคู่มือตั้งค่าภาษาไทย
+
+หลังอัปเดตให้ compile UdonSharp program ทั้งหมดและ build world ใหม่ เพราะ build รุ่นเก่า decode motion batch envelope ของ 0.3.6 ไม่ได้
 
 ## ความสามารถหลัก
 

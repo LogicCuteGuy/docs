@@ -12,7 +12,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'LogicCuteGuy Docs',
   tagline: 'Documentation for LogicCuteGuy products.',
-  favicon: 'img/icon.ico',
+  favicon: 'img/icon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -70,7 +70,7 @@ const config = {
         title: 'LogicCuteGuy Docs',
         logo: {
           alt: 'LogicCuteGuy Logo',
-          src: 'img/icon.jpg',
+          src: 'img/icon.png',
         },
         items: [
           {
