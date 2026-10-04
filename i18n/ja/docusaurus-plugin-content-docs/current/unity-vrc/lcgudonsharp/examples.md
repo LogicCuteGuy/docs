@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # サンプル
 
-> ドキュメントバージョン: **0.3.7**
+> ドキュメントバージョン: **0.3.8**
 
 [LCGUdonSharp リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)の `Example/` には各機能の実行可能な scene と script があります。各 `.cs` には同じ名前の `UdonSharpProgramAsset` があり、example `.asmdef` には別の U# assembly-definition asset が含まれています。
 
@@ -21,6 +21,10 @@ sidebar_position: 9
 1. 他の C# compile error を解決します。
 2. `Example/TestLCGUdonSharp.unity` を開くか、example component を scene に追加します。
 3. Play Mode に入り Console を確認します。
+
+## 0.3.8 の装備サンプル
+
+`ScriptableObjectEquipmentExample.prefab` は `TestLCGUdonSharp.unity` の `(12, 0, 3)` にあります。基底型の `item` に `TrainingSword.asset` を割り当て、`catalog` は `FireSpell.asset` も含みます。それぞれ固有の economy アセットを参照します。剣は 35 コイン・45 damage、魔法は 20 コイン・80 power / 12 mana です。ボードで購入し、隣のスイッチまたは `SelectNext` で選択を切り替えます。`TestDataFeatures` は入れ子の読み取り、継承フィールド、型判定、成功・null・無効なキャスト、多態的な入れ子配列の防御的コピーを確認します。購入はローカルで同期しません。
 
 ## 0.3.7 の ScriptableObject ショップ
 

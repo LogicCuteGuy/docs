@@ -4,13 +4,17 @@ sidebar_position: 1
 
 # ภาพรวม LCGUdonSharp
 
-> เวอร์ชันเอกสาร: **0.3.7** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.7)
+> เวอร์ชันเอกสาร: **0.3.8** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.8)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) คือคอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, `async`/`await` ตอน build, `try`/`catch`/`finally` แบบ synchronous, C# collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง ไฟล์ที่แก้ไขทั้งหมดอยู่ใน `Packages/com.logiccuteguy.lcgudonsharp` โดยไม่แก้ Worlds SDK หรือ `Assets`
 
 :::info สถานะ
 Interface, synchronous exception, async lowering และความสามารถภาษาเพิ่มเติมพร้อมสำหรับทดสอบใน world ส่วน `[LCGPacket]` / `LCGNetworkZone` ยังเป็นฟีเจอร์ทดลองและ protocol อาจเปลี่ยนระหว่างเวอร์ชัน
 :::
+
+## สิ่งใหม่ใน 0.3.8
+
+LCGUdonSharp 0.3.8 เพิ่ม [snapshot ข้อมูล ScriptableObject](./scriptableobjects.md) แบบซ้อนและ polymorphic พร้อม type test และ checked cast, ตรวจ cycle/ความลึก และตัวอย่างอุปกรณ์แบบ local ต้อง build Udon program ทั้งหมดและ bake ข้อมูล scene/prefab ใหม่หลังอัปเดต เพราะ snapshot ใช้ layout ใหม่ที่มี runtime type tag
 
 ## สิ่งใหม่ใน 0.3.7
 

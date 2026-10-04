@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Collections, JSON, Bytes & Bits
 
-> Documentation version: **0.3.7**
+> Documentation version: **0.3.8**
 
 LCGUdonSharp lowers exact `List<T>` and `Dictionary<TKey,TValue>` syntax to VRChat `DataList`, `DataDictionary`, and `DataToken` operations. Existing code that directly uses the SDK data types or `VRCJson` remains unchanged.
 

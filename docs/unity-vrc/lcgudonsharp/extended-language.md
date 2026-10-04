@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Extended Language
 
-> Documentation version: **0.3.7**
+> Documentation version: **0.3.8**
 
 LCGUdonSharp lowers extended C# constructs at build time to concrete Udon-friendly code — loops, arrays, and locals instead of runtime abstractions.
 

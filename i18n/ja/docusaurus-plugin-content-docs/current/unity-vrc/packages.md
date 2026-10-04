@@ -9,7 +9,7 @@ sidebar_position: 2
 | パッケージ ID | 表示名 | 最新版 | Unity | 概要 |
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
-| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.7` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
+| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.8` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 
 ## VCC にリポジトリを追加する
@@ -28,9 +28,9 @@ VCC/ALCOM からのインストールを推奨します。LCGUdonSharp は GitHu
 - ライセンス: MIT
 - [概要](./helptools/intro.md) · [インストール](./helptools/install.md)
 
-### LCGUdonSharp `0.3.7`
+### LCGUdonSharp `0.3.8`
 
-0.3.7 は [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md) とローカルショップの例を追加します。型付きフィールド、継承フィールド、防御的な配列コピーに対応します。
+LCGUdonSharp 0.3.8 は入れ子・多態的な [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md)、実行時の型判定とチェック付きキャスト、循環・深度の検証、ローカル装備サンプルに対応します。型タグ付きの新しいレイアウトを使用するため、更新後は全 Udon プログラムを再ビルドし、シーンとプレハブのデータを再ベイクしてください。
 
 - [リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp) · [リリース](https://github.com/LogicCuteGuy/LCGUdonSharp/releases)
 - 依存関係: `com.vrchat.worlds` `3.10.5`（厳密）

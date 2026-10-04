@@ -4,14 +4,14 @@ sidebar_position: 10
 
 # การแก้ปัญหา
 
-> เวอร์ชันเอกสาร: **0.3.7**
+> เวอร์ชันเอกสาร: **0.3.8**
 
 | ปัญหา | วิธีแก้ |
 |---|---|
 | “The associated script cannot be loaded” | เพิ่ม `UdonSharpProgramAsset` ที่ใช้ชื่อเดียวกับ `.cs` |
 | Unity compile แต่ UdonSharp มองไม่เห็น | สร้าง `UdonSharpAssemblyDefinition` ที่ชี้ไปยัง `.asmdef` |
-| ติดตั้งใหม่แล้วไม่มี compiler payload | อัปเดตจาก `0.3.2` ที่จัดแพ็กเกจผิดเป็น `0.3.7` แล้วใช้ **Install or Repair** |
-| ติดตั้ง release ZIP ไม่ได้ | ใช้ `com.logiccuteguy.lcgudonsharp-0.3.7.zip` ที่มีชื่อชัดเจน ห้ามใช้ **Source code (zip)** |
+| ติดตั้งใหม่แล้วไม่มี compiler payload | อัปเดตจาก `0.3.2` ที่จัดแพ็กเกจผิดเป็น `0.3.8` แล้วใช้ **Install or Repair** |
+| ติดตั้ง release ZIP ไม่ได้ | ใช้ `com.logiccuteguy.lcgudonsharp-0.3.8.zip` ที่มีชื่อชัดเจน ห้ามใช้ **Source code (zip)** |
 | Installer หยุดทันที | ต้องใช้ Worlds SDK `3.10.5` ตรงเวอร์ชัน |
 | มี `UdonSharp.*` assembly ซ้ำ | ใช้ **Tools > LCGUdonSharp > Install or Repair** |
 | Packet field ไม่ sync หลังอัปเกรด | Compile U# program ทั้งหมดและ build world ใหม่ |

@@ -30,9 +30,9 @@ All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.7
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.8
 
-Version 0.3.7 adds [ScriptableObject data snapshots](./lcgudonsharp/scriptableobjects.md) and a local shop example with typed fields, inherited serialized data and defensive array copies.
+LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots](./lcgudonsharp/scriptableobjects.md), runtime type tests and checked casts, cycle/depth validation, and a local equipment example. Rebuild all Udon programs and rebake scene/prefab data after updating because snapshot layouts now include runtime type tags.
 
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
 

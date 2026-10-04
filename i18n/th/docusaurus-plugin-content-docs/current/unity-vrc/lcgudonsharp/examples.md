@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # ตัวอย่าง
 
-> เวอร์ชันเอกสาร: **0.3.7**
+> เวอร์ชันเอกสาร: **0.3.8**
 
 โฟลเดอร์ `Example/` ใน [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) มี scene และ script ที่รันได้สำหรับทุกความสามารถ แต่ละ `.cs` มี `UdonSharpProgramAsset` ชื่อเดียวกัน และ `.asmdef` ของตัวอย่างมี U# assembly-definition asset แยกต่างหาก
 
@@ -21,6 +21,10 @@ sidebar_position: 9
 1. แก้ C# compile error อื่นให้หมด
 2. เปิด `Example/TestLCGUdonSharp.unity` หรือเพิ่ม example component ใน scene
 3. เข้า Play Mode และดู Console
+
+## ตัวอย่างอุปกรณ์ใน 0.3.8
+
+`ScriptableObjectEquipmentExample.prefab` อยู่ที่ `(12, 0, 3)` ใน `TestLCGUdonSharp.unity` field `item` แบบ base type ถือ `TrainingSword.asset` และ `catalog` มี `FireSpell.asset` ด้วย แต่ละรายการอ้างอิง economy asset ของตัวเอง ดาบราคา 35 coin และ damage 45 ส่วนเวทราคา 20 coin, power 80 / mana 12 กดบอร์ดเพื่อซื้อ ใช้สวิตช์ข้างๆ หรือ `SelectNext` เปลี่ยนรายการ `TestDataFeatures` ตรวจ nested read, inherited field, type test, cast ที่สำเร็จ/null/ผิดชนิด และ defensive copy ของ nested polymorphic array การซื้อเป็นแบบ local ไม่ sync
 
 ## ร้านค้า ScriptableObject ใน 0.3.7
 

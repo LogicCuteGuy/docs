@@ -30,9 +30,9 @@ slug: /
 ### [Help Tools (เครื่องมือช่วยเหลือ)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ชุดเครื่องมือ Editor ระดับมืออาชีพกว่า 15 รายการ สำหรับการปรับขนาด Lightmap, การวิเคราะห์การใช้งาน Asset, การจัดการ Shader และการจัดระเบียบ Hierarchy
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.7
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.8
 
-0.3.7 เพิ่ม [snapshot ข้อมูล ScriptableObject](./lcgudonsharp/scriptableobjects.md) และตัวอย่างร้านค้าแบบ local รองรับ typed field, serialized field ที่สืบทอด และสำเนา array
+LCGUdonSharp 0.3.8 เพิ่ม [snapshot ข้อมูล ScriptableObject](./lcgudonsharp/scriptableobjects.md) แบบซ้อนและ polymorphic พร้อม type test และ checked cast, ตรวจ cycle/ความลึก และตัวอย่างอุปกรณ์แบบ local ต้อง build Udon program ทั้งหมดและ bake ข้อมูล scene/prefab ใหม่หลังอัปเดต เพราะ snapshot ใช้ layout ใหม่ที่มี runtime type tag
 
 คอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, async/await ตอน build, exception แบบ synchronous, collection/JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเองพร้อม bounded object-motion batching และ zone recovery
 

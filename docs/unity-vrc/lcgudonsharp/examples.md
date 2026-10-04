@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Examples
 
-> Documentation version: **0.3.7**
+> Documentation version: **0.3.8**
 
 The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) contains runnable scenes and scripts for every feature. Each example `.cs` ships with its same-named `UdonSharpProgramAsset`; the example `.asmdef` also ships with a separate U# assembly-definition asset so the compiler can discover it.
 
@@ -21,6 +21,10 @@ The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicC
 1. Fix any unrelated C# compilation errors and let Unity finish compiling.
 2. Open `Example/TestLCGUdonSharp.unity`, or add an example component to a GameObject in your own scene — every example `.cs` already ships with its same-named `UdonSharpProgramAsset`.
 3. Enter Play Mode and inspect the Console.
+
+## Equipment example in 0.3.8
+
+`ScriptableObjectEquipmentExample.prefab` is at `(12, 0, 3)` in `TestLCGUdonSharp.unity`. The base-typed `item` holds `TrainingSword.asset`; `catalog` also contains `FireSpell.asset`. Each references its own economy asset. The sword costs 35 coins and has 45 damage; the spell costs 20 coins and has 80 power / 12 mana. Interact with the board to purchase and use the adjacent switch or `SelectNext` to change selection. `TestDataFeatures` checks nested reads, inherited fields, type tests, successful/null/invalid casts, and defensive copies of nested polymorphic arrays. Purchases are local and not synchronized.
 
 ## ScriptableObject shop in 0.3.7
 

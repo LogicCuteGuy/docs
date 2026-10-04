@@ -30,9 +30,9 @@ slug: /
 ### [Help Tools (ヘルプツール)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ライトマップのスケーリング、アセット分析、シェーダーマッピング、および階層の整理のための 15 以上のプロフェッショナルなエディターユーティリティのコレクション。
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.7
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.8
 
-0.3.7 は [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md) とローカルショップの例を追加します。型付きフィールド、継承フィールド、防御的な配列コピーに対応します。
+LCGUdonSharp 0.3.8 は入れ子・多態的な [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md)、実行時の型判定とチェック付きキャスト、循環・深度の検証、ローカル装備サンプルに対応します。型タグ付きの新しいレイアウトを使用するため、更新後は全 Udon プログラムを再ビルドし、シーンとプレハブのデータを再ベイクしてください。
 
 C# インターフェース、ビルド時の async/await、同期例外処理、コレクション/JSON、拡張言語機能、bounded object-motion batching と zone recovery を備えた手動パケット通信に対応する VRChat 向け UdonSharp コンパイラーです。
 
