@@ -4,13 +4,19 @@ sidebar_position: 1
 
 # LCGUdonSharp の概要
 
-> ドキュメントバージョン: **0.3.6** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.6)
+> ドキュメントバージョン: **0.3.7** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.7)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) は VRChat 向けのインターフェース対応 UdonSharp コンパイラーです。C# インターフェース、ビルド時の `async`/`await`、同期 `try`/`catch`/`finally`、C# コレクションと JSON、拡張言語機能、手動パケット通信を追加します。変更されたソースは Worlds SDK や `Assets` ではなく、すべて `Packages/com.logiccuteguy.lcgudonsharp` 内に保持されます。
 
 :::info ステータス
 インターフェース、同期例外、async lowering、拡張言語機能はワールドテストに使用できます。`[LCGPacket]` / `LCGNetworkZone` は実験的機能であり、バージョン間でプロトコルが変わる場合があります。
 :::
+
+## 0.3.7 の更新内容
+
+独自の `ScriptableObject` アセットを、読み取り専用の Udon データスナップショットとして使用できます。型付きのシリアライズ済みフィールド、継承フィールド、アセット配列に対応し、配列を読むと防御的コピーを返します。ヒープの読み戻しでも Inspector のアセット割り当てを保持し、SDK のネイティブ型は従来の動作を維持します。
+
+対応型、制限、ローカルショップの例は [ScriptableObject データ](./scriptableobjects.md) を参照してください。サンプルはコンパイラーのセットアップ完了後にインポートし、アセットのデータやスキーマを変更したらワールドを再ビルドしてください。
 
 ## 0.3.6 の更新内容
 

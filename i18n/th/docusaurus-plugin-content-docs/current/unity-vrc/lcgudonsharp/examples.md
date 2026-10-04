@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # ตัวอย่าง
 
-> เวอร์ชันเอกสาร: **0.3.6**
+> เวอร์ชันเอกสาร: **0.3.7**
 
 โฟลเดอร์ `Example/` ใน [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) มี scene และ script ที่รันได้สำหรับทุกความสามารถ แต่ละ `.cs` มี `UdonSharpProgramAsset` ชื่อเดียวกัน และ `.asmdef` ของตัวอย่างมี U# assembly-definition asset แยกต่างหาก
 
@@ -21,6 +21,12 @@ sidebar_position: 9
 1. แก้ C# compile error อื่นให้หมด
 2. เปิด `Example/TestLCGUdonSharp.unity` หรือเพิ่ม example component ใน scene
 3. เข้า Play Mode และดู Console
+
+## ร้านค้า ScriptableObject ใน 0.3.7
+
+นำเข้า **LCGUdonSharp Examples** จาก sample ของแพ็กเกจหลังติดตั้งคอมไพเลอร์อัตโนมัติเสร็จ `Example/ScriptableObjects/ScriptableObjectShopExample.prefab` อยู่ที่ `(7, 0, 3)` ใน `Example/TestLCGUdonSharp.unity` ด้วย เมื่อกดบอร์ดสีชมพูใน ClientSim เงิน 100 จะเหลือ 65 และ 30 การซื้อครั้งที่สามถูกปฏิเสธ ข้อมูลสินค้ามาจาก `StrawberryMilk.asset` และ `GreenTea.asset` เรียก `TestArrayCopy` เพื่อตรวจการคืนสำเนา array การซื้อเป็นแบบ local และไม่ sync ระหว่างผู้เล่น
+
+อ่าน [ข้อมูล ScriptableObject](./scriptableobjects.md) ก่อนเปลี่ยน reference `item` และ `catalog` ใน Inspector
 
 ## Networking prefab ใน 0.3.6
 

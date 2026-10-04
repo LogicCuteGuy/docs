@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Examples
 
-> Documentation version: **0.3.6**
+> Documentation version: **0.3.7**
 
 The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) contains runnable scenes and scripts for every feature. Each example `.cs` ships with its same-named `UdonSharpProgramAsset`; the example `.asmdef` also ships with a separate U# assembly-definition asset so the compiler can discover it.
 
@@ -21,6 +21,12 @@ The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicC
 1. Fix any unrelated C# compilation errors and let Unity finish compiling.
 2. Open `Example/TestLCGUdonSharp.unity`, or add an example component to a GameObject in your own scene — every example `.cs` already ships with its same-named `UdonSharpProgramAsset`.
 3. Enter Play Mode and inspect the Console.
+
+## ScriptableObject shop in 0.3.7
+
+Import **LCGUdonSharp Examples** from the package samples after automatic compiler installation completes. `Example/ScriptableObjects/ScriptableObjectShopExample.prefab` is also placed at `(7, 0, 3)` in `Example/TestLCGUdonSharp.unity`. In ClientSim, interact with its pink board: 100 coins become 65, then 30; the third purchase is refused. `StrawberryMilk.asset` and `GreenTea.asset` provide the item data. `TestArrayCopy` checks defensive array copies. Purchases are local and are not synchronized between players.
+
+See [ScriptableObject Data](./scriptableobjects.md) before replacing the Inspector `item` and `catalog` references.
 
 ## Networking prefabs in 0.3.6
 

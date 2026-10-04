@@ -4,14 +4,14 @@ sidebar_position: 10
 
 # トラブルシューティング
 
-> ドキュメントバージョン: **0.3.6**
+> ドキュメントバージョン: **0.3.7**
 
 | 問題 | 解決方法 |
 |---|---|
 | “The associated script cannot be loaded” | `.cs` と同名の `UdonSharpProgramAsset` を追加します。 |
 | Unity では compile されるが UdonSharp が無視する | `.asmdef` を指す `UdonSharpAssemblyDefinition` を作成します。 |
-| 新規インストールに compiler payload がない | 問題のある `0.3.2` から `0.3.6` へ更新し、**Install or Repair** を実行します。 |
-| Release ZIP をインストールできない | 名前付き `com.logiccuteguy.lcgudonsharp-0.3.6.zip` を使い、**Source code (zip)** は使わないでください。 |
+| 新規インストールに compiler payload がない | 問題のある `0.3.2` から `0.3.7` へ更新し、**Install or Repair** を実行します。 |
+| Release ZIP をインストールできない | 名前付き `com.logiccuteguy.lcgudonsharp-0.3.7.zip` を使い、**Source code (zip)** は使わないでください。 |
 | Installer が停止する | Worlds SDK は正確に `3.10.5` が必要です。 |
 | `UdonSharp.*` assembly が重複する | **Tools > LCGUdonSharp > Install or Repair** を実行します。 |
 | 更新後に packet field が同期しない | 全 U# program を再コンパイルし、ワールドを再ビルドします。 |

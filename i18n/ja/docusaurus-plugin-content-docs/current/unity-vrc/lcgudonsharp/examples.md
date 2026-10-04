@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # サンプル
 
-> ドキュメントバージョン: **0.3.6**
+> ドキュメントバージョン: **0.3.7**
 
 [LCGUdonSharp リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)の `Example/` には各機能の実行可能な scene と script があります。各 `.cs` には同じ名前の `UdonSharpProgramAsset` があり、example `.asmdef` には別の U# assembly-definition asset が含まれています。
 
@@ -21,6 +21,12 @@ sidebar_position: 9
 1. 他の C# compile error を解決します。
 2. `Example/TestLCGUdonSharp.unity` を開くか、example component を scene に追加します。
 3. Play Mode に入り Console を確認します。
+
+## 0.3.7 の ScriptableObject ショップ
+
+自動コンパイラー設定の完了後、パッケージのサンプルから **LCGUdonSharp Examples** をインポートしてください。`Example/ScriptableObjects/ScriptableObjectShopExample.prefab` は `Example/TestLCGUdonSharp.unity` の `(7, 0, 3)` に配置されています。ClientSim でピンクのボードを操作すると、所持金 100 が 65、30 になり、3 回目の購入は拒否されます。商品データは `StrawberryMilk.asset` と `GreenTea.asset` から読みます。`TestArrayCopy` で配列コピーを確認できます。購入はローカル動作で、プレイヤー間では同期しません。
+
+Inspector の `item` と `catalog` を変更する前に [ScriptableObject データ](./scriptableobjects.md) を確認してください。
 
 ## 0.3.6 の Networking prefab
 

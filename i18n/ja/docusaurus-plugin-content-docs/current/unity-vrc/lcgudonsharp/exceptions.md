@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # 同期例外処理
 
-> ドキュメントバージョン: **0.3.6**
+> ドキュメントバージョン: **0.3.7**
 
 Udon に例外 opcode がなくても、コンパイラー管理の `try`/`catch`/`finally`、明示的 throw、再 throw、null・index・整数のゼロ除算ガードを使用できます。
 
