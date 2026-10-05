@@ -7,12 +7,14 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | Package | Current version | Documentation |
 |---|---:|---|
 | [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
-| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.8` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
+| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.9` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.6.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
 
 All three packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
-LCGUdonSharp 0.3.8 adds nested and polymorphic ScriptableObject data, runtime type tests, checked casts, cycle/depth validation, and an equipment example. See the [ScriptableObject guide](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/scriptableobjects). Import optional examples after compiler setup completes. Rebuild all Udon programs and rebake scene/prefab data after updating; snapshots now include runtime type tags and a new field layout.
+LCGUdonSharp 0.3.9 adds [text and asset localization](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/localization): Unity String/Asset Tables baked into Udon, local language selection and fallbacks, dropdowns/callbacks, validated Smart Strings, and sprite/texture/audio/prefab variants. It also adds EN/TH/JA samples, legacy JSON tools, Unity Localization 1.4.5 and Scriptable Build Pipeline 1.21.25 dependencies, and build/worker-thread compatibility fixes. Rebuild the world after editing tables or updating.
+
+ScriptableObject snapshots added in 0.3.8 remain supported. Rebuild all Udon programs and rebake scene/prefab data when upgrading from older layouts; see the [ScriptableObject guide](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/scriptableobjects).
 
 ## Local development
 

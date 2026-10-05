@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ScriptableObject Data
 
-> Documentation version: **0.3.8**
+> Documentation version: **0.3.9**
 
 Ordinary custom Unity `ScriptableObject` assets can be assigned directly to typed UdonSharp behaviour fields. No special base class, attribute or manual copying is needed. The compiler bakes serialized data into read-only Udon snapshots; it does not run the custom asset as a Unity object in Udon.
 

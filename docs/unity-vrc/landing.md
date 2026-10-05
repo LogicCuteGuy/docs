@@ -30,7 +30,9 @@ All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.8
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.9
+
+LCGUdonSharp 0.3.9 adds [text and asset localization](./lcgudonsharp/localization.md): Unity String/Asset Tables baked into Udon, local language selection and fallbacks, dropdowns/callbacks, validated Smart Strings, and sprite/texture/audio/prefab variants. It also adds EN/TH/JA samples, legacy JSON tools, Unity Localization 1.4.5 and Scriptable Build Pipeline 1.21.25 dependencies, and build/worker-thread compatibility fixes. Rebuild the world after editing tables or updating.
 
 LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots](./lcgudonsharp/scriptableobjects.md), runtime type tests and checked casts, cycle/depth validation, and a local equipment example. Rebuild all Udon programs and rebake scene/prefab data after updating because snapshot layouts now include runtime type tags.
 

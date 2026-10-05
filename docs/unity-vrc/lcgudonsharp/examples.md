@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Examples
 
-> Documentation version: **0.3.8**
+> Documentation version: **0.3.9**
 
 The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) contains runnable scenes and scripts for every feature. Each example `.cs` ships with its same-named `UdonSharpProgramAsset`; the example `.asmdef` also ships with a separate U# assembly-definition asset so the compiler can discover it.
 
@@ -49,3 +49,7 @@ Every U# `.cs` needs a same-named `UdonSharpProgramAsset`. Use **Assets > Create
 
 - [Installation & Setup](./install.md)
 - [Troubleshooting](./troubleshooting.md)
+
+## Localization in 0.3.9
+
+LCGUdonSharp 0.3.9 adds [text and asset localization](./localization.md): Unity String/Asset Tables baked into Udon, local language selection and fallbacks, dropdowns/callbacks, validated Smart Strings, and sprite/texture/audio/prefab variants. It also adds EN/TH/JA samples, legacy JSON tools, Unity Localization 1.4.5 and Scriptable Build Pipeline 1.21.25 dependencies, and build/worker-thread compatibility fixes. Rebuild the world after editing tables or updating.

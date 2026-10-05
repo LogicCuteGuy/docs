@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # ตัวอย่าง
 
-> เวอร์ชันเอกสาร: **0.3.8**
+> เวอร์ชันเอกสาร: **0.3.9**
 
 โฟลเดอร์ `Example/` ใน [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) มี scene และ script ที่รันได้สำหรับทุกความสามารถ แต่ละ `.cs` มี `UdonSharpProgramAsset` ชื่อเดียวกัน และ `.asmdef` ของตัวอย่างมี U# assembly-definition asset แยกต่างหาก
 
@@ -44,3 +44,7 @@ Cross-client delivery, late join, ownership contention, bandwidth และ FPS 
 :::tip Asset สองชนิด
 U# `.cs` ทุกไฟล์ต้องมี program asset ชื่อเดียวกัน ส่วน `.asmdef` นอก `Assembly-CSharp` ต้องมี U# assembly definition สร้างได้จาก **Assets > Create > U# Script** และ **Assets > Create > U# Assembly Definition**
 :::
+
+## Localization ใน 0.3.9
+
+LCGUdonSharp 0.3.9 เพิ่ม [Localization ของข้อความและ asset](./localization.md): bake Unity String/Asset Tables เป็น Udon, เลือกภาษาแบบ local พร้อม fallback, dropdown/callback, Smart Strings ที่ตรวจ syntax และสลับ sprite/texture/เสียง/prefab เพิ่มตัวอย่าง EN/TH/JA, เครื่องมือ JSON เดิม, dependency Unity Localization 1.4.5 และ Scriptable Build Pipeline 1.21.25 พร้อมแก้ compatibility ตอน build และ compiler worker thread ต้อง build world ใหม่หลังแก้ table หรืออัปเดต

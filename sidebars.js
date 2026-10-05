@@ -54,6 +54,7 @@ const sidebars = {
         'unity-vrc/lcgudonsharp/extended-language',
         'unity-vrc/lcgudonsharp/collections-json',
         'unity-vrc/lcgudonsharp/scriptableobjects',
+        'unity-vrc/lcgudonsharp/localization',
         'unity-vrc/lcgudonsharp/networking',
         'unity-vrc/lcgudonsharp/examples',
         'unity-vrc/lcgudonsharp/troubleshooting',

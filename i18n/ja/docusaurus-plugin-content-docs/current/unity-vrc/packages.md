@@ -9,7 +9,7 @@ sidebar_position: 2
 | パッケージ ID | 表示名 | 最新版 | Unity | 概要 |
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
-| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.8` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
+| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.9` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 
 ## VCC にリポジトリを追加する
@@ -28,7 +28,9 @@ VCC/ALCOM からのインストールを推奨します。LCGUdonSharp は GitHu
 - ライセンス: MIT
 - [概要](./helptools/intro.md) · [インストール](./helptools/install.md)
 
-### LCGUdonSharp `0.3.8`
+### LCGUdonSharp `0.3.9`
+
+LCGUdonSharp 0.3.9 は [テキストとアセットのローカライズ](./lcgudonsharp/localization.md) を追加します。Unity String/Asset Tables の Udon ベイク、ローカル言語選択とフォールバック、ドロップダウン・通知、検証付き Smart Strings、画像・音声・プレハブの切り替えに対応します。EN/TH/JA サンプル、従来の JSON ツール、Unity Localization 1.4.5 と Scriptable Build Pipeline 1.21.25 の依存関係、ビルド・ワーカースレッドの互換性修正も含まれます。テーブル変更や更新後はワールドを再ビルドしてください。
 
 LCGUdonSharp 0.3.8 は入れ子・多態的な [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md)、実行時の型判定とチェック付きキャスト、循環・深度の検証、ローカル装備サンプルに対応します。型タグ付きの新しいレイアウトを使用するため、更新後は全 Udon プログラムを再ビルドし、シーンとプレハブのデータを再ベイクしてください。
 

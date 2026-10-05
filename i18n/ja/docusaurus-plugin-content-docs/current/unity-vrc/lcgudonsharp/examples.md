@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # サンプル
 
-> ドキュメントバージョン: **0.3.8**
+> ドキュメントバージョン: **0.3.9**
 
 [LCGUdonSharp リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)の `Example/` には各機能の実行可能な scene と script があります。各 `.cs` には同じ名前の `UdonSharpProgramAsset` があり、example `.asmdef` には別の U# assembly-definition asset が含まれています。
 
@@ -44,3 +44,7 @@ Cross-client delivery、late join、ownership contention、bandwidth、FPS は�
 :::tip 2 種類のアセット
 各 U# `.cs` には同名の program asset が必要です。`Assembly-CSharp` 以外の `.asmdef` には U# assembly definition も必要です。それぞれ **Assets > Create > U# Script** と **Assets > Create > U# Assembly Definition** で作成できます。
 :::
+
+## 0.3.9 のローカライズ
+
+LCGUdonSharp 0.3.9 は [テキストとアセットのローカライズ](./localization.md) を追加します。Unity String/Asset Tables の Udon ベイク、ローカル言語選択とフォールバック、ドロップダウン・通知、検証付き Smart Strings、画像・音声・プレハブの切り替えに対応します。EN/TH/JA サンプル、従来の JSON ツール、Unity Localization 1.4.5 と Scriptable Build Pipeline 1.21.25 の依存関係、ビルド・ワーカースレッドの互換性修正も含まれます。テーブル変更や更新後はワールドを再ビルドしてください。

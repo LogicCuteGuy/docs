@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Async / Await
 
-> Documentation version: **0.3.8**
+> Documentation version: **0.3.9**
 
 LCGUdonSharp lowers `async`/`await` at build time to frame-pool continuations — no runtime task machinery. Supported awaits: parameterless `async void` methods, straight-line `await Task.Yield()`, constant positive `await Task.Delay(int)`, and **one VRChat SDK await per behaviour**.
 
