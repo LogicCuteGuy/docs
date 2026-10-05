@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # 拡張言語機能
 
-> ドキュメントバージョン: **0.3.9**
+> ドキュメントバージョン: **0.3.10**
 
 LCGUdonSharp は拡張 C# 構文を、Udon で実行できる loop、array、local variable へビルド時に変換します。
 

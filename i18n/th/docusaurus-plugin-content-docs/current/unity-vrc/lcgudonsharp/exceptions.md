@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # การจัดการ Exception แบบซิงโครนัส
 
-> เวอร์ชันเอกสาร: **0.3.9**
+> เวอร์ชันเอกสาร: **0.3.10**
 
 ใช้งาน `try`/`catch`/`finally`, explicit throw, rethrow และ guard สำหรับ null, index และการหารจำนวนเต็มด้วยศูนย์ที่คอมไพเลอร์จัดการ แม้ Udon ไม่มี exception opcode
 

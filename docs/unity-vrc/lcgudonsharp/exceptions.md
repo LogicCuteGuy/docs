@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Synchronous Exception Handling
 
-> Documentation version: **0.3.9**
+> Documentation version: **0.3.10**
 
 Compiler-managed `try`/`catch`/`finally` with explicit `throw`s, rethrow, and guarded null, index, and integral divide/modulo failures — without relying on unavailable Udon exception opcodes.
 

@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # サンプル
 
-> ドキュメントバージョン: **0.3.9**
+> ドキュメントバージョン: **0.3.10**
 
 [LCGUdonSharp リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)の `Example/` には各機能の実行可能な scene と script があります。各 `.cs` には同じ名前の `UdonSharpProgramAsset` があり、example `.asmdef` には別の U# assembly-definition asset が含まれています。
 

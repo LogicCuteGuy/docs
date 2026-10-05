@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ScriptableObject データ
 
-> ドキュメントバージョン: **0.3.9**
+> ドキュメントバージョン: **0.3.10**
 
 通常の独自 Unity `ScriptableObject` アセットを、型付きの UdonSharp behaviour フィールドに直接割り当てられます。特別な基底クラス、属性、手動コピーは不要です。コンパイラーはシリアライズ済みデータを読み取り専用の Udon スナップショットへ変換します。
 

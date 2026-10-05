@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ระบบ Packet Network แบบกำหนดเอง
 
-> เวอร์ชันเอกสาร: **0.3.9**
+> เวอร์ชันเอกสาร: **0.3.10**
 
 :::caution ฟีเจอร์ทดลอง
 Wire protocol ของ `[LCGPacket]` / `LCGNetworkZone` ปัจจุบันคือ v2 และอาจเปลี่ยนในอนาคต

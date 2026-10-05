@@ -4,9 +4,9 @@ sidebar_position: 8
 
 # テキストとアセットのローカライズ
 
-> ドキュメントバージョン: **0.3.9**
+> ドキュメントバージョン: **0.3.10**
 
-Unity Localization の String/Asset Tables を、一時的な Play Mode・ビルドシーンで Udon にベイクします。元シーンのネイティブ編集コンポーネントは保持され、ビルド済みワールドは Addressables を読み込みません。[インストール](./install.md)後に設定してください。依存関係は Unity Localization **1.4.5**、Scriptable Build Pipeline **1.21.25**、Unity 2022.3、Worlds SDK 3.10.5 です。
+Unity Localization の String/Asset Tables を、一時的な Play Mode・ビルドシーンで Udon にベイクします。元シーンのネイティブ編集コンポーネントは保持され、ビルド済みワールドは Addressables を読み込みません。[インストール](./install.md)後に設定してください。依存関係は Unity Localization **1.4.5**、SBP compatibility **1.21.26** (Unity 1.21.25)、Unity 2022.3、Worlds SDK 3.10.5 です。
 
 ## Unity Tables の設定
 
@@ -83,7 +83,7 @@ Noto Sans JP/Thai の subset と OFL ライセンスが付属します。追加�
 
 - ベイク失敗: コレクション/キー、同じシーンの manager、コレクションごとに一つの manager、変数配列長、dynamic setter を確認します。
 - 文字欠け: 多言語 TMP font/fallback を追加します。
-- SDK/SBP assembly 衝突: 0.3.9 の互換フックは SBP editor assembly から自動参照 plugin DLL を除外し、明示的な Unity 参照を保持します。SDK DLL は変更しません。
+- 現在の導入: Unity Localization **1.4.5** と VPM による埋め込み `com.unity.scriptablebuildpipeline` **1.21.26**。Unity **1.21.25** を基にした互換配布であり、Unity の新しい公式 SBP リリースではありません。Manifest の UPM 宣言は 1.21.25 のままで、VPM 互換依存関係は 1.21.26 に固定されています。Unity のコンパイル前に導入してください。[インストール](./install.md)を参照。
 - Unity EditMode で **LCGUnityLocalizationTests** / **LCGLocalizationTests**、Play Mode でサンプルの `RunChecks` を実行できます。これは利用者側の手順であり、docs ビルドで Unity テストを実行したという意味ではありません。
 
 [サンプル](./examples.md)と[バージョン固定の上流ガイド](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.9/Example/Localization/UnityLocalization.md)も参照してください。

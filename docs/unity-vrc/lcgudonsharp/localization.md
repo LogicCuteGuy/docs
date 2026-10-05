@@ -4,9 +4,9 @@ sidebar_position: 8
 
 # Text and Asset Localization
 
-> Documentation version: **0.3.9**
+> Documentation version: **0.3.10**
 
-LCGUdonSharp bakes Unity Localization String and Asset Tables into Udon in the temporary Play Mode/build scene. Native authoring components remain editable in the source scene; the built world does not load Addressables. Install [LCGUdonSharp](./install.md) first. Package dependencies are Unity Localization **1.4.5** and Scriptable Build Pipeline **1.21.25**, with Unity 2022.3 and Worlds SDK 3.10.5.
+LCGUdonSharp bakes Unity Localization String and Asset Tables into Udon in the temporary Play Mode/build scene. Native authoring components remain editable in the source scene; the built world does not load Addressables. Install [LCGUdonSharp](./install.md) first. Package dependencies are Unity Localization **1.4.5** and SBP compatibility **1.21.26** (Unity 1.21.25), with Unity 2022.3 and Worlds SDK 3.10.5.
 
 ## Unity Tables setup
 
@@ -83,7 +83,7 @@ Legacy JSON remains available via **Tools > LCGUdonSharp > Localization > Legacy
 
 - Bake failure: check collection/key, same-scene manager, unique manager per collection, matching variable arrays and dynamic text/asset setters.
 - Missing glyphs: provide multilingual TMP fonts/fallbacks.
-- SDK/SBP assembly conflict: 0.3.9 includes a compatibility hook that excludes automatically referenced plugin DLLs from SBP's editor assembly while preserving explicit Unity references; the SDK DLL is unchanged.
+- Current install: Unity Localization **1.4.5** and embedded `com.unity.scriptablebuildpipeline` **1.21.26** via VPM. This compatibility distribution is based on Unity **1.21.25**, not a new upstream Unity SBP release. The manifest retains the UPM 1.21.25 declaration, but pins the VPM compatibility dependency to 1.21.26. Install it before Unity compiles; see [installation](./install.md).
 - Run **LCGUnityLocalizationTests** and **LCGLocalizationTests** in Unity EditMode. The example's `RunChecks` event checks compiled local behavior in Play Mode. These are user-side validation instructions, not tests run by this documentation build.
 
 See [examples](./examples.md) and the [version-pinned upstream setup](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.9/Example/Localization/UnityLocalization.md).

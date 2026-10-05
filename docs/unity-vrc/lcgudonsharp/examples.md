@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Examples
 
-> Documentation version: **0.3.9**
+> Documentation version: **0.3.10**
 
 The `Example/` folder in the [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) contains runnable scenes and scripts for every feature. Each example `.cs` ships with its same-named `UdonSharpProgramAsset`; the example `.asmdef` also ships with a separate U# assembly-definition asset so the compiler can discover it.
 

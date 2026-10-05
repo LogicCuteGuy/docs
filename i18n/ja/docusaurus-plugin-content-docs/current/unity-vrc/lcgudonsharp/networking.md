@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # 手動パケット通信
 
-> ドキュメントバージョン: **0.3.9**
+> ドキュメントバージョン: **0.3.10**
 
 :::caution 実験的機能
 `[LCGPacket]` / `LCGNetworkZone` の wire protocol は現在 v2 で、将来変更される場合があります。

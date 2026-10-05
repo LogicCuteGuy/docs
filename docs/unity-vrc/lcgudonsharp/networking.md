@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Manual Packet Networking
 
-> Documentation version: **0.3.9**
+> Documentation version: **0.3.10**
 
 :::caution Experimental
 `[LCGPacket]` / `LCGNetworkZone` networking is experimental — its wire protocol may change between versions (currently protocol v2).

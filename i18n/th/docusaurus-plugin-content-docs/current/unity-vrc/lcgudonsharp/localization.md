@@ -4,9 +4,9 @@ sidebar_position: 8
 
 # Localization ของข้อความและ Asset
 
-> เวอร์ชันเอกสาร: **0.3.9**
+> เวอร์ชันเอกสาร: **0.3.10**
 
-ระบบ bake Unity Localization String/Asset Tables เป็น Udon ใน scene ชั่วคราวตอน Play Mode/build โดยยังเก็บ native component สำหรับแก้ไขใน scene ต้นฉบับ World ที่ build แล้วไม่โหลด Addressables [ติดตั้ง LCGUdonSharp](./install.md) ก่อน Dependency คือ Unity Localization **1.4.5**, Scriptable Build Pipeline **1.21.25**, Unity 2022.3 และ Worlds SDK 3.10.5
+ระบบ bake Unity Localization String/Asset Tables เป็น Udon ใน scene ชั่วคราวตอน Play Mode/build โดยยังเก็บ native component สำหรับแก้ไขใน scene ต้นฉบับ World ที่ build แล้วไม่โหลด Addressables [ติดตั้ง LCGUdonSharp](./install.md) ก่อน Dependency คือ Unity Localization **1.4.5**, SBP compatibility **1.21.26** (Unity 1.21.25), Unity 2022.3 และ Worlds SDK 3.10.5
 
 ## ตั้งค่า Unity Tables
 
@@ -83,7 +83,7 @@ JSON เดิมยังใช้ได้ที่ **Tools > LCGUdonSharp > L
 
 - Bake ไม่ผ่าน: ตรวจ collection/key, manager ใน scene เดียวกัน, manager เดียวต่อ collection, ความยาว variable array และ dynamic setter
 - อักขระหาย: เพิ่ม multilingual TMP font/fallback
-- SDK/SBP assembly ชนกัน: 0.3.9 มี compatibility hook ตัด plugin DLL ที่ auto-reference ออกจาก SBP editor assembly โดยรักษา explicit Unity reference และไม่แก้ SDK DLL
+- การติดตั้งปัจจุบัน: Unity Localization **1.4.5** และ embedded `com.unity.scriptablebuildpipeline` **1.21.26** ผ่าน VPM รุ่น compatibility นี้ใช้ฐาน Unity **1.21.25** ไม่ใช่ upstream Unity SBP รุ่นใหม่ Manifest ยังประกาศ UPM 1.21.25 แต่ pin VPM compatibility dependency เป็น 1.21.26 ต้องติดตั้งก่อน Unity compile ดู[การติดตั้ง](./install.md)
 - รัน **LCGUnityLocalizationTests** / **LCGLocalizationTests** ใน Unity EditMode และ event `RunChecks` ของตัวอย่างใน Play Mode ได้ นี่คือขั้นตอนตรวจฝั่งผู้ใช้ ไม่ใช่การอ้างว่า docs build ได้รัน Unity test แล้ว
 
 ดู [ตัวอย่าง](./examples.md) และ [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.9/Example/Localization/UnityLocalization.md)

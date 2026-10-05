@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # อินเทอร์เฟซ C#
 
-> เวอร์ชันเอกสาร: **0.3.9**
+> เวอร์ชันเอกสาร: **0.3.10**
 
 ประกาศ C# interface ปกติและ implement ใน `UdonSharpBehaviour` ได้ รองรับ parameter, return value, property, หลาย implementation และ interface array
 

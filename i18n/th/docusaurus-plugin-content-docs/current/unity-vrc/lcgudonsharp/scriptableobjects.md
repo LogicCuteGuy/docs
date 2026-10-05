@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ข้อมูล ScriptableObject
 
-> เวอร์ชันเอกสาร: **0.3.9**
+> เวอร์ชันเอกสาร: **0.3.10**
 
 กำหนด asset Unity `ScriptableObject` ที่สร้างเองให้ field ของ UdonSharp behaviour ตามชนิดได้โดยตรง ไม่ต้องใช้ base class พิเศษ, attribute หรือคัดลอกข้อมูลเอง คอมไพเลอร์แปลง serialized data เป็น snapshot แบบอ่านอย่างเดียวใน Udon
 

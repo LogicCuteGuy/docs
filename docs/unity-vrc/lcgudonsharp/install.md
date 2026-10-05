@@ -4,26 +4,28 @@ sidebar_position: 2
 
 # LCGUdonSharp Installation & Setup
 
-> Documentation version: **0.3.9** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.9)
+> Documentation version: **0.3.10** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10)
 
-:::warning Upgrade from 0.3.2
-The `0.3.2` distribution was packaged incorrectly and could leave new projects without the compiler payload. Update to `0.3.9`; the installer repairs the compiler after Unity refreshes.
-:::
+> **Upgrade from 0.3.2**
+>
+> The `0.3.2` distribution was packaged incorrectly and could leave new projects without the compiler payload. Update to `0.3.10`; the installer repairs the compiler after Unity refreshes.
 
 ## Requirements
+
+LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](./install.md); manual installs require **both** release ZIPs.
 
 - **Unity 2022.3**
 - **VRChat Worlds SDK 3.10.5** (strict — other versions are refused)
 
 ## Install via VCC or ALCOM (recommended)
 
-Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) in VCC or ALCOM, then install or update **LCGUdonSharp** to `0.3.9`. The package manager resolves `com.vrchat.worlds` 3.10.5 as a VPM dependency.
+Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) in VCC or ALCOM, then install or update **LCGUdonSharp** to `0.3.10`. The package manager resolves `com.vrchat.worlds` 3.10.5 as a VPM dependency.
 
-For a local package reference, download and extract the named `com.logiccuteguy.lcgudonsharp-0.3.9.zip` asset from [GitHub Releases](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.9), then reference the extracted folder. Do not use GitHub's automatic **Source code (zip)** archive: it is not an installable Unity package.
+For manual installation, **close Unity first**. Download the named [LCGUdonSharp 0.3.10 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10) and [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26). Extract their contents to `Packages/com.logiccuteguy.lcgudonsharp` and `Packages/com.unity.scriptablebuildpipeline` respectively, with each `package.json` directly inside its package folder, before reopening Unity. A `file:` reference to LCGUdonSharp still requires SBP embedded in the project. Do not use GitHub's automatic **Source code (zip)** archive. Do not rely on a PackageCache edit or a post-compilation hook: cache regeneration can remove that fix.
 
 ## Setup steps
 
-1. Install or update the package to `0.3.9` through VCC/ALCOM, or extract the named release ZIP for a local package reference.
+1. Install/update `0.3.10` and its SBP compatibility dependency through VCC/ALCOM, or complete the two-ZIP manual installation above while Unity is closed.
 2. Open Unity and let it compile. The installer verifies the SDK, backs up the bundled UdonSharp, and installs the compiler automatically.
 3. *(Optional)* Force setup any time via **Tools > LCGUdonSharp > Install or Repair**.
 4. Build/test your world as usual.
@@ -50,9 +52,9 @@ LCG network logging is off by default. Enable **Edit > Project Settings > Udon S
 
 ## Uninstalling
 
-:::caution Important
-Use **Tools > LCGUdonSharp > Restore VRChat UdonSharp and Disable Auto Setup** before removing the package. This restores the backed-up SDK copy and removes the generated compiler folder.
-:::
+> **Important**
+>
+> Use **Tools > LCGUdonSharp > Restore VRChat UdonSharp and Disable Auto Setup** before removing the package. This restores the backed-up SDK copy and removes the generated compiler folder.
 
 ## See also
 
@@ -63,4 +65,4 @@ Use **Tools > LCGUdonSharp > Restore VRChat UdonSharp and Disable Auto Setup** b
 
 LCGUdonSharp 0.3.9 adds [text and asset localization](./localization.md): Unity String/Asset Tables baked into Udon, local language selection and fallbacks, dropdowns/callbacks, validated Smart Strings, and sprite/texture/audio/prefab variants. It also adds EN/TH/JA samples, legacy JSON tools, Unity Localization 1.4.5 and Scriptable Build Pipeline 1.21.25 dependencies, and build/worker-thread compatibility fixes. Rebuild the world after editing tables or updating.
 
-Unity package dependencies: `com.unity.localization` **1.4.5** and `com.unity.scriptablebuildpipeline` **1.21.25**. Let Unity resolve them before compiling. The 0.3.9 compatibility hook repairs SBP editor references without changing the SDK DLL.
+Current install: Unity Localization **1.4.5** and embedded `com.unity.scriptablebuildpipeline` **1.21.26** via VPM. This compatibility distribution is based on Unity **1.21.25**, not a new upstream Unity SBP release. The manifest retains the UPM 1.21.25 declaration, but pins the VPM compatibility dependency to 1.21.26. Install it before Unity compiles; see [installation](./install.md).
