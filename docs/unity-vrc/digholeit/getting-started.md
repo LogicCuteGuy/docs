@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting started
 
-> Documentation version: **0.6.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+> Documentation version: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 
 ## Requirements
 
@@ -16,13 +16,13 @@ sidebar_position: 2
 
 ## Installing
 
-Pick one:
+Install **0.7.0** through VCC/ALCOM from the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json); refresh the listing first. Alternatively use `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`, embed the tagged repository, or extract the named `com.logiccuteguy.digholeit-0.7.0.zip` from [the release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0). Do not use the automatic source archive. For Git/ZIP installs in VRChat projects, install LCGUdonSharp first using its [installation guide](../lcgudonsharp/install.md).
 
 - **VRChat Creator Companion (VCC):** add the LogicCuteGuy repository from [docs.logiccuteguy.com](https://docs.logiccuteguy.com/) (**Install via VCC**), or add
   `https://vpm.logiccuteguy.com/index.json` in *Settings > Packages > Add Repository*. Then add **DigHoleIt** to your project; VCC installs LCGUdonSharp with it. The listing may lag behind the newest GitHub release.
 - **Git URL:** *Window > Package Manager > + > Add package from git URL* and enter
   `https://github.com/LogicCuteGuy/DigHoleIt.git`.
-  Add `#v0.6.1` (or another published tag) to the end to pin a released version.
+  Add `#v0.7.0` (or another published tag) to the end to pin a released version.
 - **Embedded:** clone or copy the repository into your project's `Packages/com.logiccuteguy.digholeit` folder.
 
 With a Git URL or embedded install in a VRChat project, install LCGUdonSharp first. The Udon runtime does not compile without it.
@@ -32,7 +32,7 @@ With a Git URL or embedded install in a VRChat project, install LCGUdonSharp fir
 DigHoleIt 0.6.0 and later include example scenes under *Packages > DigHoleIt - Diggable Voxel Terrain > Example* in the Project window:
 
 - **`VRChat/DigHoleItVRChatDemo`** (VRChat projects): a baked Dig Zone, a VRCWorld spawn and three shovels for dig, add and paint. Press Play with ClientSim, pick up a shovel and hold Use.
-- **`Standalone/DigHoleItStandaloneDemo`** (non-VRChat projects): a baked zone and a camera with `DigToolStandalone`. The left mouse button digs, the right adds and the middle paints. Its runtime scripts appear missing in a VRChat project because the standalone runtime is disabled there.
+- **`Standalone/DigHoleItStandaloneDemo`** (non-VRChat projects): a baked zone and a camera with `DigToolStandalone`. The left mouse button uses the selected mode (dig by default), the right adds and the middle paints. Its runtime scripts appear missing in a VRChat project because the standalone runtime is disabled there.
 - **`Showcase/DigHoleItShowcase`**: the README screenshot scene, with a 200 m forest terrain, a pit, a cave beneath a rock, and trees and grass inside both. It has no runtime; the disabled *Shot Pit* and *Shot Cave* cameras store the screenshot views.
 
 Each example keeps its terrain, zone data and materials in its own folder. Git URL packages are read-only, so copy an example folder into `Assets` before editing or re-baking it. VCC-installed packages can be edited under `Packages`.
@@ -60,3 +60,13 @@ You can also build fresh demo scenes in your project:
 You can also start from the terrain: select it, open **Paint Terrain**, pick **DigHoleIt: Dig Voxels** and click **Create Dig Zone**.
 
 The terrain material must support holes. Unity's default built-in terrain material does.
+
+## Dig Pen and showcase in 0.7.0
+
+Use `Example/Pen/Dig Pen (VRChat).prefab` for a pickup with VRC Object Sync, a world-space settings panel and a brush cursor. `Dig Pen (Standalone).prefab` provides a mouse pen and an on-screen panel. Both packaged demo scenes include a pen; scene-builder menus still provide the original shovel/camera setup.
+
+Modes: dig, add, paint, tree, detail and smooth, with size/rate and layer/prefab/erase options. The standalone left mouse button uses the selected mode; right adds and middle paints. **Show Settings** enables its panel; Tab toggles it.
+
+Empty `zones` / `layerNames` and runtime `treePrefabs` / `detailPrefabs` are filled on bake, scene open, save and play from scene zones and terrain prototypes (or example prefabs). Assign explicit lists to choose your own. **Refresh Zones** in the DigTool Inspector repopulates zones and layer names; deleted zones are removed on save/play.
+
+`Example/VRChat/DigHoleItVRChatShowcase.unity` includes four pens and its own terrain, with a 151 × 89 × 155-cell zone at 0.5 m voxels. It is not the older non-runtime `Showcase/DigHoleItShowcase`. Copy Git-installed sample folders into Assets before editing.

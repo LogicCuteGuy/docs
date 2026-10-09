@@ -4,9 +4,13 @@ sidebar_position: 1
 
 # DigHoleIt documentation
 
-> Documentation version: **0.6.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+> Documentation version: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 
 DigHoleIt turns part of a Unity Terrain into diggable voxel terrain. You place a **Dig Zone** over the terrain and bake it. Players can then dig holes, tunnels and caves, add soil back, and paint terrain layers onto the voxel surface. In VRChat, every edit syncs to all players, including late joiners.
+
+## What's new in 0.7.0
+
+DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
 ## What's new in 0.6.1
 

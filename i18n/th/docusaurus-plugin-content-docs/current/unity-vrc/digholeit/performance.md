@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ประสิทธิภาพและข้อจำกัด
 
-> เวอร์ชันเอกสาร: **0.6.1**
+> เวอร์ชันเอกสาร: **0.7.0**
 
 ## ค่าที่แนะนำ
 
@@ -35,3 +35,5 @@ sidebar_position: 8
 - Chunk ที่ขุดตอน runtime ใช้ light probe ไม่ใช่ lightmap
 - Terrain material ต้องรองรับ hole
 - Tree แต่ละต้นเป็น GameObject ส่วน detail ใช้หนึ่ง renderer ต่อ chunk column (หนึ่ง draw call ต่อ detail type) บน Quest ควรลด density และ Detail Distance
+
+การปลูกตอน runtime เพิ่ม GameObject ค่า `maxSpawned` เริ่มต้น 2048 ต่อ runtime ต้องปรับ cap และความหนาแน่นตามอุปกรณ์ Tree/detail/smooth edit ใช้ log ด้วย Smoothing ของ non-owner รอ owner แทน prediction Showcase ใหญ่ของ 0.7.0 ไม่ใช่คำแนะนำ performance สำหรับ Quest ต้องวัดใน world จริง

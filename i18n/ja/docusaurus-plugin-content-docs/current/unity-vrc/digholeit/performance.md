@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # 性能と制限
 
-> ドキュメントバージョン: **0.6.1**
+> ドキュメントバージョン: **0.7.0**
 
 ## 推奨設定
 
@@ -35,3 +35,5 @@ Quest では 1 つの大きな zone より複数の小さな zone を推奨し�
 - Runtime で掘られた chunk は lightmap ではなく light probe を使います。
 - Terrain material は hole を support する必要があります。
 - Tree は 1 本ごとに GameObject、detail は chunk column ごとに renderer（detail type ごとに draw call）を使います。Quest では density と Detail Distance を控えめにします。
+
+Runtime の配置は GameObject を増やします。`maxSpawned` は runtime ごとに既定 2048 で、対象機種に合わせて上限と密度を調整します。Tree/detail/smooth edit も log を消費します。非 owner の smoothing は prediction せず owner を待ちます。大規模な 0.7.0 showcase は Quest 向け推奨設定ではありません。実ワールドで測定してください。

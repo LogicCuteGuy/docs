@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> ドキュメントバージョン: **0.6.1**
+> ドキュメントバージョン: **0.7.0**
 
 Dig Zone は 1 つの Unity Terrain 上に置く axis-aligned box です。内部の terrain は、掘る・埋める・paint できる voxel grid に置き換わります。
 
@@ -59,3 +59,11 @@ Chunk mesh は material の **Hole Overlap**（既定 0.1 m）だけ terrain hol
 Box face の handle は voxel 単位で snap します。Re-bake は voxel size と lattice が同じなら sculpt/paint を保持します。**Follow terrain edits** が有効なら、Unity Terrain の height、paint、tree、detail の変更完了後に zone を更新し、sculpt と voxel paint は維持します。
 
 各 zone は terrain hole を管理し、削除や Clear で復元します。古い zone が残した hole は Terrain tool の **Fix Leftover Holes** で修復できます。
+
+## Refresh Holes と削除 foliage
+
+Terrain の Dig Zones panel の **Refresh Holes** は、**開いている scene** の Dig Zone が覆っていない hole cell を埋めます。削除 zone の記録なしの hole にも対応し、記録付き leftovers も処理します。未所有 hole の処理は確認付きで Undo できます。
+
+**手動で描いた hole** や、同じ terrain を使う **閉じた scene** の zone hole も埋まる可能性があります。先に必要な scene を開き、確認内容を読んでください。無害な refresh ではありません。**Fix Leftover Holes** は記録がある leftovers だけを検出します。
+
+Runtime Tree/Detail erase は配置 object だけでなく Bake foliage も除去します。Remesh では戻らず、reset で戻ります。[Runtime operation](vrchat-runtime.md)を参照してください。

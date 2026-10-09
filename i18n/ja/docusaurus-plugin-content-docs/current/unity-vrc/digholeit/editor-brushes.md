@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brush
 
-> ドキュメントバージョン: **0.6.1**
+> ドキュメントバージョン: **0.7.0**
 
 Bake 済み zone は 2 つの方法で編集できます。
 
@@ -37,3 +37,5 @@ Paint layer は Auto、terrain の全 layer（最大 16）、Dug Soil から選�
 | `[` / `]` | Size を 10% 変更。Hold で連続変更 |
 
 1 stroke が 1 undo step です。VRChat project では mouse を離したときに変更が `DigZoneRuntime` へコピーされます。
+
+Runtime Dig Pen は smoothing と foliage の配置/削除にも対応します。Editor sculpt/terrain brush とは別です。Refresh Holes の対象と注意点は [Dig Zones](dig-zones.md)、Refresh Zones は [VRChat runtime](vrchat-runtime.md)を参照してください。

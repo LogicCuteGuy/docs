@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zones
 
-> Documentation version: **0.6.1**
+> Documentation version: **0.7.0**
 
 A Dig Zone is an axis-aligned box over one Unity Terrain. Inside it the terrain is replaced by a voxel grid that can be dug, filled and painted.
 
@@ -126,3 +126,11 @@ Each zone cuts a hole in the terrain over its footprint, one voxel inside its ed
 Select the terrain, open **Paint Terrain** and pick **DigHoleIt: Dig Voxels** or **DigHoleIt: Paint Voxels**. The Terrain inspector then lists every Dig Zone on the terrain with its full settings and buttons. The Scene view shows each zone's box, diggable area and resize handles.
 
 **DigHoleIt: Paint Trees** and **DigHoleIt: Paint Details** paint the terrain's trees and details, inside zones too (see [Trees and details](#trees-and-details)).
+
+## Refresh Holes and erased foliage
+
+**Refresh Holes** in the terrain's Dig Zones panel fills hole cells not covered by Dig Zones in the **open scenes**, including unrecorded holes left by deleted zones. It also handles recorded leftovers. The unclaimed-hole step asks for confirmation and supports Undo.
+
+It can also fill **manually painted holes** and holes belonging to zones in **closed scenes** sharing the terrain. Open those scenes first and review the confirmation; do not treat it as a harmless refresh. **Fix Leftover Holes** only finds recorded leftovers.
+
+Runtime Tree/Detail erase also removes baked foliage, not just planted objects. Remeshing does not restore it; reset does. See [runtime operations](vrchat-runtime.md#runtime-operations-in-070).

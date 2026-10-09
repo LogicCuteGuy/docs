@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Troubleshooting
 
-> Documentation version: **0.6.1**
+> Documentation version: **0.7.0**
 
 **A gray strip or gap shows through the terrain next to a zone.**
 The terrain has a hole that no zone covers, usually left by an older bake. Holes from deleted zones can be filled with **Fix Leftover Holes** in the terrain tools. For a hole no zone knows about, open the terrain's **Paint Holes** tool and paint the area back in, then bake the zone again.
@@ -65,3 +65,11 @@ Check **Trees** / **Details** on the zone, and that the zone is baked. Details b
 
 **Baking raised the top of my zone.**
 The terrain reached the top of the box, which would cut the surface off flat. Bake raises the top to **Headroom Above Terrain** over the highest terrain point and logs it. Lower Headroom Above Terrain for a flatter box.
+
+## Refresh Holes and erased foliage
+
+**Refresh Holes** in the terrain's Dig Zones panel fills hole cells not covered by Dig Zones in the **open scenes**, including unrecorded holes left by deleted zones. It also handles recorded leftovers. The unclaimed-hole step asks for confirmation and supports Undo.
+
+It can also fill **manually painted holes** and holes belonging to zones in **closed scenes** sharing the terrain. Open those scenes first and review the confirmation; do not treat it as a harmless refresh. **Fix Leftover Holes** only finds recorded leftovers.
+
+Runtime Tree/Detail erase also removes baked foliage, not just planted objects. Remeshing does not restore it; reset does. See [runtime operations](vrchat-runtime.md#runtime-operations-in-070).

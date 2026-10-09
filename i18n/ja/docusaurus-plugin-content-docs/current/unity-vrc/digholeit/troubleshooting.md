@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # トラブルシューティング
 
-> ドキュメントバージョン: **0.6.1**
+> ドキュメントバージョン: **0.7.0**
 
 | 問題 | 解決方法 |
 |---|---|
@@ -24,3 +24,11 @@ sidebar_position: 9
 | Bake 後に zone の上端が上がる | Terrain が box 上端へ達したためです。**Headroom Above Terrain** を下げると拡張量を減らせます。 |
 
 Issue: [github.com/LogicCuteGuy/DigHoleIt/issues](https://github.com/LogicCuteGuy/DigHoleIt/issues)
+
+## Refresh Holes と削除 foliage
+
+Terrain の Dig Zones panel の **Refresh Holes** は、**開いている scene** の Dig Zone が覆っていない hole cell を埋めます。削除 zone の記録なしの hole にも対応し、記録付き leftovers も処理します。未所有 hole の処理は確認付きで Undo できます。
+
+**手動で描いた hole** や、同じ terrain を使う **閉じた scene** の zone hole も埋まる可能性があります。先に必要な scene を開き、確認内容を読んでください。無害な refresh ではありません。**Fix Leftover Holes** は記録がある leftovers だけを検出します。
+
+Runtime Tree/Detail erase は配置 object だけでなく Bake foliage も除去します。Remesh では戻らず、reset で戻ります。[Runtime operation](vrchat-runtime.md)を参照してください。

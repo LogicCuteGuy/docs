@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Performance and limits
 
-> Documentation version: **0.6.1**
+> Documentation version: **0.7.0**
 
 ## Recommended settings
 
@@ -40,3 +40,5 @@ Measured in the editor (ClientSim, PC): remeshing one 16³ chunk costs about **1
 - Zone shading uses up to 16 terrain layers (8 with DigTerrain Lite, 4 with the Standard shader on mobile). Each extra layer costs where it is visible: pixels only sample layers with weight. Each chunk mesh holds up to 4 painted layers.
 - Runtime-dug chunks are lit by light probes, not lightmaps.
 - The terrain material must support holes. Unity's default built-in terrain material does.
+
+Runtime planting adds GameObjects; `maxSpawned` defaults to 2048 per runtime, so tune it and planting density for your target hardware. Tree/detail/smooth edits also consume the edit log. Non-owner smoothing waits for the owner rather than predicting. The large 0.7.0 showcase is not a Quest performance recommendation; measure your own world.

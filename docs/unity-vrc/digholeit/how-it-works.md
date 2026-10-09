@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # How it works
 
-> Documentation version: **0.6.1**
+> Documentation version: **0.7.0**
 
 ```
 Terrain ──Bake──► DigZoneData (byte SDF grid, chunk meshes, splat/height textures)
@@ -39,7 +39,7 @@ An edit is packed into one `long`:
 
 - position in 1/16 voxel;
 - radius in 1/8 voxel;
-- op (dig, add, paint);
+- op (dig, add, smooth, paint, tree, detail);
 - paint layer.
 
 Dig is `max(d, -sphere)` and Add is `min(d, sphere)`. Paint sets the layer inside the sphere. All three are idempotent, so applying an edit twice changes nothing. Edits only touch samples inside the zone's edit box, at least Border Voxels inside the terrain hole.
@@ -84,7 +84,7 @@ Queued edits and meshing share `budgetMsDesktop` (2.5 ms) or `budgetMsMobile` (1
 
 1. The digging player applies the edit locally right away (prediction) and asks the owner to append it.
 2. The owner assigns the next sequence number and broadcasts the edit (`[NetworkCallable]`).
-3. Every client applies edits strictly in sequence order and buffers any that arrive early. Re-applying the predicted edit changes nothing, because edits are idempotent.
+3. Every client applies edits strictly in sequence order and buffers any that arrive early. Dig/Add/Paint are idempotent. Smoothing is not predicted by non-owners and must be applied once.
 4. Shortly after someone joins, the owner serializes the full log (Manual sync), and the late joiner replays it, time-sliced.
 5. Every client keeps the full log, so an ownership handoff keeps working.
 
@@ -98,3 +98,20 @@ Queued edits and meshing share `budgetMsDesktop` (2.5 ms) or `budgetMsMobile` (1
 - `DigTerrainHoles` records which terrain cells each zone cut, and fills them back in when zones are deleted, together with the trees the zone kept. A re-bake gives the trees back and takes them again; `KeepPlacement` puts back each one's height and direction (`DigTreeInstance.up`).
 - A bake raises the zone's top when the terrain reaches it (`DigZoneBaker.GrowToTerrain`).
 - `DigTerrainTreeTool` and `DigTerrainDetailTool` wrap Unity's Paint Trees and Paint Details tools: where the mouse ray hits a zone's voxel surface before the terrain, they paint there (details through Unity's tool at that terrain spot, trees into the zone's list). The tree brush scatters on the plane of the surface under the mouse and drops each tree onto the voxel surface along its normal (`DigGridUtil.Raycast`); the detail tool snapshots the detail layers under the brush and puts back cells whose surface is further than the brush radius from the mouse in height.
+
+## Runtime operations in 0.7.0
+
+Tool modes and packed operation codes are different:
+
+| Action | Tool `mode` | `DigFormat` op | Layer bits |
+|---|---:|---:|---|
+| Dig | 0 | `OpDig = 0` | — |
+| Add | 1 | `OpAdd = 1` | Soil paint value |
+| Paint | 2 | `OpPaint = 3` | Paint value |
+| Tree | 3 | `OpTree = 4` | Prefab index + 1; 0 erases |
+| Detail | 4 | `OpDetail = 5` | Prefab index + 1; 0 erases |
+| Smooth | 5 | `OpSmooth = 2` | Strength in steps of 1/31 |
+
+Tree/detail erase removes both planted objects and baked foliage of that kind inside the sphere. Erased baked foliage stays hidden across remeshing; reset restores it. Dig/add removes planted objects inside the brush. Prefab lists must match on every client. `maxSpawned` limits planted objects (default 2048); further planting is ignored.
+
+Smoothing is **not idempotent**: apply each edit once in log order. DigSync does not locally predict non-owner smoothing; it appears after the owner returns it. Udon smoothing updates shared chunk-border samples consistently. Do not generalize Dig/Add/Paint's duplicate-edit behavior to smoothing.

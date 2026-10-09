@@ -12,7 +12,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 
 ## Add the repository in VCC
 
@@ -57,13 +57,15 @@ Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 
 ### `com.logiccuteguy.digholeit` — DigHoleIt
 
-- **Latest version**: 0.6.1 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
+
+- **Latest version**: 0.7.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 - **Unity**: 2022.3, Built-in Render Pipeline
 - **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
 - **License**: MIT
 - **Repository**: [LogicCuteGuy/DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt)
 
-Install 0.6.1 through VCC from the LogicCuteGuy VPM listing, add `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1` through Unity Package Manager, embed the repository at `Packages/com.logiccuteguy.digholeit`, or extract the named `com.logiccuteguy.digholeit-0.6.1.zip` release asset. Do not use GitHub's automatic source archive as a Unity package.
+Install **0.7.0** through VCC/ALCOM from the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json); refresh the listing first. Alternatively use `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`, embed the tagged repository, or extract the named `com.logiccuteguy.digholeit-0.7.0.zip` from [the release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0). Do not use the automatic source archive. For Git/ZIP installs in VRChat projects, install LCGUdonSharp first using its [installation guide](./lcgudonsharp/install.md).
 
 Version 0.6.1 fixes bake/move/resize undo, terrain-hole seams, foliage shading and invalid edge collision meshes.
 

@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # 仕組み
 
-> ドキュメントバージョン: **0.6.1**
+> ドキュメントバージョン: **0.7.0**
 
 ## Grid と圧縮
 
@@ -30,4 +30,21 @@ Baked Lighting が有効なら chunk は lightmap UV と static flag を持ち�
 
 ## Network
 
-Digging player は edit を local prediction し、owner が sequence number を付けて broadcast します。各 client は順序どおり適用し、早く届いた edit を buffer します。Late joiner には owner が full log を Manual sync し、time-sliced replay します。Reset は新しい epoch を開始して log を clear します。
+Smoothing 以外の edit を local prediction し、owner が sequence number を付けて broadcast します。各 client は順序どおり適用し、早く届いた edit を buffer します。Late joiner には owner が full log を Manual sync し、time-sliced replay します。Reset は新しい epoch を開始して log を clear します。
+
+## 0.7.0 の runtime operation
+
+Tool mode と packed operation code は別です。
+
+| 動作 | Tool `mode` | `DigFormat` op | Layer bits |
+|---|---:|---:|---|
+| Dig | 0 | `OpDig = 0` | — |
+| Add | 1 | `OpAdd = 1` | Soil paint value |
+| Paint | 2 | `OpPaint = 3` | Paint value |
+| Tree | 3 | `OpTree = 4` | Prefab index + 1、0 は削除 |
+| Detail | 4 | `OpDetail = 5` | Prefab index + 1、0 は削除 |
+| Smooth | 5 | `OpSmooth = 2` | 1/31 単位の強度 |
+
+Tree/detail の削除は球内の配置 object と同種の Bake 済み foliage を除去します。Bake foliage は remesh 後も非表示で、reset すると戻ります。Dig/add は brush 内の配置 object を除去します。Prefab 配列は全 client で一致させます。`maxSpawned` は配置数の上限（既定 2048）で、超える配置は無視されます。
+
+Smoothing は **冪等ではありません**。Log 順で一度だけ適用してください。DigSync は非 owner の smoothing を local prediction せず、owner から戻った時に表示します。Udon は共有 chunk border の sample を一致させます。Dig/Add/Paint の重複適用特性を smoothing に当てはめないでください。

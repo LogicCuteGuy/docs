@@ -40,7 +40,11 @@ LCGUdonSharp 0.3.8 は入れ子・多態的な [ScriptableObject データスナ
 
 C# インターフェース、ビルド時の async/await、同期例外処理、コレクション/JSON、拡張言語機能、bounded object-motion batching と zone recovery を備えた手動パケット通信に対応する VRChat 向け UdonSharp コンパイラーです。
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.0
+
+DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除（Bake 済み foliage を含む）、同期 smoothing、VRChat showcase、Refresh Holes / Refresh Zones を追加します。設定はローカルで、VRChat edit は同期され late joiner に replay されます。
+
+0.7.0 は VPM と GitHub で公開されています。[導入方法](./digholeit/getting-started.md)を参照してください。
 Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrain layer のペイントを提供する voxel terrain システムです。VRChat 同期と standalone C# runtime に対応します。
 
 バージョン、依存関係、リポジトリについては[パッケージ一覧](./packages.md)をご覧ください。

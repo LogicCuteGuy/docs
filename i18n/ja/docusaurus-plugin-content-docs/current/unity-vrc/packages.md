@@ -10,7 +10,7 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 
 ## VCC にリポジトリを追加する
 
@@ -45,13 +45,15 @@ LCGUdonSharp は Worlds SDK を変更せず、`Payload~/UdonSharp` からコン�
 
 ### DigHoleIt
 
-- 最新版: `0.6.1` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除（Bake 済み foliage を含む）、同期 smoothing、VRChat showcase、Refresh Holes / Refresh Zones を追加します。設定はローカルで、VRChat edit は同期され late joiner に replay されます。
+
+- 最新版: `0.7.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 - Unity 2022.3、Built-in Render Pipeline
 - VRChat 依存関係: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 - ライセンス: MIT
 
-VCC の VPM リスト、Unity Package Manager の `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1`、`Packages/com.logiccuteguy.digholeit` への配置、または名前付き `com.logiccuteguy.digholeit-0.6.1.zip` release asset から 0.6.1 をインストールできます。GitHub 自動生成の source archive を Unity package として使用しないでください。
+[LogicCuteGuy VPM リスト](https://vpm.logiccuteguy.com/index.json)を更新し、VCC/ALCOM で **0.7.0** を導入できます。ほかに `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`、tag repository の埋め込み、[リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)の `com.logiccuteguy.digholeit-0.7.0.zip` の展開にも対応します。自動生成 source archive は使わないでください。VRChat の Git/ZIP 導入では先に LCGUdonSharp を[インストール](./lcgudonsharp/install.md)します。
 
 0.6.1 は Bake/move/resize の Undo、terrain-hole seam、foliage shading、無効な edge collision mesh を修正します。
 

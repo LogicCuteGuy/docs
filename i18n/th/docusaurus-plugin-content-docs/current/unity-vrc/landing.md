@@ -40,7 +40,11 @@ LCGUdonSharp 0.3.8 เพิ่ม [snapshot ข้อมูล ScriptableObject
 
 คอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, async/await ตอน build, exception แบบ synchronous, collection/JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเองพร้อม bounded object-motion batching และ zone recovery
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.0
+
+DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree และ detail ตอน runtime (รวม foliage ที่ bake ไว้), smoothing แบบ sync, VRChat showcase และ Refresh Holes / Refresh Zones การตั้งค่าเป็น local แต่ edit ใน VRChat sync และ replay ให้ late joiner
+
+0.7.0 มีทั้งใน VPM และ GitHub ดู[วิธีติดตั้ง](./digholeit/getting-started.md)
 ระบบ voxel terrain ที่ขุดได้สำหรับ Unity รองรับหลุม อุโมงค์ ถ้ำ การเติมดิน และระบาย terrain layer ตอน runtime พร้อมการ sync ใน VRChat และ runtime C# สำหรับเกม standalone
 
 ดูเวอร์ชัน การพึ่งพา และ repository ได้ที่[รายการแพ็กเกจ](./packages.md)

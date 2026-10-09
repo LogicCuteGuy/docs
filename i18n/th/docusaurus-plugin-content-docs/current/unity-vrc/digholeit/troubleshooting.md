@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # การแก้ปัญหา
 
-> เวอร์ชันเอกสาร: **0.6.1**
+> เวอร์ชันเอกสาร: **0.7.0**
 
 | ปัญหา | วิธีแก้ |
 |---|---|
@@ -24,3 +24,11 @@ sidebar_position: 9
 | ขอบบนของ zone สูงขึ้นหลัง Bake | Terrain แตะขอบบนของกล่อง ระบบจึงขยายให้อัตโนมัติ ลด **Headroom Above Terrain** หากต้องการให้ขยายน้อยลง |
 
 Issue: [github.com/LogicCuteGuy/DigHoleIt/issues](https://github.com/LogicCuteGuy/DigHoleIt/issues)
+
+## Refresh Holes และ foliage ที่ลบ
+
+**Refresh Holes** ใน Dig Zones panel ของ terrain เติม hole cell ที่ไม่มี Dig Zone ใน **scene ที่เปิดอยู่** ครอบคลุม รวมถึง hole ที่ zone ถูกลบทิ้งโดยไม่มี record และจัดการ recorded leftover ด้วย ขั้นตอน unclaimed hole มี confirmation และ Undo ได้
+
+อาจเติม **hole ที่วาดเอง** และ hole ของ zone ใน **scene ที่ปิดอยู่** ซึ่งใช้ terrain เดียวกันด้วย ต้องเปิด scene ที่เกี่ยวข้องและอ่าน confirmation ก่อน ไม่ใช่ refresh ที่ไม่เปลี่ยนข้อมูล ส่วน **Fix Leftover Holes** หาเฉพาะ leftover ที่มี record
+
+Runtime Tree/Detail erase ลบทั้ง planted object และ baked foliage การ remesh ไม่คืน foliage ที่ลบ ต้อง reset ดู[Runtime operation](vrchat-runtime.md)

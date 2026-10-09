@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> เวอร์ชันเอกสาร: **0.6.1**
+> เวอร์ชันเอกสาร: **0.7.0**
 
 Dig Zone คือกล่อง axis-aligned เหนือ Unity Terrain หนึ่งอัน ภายในกล่อง terrain จะถูกแทนด้วย voxel grid ที่ขุด เติม และ paint ได้
 
@@ -59,3 +59,11 @@ Chunk mesh ยื่นเลยขอบ terrain hole ตามค่า **Hole
 Handle ที่หน้ากล่อง snap เป็นจำนวน voxel การ Bake ใหม่จะเก็บ sculpt/paint ถ้า voxel size และ lattice ไม่เปลี่ยน เมื่อเปิด **Follow terrain edits** การแก้ height, paint, tree และ detail ของ Unity Terrain จะอัปเดต zone หลังจบ stroke โดยเก็บ sculpt และ voxel paint ไว้
 
 Zone จัดการ terrain hole ของตัวเอง และคืน hole เมื่อ Clear/ลบ zone ใช้ **Fix Leftover Holes** แก้ hole ที่ค้างจากเวอร์ชันเก่า
+
+## Refresh Holes และ foliage ที่ลบ
+
+**Refresh Holes** ใน Dig Zones panel ของ terrain เติม hole cell ที่ไม่มี Dig Zone ใน **scene ที่เปิดอยู่** ครอบคลุม รวมถึง hole ที่ zone ถูกลบทิ้งโดยไม่มี record และจัดการ recorded leftover ด้วย ขั้นตอน unclaimed hole มี confirmation และ Undo ได้
+
+อาจเติม **hole ที่วาดเอง** และ hole ของ zone ใน **scene ที่ปิดอยู่** ซึ่งใช้ terrain เดียวกันด้วย ต้องเปิด scene ที่เกี่ยวข้องและอ่าน confirmation ก่อน ไม่ใช่ refresh ที่ไม่เปลี่ยนข้อมูล ส่วน **Fix Leftover Holes** หาเฉพาะ leftover ที่มี record
+
+Runtime Tree/Detail erase ลบทั้ง planted object และ baked foliage การ remesh ไม่คืน foliage ที่ลบ ต้อง reset ดู[Runtime operation](vrchat-runtime.md)

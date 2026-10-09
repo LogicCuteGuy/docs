@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brush
 
-> เวอร์ชันเอกสาร: **0.6.1**
+> เวอร์ชันเอกสาร: **0.7.0**
 
 แก้ zone ที่ Bake แล้วได้สองทาง:
 
@@ -37,3 +37,5 @@ Paint layer เลือก Auto, terrain layer ทั้งหมดสูง�
 | `[` / `]` | เปลี่ยนขนาด 10%; กดค้างเพื่อเปลี่ยนต่อเนื่อง |
 
 หนึ่ง stroke คือหนึ่ง undo step ใน VRChat project การเปลี่ยนจะถูกคัดลอกไป `DigZoneRuntime` เมื่อปล่อย mouse
+
+Runtime Dig Pen รองรับ smoothing และปลูก/ลบ foliage แล้ว แต่เป็นคนละระบบกับ editor sculpt/terrain brush ดูขอบเขตและข้อควรระวัง Refresh Holes ใน [Dig Zones](dig-zones.md) และ Refresh Zones ใน [VRChat runtime](vrchat-runtime.md)

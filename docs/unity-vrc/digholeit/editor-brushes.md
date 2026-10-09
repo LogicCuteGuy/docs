@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Editor brushes
 
-> Documentation version: **0.6.1**
+> Documentation version: **0.7.0**
 
 There are two ways to sculpt and paint a baked zone in the editor. Both use the same brush settings.
 
@@ -50,3 +50,5 @@ The brush axis is the surface normal by default. World up and view direction are
 ## Undo and the runtime
 
 Every stroke is one undo step. Undo and redo remesh only the chunks the stroke changed, and zones whose terrain the undo didn't touch aren't re-synced, so they stay quick on large zones. In a VRChat project, the stroke is copied into the zone's `DigZoneRuntime` when you release the mouse, so the uploaded world starts with your sculpting.
+
+Runtime Dig Pens now support smoothing and planting/erasing foliage. They are separate from editor sculpt/terrain brushes. [Dig Zone cleanup](dig-zones.md) covers Refresh Holes and its destructive scope; [VRChat runtime](vrchat-runtime.md) covers Refresh Zones.

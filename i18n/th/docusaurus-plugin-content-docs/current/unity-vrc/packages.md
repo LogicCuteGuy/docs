@@ -10,7 +10,7 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | เครื่องมือ Editor กว่า 15 รายการสำหรับจัดการ scene, object และ optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | คอมไพเลอร์ UdonSharp พร้อม interface, async/await, exception, collection/JSON และ packet network |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.6.1` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
 
 ## เพิ่ม repository ใน VCC
 
@@ -45,13 +45,15 @@ LCGUdonSharp ติดตั้งคอมไพเลอร์จาก `Paylo
 
 ### DigHoleIt
 
-- เวอร์ชันล่าสุด: `0.6.1` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree และ detail ตอน runtime (รวม foliage ที่ bake ไว้), smoothing แบบ sync, VRChat showcase และ Refresh Holes / Refresh Zones การตั้งค่าเป็น local แต่ edit ใน VRChat sync และ replay ให้ late joiner
+
+- เวอร์ชันล่าสุด: `0.7.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 - Unity 2022.3 และ Built-in Render Pipeline
 - Dependency สำหรับ VRChat: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [Repository](https://github.com/LogicCuteGuy/DigHoleIt) · [Release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.6.1)
+- [Repository](https://github.com/LogicCuteGuy/DigHoleIt) · [Release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 - License: MIT
 
-ติดตั้ง 0.6.1 ผ่านรายการ VPM ใน VCC, เพิ่ม `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.6.1` ผ่าน Unity Package Manager, วาง repository ที่ `Packages/com.logiccuteguy.digholeit` หรือแตก release asset แบบมีชื่อ `com.logiccuteguy.digholeit-0.6.1.zip` ห้ามใช้ source archive ที่ GitHub สร้างอัตโนมัติเป็น Unity package
+Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy.com/index.json) แล้วติดตั้ง **0.7.0** ผ่าน VCC/ALCOM ได้ หรือใช้ `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`, embedded repository ที่ tag นี้ หรือแตก `com.logiccuteguy.digholeit-0.7.0.zip` จาก[release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0) ห้ามใช้ source archive อัตโนมัติ หากใช้ Git/ZIP ใน VRChat project ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
 
 0.6.1 แก้ Undo หลัง Bake/move/resize, seam ของ terrain hole, foliage shading และ edge collision mesh ที่ไม่ถูกต้อง
 

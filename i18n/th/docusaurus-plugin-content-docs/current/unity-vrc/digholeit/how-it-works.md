@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # วิธีทำงาน
 
-> เวอร์ชันเอกสาร: **0.6.1**
+> เวอร์ชันเอกสาร: **0.7.0**
 
 ## Grid และ compression
 
@@ -30,4 +30,21 @@ Standard shader ใช้ terrain splat/normal สูงสุด 16 layer ส�
 
 ## Network
 
-ผู้ขุด apply edit แบบ local prediction แล้ว owner กำหนด sequence number และ broadcast ทุก client apply ตามลำดับและ buffer edit ที่มาถึงก่อน Late joiner รับ full log จาก owner แล้ว replay แบบแบ่งเฟรม Reset เริ่ม epoch ใหม่และล้าง log
+ผู้ขุด apply edit ที่ไม่ใช่ smoothing แบบ local prediction แล้ว owner กำหนด sequence number และ broadcast ทุก client apply ตามลำดับและ buffer edit ที่มาถึงก่อน Late joiner รับ full log จาก owner แล้ว replay แบบแบ่งเฟรม Reset เริ่ม epoch ใหม่และล้าง log
+
+## Runtime operation ใน 0.7.0
+
+Tool mode กับ packed operation code เป็นคนละค่า
+
+| การทำงาน | Tool `mode` | `DigFormat` op | Layer bits |
+|---|---:|---:|---|
+| Dig | 0 | `OpDig = 0` | — |
+| Add | 1 | `OpAdd = 1` | Soil paint value |
+| Paint | 2 | `OpPaint = 3` | Paint value |
+| Tree | 3 | `OpTree = 4` | Prefab index + 1; 0 ลบ |
+| Detail | 4 | `OpDetail = 5` | Prefab index + 1; 0 ลบ |
+| Smooth | 5 | `OpSmooth = 2` | Strength ทีละ 1/31 |
+
+Tree/detail erase ลบทั้ง object ที่ปลูกและ foliage ชนิดนั้นที่ bake ไว้ภายในทรงกลม Baked foliage ที่ลบจะยังซ่อนหลัง remesh และกลับมาเมื่อ reset ส่วน dig/add ลบ planted object ใน brush ต้องใช้ prefab array ตรงกันทุก client `maxSpawned` จำกัดจำนวน object ที่ปลูก (เริ่มต้น 2048) หากเต็มจะไม่ปลูกเพิ่ม
+
+Smoothing **ไม่เป็น idempotent** ต้อง apply ครั้งเดียวตามลำดับ log DigSync ไม่ทำ local prediction ให้ smoothing ของ non-owner จึงเห็นผลเมื่อ owner ส่งกลับ Udon อัปเดต shared sample บนขอบ chunk ให้ตรงกัน อย่าใช้กฎ replay ซ้ำของ Dig/Add/Paint กับ smoothing

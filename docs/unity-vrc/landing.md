@@ -40,7 +40,11 @@ LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots]
 
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.6.1
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.0
+
+DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
+
+Version 0.7.0 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
