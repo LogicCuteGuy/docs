@@ -6,7 +6,7 @@ sidebar_position: 2
 
 > เวอร์ชันเอกสาร: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 
-ทำตามขั้นตอนเพื่อติดตั้ง DigHoleIt, Bake พื้นที่ที่ขุดได้, sculpt ใน Unity และเพิ่ม Dig Pen สำหรับ VRChat ภาพมาจากวิดีโอ `2026-10-10 06-45-13.mp4` ที่ให้มา โดย caption ระบุเวลาในวิดีโอ คลิกภาพเพื่ออ่าน Inspector ขนาดเต็ม
+ทำตามขั้นตอนเพื่อติดตั้ง DigHoleIt, Bake พื้นที่ที่ขุดได้, sculpt ใน Unity และเพิ่ม Dig Pen สำหรับ VRChat ภาพประกอบแสดงขั้นตอนใน Editor คลิกภาพเพื่ออ่าน Inspector ขนาดเต็ม
 
 วิดีโอนี้แสดง **การแก้ไขใน Editor** โดยไม่ได้เปิด Play mode และมี Udon program-asset error ที่ยังไม่แก้ ต้องทำ runtime setup และตรวจสอบตามขั้นตอนด้านล่างก่อนทดสอบ world
 

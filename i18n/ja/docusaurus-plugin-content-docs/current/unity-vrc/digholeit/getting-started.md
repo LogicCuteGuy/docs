@@ -6,7 +6,7 @@ sidebar_position: 2
 
 > ドキュメントバージョン: **0.7.0** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 
-DigHoleIt のインストール、掘れる範囲の Bake、Unity での sculpt、VRChat 用 Dig Pen の設定を順番に説明します。画像は提供された `2026-10-10 06-45-13.mp4` の実際のフレームです。キャプションは動画内の時刻です。画像をクリックすると原寸で確認できます。
+DigHoleIt のインストール、掘れる範囲の Bake、Unity での sculpt、VRChat 用 Dig Pen の設定を順番に説明します。スクリーンショットで Editor の操作を確認できます。画像をクリックすると原寸で確認できます。
 
 録画は Play mode を使わない **Editor での作業**で、未解決の Udon program asset エラーも含みます。World をテストする前に、以下の runtime 設定と確認を完了してください。
 

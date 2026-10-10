@@ -6,7 +6,7 @@ sidebar_position: 2
 
 > Documentation version: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
 
-Install DigHoleIt, bake a diggable area, sculpt it in Unity, and enable a Dig Pen for VRChat. Images are real frames from the supplied `2026-10-10 06-45-13.mp4`; captions give video times. Click an image to read it at full size.
+Install DigHoleIt, bake a diggable area, sculpt it in Unity, and enable a Dig Pen for VRChat. Screenshots illustrate the editor workflow. Click an image to read it at full size.
 
 The recording shows **editor authoring**, with Play mode off and unresolved Udon program-asset errors. Complete the runtime setup and checks below before testing your world.
 
