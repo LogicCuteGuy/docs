@@ -23,6 +23,8 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
   <span style={{fontSize: '0.9rem', opacity: 0.6}}>Supports Unity 2022.3.x & VCC</span>
 </div>
 
+[Get a square VCC embed for BOOTH](/booth-embed).
+
 ## Available Projects
 
 All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.

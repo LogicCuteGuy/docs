@@ -23,6 +23,8 @@ slug: /
   <span style={{fontSize: '0.9rem', opacity: 0.6}}>รองรับ Unity 2022.3.x และ VCC</span>
 </div>
 
+[รับโค้ด VCC embed แบบสี่เหลี่ยมจัตุรัสสำหรับ BOOTH](/th/booth-embed)
+
 ## โปรเจกต์ที่พร้อมใช้งาน
 
 แพ็กเกจทั้งสามมีใน [รายการ VPM ของ LogicCuteGuy](./packages.md) (`https://vpm.logiccuteguy.com/index.json`) และ DigHoleIt ยังมี Git tag กับแพ็กเกจ GitHub Release แบบมีชื่อ

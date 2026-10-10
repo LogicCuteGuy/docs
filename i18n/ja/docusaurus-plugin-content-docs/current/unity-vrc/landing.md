@@ -23,6 +23,8 @@ slug: /
   <span style={{fontSize: '0.9rem', opacity: 0.6}}>Unity 2022.3.x および VCC をサポート</span>
 </div>
 
+[BOOTH 用の正方形 VCC 埋め込みコード](/ja/booth-embed)。
+
 ## 利用可能なプロジェクト
 
 3 つの package はすべて [LogicCuteGuy VPM リスト](./packages.md)（`https://vpm.logiccuteguy.com/index.json`）で公開されています。DigHoleIt は Git tag と名前付き GitHub Release package も公開しています。

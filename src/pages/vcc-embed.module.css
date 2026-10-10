@@ -1,0 +1,158 @@
+.widget {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: clamp(16px, 5vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 16px);
+  text-align: center;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: clamp(12px, 3vw, 16px);
+}
+
+.avatar {
+  width: clamp(48px, 16vw, 96px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ifm-color-primary);
+}
+
+.content,
+.productContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: inherit;
+  width: 100%;
+}
+
+.product {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #16241a;
+  color: #fff;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+.product::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(8, 16, 12, 0.15), rgba(8, 16, 12, 0.85));
+}
+
+.widget.product h1 {
+  font-size: clamp(42px, 12vw, 76px);
+  letter-spacing: -0.04em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.product .hint,
+.creator {
+  color: #fff;
+}
+
+.creator {
+  font-size: 0.9em;
+}
+
+.productContent > a:last-child {
+  color: #dbeafe;
+  text-decoration: underline;
+}
+
+.widget h1 {
+  margin: 0;
+  font-size: clamp(22px, 6vw, 36px);
+}
+
+.widget p {
+  margin: 0;
+}
+
+.packages,
+.hint {
+  max-width: 32em;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.install {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: #2563eb;
+  color: #fff;
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 700;
+}
+
+.install:hover {
+  background: #1d4ed8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.widget a:focus-visible,
+.manual input:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 4px;
+}
+
+.manual {
+  width: 100%;
+  max-width: 32em;
+  font-size: 0.85em;
+}
+
+.manual input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  .widget {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .avatar {
+    width: 48px;
+  }
+
+  .install {
+    padding: 10px 20px;
+  }
+
+  .manual input {
+    padding: 6px;
+  }
+}

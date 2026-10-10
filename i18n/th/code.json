@@ -1,4 +1,16 @@
 {
+  "vccEmbed.productNext": {"message": "เพิ่ม repository แล้วติดตั้ง {name} ใน VCC → Manage Packages"},
+  "boothEmbed.asset": {"message": "Asset"},
+  "boothEmbed.all": {"message": "เครื่องมือ LogicCuteGuy ทั้งหมด"},
+  "vccEmbed.title": {"message": "เพิ่ม LogicCuteGuy ใน VCC"},
+  "vccEmbed.add": {"message": "เพิ่มใน VCC"},
+  "vccEmbed.next": {"message": "ยืนยัน repository ใน VCC แล้วเพิ่ม package ที่ต้องการลงใน project"},
+  "vccEmbed.help": {"message": "คู่มือติดตั้ง / VCC ไม่เปิด?"},
+  "vccEmbed.manual": {"message": "Repository URL สำหรับเพิ่มเอง"},
+  "boothEmbed.title": {"message": "VCC embed แบบสี่เหลี่ยมจัตุรัสสำหรับ BOOTH"},
+  "boothEmbed.instructions": {"message": "คัดลอกโค้ดนี้ไปวางในช่อง embed code ของหน้าสินค้า BOOTH โดย widget มีอัตราส่วน 1:1"},
+  "boothEmbed.open": {"message": "เปิด widget ในแท็บใหม่"},
+  "boothEmbed.fallback": {"message": "ถ้า BOOTH ไม่รับ iframe หรือเปิด VCC ไม่ได้ ให้วางลิงก์นี้ในคำอธิบายสินค้าแทน:"},
   "theme.ErrorPageContent.title": {
     "message": "หน้านี้เกิดข้อผิดพลาด",
     "description": "The title of the fallback page when the page crashed"

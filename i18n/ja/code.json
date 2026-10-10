@@ -1,4 +1,16 @@
 {
+  "vccEmbed.productNext": {"message": "リポジトリ追加後、VCC → Manage Packages で {name} をインストールしてください。"},
+  "boothEmbed.asset": {"message": "アセット"},
+  "boothEmbed.all": {"message": "LogicCuteGuy の全ツール"},
+  "vccEmbed.title": {"message": "LogicCuteGuy を VCC に追加"},
+  "vccEmbed.add": {"message": "VCC に追加"},
+  "vccEmbed.next": {"message": "VCC でリポジトリを確認し、プロジェクトに必要な package を追加してください。"},
+  "vccEmbed.help": {"message": "導入ガイド / VCC が開かない場合"},
+  "vccEmbed.manual": {"message": "手動追加用のリポジトリ URL"},
+  "boothEmbed.title": {"message": "BOOTH 用：正方形 VCC 埋め込み"},
+  "boothEmbed.instructions": {"message": "BOOTH 商品ページの埋め込みコード欄に貼り付けるためのコードです。表示比率は正方形（1:1）です。"},
+  "boothEmbed.open": {"message": "新しいタブでウィジェットを開く"},
+  "boothEmbed.fallback": {"message": "BOOTH が iframe を受け付けない場合や VCC が開かない場合は、商品説明に次のリンクを貼り付けてください："},
   "theme.ErrorPageContent.title": {
     "message": "エラーが発生しました",
     "description": "The title of the fallback page when the page crashed"
