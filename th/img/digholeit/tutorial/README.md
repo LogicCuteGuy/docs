@@ -1,6 +1,6 @@
 # DigHoleIt tutorial screenshots
 
-Real frames extracted from the user-supplied `2026-10-10 06-45-13.mp4` (1920 × 1080, 260.3 seconds). WebP images retain the recorded UI; crops focus on the relevant panels and omit the desktop/taskbar. No UI was generated or retouched.
+Real screenshots of the Unity editor workflow. WebP images retain the recorded UI; crops focus on the relevant panels and omit the desktop/taskbar. No UI was generated or retouched.
 
 | File | Video time | Crop (width:height:x:y) |
 |---|---|---|
