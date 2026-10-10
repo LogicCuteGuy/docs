@@ -27,7 +27,7 @@ DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree แล�
 
 | หน้า | เนื้อหา |
 |---|---|
-| [เริ่มต้นใช้งาน](getting-started.md) | การติดตั้ง demo scene และสร้าง zone บน terrain ของคุณ |
+| [Tutorial พร้อมภาพ](getting-started.md) | ภาพจริงสำหรับ install, Bake/resize zone, dig/paint, foliage และ VRChat pen setup |
 | [Dig Zone](dig-zones.md) | การตั้งค่า Bake, zone height, tree/detail, ย้าย resize terrain hole ติดตาม terrain layer และ baked lighting |
 | [Editor brush](editor-brushes.md) | Sculpt และ paint zone ใน Editor |
 | [VRChat runtime](vrchat-runtime.md) | `DigZoneRuntime`, `DigTool`, `DigSync` บน UdonSharp |

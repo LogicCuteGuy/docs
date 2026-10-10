@@ -27,7 +27,7 @@ DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (
 
 | Page | What it covers |
 |---|---|
-| [Getting started](getting-started.md) | Installing the package, the included example scenes, and setting up a zone on your own terrain |
+| [Illustrated getting-started tutorial](getting-started.md) | Install, bake and resize a zone, dig/paint, add foliage, and set up a VRChat pen with real screenshots |
 | [Dig Zones](dig-zones.md) | Zone settings, baking, zone height, trees and details, moving and resizing, terrain holes, following terrain edits, terrain layers and baked lighting |
 | [Editor brushes](editor-brushes.md) | Sculpting and painting zones in the editor |
 | [VRChat runtime](vrchat-runtime.md) | `DigZoneRuntime`, `DigTool` and `DigSync` (UdonSharp) |

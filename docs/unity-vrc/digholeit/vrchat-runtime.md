@@ -34,7 +34,7 @@ A pickup that digs, adds or paints where it points.
 | `interval` | Seconds between edits while Use is held. |
 | `digIndicator`, `addIndicator`, `paintIndicator` | Optional objects shown for the current mode. |
 
-Call `_ToggleMode()` to switch between dig and add, or `_NextMode()` to cycle dig, add, paint (for example from a UI button with `SendCustomEvent`).
+Call `_ToggleMode()` to switch between dig and add, or `_NextMode()` to cycle dig, add, paint, tree, detail and smooth (for example from a UI button with `SendCustomEvent`). For prefab setup and local testing, follow the [illustrated tutorial](getting-started.md).
 
 ## DigZoneRuntime
 

@@ -6,6 +6,17 @@ sidebar_position: 9
 
 > เวอร์ชันเอกสาร: **0.7.0**
 
+## Udon program assets
+
+วิดีโอใน [tutorial พร้อมภาพ](getting-started.md) มี `Unable to find valid U# program asset` และ `Cannot run serialization ... the U# program asset ... is null` ถึงจะเห็น sculpt ใน Editor ก็ไม่ได้แปลว่า VRChat runtime พร้อม ต้องแก้ก่อน Play/build
+
+1. รอ import/compile ให้เสร็จ ตรวจ Worlds SDK กับ LCGUdonSharp และแก้ Console compile error แรกก่อน ดู[การติดตั้ง LCGUdonSharp](../lcgudonsharp/install.md)กับ[การแก้ปัญหา](../lcgudonsharp/troubleshooting.md)
+2. หาก program file ของ **DigHoleIt** หาย ใช้ **Tools > DigHoleIt > Create Missing U# Program Assets** ปุ่มนี้สร้างเฉพาะ `.asset` ที่ขาดสำหรับ Udon script ของ package ไม่ซ่อม file เดิมที่ invalid หรือ SDK program
+3. หาก error ระบุ **VRCWorld/WorldQualitySettings** ให้ตรวจ Program Source ของ SDK sample และ SDK import ปุ่มของ DigHoleIt ไม่ซ่อม program นี้
+4. ตรวจว่า zone มี **DigZoneRuntime + DigSync**, save แล้วลอง ClientSim เมื่อ Console ไม่มี error หากยังมี null-reference ให้ดู stack trace วิดีโออย่างเดียวระบุสาเหตุหรือยืนยันวิธีแก้ไม่ได้
+
+## ปัญหา Terrain และ runtime
+
 | ปัญหา | วิธีแก้ |
 |---|---|
 | มีแถบสีเทาหรือช่องว่างข้าง zone | ใช้ **Fix Leftover Holes** ใน terrain tool หรือ Paint Holes แล้ว Bake ใหม่ |

@@ -27,7 +27,7 @@ DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除�
 
 | ページ | 内容 |
 |---|---|
-| [はじめに](getting-started.md) | インストール、demo scene、独自 terrain への zone 設定 |
+| [画像付きチュートリアル](getting-started.md) | 実際の画像で install、Bake/resize、dig/paint、foliage、VRChat pen 設定を説明 |
 | [Dig Zone](dig-zones.md) | 設定、Bake、zone height、木と detail、移動、resize、terrain hole、terrain 追従、layer、baked lighting |
 | [Editor brush](editor-brushes.md) | Editor 内での sculpt と paint |
 | [VRChat runtime](vrchat-runtime.md) | UdonSharp の `DigZoneRuntime`、`DigTool`、`DigSync` |

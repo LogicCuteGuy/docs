@@ -6,6 +6,17 @@ sidebar_position: 9
 
 > Documentation version: **0.7.0**
 
+## Udon program assets
+
+The [illustrated tutorial](getting-started.md) recording shows `Unable to find valid U# program asset` and `Cannot run serialization ... the U# program asset ... is null`. Editor sculpting can still be visible while the VRChat runtime is incomplete. Resolve these errors before Play or building.
+
+1. Wait for package import and compilation to finish. Verify the Worlds SDK and LCGUdonSharp installation; fix the first Console compile error first. See [LCGUdonSharp installation](../lcgudonsharp/install.md) and [troubleshooting](../lcgudonsharp/troubleshooting.md).
+2. For a missing **DigHoleIt** program file, use **Tools > DigHoleIt > Create Missing U# Program Assets**. This only creates absent `.asset` files for the package's Udon scripts; it does not repair existing invalid files or SDK programs.
+3. If the error names **VRCWorld/WorldQualitySettings**, inspect the SDK sample's Program Source and SDK import. The DigHoleIt menu does not repair that program.
+4. Check the zone has **DigZoneRuntime + DigSync**, save, and retry ClientSim only after the Console is clear. If a null-reference error remains, inspect its stack trace; the recording alone does not establish its cause or a confirmed fix.
+
+## Terrain and runtime problems
+
 **A gray strip or gap shows through the terrain next to a zone.**
 The terrain has a hole that no zone covers, usually left by an older bake. Holes from deleted zones can be filled with **Fix Leftover Holes** in the terrain tools. For a hole no zone knows about, open the terrain's **Paint Holes** tool and paint the area back in, then bake the zone again.
 
