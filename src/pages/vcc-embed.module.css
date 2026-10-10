@@ -98,18 +98,46 @@
   justify-content: center;
   gap: 12px;
   max-width: 100%;
-  padding: 14px 24px;
-  border-radius: 14px;
-  background: #2563eb;
+  padding: 16px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb 60%, #7c3aed);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 24px rgba(37, 99, 235, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease;
   color: #fff;
   font-size: clamp(16px, 4vw, 22px);
   font-weight: 700;
 }
 
 .install:hover {
-  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 12px 32px rgba(37, 99, 235, 0.5);
   color: #fff;
   text-decoration: none;
+}
+
+.install:active {
+  transform: translateY(0);
+}
+
+.install svg {
+  transition: transform 180ms ease;
+}
+
+.install:hover svg {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install,
+  .install svg {
+    transition: none;
+  }
+
+  .install:hover,
+  .install:hover svg {
+    transform: none;
+  }
 }
 
 .widget a:focus-visible,
@@ -148,8 +176,12 @@
     width: 48px;
   }
 
+  .content {
+    gap: 4px;
+  }
+
   .install {
-    padding: 10px 20px;
+    padding: 12px 24px;
   }
 
   .manual input {
