@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifier และข้อจำกัด
 
-> เวอร์ชันเอกสาร: **0.1.1**
+> เวอร์ชันเอกสาร: **0.2.0**
 
 [สร้าง stack](./intro.md) ก่อน Modifier ทำงานตาม **ลำดับ component** เปลี่ยนลำดับแล้วผลเปลี่ยน
 
@@ -23,7 +23,15 @@ sidebar_position: 2
 - **Simple Deform**: Twist / Bend / Taper / Stretch ส่วน **Wave** ที่ Runtime Off bake ที่ time คงที่ หากต้องการเคลื่อนไหวใช้[วิธี runtime](./runtime.md)
 - **Remesh**: Blocks / Smooth / Sharp / Voxel ส่วนที่บางกว่า voxel อาจหายไป
 
-ดู option ทั้งหมดใน[README ที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/README.md)
+ดู option ทั้งหมดใน[README ที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/README.md)
+
+### เทียบก่อนและหลัง Bevel
+
+เลือก **Bevel** ใน Editor แล้วเทียบ cube เดิมด้านซ้ายกับผลขอบมนด้านขวา ตัวอย่างตั้ง **Affect: Edges / Width Type: Offset / Width: 0.16 / Segments: 4** ให้ปรับ Width ตามขนาด mesh ของคุณ
+
+[![Bevel Inspector ตั้ง Width 0.16 และ Segments 4 พร้อม cube เดิมและผลขอบมน](/img/blendproperty/modifier-bevel.png)](/img/blendproperty/modifier-bevel.png)
+
+[เปิดภาพขนาดเต็ม](/img/blendproperty/modifier-bevel.png)
 
 ## ตั้งค่า Lattice
 
@@ -33,6 +41,12 @@ sidebar_position: 2
 4. เลือก cage แล้วลาก point ใน Scene view ใช้ **Reset Points** เพื่อคืนตำแหน่ง
 
 Lattice ใช้ trilinear interpolation ส่วน Boolean / Hook / Lattice / Curve / Shrinkwrap / Warp และ Mirror / Array / Screw ที่ใช้ object จะอ่าน transform อื่น การย้าย dependency ทำให้ Editor stack rebuild ใช้ **Reset Hook** ใน ⋮ เพื่อ bind Hook ใหม่
+
+ภาพ Editor ด้านล่างแสดง Lattice Object ขนาด **2 × 2 × 2** และผลเสาที่เอียง เลือก cage เพื่อแก้ point ส่วนการกำหนด cage ให้ Lattice modifier ต้องเลือก mesh
+
+[![Lattice Object Inspector ตั้ง Resolution U V W เป็น 2 พร้อมเสาก่อนและหลัง deform](/img/blendproperty/workflow-lattice-cage.png)](/img/blendproperty/workflow-lattice-cage.png)
+
+[เปิดภาพขนาดเต็ม](/img/blendproperty/workflow-lattice-cage.png)
 
 ## หน่วยและแกน
 
@@ -59,4 +73,4 @@ Editor rebuild เฉพาะส่วนที่เปลี่ยน หา�
 
 Wave / Simple Deform / Lattice / Hook / Warp มี **Runtime > Off / GPU** ให้ย้าย GPU ไว้ท้าย stack จำกัดแปด operation, Lattice หนึ่งตัว และ 512 point Wave Along Normals / Warp Preserve Volume ยังไม่ live ใช้[การแปลง runtime](./runtime.md) แทนการเพิ่ม component Wave/SimpleDeform/Lattice แยกแบบเดิม
 
-[คู่มือ modifier พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedModifiers.md) มี setting และ before/after
+[คู่มือ modifier พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedModifiers.md) มี setting และ before/after

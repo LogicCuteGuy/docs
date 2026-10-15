@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime and builds
 
-> Documentation version: **0.1.1**
+> Documentation version: **0.2.0**
 
 The editor stack is baked and stripped by default. Version 0.1.1 adds automatic GPU modifier conversion and shared physics components that run in VRChat or standalone projects.
 
@@ -31,6 +31,20 @@ The generated component is not an Inspector reference before conversion. Get it 
 
 GPU output is copied back to the mesh via asynchronous readback, allowing its existing material to remain. The image can lag the simulation by one or two frames. This is not the old CPU-only, roughly 1,000-vertex workflow.
 
+### Wave: Editor setup to local Play Mode
+
+Open the VRChat example, select **Runtime Example/Udon Wave/Udon Wave Mesh**, and check **Runtime: GPU** on Wave. The first image shows the Editor setup, including Height and Speed.
+
+[![Wave modifier in the Editor with Runtime set to GPU and its height and speed settings visible](/img/blendproperty/setup-wave.png)](/img/blendproperty/setup-wave.png)
+
+[View setup full size](/img/blendproperty/setup-wave.png)
+
+After entering Play Mode, the upstream ClientSim capture shows the generated **Blend Udon Deform Stack** and the deformed plane. Use this frame to identify the converted component, not as proof of remote synchronization or device support.
+
+[![Local ClientSim Play Mode showing the converted Blend Udon Deform Stack and a deformed blue plane](/img/blendproperty/runtime-wave.png)](/img/blendproperty/runtime-wave.png)
+
+[View local result full size](/img/blendproperty/runtime-wave.png)
+
 ## Standalone full-stack control
 
 For general C# changes, enable **Keep at Runtime** on the stack and **Read/Write** on the source mesh:
@@ -52,6 +66,10 @@ The main VRChat scene has Line/Circle Array stations using `BlendUdonRuntimeArra
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifiers, Array, cloth/soft body, fluid, hair, particles, paint/waves, destruction, ocean and controls.
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: full-stack rebuild examples. Shared physics components also work natively in standalone; the scene is not a copy of every VRChat station.
 - [Physics and interaction](./physics.md): bake commands, material limits, input and synchronization.
-- [Illustrated runtime stations](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedRuntime.md): settings, actions and expected results.
+- [Illustrated runtime stations](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedRuntime.md): settings, actions and expected results.
 
 If a stack disappears in a VRChat build, use Runtime GPU rather than Keep at Runtime. Missing GPU output needs the correct bake, readable source, graphics support and pipeline checks. The docs build does not run Unity or validate two-client synchronization.
+
+0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
+
+For upgrade checks, see [panels and copied example assets](./physics.md).

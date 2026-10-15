@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # BlendProperty
 
-> Documentation version: **0.1.1** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+> Documentation version: **0.2.0** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
 
 **Blend Property** (`com.logiccuteguy.blendproperty`) adds Blender-style modifier components to Unity objects with a **MeshFilter**. Components run top-to-bottom, preview in the editor and save the result as a mesh asset. By default, builds contain the baked mesh, not the stack.
 
 Requires **Unity 2022.3 or newer**. ProBuilder support is optional and activates when ProBuilder is installed. SkinnedMeshRenderer, bones and blend shapes are not supported. See [modifier reference](./modifiers.md) and [runtime/build behavior](./runtime.md).
+
+## What's fixed in 0.2.0
+
+0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
 
 ## What's new in 0.1.1
 
@@ -19,12 +23,12 @@ Requires **Unity 2022.3 or newer**. ProBuilder support is optional and activates
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1
+https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0
 ```
 
-Alternatively place the tagged repository at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.1.1.zip` from the release into that folder, with `package.json` at its root.
+Alternatively place the tagged repository at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.2.0.zip` from the release into that folder, with `package.json` at its root.
 
-**VCC/ALCOM:** add or refresh the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`), then add **Blend Property 0.1.1** to the project. The listing publishes the same named ZIP as GitHub Releases. The package declares `com.unity.ugui` **1.0.0**; VRChat runtime deformers require a Worlds SDK project with stock UdonSharp or LCGUdonSharp.
+**VCC/ALCOM:** add or refresh the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.com/index.json`), then add **Blend Property 0.2.0** to the project. The listing publishes the same named ZIP as GitHub Releases. The package declares `com.unity.ugui` **1.0.0**; VRChat runtime deformers require a Worlds SDK project with stock UdonSharp or LCGUdonSharp.
 
 ## Build your first stack
 
@@ -37,6 +41,14 @@ Alternatively place the tagged repository at `Packages/com.logiccuteguy.blendpro
 **Rebuild** forces an update after the source mesh changes. **Apply** in a modifier's ⋮ menu bakes it and every enabled modifier above it into the source. **Apply All** bakes the whole stack and removes modifiers. **Remove All** restores the original without applying, in one Undo step. **GameObject > Blend Property > Modifiers > Apply All in Children / Remove All in Children** operates on a whole model.
 
 Baked results live in `Assets/BlendProperty/Baked/`; keep assets still referenced by MeshFilters. **Tools > Blend Property > Delete Unused Baked Meshes** removes unused results.
+
+### Editor walkthrough
+
+Select the mesh to find **Modifier Stack** in the Inspector. Here the source cube is on the left and the Bevel result is on the right; **Add Modifier**, **Apply All**, **Remove All** and **Rebuild** are on the stack.
+
+[![Unity Editor showing the Modifier Stack Inspector and a cube before and after Bevel](/img/blendproperty/workflow-stack.png)](/img/blendproperty/workflow-stack.png)
+
+[View full size](/img/blendproperty/workflow-stack.png). Images are reused from the [tagged upstream guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md); some Inspector version labels predate 0.2.0. Editor setup and local ClientSim results are labeled separately below.
 
 ## Examples
 
@@ -54,6 +66,6 @@ Stacks stay live while the shape is edited. Vertex/edge/face selection shows the
 
 ## Source and license
 
-[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [Version-pinned user guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/LICENSE)
+[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [Version-pinned user guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/LICENSE)
 
-After the first modifier, the stack's **Add Modifier** button lists Generate / Deform / Edit / Normals. Physics setup uses **Blend Property > Physics > Physics Tab**; see [physics](./physics.md). For pictured steps use the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedWorkflow.md).
+After the first modifier, the stack's **Add Modifier** button lists Generate / Deform / Edit / Normals. Physics setup uses **Blend Property > Physics > Physics Tab**; see [physics](./physics.md). For pictured steps use the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md).

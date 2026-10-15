@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Physics, materials and interaction
 
-> Documentation version: **0.1.1**
+> Documentation version: **0.2.0**
 
 These components keep their `BlendUdon…` names in both project types: UdonSharp in VRChat, native MonoBehaviours without the Worlds SDK. Physics simulation and its networking are separate concerns.
 
@@ -15,6 +15,12 @@ Add **Blend Property > Physics > Physics Tab**. Choosing a physics type adds/con
 **Scope > Scene** links Physics Tab objects across the scene; **Parent** limits links to siblings under the same parent. It connects simulation force fields, collisions, brushes and flows. Manually populated components without a Physics Tab are not auto-filled. Rigid Body creates a Rigidbody/collider; Constraint creates a Unity joint whose **Connected Body** you must assign.
 
 Only one mesh-moving physics feature (Cloth/Soft Body, Dynamic Waves or Explode) can be active per object. Re-bake when the mesh or bake-dependent settings change. Mesh-based cloth, hair and particle emission need readable source data.
+
+The Editor screenshot shows the type buttons and **Scope** dropdown. Choose the type for your selected object; this setup view is not a running simulation.
+
+[![Physics Tab in the Unity Inspector with Scope Scene and buttons for cloth fluid rigid bodies particles and other physics types](/img/blendproperty/workflow-physics-tab.png)](/img/blendproperty/workflow-physics-tab.png)
+
+[View full size](/img/blendproperty/workflow-physics-tab.png)
 
 ## Components and bake commands
 
@@ -32,6 +38,20 @@ Only one mesh-moving physics feature (Cloth/Soft Body, Dynamic Waves or Explode)
 | Cell fracture | `BlendUdonFracture`; **Bake Fracture** / Unbake. Voronoi pieces with convex MeshColliders/Rigidbodies; `Break()` or impact, `ResetFracture()` to restore |
 
 Cloth/hair/particles accept Sphere, Capsule and Box colliders, with feature-specific limits (up to eight of each). Fluid effectors are **Sphere** colliders. Do not assume a convex MeshCollider used by fracture/rigid bodies is a GPU simulation collider.
+
+### Cloth setup and local result
+
+Select **Runtime Example/Cloth/Cloth Mesh** in the VRChat example. In the Editor, inspect the pinning/Goal, gravity and collider list, then use **Bake Cloth** after changing bake-dependent settings. Enable **Simulate** for the local run.
+
+[![Editor Cloth Inspector showing gravity Goal a sphere collider baked state and the Bake Cloth button](/img/blendproperty/setup-cloth.png)](/img/blendproperty/setup-cloth.png)
+
+[View setup full size](/img/blendproperty/setup-cloth.png)
+
+The upstream ClientSim frame below shows the cloth surface during local Play Mode. Read configuration from the Editor setup above, not the runtime Inspector values. A still image does not validate motion over time, multiplayer or Quest performance.
+
+[![Pink cloth surface in the VRChat example during local Unity ClientSim Play Mode](/img/blendproperty/runtime-cloth.png)](/img/blendproperty/runtime-cloth.png)
+
+[View local result full size](/img/blendproperty/runtime-cloth.png)
 
 ## Paint input and UVs
 
@@ -62,4 +82,13 @@ Standalone Synced Panel/Network Event act locally. `BlendUdonPlayerColliders` cr
 - GPU simulations require compatible render textures/readback. Mesh readback can lag one or two frames. Verify target hardware, especially Quest; this documentation update does not test it.
 - Nothing moves: check Simulate, bake data, source Read/Write, visible fluid domain and graphics support. Wrong links: review Scope and manually assigned lists. Wrong remote result: distinguish shared controls from local simulation state.
 
-See the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedWorkflow.md) and [full component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/BlendProperty.md).
+See the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md) and [full component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/BlendProperty.md).
+
+## Upgrading panels and example assets to 0.2.0
+
+- Refresh the VPM listing and update Blend Property, or use the tagged Git/ZIP release. Keep each Udon script and its paired program `.asset` together; 0.2.0 updates both panel source and serialized sync mode.
+- `BlendUdonPanel` and `BlendUdonClothPanel` use **NoVariableSync**, not **None**. They remain local control helpers: this change does not itself synchronize slider values.
+- Add `BlendUdonSyncedPanel` (**Manual**) alongside the local panel and assign its Panel reference. Wire Toggle/Slider **On Value Changed** to its **Changed** event rather than the local panel's Apply. Use backing UdonBehaviour **SendCustomEvent** for VRChat UI.
+- The packaged Bend, Lattice, Stretch, Taper, Twist, Wave and WaveHD `*_gpudeform.asset` files now point their Bounds/Deform materials at `BlendDeformStackGPU.shader`. If you copied old examples into Assets, compare/update those copied assets and scene too; a package update does not replace your copies. Use the current bake/build workflow for customized copies rather than editing shader GUIDs by hand.
+
+If synchronized controls or the demo deformation still fail after updating, check for old copied program/texture assets before changing unrelated simulation settings. This release does not turn local GPU simulation state into a shared snapshot.

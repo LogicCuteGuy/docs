@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifiers and limits
 
-> Documentation version: **0.1.1**
+> Documentation version: **0.2.0**
 
 [Set up a stack](./intro.md) first. Modifiers run in **component order**; changing order changes the result.
 
@@ -23,7 +23,15 @@ sidebar_position: 2
 - **Simple Deform** provides Twist, Bend, Taper and Stretch. **Wave** with Runtime Off is baked at a fixed time; use the [runtime alternatives](./runtime.md) for motion.
 - **Remesh** provides Blocks, Smooth, Sharp and Voxel modes. Thin parts smaller than a voxel can disappear.
 
-For full option lists, use the [version-pinned README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/README.md).
+For full option lists, use the [version-pinned README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/README.md).
+
+### Bevel before and after
+
+In the Editor, select **Bevel** and compare the source cube on the left with the rounded result on the right. This example uses **Affect: Edges**, **Width Type: Offset**, **Width: 0.16** and **Segments: 4**; adjust Width for your mesh's size.
+
+[![Bevel Inspector with Width 0.16 and Segments 4 beside the source and rounded cubes](/img/blendproperty/modifier-bevel.png)](/img/blendproperty/modifier-bevel.png)
+
+[View full size](/img/blendproperty/modifier-bevel.png)
 
 ## Lattice setup
 
@@ -33,6 +41,12 @@ For full option lists, use the [version-pinned README](https://github.com/LogicC
 4. Select the cage and drag Scene-view points. **Reset Points** restores the cage.
 
 Lattice interpolation is trilinear. Boolean, Hook, Lattice, Curve, Shrinkwrap, Warp and object-driven Mirror/Array/Screw read other transforms; moving dependencies rebuilds the editor stack. **Reset Hook** in the ⋮ menu rebinds Hook.
+
+The Editor capture below shows a **2 × 2 × 2** Lattice Object and the resulting leaning column. Select the cage to edit its points; select the mesh to assign the cage to its Lattice modifier.
+
+[![Lattice Object Inspector with Resolution U V W set to 2 and a column before and after deformation](/img/blendproperty/workflow-lattice-cage.png)](/img/blendproperty/workflow-lattice-cage.png)
+
+[View full size](/img/blendproperty/workflow-lattice-cage.png)
 
 ## Units and axes
 
@@ -59,4 +73,4 @@ Only the changed editor-stack portion rebuilds. A rebuild exceeding 80 ms waits 
 
 Wave, Simple Deform, Lattice, Hook and Warp expose **Runtime > Off / GPU**. Keep GPU operations at the end of the stack. Conversion supports at most eight operations, one Lattice and 512 cage points. Wave Along Normals and Warp Preserve Volume are not live. See [runtime conversion](./runtime.md) rather than adding the old separate Wave/SimpleDeform/Lattice components.
 
-[Illustrated modifier tutorials](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedModifiers.md) cover settings and before/after results.
+[Illustrated modifier tutorials](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedModifiers.md) cover settings and before/after results.

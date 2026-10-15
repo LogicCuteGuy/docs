@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifier と制限
 
-> ドキュメントバージョン: **0.1.1**
+> ドキュメントバージョン: **0.2.0**
 
 先に [stack を作成](./intro.md)してください。**Component 順**に適用するため、順序で結果が変わります。
 
@@ -23,7 +23,15 @@ sidebar_position: 2
 - **Simple Deform**: Twist / Bend / Taper / Stretch。Runtime Off の **Wave** は固定 time で Bake されるため、動きには [runtime の方法](./runtime.md)を使います。
 - **Remesh**: Blocks / Smooth / Sharp / Voxel。Voxel より薄い部分は消えることがあります。
 
-全 option は[バージョン固定 README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/README.md)を参照してください。
+全 option は[バージョン固定 README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/README.md)を参照してください。
+
+### Bevel の適用前後
+
+Editor で **Bevel** を選択し、左の元 cube と右の丸めた結果を比較します。この例は **Affect: Edges / Width Type: Offset / Width: 0.16 / Segments: 4** です。Mesh の大きさに合わせて Width を調整してください。
+
+[![Width 0.16 と Segments 4 の Bevel Inspector、および元 cube と丸めた結果](/img/blendproperty/modifier-bevel.png)](/img/blendproperty/modifier-bevel.png)
+
+[原寸画像を開く](/img/blendproperty/modifier-bevel.png)
 
 ## Lattice の設定
 
@@ -33,6 +41,12 @@ sidebar_position: 2
 4. Cage の Scene-view point を drag します。**Reset Points** で戻します。
 
 補間は trilinear です。Boolean / Hook / Lattice / Curve / Shrinkwrap / Warp と object 指定の Mirror / Array / Screw は別 transform を参照し、移動すると Editor stack を再評価します。Hook は ⋮ の **Reset Hook** で再 bind します。
+
+下の Editor 画像は **2 × 2 × 2** の Lattice Object と、傾いた柱の結果です。Point の編集は cage を選択し、Lattice modifier への cage 指定は mesh を選択して行います。
+
+[![Resolution U V W が 2 の Lattice Object Inspector と変形前後の柱](/img/blendproperty/workflow-lattice-cage.png)](/img/blendproperty/workflow-lattice-cage.png)
+
+[原寸画像を開く](/img/blendproperty/workflow-lattice-cage.png)
 
 ## 単位と軸
 
@@ -59,4 +73,4 @@ Editor は変更部分だけを再構築します。80 ms 超の rebuild は mou
 
 Wave / Simple Deform / Lattice / Hook / Warp は **Runtime > Off / GPU** に対応します。GPU 部分を末尾に置きます。最大八 operation、Lattice 一つ、512 point。Wave Along Normals / Warp Preserve Volume は live 非対応です。従来の個別 Wave/SimpleDeform/Lattice component を追加する手順ではなく [runtime 変換](./runtime.md)を使います。
 
-[画像付き modifier guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedModifiers.md)に設定と before/after があります。
+[画像付き modifier guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedModifiers.md)に設定と before/after があります。

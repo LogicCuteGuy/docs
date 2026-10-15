@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime และ build
 
-> เวอร์ชันเอกสาร: **0.1.1**
+> เวอร์ชันเอกสาร: **0.2.0**
 
 ค่าเริ่มต้น Editor bake stack แล้ว strip component รุ่น 0.1.1 เพิ่มการแปลง GPU modifier อัตโนมัติ และ physics component ร่วมระหว่าง VRChat/standalone
 
@@ -31,6 +31,20 @@ sidebar_position: 3
 
 ผล GPU ใช้ asynchronous readback กลับเข้า mesh จึงเก็บ material เดิมได้ ภาพอาจช้ากว่า simulation 1–2 frame ไม่ใช่ workflow CPU-only เดิมที่แนะนำราว 1,000 vertex
 
+### Wave: จากการตั้งค่า Editor ไป local Play Mode
+
+เปิด VRChat example แล้วเลือก **Runtime Example/Udon Wave/Udon Wave Mesh** ตรวจ **Runtime: GPU** ของ Wave ภาพแรกเป็นการตั้งค่าใน Editor มี Height และ Speed ให้เทียบ
+
+[![Wave modifier ใน Editor ตั้ง Runtime เป็น GPU พร้อมค่า Height และ Speed](/img/blendproperty/setup-wave.png)](/img/blendproperty/setup-wave.png)
+
+[เปิดภาพตั้งค่าขนาดเต็ม](/img/blendproperty/setup-wave.png)
+
+ภาพ ClientSim จากคู่มือต้นทางด้านล่างแสดง **Blend Udon Deform Stack** ที่สร้างเมื่อเข้า Play Mode และ plane ที่ deform แล้ว ใช้ดู component หลังแปลง ไม่ใช่หลักฐานว่า sync ข้าม client หรือรองรับอุปกรณ์จริงแล้ว
+
+[![Local ClientSim Play Mode แสดง Blend Udon Deform Stack ที่แปลงแล้วกับ plane สีฟ้าที่ deform](/img/blendproperty/runtime-wave.png)](/img/blendproperty/runtime-wave.png)
+
+[เปิดภาพผล local ขนาดเต็ม](/img/blendproperty/runtime-wave.png)
+
 ## Standalone ควบคุมทั้ง stack
 
 เมื่อต้องเปลี่ยน modifier ทั่วไปด้วย C# ให้เปิด **Keep at Runtime** และ **Read/Write** ของ source mesh
@@ -52,6 +66,10 @@ Line/Circle Array station ใน VRChat scene ใช้ `BlendUdonRuntimeArray` 
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifier, Array, cloth/soft body, fluid, hair, particle, paint/waves, destruction, ocean และ control
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: ตัวอย่าง rebuild ทั้ง stack; physics ร่วมใช้แบบ native standalone ได้ แต่ scene ไม่ได้คัดลอก VRChat station ทุกชุดมา
 - [Physics/interaction](./physics.md): bake, material limit, input และ sync
-- [คู่มือ runtime พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedRuntime.md): setting, action และผลที่ควรเห็น
+- [คู่มือ runtime พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedRuntime.md): setting, action และผลที่ควรเห็น
 
 Stack หายใน VRChat build ให้ใช้ Runtime GPU ไม่ใช่ Keep at Runtime หากไม่มี GPU output ให้ตรวจ bake, Read/Write, อุปกรณ์และ pipeline การ build docs ไม่ใช่การทดสอบ Unity หรือ sync สอง client
+
+0.2.0 แก้ความเข้ากันได้ของ VRChat panel โดย Control Panel และ Cloth Panel ใช้ `NoVariableSync` จึงอยู่ GameObject เดียวกับ Synced Control Panel ที่เป็น `Manual` ได้ พร้อมแก้ shader reference ใน baked GPU deform texture ของ example และอัปเดต VRChat scene ฟีเจอร์ GPU/native physics เดิมยังใช้ได้
+
+ดู[การตรวจ panel และ example ที่ copy ไว้](./physics.md)เมื่ออัปเกรด

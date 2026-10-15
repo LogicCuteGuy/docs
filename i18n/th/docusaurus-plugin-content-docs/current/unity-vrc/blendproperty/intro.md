@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # BlendProperty
 
-> เวอร์ชันเอกสาร: **0.1.1** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+> เวอร์ชันเอกสาร: **0.2.0** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
 
 **Blend Property** (`com.logiccuteguy.blendproperty`) เพิ่ม modifier component แบบ Blender ให้ Unity object ที่มี **MeshFilter** Stack ทำงานจากบนลงล่าง แสดง preview ใน Editor และบันทึกผลเป็น mesh asset โดยค่าเริ่มต้น build จะเก็บ baked mesh ไม่ใช่ stack
 
 ต้องใช้ **Unity 2022.3 ขึ้นไป** ProBuilder เป็นทางเลือกและ bridge จะเปิดเมื่อมีแพ็กเกจนี้ ไม่รองรับ SkinnedMeshRenderer, bone หรือ blend shape ดู[รายการ modifier](./modifiers.md) และ[Runtime/build](./runtime.md)
+
+## สิ่งที่แก้ใน 0.2.0
+
+0.2.0 แก้ความเข้ากันได้ของ VRChat panel โดย Control Panel และ Cloth Panel ใช้ `NoVariableSync` จึงอยู่ GameObject เดียวกับ Synced Control Panel ที่เป็น `Manual` ได้ พร้อมแก้ shader reference ใน baked GPU deform texture ของ example และอัปเดต VRChat scene ฟีเจอร์ GPU/native physics เดิมยังใช้ได้
 
 ## สิ่งใหม่ใน 0.1.1
 
@@ -19,12 +23,12 @@ sidebar_position: 1
 เปิด **Window > Package Manager > + > Add package from git URL** แล้วใส่
 
 ```text
-https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1
+https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0
 ```
 
-หรือวาง repository ที่ tag นี้ใน `Packages/com.logiccuteguy.blendproperty` หรือแตก release ZIP `com.logiccuteguy.blendproperty-0.1.1.zip` ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจ
+หรือวาง repository ที่ tag นี้ใน `Packages/com.logiccuteguy.blendproperty` หรือแตก release ZIP `com.logiccuteguy.blendproperty-0.2.0.zip` ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจ
 
-**VCC/ALCOM:** เพิ่มหรือ refresh [รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วเพิ่ม **Blend Property 0.1.1** เข้า project Listing แจก named ZIP เดียวกับ GitHub Releases Package ประกาศ dependency `com.unity.ugui` **1.0.0** แต่ Udon deformer สำหรับ VRChat ต้องมี Worlds SDK และ stock UdonSharp หรือ LCGUdonSharp
+**VCC/ALCOM:** เพิ่มหรือ refresh [รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วเพิ่ม **Blend Property 0.2.0** เข้า project Listing แจก named ZIP เดียวกับ GitHub Releases Package ประกาศ dependency `com.unity.ugui` **1.0.0** แต่ Udon deformer สำหรับ VRChat ต้องมี Worlds SDK และ stock UdonSharp หรือ LCGUdonSharp
 
 ## สร้าง stack แรก
 
@@ -37,6 +41,14 @@ https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1
 **Rebuild** บังคับประเมินใหม่หลัง source mesh เปลี่ยน **Apply** ในเมนู ⋮ bake modifier นั้นและตัวที่เปิดอยู่ด้านบนเข้า source ส่วน **Apply All** bake ทั้ง stack และลบ modifier **Remove All** คืน mesh เดิมโดยไม่ apply และ Undo ได้ในขั้นเดียว **GameObject > Blend Property > Modifiers > Apply All in Children / Remove All in Children** ทำงานกับทั้ง model
 
 ผลเก็บที่ `Assets/BlendProperty/Baked/` อย่าลบ asset ที่ MeshFilter ยังอ้างอิง **Tools > Blend Property > Delete Unused Baked Meshes** ลบผลที่ไม่ใช้แล้ว
+
+### ดูหน้าตาใน Editor
+
+เลือก mesh แล้วดู **Modifier Stack** ใน Inspector ภาพนี้แสดง cube ต้นฉบับด้านซ้ายและผล Bevel ด้านขวา บน stack มีปุ่ม **Add Modifier / Apply All / Remove All / Rebuild**
+
+[![Unity Editor แสดง Modifier Stack Inspector และ cube ก่อนและหลังใช้ Bevel](/img/blendproperty/workflow-stack.png)](/img/blendproperty/workflow-stack.png)
+
+[เปิดภาพขนาดเต็ม](/img/blendproperty/workflow-stack.png) ภาพนำมาจาก[คู่มือต้นทางที่ตรึง tag](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md) บางภาพมีเลขเวอร์ชันใน Inspector เก่ากว่า 0.2.0 ด้านล่างแยกภาพตั้งค่า Editor ออกจากผล local ClientSim ชัดเจน
 
 ## ตัวอย่าง
 
@@ -54,6 +66,6 @@ Stack ยังทำงานขณะแก้ shape โหมดเลือ�
 
 ## Source และ license
 
-[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/LICENSE)
+[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/LICENSE)
 
-หลัง modifier แรก ใช้ปุ่ม **Add Modifier** ของ stack เลือก Generate / Deform / Edit / Normals ได้ ตั้ง physics ผ่าน **Blend Property > Physics > Physics Tab** ดู[Physics](./physics.md) และ[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedWorkflow.md)
+หลัง modifier แรก ใช้ปุ่ม **Add Modifier** ของ stack เลือก Generate / Deform / Edit / Normals ได้ ตั้ง physics ผ่าน **Blend Property > Physics > Physics Tab** ดู[Physics](./physics.md) และ[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md)

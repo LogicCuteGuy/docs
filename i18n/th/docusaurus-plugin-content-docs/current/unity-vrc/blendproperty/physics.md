@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Physics, material และ interaction
 
-> เวอร์ชันเอกสาร: **0.1.1**
+> เวอร์ชันเอกสาร: **0.2.0**
 
 Component ยังคงชื่อ `BlendUdon…` ทั้งสองประเภท project: VRChat ใช้ UdonSharp ส่วนไม่มี Worlds SDK ใช้ native MonoBehaviour ต้องแยก physics simulation ออกจาก networking
 
@@ -15,6 +15,12 @@ Component ยังคงชื่อ `BlendUdon…` ทั้งสองปร
 **Scope > Scene** เชื่อม Physics Tab object ทั้ง scene ส่วน **Parent** จำกัดใต้ parent เดียวกัน เชื่อม force field, collision, brush และ flow แต่ไม่เติม list ของ component ที่ตั้งเองโดยไม่มี Physics Tab Rigid Body สร้าง Rigidbody/collider ส่วน Constraint สร้าง Unity joint ซึ่งต้องกำหนด **Connected Body** เอง
 
 Cloth/Soft Body, Dynamic Waves และ Explode ที่เปลี่ยน mesh ใช้ได้หนึ่งชนิดต่อ object ต้อง rebake เมื่อเปลี่ยน mesh หรือค่าที่มีผลต่อ bake และ cloth/hair/particle ที่ emit จาก mesh ต้องอ่าน source mesh ได้
+
+ภาพ Editor แสดงปุ่มประเภท physics และ dropdown **Scope** ให้เลือกประเภทที่ต้องการบน object ที่เลือก ภาพตั้งค่านี้ยังไม่ใช่ผล simulation ที่กำลังรัน
+
+[![Physics Tab ใน Unity Inspector แสดง Scope Scene และปุ่มเลือก cloth fluid rigid body particle และ physics อื่น](/img/blendproperty/workflow-physics-tab.png)](/img/blendproperty/workflow-physics-tab.png)
+
+[เปิดภาพขนาดเต็ม](/img/blendproperty/workflow-physics-tab.png)
 
 ## Component และคำสั่ง bake
 
@@ -32,6 +38,20 @@ Cloth/Soft Body, Dynamic Waves และ Explode ที่เปลี่ยน 
 | Cell fracture | `BlendUdonFracture`, **Bake Fracture** / Unbake เป็น Voronoi piece ที่มี convex MeshCollider/Rigidbody แตกด้วย `Break()` หรือ impact และคืนด้วย `ResetFracture()` |
 
 Cloth/hair/particle รับ Sphere/Capsule/Box collider โดยมี cap ตามฟีเจอร์ (สูงสุดชนิดละแปด) ส่วน fluid effector เป็น **Sphere** อย่าสมมติว่า convex MeshCollider ของ fracture/Rigidbody ใช้กับ GPU simulation ได้ด้วย
+
+### ตั้งค่า Cloth และดูผล local
+
+เลือก **Runtime Example/Cloth/Cloth Mesh** ใน VRChat example ดู pinning / Goal, gravity และ collider list ใน Editor แล้วใช้ **Bake Cloth** หลังแก้ค่าที่มีผลต่อ bake เปิด **Simulate** เมื่อต้องการรัน local
+
+[![Cloth Inspector ใน Editor แสดง gravity Goal sphere collider baked state และปุ่ม Bake Cloth](/img/blendproperty/setup-cloth.png)](/img/blendproperty/setup-cloth.png)
+
+[เปิดภาพตั้งค่าขนาดเต็ม](/img/blendproperty/setup-cloth.png)
+
+ภาพ ClientSim จากคู่มือต้นทางด้านล่างแสดงผิว cloth ระหว่าง local Play Mode ให้อ่านค่าตั้งจากภาพ Editor ด้านบน ไม่ใช่ค่าใน runtime Inspector ภาพนิ่งไม่ใช่การทดสอบ motion ต่อเนื่อง, multiplayer หรือประสิทธิภาพ Quest
+
+[![ผิว cloth สีชมพูใน VRChat example ระหว่าง local Unity ClientSim Play Mode](/img/blendproperty/runtime-cloth.png)](/img/blendproperty/runtime-cloth.png)
+
+[เปิดภาพผล local ขนาดเต็ม](/img/blendproperty/runtime-cloth.png)
 
 ## Paint input และ UV
 
@@ -62,4 +82,13 @@ Standalone Synced Panel/Network Event ทำงาน local `BlendUdonPlayerColl
 - GPU ต้องมี render texture/readback ที่รองรับ Mesh readback อาจช้า 1–2 frame ต้องตรวจ hardware เป้าหมายโดยเฉพาะ Quest รอบอัปเดต docs นี้ไม่ได้ทดสอบจริง
 - ไม่เคลื่อนไหว: ตรวจ Simulate, bake data, Read/Write, fluid domain ที่มองเห็นและ GPU หาก link ผิดให้ตรวจ Scope/list หาก remote ไม่เหมือนกันให้แยก control sync กับ simulation local
 
-ดู[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedWorkflow.md) และ[คู่มือ component ทั้งหมด](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/BlendProperty.md)
+ดู[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md) และ[คู่มือ component ทั้งหมด](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/BlendProperty.md)
+
+## อัปเกรด panel และ example asset เป็น 0.2.0
+
+- Refresh VPM แล้วอัปเดต Blend Property หรือใช้ Git/ZIP ที่ tag นี้ เก็บ Udon script กับ program `.asset` คู่กัน เพราะ 0.2.0 แก้ทั้ง panel source และ sync mode ที่ serialize ไว้
+- `BlendUdonPanel` / `BlendUdonClothPanel` ใช้ **NoVariableSync** ไม่ใช่ **None** แต่ยังเป็น local helper การแก้นี้ไม่ได้ sync ค่า slider ด้วยตัวมันเอง
+- เพิ่ม `BlendUdonSyncedPanel` (**Manual**) ข้าง local panel บน GameObject เดียวกันแล้วกำหนด Panel reference ต่อ Toggle/Slider **On Value Changed** ไป **Changed** แทน Apply ของ local panel และใช้ backing UdonBehaviour **SendCustomEvent** สำหรับ VRChat UI
+- `*_gpudeform.asset` ของ Bend / Lattice / Stretch / Taper / Twist / Wave / WaveHD ใน example แก้ Bounds/Deform material ให้ชี้ `BlendDeformStackGPU.shader` แล้ว หาก copy example เก่าไป Assets ต้องเทียบ/อัปเดต asset และ scene ที่ copy ไว้ด้วย เพราะ package update ไม่แทนสำเนาของคุณ สำหรับสำเนาที่ปรับแต่งให้ใช้ bake/build workflow ปัจจุบัน ไม่แก้ shader GUID ด้วยมือ
+
+ถ้า control ยังไม่ sync หรือ demo deform ยังผิดหลังอัปเดต ให้ตรวจ program/texture asset ที่ copy เก่าก่อนเปลี่ยน setting simulation ที่ไม่เกี่ยวข้อง รุ่นนี้ไม่ได้ทำให้ GPU simulation state ทั้งหมดเป็น shared snapshot

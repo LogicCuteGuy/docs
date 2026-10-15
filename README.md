@@ -9,7 +9,7 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
 | [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.10` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.7.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
-| [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.1.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
+| [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.2.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
 
 All four packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
@@ -23,7 +23,7 @@ DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (
 
 DigHoleIt **0.7.0** is available through VPM and GitHub. See the [installation guide](https://docs.logiccuteguy.com/unity-vrc/digholeit/getting-started) for pinned Git/ZIP installation.
 
-BlendProperty **0.1.1** adds GPU runtime modifiers, cloth/fluids/hair/particles, paint/waves, destruction and native standalone physics. Editor Array/Curve support optional Unity Splines. Shared controls do not replicate full GPU simulation state. See the [guide](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro).
+BlendProperty **0.2.0** fixes local/synced VRChat panel compatibility and baked example GPU deform shader references. It retains GPU modifiers, physics and native standalone support. See the [guide](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro).
 
 ## Local development
 

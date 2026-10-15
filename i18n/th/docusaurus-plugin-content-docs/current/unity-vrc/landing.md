@@ -49,7 +49,9 @@ DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree แล�
 0.7.0 มีทั้งใน VPM และ GitHub ดู[วิธีติดตั้ง](./digholeit/getting-started.md)
 ระบบ voxel terrain ที่ขุดได้สำหรับ Unity รองรับหลุม อุโมงค์ ถ้ำ การเติมดิน และระบาย terrain layer ตอน runtime พร้อมการ sync ใน VRChat และ runtime C# สำหรับเกม standalone
 
-### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.1.1
+### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.0
+
+0.2.0 แก้ความเข้ากันได้ของ VRChat panel โดย Control Panel และ Cloth Panel ใช้ `NoVariableSync` จึงอยู่ GameObject เดียวกับ Synced Control Panel ที่เป็น `Manual` ได้ พร้อมแก้ shader reference ใน baked GPU deform texture ของ example และอัปเดต VRChat scene ฟีเจอร์ GPU/native physics เดิมยังใช้ได้
 
 Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone. [การตั้งค่า](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md)
 

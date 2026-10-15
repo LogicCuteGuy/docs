@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # BlendProperty
 
-> ドキュメントバージョン: **0.1.1** · [リリース](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+> ドキュメントバージョン: **0.2.0** · [リリース](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
 
 **Blend Property** (`com.logiccuteguy.blendproperty`) は **MeshFilter** を持つ Unity object に Blender 風の modifier component を追加します。上から順に適用し、Editor で preview して mesh asset に保存します。既定の build には stack ではなく Bake 済み mesh が入ります。
 
 **Unity 2022.3 以降**が必要です。ProBuilder は任意で、導入済みなら bridge が有効になります。SkinnedMeshRenderer、bone、blend shape は非対応です。[Modifier 一覧](./modifiers.md)と[Runtime/build](./runtime.md)を参照してください。
+
+## 0.2.0 の修正
+
+0.2.0 は VRChat panel の互換性を修正します。Control Panel と Cloth Panel は `NoVariableSync` を使用し、`Manual` の Synced Control Panel と同じ GameObject に置けます。Example の Bake 済み GPU deform texture の shader 参照と VRChat scene も更新します。既存の GPU/native physics は引き続き利用できます。
 
 ## 0.1.1 の更新
 
@@ -19,12 +23,12 @@ sidebar_position: 1
 **Window > Package Manager > + > Add package from git URL** に入力します。
 
 ```text
-https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1
+https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0
 ```
 
-ほかに tag repository を `Packages/com.logiccuteguy.blendproperty` に配置するか、release の `com.logiccuteguy.blendproperty-0.1.1.zip` をその folder に展開します。`package.json` は package の直下に置きます。
+ほかに tag repository を `Packages/com.logiccuteguy.blendproperty` に配置するか、release の `com.logiccuteguy.blendproperty-0.2.0.zip` をその folder に展開します。`package.json` は package の直下に置きます。
 
-**VCC/ALCOM:** [LogicCuteGuy VPM リスト](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) を追加/更新し、**Blend Property 0.1.1** を project に追加します。Listing は GitHub Releases と同じ名前付き ZIP を配布します。Dependency は `com.unity.ugui` **1.0.0** です。VRChat runtime deformer は Worlds SDK と stock UdonSharp または LCGUdonSharp がある project で使います。
+**VCC/ALCOM:** [LogicCuteGuy VPM リスト](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) を追加/更新し、**Blend Property 0.2.0** を project に追加します。Listing は GitHub Releases と同じ名前付き ZIP を配布します。Dependency は `com.unity.ugui` **1.0.0** です。VRChat runtime deformer は Worlds SDK と stock UdonSharp または LCGUdonSharp がある project で使います。
 
 ## 最初の stack
 
@@ -37,6 +41,14 @@ https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1
 **Rebuild** は source mesh 変更後の再評価です。⋮ の **Apply** はその modifier と上の有効 modifier を source に Bake します。**Apply All** は全体を Bake して modifier を削除します。**Remove All** は適用せず元 mesh に戻し、一回の Undo で戻せます。**GameObject > Blend Property > Modifiers > Apply All in Children / Remove All in Children** は model 全体に作用します。
 
 結果は `Assets/BlendProperty/Baked/` に保存されます。MeshFilter が参照している asset は保持してください。**Tools > Blend Property > Delete Unused Baked Meshes** は未使用の結果を削除します。
+
+### Editor の操作画面
+
+Mesh を選択し、Inspector の **Modifier Stack** を確認します。左が元の cube、右が Bevel の結果です。Stack に **Add Modifier / Apply All / Remove All / Rebuild** があります。
+
+[![Unity Editor の Modifier Stack Inspector と Bevel 適用前後の cube](/img/blendproperty/workflow-stack.png)](/img/blendproperty/workflow-stack.png)
+
+[原寸画像を開く](/img/blendproperty/workflow-stack.png)。画像は[tag 固定の元ガイド](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md)から再利用しています。Inspector 内の version 表記が 0.2.0 より古い場合があります。以下では Editor 設定と local ClientSim の結果を区別します。
 
 ## サンプル
 
@@ -54,6 +66,6 @@ Shape 編集中も stack が有効です。Vertex/edge/face 選択は未変形 c
 
 ## ソースとライセンス
 
-[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [バージョン固定 user guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/LICENSE)
+[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [バージョン固定 user guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/LICENSE)
 
-最初の modifier 後は stack の **Add Modifier** button から Generate / Deform / Edit / Normals を選べます。Physics は **Blend Property > Physics > Physics Tab**。[Physics](./physics.md)と[画像付き workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedWorkflow.md)を参照してください。
+最初の modifier 後は stack の **Add Modifier** button から Generate / Deform / Edit / Normals を選べます。Physics は **Blend Property > Physics > Physics Tab**。[Physics](./physics.md)と[画像付き workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedWorkflow.md)を参照してください。

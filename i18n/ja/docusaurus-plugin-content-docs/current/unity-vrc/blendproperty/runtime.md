@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime とビルド
 
-> ドキュメントバージョン: **0.1.1**
+> ドキュメントバージョン: **0.2.0**
 
 既定では Editor stack を Bake して削除します。0.1.1 は GPU modifier の自動変換と、VRChat/standalone 共通の physics component を追加します。
 
@@ -31,6 +31,20 @@ Mesh ごとに最大 **8 live operation**、**live Lattice 一つ**、最大 **8
 
 GPU 結果を非同期 readback で mesh に戻すため元 material を維持できます。表示は simulation より 1〜2 frame 遅れる場合があります。以前の CPU-only・約 1,000 vertex を目安にした方式とは異なります。
 
+### Wave: Editor 設定から local Play Mode へ
+
+VRChat example の **Runtime Example/Udon Wave/Udon Wave Mesh** を選び、Wave の **Runtime: GPU** を確認します。最初の画像は Height / Speed を含む Editor 設定です。
+
+[![Runtime が GPU の Wave modifier と Height Speed を表示した Editor 設定](/img/blendproperty/setup-wave.png)](/img/blendproperty/setup-wave.png)
+
+[設定の原寸画像を開く](/img/blendproperty/setup-wave.png)
+
+次は元ガイドの ClientSim Play Mode 画像です。生成された **Blend Udon Deform Stack** と変形した plane を確認できます。変換後の component を見分けるための画像で、remote 同期や実機対応の証明ではありません。
+
+[![Local ClientSim Play Mode の Blend Udon Deform Stack と変形した青い plane](/img/blendproperty/runtime-wave.png)](/img/blendproperty/runtime-wave.png)
+
+[Local 結果の原寸画像を開く](/img/blendproperty/runtime-wave.png)
+
 ## Standalone の全 stack 制御
 
 一般の C# 変更には **Keep at Runtime** と source mesh の **Read/Write** を有効にします。
@@ -52,6 +66,10 @@ VRChat scene の Line/Circle Array station は `BlendUdonRuntimeArray` を使い
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifier、Array、cloth/soft body、fluid、hair、particle、paint/waves、destruction、ocean、control。
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: 全 stack rebuild。共通 physics は native standalone でも動作しますが、scene は全 VRChat station の複製ではありません。
 - [Physics/interaction](./physics.md): Bake、material 制限、input、同期。
-- [画像付き runtime guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.1.1/Documentation~/IllustratedRuntime.md): 設定、操作、期待する結果。
+- [画像付き runtime guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedRuntime.md): 設定、操作、期待する結果。
 
 VRChat build で stack が消える場合は Keep at Runtime ではなく Runtime GPU を使います。GPU 出力がない場合は Bake、Read/Write、機器/pipeline を確認してください。Docs build は Unity や二 client 同期の検証ではありません。
+
+0.2.0 は VRChat panel の互換性を修正します。Control Panel と Cloth Panel は `NoVariableSync` を使用し、`Manual` の Synced Control Panel と同じ GameObject に置けます。Example の Bake 済み GPU deform texture の shader 参照と VRChat scene も更新します。既存の GPU/native physics は引き続き利用できます。
+
+更新時の確認は [panel と example copy](./physics.md)を参照してください。

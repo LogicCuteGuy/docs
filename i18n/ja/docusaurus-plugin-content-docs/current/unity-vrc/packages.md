@@ -11,7 +11,7 @@ sidebar_position: 2
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.1.1` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.0` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
 
 ## VCC にリポジトリを追加する
 
@@ -62,13 +62,15 @@ DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除�
 
 ### `com.logiccuteguy.blendproperty` — Blend Property
 
-- **最新版**: 0.1.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+0.2.0 は VRChat panel の互換性を修正します。Control Panel と Cloth Panel は `NoVariableSync` を使用し、`Manual` の Synced Control Panel と同じ GameObject に置けます。Example の Bake 済み GPU deform texture の shader 参照と VRChat scene も更新します。既存の GPU/native physics は引き続き利用できます。
+
+- **最新版**: 0.2.0 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
 - **Unity**: 2022.3 以降
 - **License**: MIT
 - **依存関係**: `com.unity.ugui` `1.0.0`。ProBuilder/Unity Splines は任意。VRChat は Worlds SDK/UdonSharp
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1`、`Packages/com.logiccuteguy.blendproperty` への埋め込み、または名前付き `com.logiccuteguy.blendproperty-0.1.1.zip` release asset を使います。
+VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0`、`Packages/com.logiccuteguy.blendproperty` への埋め込み、または名前付き `com.logiccuteguy.blendproperty-0.2.0.zip` release asset を使います。
 
 [概要と設定](./blendproperty/intro.md) · [Modifier](./blendproperty/modifiers.md) · [Runtime/build](./blendproperty/runtime.md)
 
