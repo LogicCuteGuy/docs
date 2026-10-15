@@ -13,6 +13,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.1.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
 
 ## Add the repository in VCC
 
@@ -70,3 +71,17 @@ Install **0.7.0** through VCC/ALCOM from the [LogicCuteGuy VPM listing](https://
 Version 0.6.1 fixes bake/move/resize undo, terrain-hole seams, foliage shading and invalid edge collision meshes.
 
 Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started)
+
+### `com.logiccuteguy.blendproperty` — Blend Property
+
+- **Latest version**: 0.1.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+- **Unity**: 2022.3 or newer
+- **License**: MIT
+- **Declared dependency**: `com.unity.ugui` `1.0.0`; optional ProBuilder/Unity Splines; Worlds SDK/UdonSharp for VRChat
+- **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
+
+Install through the VPM listing in VCC/ALCOM, use `https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1`, embed at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.1.1.zip` release asset.
+
+Docs: [Overview and setup](./blendproperty/intro.md) · [Modifiers](./blendproperty/modifiers.md) · [Runtime and builds](./blendproperty/runtime.md)
+
+0.1.1 adds live GPU modifiers, cloth/soft body, fluids, hair, particles, paint/waves, destruction, ocean and interaction. Shared components now run natively without the Worlds SDK. Array/Curve accept optional Unity Splines; Array adds Split Copies and Collider Per Copy. Runtime controls can be shared without replicating full GPU simulation state. See [runtime/builds](./blendproperty/runtime.md) and [physics/materials](./blendproperty/physics.md).

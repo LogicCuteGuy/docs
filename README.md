@@ -9,8 +9,9 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
 | [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.10` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.7.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
+| [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.1.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
 
-All three packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
+All four packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
 LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/install); manual installs require **both** release ZIPs.
 
@@ -21,6 +22,8 @@ ScriptableObject snapshots added in 0.3.8 remain supported. Rebuild all Udon pro
 DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
 DigHoleIt **0.7.0** is available through VPM and GitHub. See the [installation guide](https://docs.logiccuteguy.com/unity-vrc/digholeit/getting-started) for pinned Git/ZIP installation.
+
+BlendProperty **0.1.1** adds GPU runtime modifiers, cloth/fluids/hair/particles, paint/waves, destruction and native standalone physics. Editor Array/Curve support optional Unity Splines. Shared controls do not replicate full GPU simulation state. See the [guide](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro).
 
 ## Local development
 

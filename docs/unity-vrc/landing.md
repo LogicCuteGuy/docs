@@ -27,7 +27,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-All three packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
+All four packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -48,6 +48,10 @@ DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (
 
 Version 0.7.0 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
+
+### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.1.1
+
+Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components. [Setup](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md).
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 

@@ -11,6 +11,7 @@ sidebar_position: 2
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.1.1` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
 
 ## VCC にリポジトリを追加する
 
@@ -58,3 +59,17 @@ DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除�
 0.6.1 は Bake/move/resize の Undo、terrain-hole seam、foliage shading、無効な edge collision mesh を修正します。
 
 [概要](./digholeit/intro.md) · [はじめに](./digholeit/getting-started.md)
+
+### `com.logiccuteguy.blendproperty` — Blend Property
+
+- **最新版**: 0.1.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+- **Unity**: 2022.3 以降
+- **License**: MIT
+- **依存関係**: `com.unity.ugui` `1.0.0`。ProBuilder/Unity Splines は任意。VRChat は Worlds SDK/UdonSharp
+- **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
+
+VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1`、`Packages/com.logiccuteguy.blendproperty` への埋め込み、または名前付き `com.logiccuteguy.blendproperty-0.1.1.zip` release asset を使います。
+
+[概要と設定](./blendproperty/intro.md) · [Modifier](./blendproperty/modifiers.md) · [Runtime/build](./blendproperty/runtime.md)
+
+0.1.1 は live GPU modifier、cloth/soft body、fluid、hair、particle、paint/waves、destruction、ocean、interaction を追加します。Worlds SDK なしでも共通 component が native 動作します。Array/Curve は任意の Unity Splines、Array は Split Copies/Collider Per Copy に対応します。Control の同期と GPU simulation 全状態の同期は別です。[Runtime/build](./blendproperty/runtime.md)と [Physics/material](./blendproperty/physics.md)を参照してください。

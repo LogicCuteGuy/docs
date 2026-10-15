@@ -11,6 +11,7 @@ sidebar_position: 2
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | เครื่องมือ Editor กว่า 15 รายการสำหรับจัดการ scene, object และ optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | คอมไพเลอร์ UdonSharp พร้อม interface, async/await, exception, collection/JSON และ packet network |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.1.1` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
 
 ## เพิ่ม repository ใน VCC
 
@@ -58,3 +59,17 @@ Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy
 0.6.1 แก้ Undo หลัง Bake/move/resize, seam ของ terrain hole, foliage shading และ edge collision mesh ที่ไม่ถูกต้อง
 
 [ภาพรวม](./digholeit/intro.md) · [เริ่มต้นใช้งาน](./digholeit/getting-started.md)
+
+### `com.logiccuteguy.blendproperty` — Blend Property
+
+- **เวอร์ชันล่าสุด**: 0.1.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.1.1)
+- **Unity**: 2022.3 ขึ้นไป
+- **License**: MIT
+- **Dependency**: `com.unity.ugui` `1.0.0`; ProBuilder/Unity Splines เป็นทางเลือก และ VRChat ใช้ Worlds SDK/UdonSharp
+- **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
+
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM, ใช้ `https://github.com/LogicCuteGuy/BlendProperty.git#v0.1.1`, embedded ที่ `Packages/com.logiccuteguy.blendproperty` หรือแตก named release asset `com.logiccuteguy.blendproperty-0.1.1.zip`
+
+[ภาพรวมและตั้งค่า](./blendproperty/intro.md) · [Modifier](./blendproperty/modifiers.md) · [Runtime/build](./blendproperty/runtime.md)
+
+0.1.1 เพิ่ม live GPU modifier, cloth/soft body, fluid, hair, particle, paint/waves, destruction, ocean และ interaction Component ร่วมทำงาน native ได้เมื่อไม่มี Worlds SDK ส่วน Array/Curve ใช้ Unity Splines เสริม และ Array เพิ่ม Split Copies/Collider Per Copy การ sync control ไม่ใช่การ replicate GPU simulation ทั้งหมด ดู[Runtime/build](./blendproperty/runtime.md) และ[Physics/material](./blendproperty/physics.md)

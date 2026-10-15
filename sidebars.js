@@ -76,6 +76,17 @@ const sidebars = {
         'unity-vrc/digholeit/troubleshooting',
       ],
     },
+    {
+      type: 'category',
+      label: 'BlendProperty',
+      collapsed: false,
+      items: [
+        'unity-vrc/blendproperty/intro',
+        'unity-vrc/blendproperty/modifiers',
+        'unity-vrc/blendproperty/runtime',
+        'unity-vrc/blendproperty/physics',
+      ],
+    },
   ],
 };
 
