@@ -87,6 +87,15 @@ const sidebars = {
         'unity-vrc/blendproperty/physics',
       ],
     },
+    {
+      type: 'category',
+      label: 'WASM2HLSL',
+      collapsed: false,
+      items: [
+        'unity-vrc/wasm2hlsl/intro',
+        'unity-vrc/wasm2hlsl/getting-started',
+      ],
+    },
   ],
 };
 

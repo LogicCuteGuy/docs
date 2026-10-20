@@ -10,8 +10,9 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.11` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.7.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
 | [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.2.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
+| [WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL) | `0.1.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) |
 
-All four packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
+All five packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
 LCGUdonSharp 0.3.11 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
 
@@ -26,6 +27,8 @@ DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (
 DigHoleIt **0.7.0** is available through VPM and GitHub. See the [installation guide](https://docs.logiccuteguy.com/unity-vrc/digholeit/getting-started) for pinned Git/ZIP installation.
 
 BlendProperty **0.2.1** is a documentation release with step-by-step VCC/ALCOM installation and clearer Git/ZIP alternatives. Runtime code and example assets are unchanged from 0.2.0. See the [guide](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro).
+
+WASM2HLSL **0.1.0** is the initial release: `.wasm` WebAssembly modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback. Requires LCGUdonSharp >= 0.3.10. See the [overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) and [getting started](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/getting-started) guide.
 
 ## Local development
 

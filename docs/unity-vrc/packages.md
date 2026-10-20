@@ -14,6 +14,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.1.0` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
 
 ## Add the repository in VCC
 
@@ -93,3 +94,17 @@ Choose one installation method per project to avoid duplicate copies; see the [s
 Docs: [Overview and setup](./blendproperty/intro.md) · [Modifiers](./blendproperty/modifiers.md) · [Runtime and builds](./blendproperty/runtime.md)
 
 0.1.1 adds live GPU modifiers, cloth/soft body, fluids, hair, particles, paint/waves, destruction, ocean and interaction. Shared components now run natively without the Worlds SDK. Array/Curve accept optional Unity Splines; Array adds Split Copies and Collider Per Copy. Runtime controls can be shared without replicating full GPU simulation state. See [runtime/builds](./blendproperty/runtime.md) and [physics/materials](./blendproperty/physics.md).
+
+### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
+
+WASM2HLSL 0.1.0 converts WebAssembly modules into HLSL shaders and runs them on the GPU from UdonSharp: drop a `.wasm` into `Assets/`, and the importer builds a shader/material/render texture per export inside the `.wasm` asset. A `WasmGpuRunner` sets arguments and input, blits once per pixel and reads results back through `VRCAsyncGPUReadback`. Kernels are written in Rust/C/Zig/AssemblyScript/TinyGo with `@size` and `@traps` source tags; `f32`/`f64`/`i64`/`v128` and reference types are supported with bit-exact results except GPU `f32` rounding.
+
+- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.10`
+- **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.1.0.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
+
+Docs: [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md)

@@ -12,6 +12,7 @@ sidebar_position: 2
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.1.0` | 2022.3 | `.wasm` WebAssembly カーネルを HLSL シェーダーとして GPU 上で実行し、UdonSharp から async GPU readback で読む |
 
 ## VCC にリポジトリを追加する
 
@@ -81,3 +82,17 @@ VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git
 [概要と設定](./blendproperty/intro.md) · [Modifier](./blendproperty/modifiers.md) · [Runtime/build](./blendproperty/runtime.md)
 
 0.1.1 は live GPU modifier、cloth/soft body、fluid、hair、particle、paint/waves、destruction、ocean、interaction を追加します。Worlds SDK なしでも共通 component が native 動作します。Array/Curve は任意の Unity Splines、Array は Split Copies/Collider Per Copy に対応します。Control の同期と GPU simulation 全状態の同期は別です。[Runtime/build](./blendproperty/runtime.md)と [Physics/material](./blendproperty/physics.md)を参照してください。
+
+### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
+
+WASM2HLSL 0.1.0 は WebAssembly モジュールを HLSL シェーダーに変換し、UdonSharp から GPU 上で実行します。`.wasm` を `Assets/` に置くと、インポーターが export ごとに shader/material/render texture を `.wasm` アセット内に生成します。`WasmGpuRunner` が引数と入力を設定してピクセルごとに 1 回 blit し、`VRCAsyncGPUReadback` で結果を読み戻します。カーネルは Rust/C/Zig/AssemblyScript/TinyGo で書き、ソースの `@size` / `@traps` タグで設定します。`f32`/`f64`/`i64`/`v128` と参照型に対応し、GPU の `f32` 丸め以外はビット一致です。
+
+- **最新版**: 0.1.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.10`
+- **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
+
+VCC/ALCOM の VPM リスト（先に更新）、`https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0`、`Packages/com.logiccuteguy.wasm2hlsl` への埋め込み、または名前付き `com.logiccuteguy.wasm2hlsl-0.1.0.zip` release asset を使います。重複を避けるため project ごとに方法を一つだけ選び、Git/ZIP では先に [LCGUdonSharp](./lcgudonsharp/install.md) をインストールしてください。
+
+ドキュメント: [概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)

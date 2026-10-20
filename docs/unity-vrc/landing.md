@@ -27,7 +27,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-All four packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
+All five packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -58,6 +58,12 @@ Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrai
 0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
 
 Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components. [Setup](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md).
+
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.1.0
+
+WASM2HLSL 0.1.0 is the initial release: `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
+
+Run WebAssembly on the GPU in VRChat worlds — write kernels in Rust/C/Zig instead of hand-written HLSL. [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md).
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 
