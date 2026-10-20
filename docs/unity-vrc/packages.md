@@ -13,7 +13,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.0` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
 
 ## Add the repository in VCC
 
@@ -74,15 +74,19 @@ Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started
 
 ### `com.logiccuteguy.blendproperty` — Blend Property
 
+0.2.1 is a documentation release: it adds step-by-step VCC/ALCOM installation and clarifies the Git/ZIP alternatives. Runtime code and example assets are unchanged from 0.2.0.
+
 0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
 
-- **Latest version**: 0.2.0 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
+- **Latest version**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
 - **Unity**: 2022.3 or newer
 - **License**: MIT
 - **Declared dependency**: `com.unity.ugui` `1.0.0`; optional ProBuilder/Unity Splines; Worlds SDK/UdonSharp for VRChat
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-Install through the VPM listing in VCC/ALCOM, use `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0`, embed at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.2.0.zip` release asset.
+Install through the VPM listing in VCC/ALCOM, use `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1`, embed at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.2.1.zip` release asset.
+
+Choose one installation method per project to avoid duplicate copies; see the [step-by-step installation guide](./blendproperty/intro.md).
 
 Docs: [Overview and setup](./blendproperty/intro.md) · [Modifiers](./blendproperty/modifiers.md) · [Runtime and builds](./blendproperty/runtime.md)
 

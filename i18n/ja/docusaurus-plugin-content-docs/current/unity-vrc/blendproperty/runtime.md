@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime とビルド
 
-> ドキュメントバージョン: **0.2.0**
+> ドキュメントバージョン: **0.2.1**
 
 既定では Editor stack を Bake して削除します。0.1.1 は GPU modifier の自動変換と、VRChat/standalone 共通の physics component を追加します。
 
@@ -66,7 +66,7 @@ VRChat scene の Line/Circle Array station は `BlendUdonRuntimeArray` を使い
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifier、Array、cloth/soft body、fluid、hair、particle、paint/waves、destruction、ocean、control。
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: 全 stack rebuild。共通 physics は native standalone でも動作しますが、scene は全 VRChat station の複製ではありません。
 - [Physics/interaction](./physics.md): Bake、material 制限、input、同期。
-- [画像付き runtime guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedRuntime.md): 設定、操作、期待する結果。
+- [画像付き runtime guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedRuntime.md): 設定、操作、期待する結果。
 
 VRChat build で stack が消える場合は Keep at Runtime ではなく Runtime GPU を使います。GPU 出力がない場合は Bake、Read/Write、機器/pipeline を確認してください。Docs build は Unity や二 client 同期の検証ではありません。
 

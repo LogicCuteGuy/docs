@@ -11,7 +11,7 @@ sidebar_position: 2
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | เครื่องมือ Editor กว่า 15 รายการสำหรับจัดการ scene, object และ optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.10` | 2022.3 | คอมไพเลอร์ UdonSharp พร้อม interface, async/await, exception, collection/JSON และ packet network |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.0` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
 
 ## เพิ่ม repository ใน VCC
 
@@ -62,15 +62,19 @@ Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy
 
 ### `com.logiccuteguy.blendproperty` — Blend Property
 
+0.2.1 เป็นรุ่นอัปเดตเอกสาร เพิ่มขั้นตอนติดตั้งผ่าน VCC/ALCOM และอธิบายทางเลือก Git/ZIP ให้ชัดเจนขึ้น Runtime code และ example asset ไม่เปลี่ยนจาก 0.2.0
+
 0.2.0 แก้ความเข้ากันได้ของ VRChat panel โดย Control Panel และ Cloth Panel ใช้ `NoVariableSync` จึงอยู่ GameObject เดียวกับ Synced Control Panel ที่เป็น `Manual` ได้ พร้อมแก้ shader reference ใน baked GPU deform texture ของ example และอัปเดต VRChat scene ฟีเจอร์ GPU/native physics เดิมยังใช้ได้
 
-- **เวอร์ชันล่าสุด**: 0.2.0 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.0)
+- **เวอร์ชันล่าสุด**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
 - **Unity**: 2022.3 ขึ้นไป
 - **License**: MIT
 - **Dependency**: `com.unity.ugui` `1.0.0`; ProBuilder/Unity Splines เป็นทางเลือก และ VRChat ใช้ Worlds SDK/UdonSharp
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM, ใช้ `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.0`, embedded ที่ `Packages/com.logiccuteguy.blendproperty` หรือแตก named release asset `com.logiccuteguy.blendproperty-0.2.0.zip`
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM, ใช้ `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1`, embedded ที่ `Packages/com.logiccuteguy.blendproperty` หรือแตก named release asset `com.logiccuteguy.blendproperty-0.2.1.zip`
+
+เลือกวิธีติดตั้งเดียวต่อ project เพื่อไม่ให้มี package ซ้ำ ดู[ขั้นตอนติดตั้ง](./blendproperty/intro.md)
 
 [ภาพรวมและตั้งค่า](./blendproperty/intro.md) · [Modifier](./blendproperty/modifiers.md) · [Runtime/build](./blendproperty/runtime.md)
 

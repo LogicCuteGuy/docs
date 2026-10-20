@@ -51,7 +51,9 @@ Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrai
 
 バージョン、依存関係、リポジトリについては[パッケージ一覧](./packages.md)をご覧ください。
 
-### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.0
+### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.1
+
+0.2.1 はドキュメント更新です。VCC/ALCOM の手順と Git/ZIP による代替インストールを明確にします。Runtime code と example asset は 0.2.0 から変更ありません。
 
 0.2.0 は VRChat panel の互換性を修正します。Control Panel と Cloth Panel は `NoVariableSync` を使用し、`Manual` の Synced Control Panel と同じ GameObject に置けます。Example の Bake 済み GPU deform texture の shader 参照と VRChat scene も更新します。既存の GPU/native physics は引き続き利用できます。
 

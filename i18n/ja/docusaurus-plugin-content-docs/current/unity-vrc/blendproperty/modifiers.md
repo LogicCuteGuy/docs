@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifier と制限
 
-> ドキュメントバージョン: **0.2.0**
+> ドキュメントバージョン: **0.2.1**
 
 先に [stack を作成](./intro.md)してください。**Component 順**に適用するため、順序で結果が変わります。
 
@@ -23,7 +23,7 @@ sidebar_position: 2
 - **Simple Deform**: Twist / Bend / Taper / Stretch。Runtime Off の **Wave** は固定 time で Bake されるため、動きには [runtime の方法](./runtime.md)を使います。
 - **Remesh**: Blocks / Smooth / Sharp / Voxel。Voxel より薄い部分は消えることがあります。
 
-全 option は[バージョン固定 README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/README.md)を参照してください。
+全 option は[バージョン固定 README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/README.md)を参照してください。
 
 ### Bevel の適用前後
 
@@ -73,4 +73,4 @@ Editor は変更部分だけを再構築します。80 ms 超の rebuild は mou
 
 Wave / Simple Deform / Lattice / Hook / Warp は **Runtime > Off / GPU** に対応します。GPU 部分を末尾に置きます。最大八 operation、Lattice 一つ、512 point。Wave Along Normals / Warp Preserve Volume は live 非対応です。従来の個別 Wave/SimpleDeform/Lattice component を追加する手順ではなく [runtime 変換](./runtime.md)を使います。
 
-[画像付き modifier guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedModifiers.md)に設定と before/after があります。
+[画像付き modifier guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedModifiers.md)に設定と before/after があります。

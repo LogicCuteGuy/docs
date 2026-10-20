@@ -49,7 +49,9 @@ DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (
 Version 0.7.0 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
-### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.0
+### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.1
+
+0.2.1 is a documentation release: it adds step-by-step VCC/ALCOM installation and clarifies the Git/ZIP alternatives. Runtime code and example assets are unchanged from 0.2.0.
 
 0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
 

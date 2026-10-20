@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime และ build
 
-> เวอร์ชันเอกสาร: **0.2.0**
+> เวอร์ชันเอกสาร: **0.2.1**
 
 ค่าเริ่มต้น Editor bake stack แล้ว strip component รุ่น 0.1.1 เพิ่มการแปลง GPU modifier อัตโนมัติ และ physics component ร่วมระหว่าง VRChat/standalone
 
@@ -66,7 +66,7 @@ Line/Circle Array station ใน VRChat scene ใช้ `BlendUdonRuntimeArray` 
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifier, Array, cloth/soft body, fluid, hair, particle, paint/waves, destruction, ocean และ control
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: ตัวอย่าง rebuild ทั้ง stack; physics ร่วมใช้แบบ native standalone ได้ แต่ scene ไม่ได้คัดลอก VRChat station ทุกชุดมา
 - [Physics/interaction](./physics.md): bake, material limit, input และ sync
-- [คู่มือ runtime พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.0/Documentation~/IllustratedRuntime.md): setting, action และผลที่ควรเห็น
+- [คู่มือ runtime พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedRuntime.md): setting, action และผลที่ควรเห็น
 
 Stack หายใน VRChat build ให้ใช้ Runtime GPU ไม่ใช่ Keep at Runtime หากไม่มี GPU output ให้ตรวจ bake, Read/Write, อุปกรณ์และ pipeline การ build docs ไม่ใช่การทดสอบ Unity หรือ sync สอง client
 
