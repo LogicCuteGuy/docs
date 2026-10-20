@@ -4,15 +4,15 @@ sidebar_position: 9
 
 # LCGUdonSharp Troubleshooting
 
-> Documentation version: **0.3.10**
+> Documentation version: **0.3.11**
 
 | Problem | Fix |
 |---|---|
 | "The associated script cannot be loaded" | The `.cs` is missing its same-named `UdonSharpProgramAsset`. Use **Assets > Create > U# Script** so Unity generates both files together, or copy the `.asset` with the `.cs`. |
 | Script compiles in Unity but UdonSharp ignores it | Its assembly is not registered. `Assembly-CSharp` is always scanned; scripts in an `.asmdef` need a `UdonSharpAssemblyDefinition` pointing to that `.asmdef`. |
-| Fresh install has no compiler payload | Update from the incorrectly packaged `0.3.2` release to `0.3.10`, then let Unity refresh or run **Install or Repair**. |
-| Installing a release ZIP fails | Use the named `com.logiccuteguy.lcgudonsharp-0.3.10.zip` release asset, not GitHub's automatic **Source code (zip)** archive. |
-| Installer stops immediately | SDK version must be exactly **3.10.5**. Setup refuses other versions by design. |
+| Fresh install has no compiler payload | Update from the incorrectly packaged `0.3.2` release to `0.3.11`, then let Unity refresh or run **Install or Repair**. |
+| Installing a release ZIP fails | Use the named `com.logiccuteguy.lcgudonsharp-0.3.11.zip` release asset, not GitHub's automatic **Source code (zip)** archive. |
+| Worlds SDK version differs from 3.10.5 | Since `0.3.11` the installer **warns instead of blocking**: the payload (built from SDK 3.10.5) installs anyway. Run **Tools > LCGUdonSharp > Restore** to revert to the backed-up original UdonSharp. |
 | Duplicate `UdonSharp.*` assemblies | Run **Tools > LCGUdonSharp > Install or Repair** — the SDK's bundled copy may have been restored. |
 | Packet fields not syncing after upgrade | Protocol is versioned (v2): recompile all UdonSharp programs and rebuild the world. |
 | Build fails around `LCGNetworkZone` | Zones fail closed on native `[UdonSynced]` fields unless **Allow Native Sync Passthrough** is enabled, plus Udon Graph behaviours, overlapping parent/child zones, and PlayerObject templates sharing a hierarchy. Continuous behaviours without synced fields are safe. Zones in separate hierarchies may overlap. |
@@ -40,3 +40,9 @@ LCGUdonSharp 0.3.9 adds [text and asset localization](./localization.md): Unity 
 LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](./install.md); manual installs require **both** release ZIPs.
 
 For manual installation, **close Unity first**. Download the named [LCGUdonSharp 0.3.10 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10) and [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26). Extract their contents to `Packages/com.logiccuteguy.lcgudonsharp` and `Packages/com.unity.scriptablebuildpipeline` respectively, with each `package.json` directly inside its package folder, before reopening Unity. A `file:` reference to LCGUdonSharp still requires SBP embedded in the project. Do not use GitHub's automatic **Source code (zip)** archive. Do not rely on a PackageCache edit or a post-compilation hook: cache regeneration can remove that fix.
+
+## Untested SDK warning in 0.3.11
+
+Since `0.3.11` the installer **warns instead of blocking** when the installed VRChat Worlds SDK differs from the supported `3.10.5`. The payload is built from SDK 3.10.5 and installs anyway, with a Console reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. The same release declares the **LCGUdonSharp Examples** sample in `package.json`, so Package Manager lists it — import it after automatic compiler installation completes.
+
+For manual installation, **close Unity first**. Download the named [LCGUdonSharp 0.3.11 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11) and [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26). Extract their contents to `Packages/com.logiccuteguy.lcgudonsharp` and `Packages/com.unity.scriptablebuildpipeline` respectively, with each `package.json` directly inside its package folder, before reopening Unity. A `file:` reference to LCGUdonSharp still requires SBP embedded in the project.

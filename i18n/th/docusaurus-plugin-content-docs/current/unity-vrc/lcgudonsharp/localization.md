@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Localization ของข้อความและ Asset
 
-> เวอร์ชันเอกสาร: **0.3.10**
+> เวอร์ชันเอกสาร: **0.3.11**
 
 ระบบ bake Unity Localization String/Asset Tables เป็น Udon ใน scene ชั่วคราวตอน Play Mode/build โดยยังเก็บ native component สำหรับแก้ไขใน scene ต้นฉบับ World ที่ build แล้วไม่โหลด Addressables [ติดตั้ง LCGUdonSharp](./install.md) ก่อน Dependency คือ Unity Localization **1.4.5**, SBP compatibility **1.21.26** (Unity 1.21.25), Unity 2022.3 และ Worlds SDK 3.10.5
 

@@ -4,28 +4,28 @@ sidebar_position: 2
 
 # การติดตั้งและตั้งค่า
 
-> เวอร์ชันเอกสาร: **0.3.10** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10)
+> เวอร์ชันเอกสาร: **0.3.11** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11)
 
 > **อัปเกรดจาก 0.3.2**
 >
-> แพ็กเกจ `0.3.2` ถูกจัดชุดไม่ถูกต้อง ทำให้โปรเจกต์ใหม่อาจไม่มี compiler payload ให้อัปเดตเป็น `0.3.10`; installer จะซ่อมให้หลัง Unity refresh
+> แพ็กเกจ `0.3.2` ถูกจัดชุดไม่ถูกต้อง ทำให้โปรเจกต์ใหม่อาจไม่มี compiler payload ให้อัปเดตเป็น `0.3.11`; installer จะซ่อมให้หลัง Unity refresh
 
 ## ข้อกำหนด
 
 LCGUdonSharp 0.3.10 ติดตั้ง dependency แบบ embedded **SBP compatibility 1.21.26** ผ่าน VPM ก่อน Unity compile เพื่อกัน VRChat SDK `ExtensionMethods` ชนทั้งตอนติดตั้งใหม่และอัปเกรด ใช้ฐาน Unity SBP 1.21.25 โดยรักษา source/GUID และ Unity Companion License และยังอยู่หลังสร้าง `Library` ใหม่ Unity Localization 1.4.5 ยังรองรับ ดู[การติดตั้ง](./install.md) การติดตั้งเองต้องใช้ release ZIP **ทั้งสองไฟล์**
 
 - Unity **2022.3**
-- VRChat Worlds SDK **3.10.5** เท่านั้น
+- VRChat Worlds SDK **3.10.5** เวอร์ชันที่รองรับ (ตั้งแต่ `0.3.11` เวอร์ชันอื่นจะติดตั้งพร้อมคำเตือน SDK ที่ไม่ได้ทดสอบ แทนที่จะถูกปฏิเสธ)
 
 ## แนะนำ: VCC หรือ ALCOM
 
-เพิ่ม[รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วติดตั้ง LCGUdonSharp `0.3.10`
+เพิ่ม[รายการ VPM ของ LogicCuteGuy](../packages.md) (`https://vpm.logiccuteguy.com/index.json`) แล้วติดตั้ง LCGUdonSharp `0.3.11`
 
-ติดตั้งเองให้ **ปิด Unity ก่อน** ดาวน์โหลด [LCGUdonSharp 0.3.10 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10) และ [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) แล้วแตกเนื้อหาลง `Packages/com.logiccuteguy.lcgudonsharp` และ `Packages/com.unity.scriptablebuildpipeline` ตามลำดับ ให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจแต่ละอันก่อนเปิด Unity การใช้ `file:` reference ของ LCGUdonSharp ก็ยังต้อง embedded SBP ในโปรเจกต์ ห้ามใช้ **Source code (zip)** อัตโนมัติ และอย่าพึ่งแค่แก้ PackageCache หรือ hook หลัง compile เพราะการสร้าง cache ใหม่ทำให้ fix หายได้
+ติดตั้งเองให้ **ปิด Unity ก่อน** ดาวน์โหลด [LCGUdonSharp 0.3.11 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11) และ [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) แล้วแตกเนื้อหาลง `Packages/com.logiccuteguy.lcgudonsharp` และ `Packages/com.unity.scriptablebuildpipeline` ตามลำดับ ให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจแต่ละอันก่อนเปิด Unity การใช้ `file:` reference ของ LCGUdonSharp ก็ยังต้อง embedded SBP ในโปรเจกต์ ห้ามใช้ **Source code (zip)** อัตโนมัติ และอย่าพึ่งแค่แก้ PackageCache หรือ hook หลัง compile เพราะการสร้าง cache ใหม่ทำให้ fix หายได้
 
 ## ขั้นตอนตั้งค่า
 
-1. ติดตั้ง `0.3.10` พร้อม SBP compatibility dependency ผ่าน VCC/ALCOM หรือทำขั้นตอนสอง ZIP ด้านบนขณะปิด Unity
+1. ติดตั้ง `0.3.11` พร้อม SBP compatibility dependency ผ่าน VCC/ALCOM หรือทำขั้นตอนสอง ZIP ด้านบนขณะปิด Unity
 2. เปิด Unity และรอ compile ให้เสร็จ
 3. หากจำเป็น ใช้ **Tools > LCGUdonSharp > Install or Repair**
 4. Build และทดสอบ world ตามปกติ

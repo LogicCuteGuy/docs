@@ -4,9 +4,11 @@ sidebar_position: 9
 
 # サンプル
 
-> ドキュメントバージョン: **0.3.10**
+> ドキュメントバージョン: **0.3.11**
 
 [LCGUdonSharp リポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)の `Example/` には各機能の実行可能な scene と script があります。各 `.cs` には同じ名前の `UdonSharpProgramAsset` があり、example `.asmdef` には別の U# assembly-definition asset が含まれています。
+
+`0.3.11` 以降、**LCGUdonSharp Examples** は `package.json` にサンプルとして宣言されているため、Package Manager に自動表示されます。自動コンパイラインストール完了後にインポートしてください。
 
 | フォルダー | 内容 |
 |---|---|

@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Text and Asset Localization
 
-> Documentation version: **0.3.10**
+> Documentation version: **0.3.11**
 
 LCGUdonSharp bakes Unity Localization String and Asset Tables into Udon in the temporary Play Mode/build scene. Native authoring components remain editable in the source scene; the built world does not load Addressables. Install [LCGUdonSharp](./install.md) first. Package dependencies are Unity Localization **1.4.5** and SBP compatibility **1.21.26** (Unity 1.21.25), with Unity 2022.3 and Worlds SDK 3.10.5.
 

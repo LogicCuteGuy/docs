@@ -4,9 +4,11 @@ sidebar_position: 9
 
 # ตัวอย่าง
 
-> เวอร์ชันเอกสาร: **0.3.10**
+> เวอร์ชันเอกสาร: **0.3.11**
 
 โฟลเดอร์ `Example/` ใน [LCGUdonSharp repository](https://github.com/LogicCuteGuy/LCGUdonSharp) มี scene และ script ที่รันได้สำหรับทุกความสามารถ แต่ละ `.cs` มี `UdonSharpProgramAsset` ชื่อเดียวกัน และ `.asmdef` ของตัวอย่างมี U# assembly-definition asset แยกต่างหาก
+
+ตั้งแต่ `0.3.11` ตัวอย่าง **LCGUdonSharp Examples** ถูกประกาศเป็น sample ใน `package.json` จึงแสดงใน Package Manager โดยอัตโนมัติ ให้นำเข้าหลังติดตั้งคอมไพเลอร์อัตโนมัติเสร็จ
 
 | โฟลเดอร์ | เนื้อหา |
 |---|---|

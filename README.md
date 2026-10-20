@@ -7,11 +7,13 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | Package | Current version | Documentation |
 |---|---:|---|
 | [LogicCuteGuy Help Tools](https://github.com/LogicCuteGuy/UnityHelpTools) | `1.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/helptools/intro) |
-| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.10` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
+| [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.11` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.7.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
 | [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.2.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
 
 All four packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
+
+LCGUdonSharp 0.3.11 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
 
 LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/install); manual installs require **both** release ZIPs.
 

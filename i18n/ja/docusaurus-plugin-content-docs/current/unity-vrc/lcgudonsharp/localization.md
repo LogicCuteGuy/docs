@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # テキストとアセットのローカライズ
 
-> ドキュメントバージョン: **0.3.10**
+> ドキュメントバージョン: **0.3.11**
 
 Unity Localization の String/Asset Tables を、一時的な Play Mode・ビルドシーンで Udon にベイクします。元シーンのネイティブ編集コンポーネントは保持され、ビルド済みワールドは Addressables を読み込みません。[インストール](./install.md)後に設定してください。依存関係は Unity Localization **1.4.5**、SBP compatibility **1.21.26** (Unity 1.21.25)、Unity 2022.3、Worlds SDK 3.10.5 です。
 

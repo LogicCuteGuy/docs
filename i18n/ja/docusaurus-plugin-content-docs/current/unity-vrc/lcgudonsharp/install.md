@@ -4,28 +4,28 @@ sidebar_position: 2
 
 # インストールとセットアップ
 
-> ドキュメントバージョン: **0.3.10** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10)
+> ドキュメントバージョン: **0.3.11** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11)
 
 > **0.3.2 からの更新**
 >
-> `0.3.2` は配布パッケージに問題があり、新規プロジェクトでコンパイラーペイロードが不足する場合があります。`0.3.10` へ更新してください。Unity の更新後、installer が修復します。
+> `0.3.2` は配布パッケージに問題があり、新規プロジェクトでコンパイラーペイロードが不足する場合があります。`0.3.11` へ更新してください。Unity の更新後、installer が修復します。
 
 ## 要件
 
 LCGUdonSharp 0.3.10 は Unity のコンパイル前に VPM で埋め込み **SBP compatibility 1.21.26** を導入し、新規・更新時の VRChat SDK `ExtensionMethods` 衝突を防ぎます。Unity SBP 1.21.25 を基にソース・GUID・Unity Companion License を保持し、`Library` 再生成後も残ります。Unity Localization 1.4.5 は引き続き対応します。[インストール](./install.md)を参照してください。手動導入には **両方** のリリース ZIP が必要です。
 
 - Unity **2022.3**
-- VRChat Worlds SDK **3.10.5**（他のバージョンは拒否されます）
+- VRChat Worlds SDK **3.10.5**（対応バージョン。`0.3.11` 以降は異なるバージョンでも拒否されず、未検証の警告を表示してインストールされます）
 
 ## 推奨: VCC または ALCOM
 
-[LogicCuteGuy VPM リスト](../packages.md)（`https://vpm.logiccuteguy.com/index.json`）を追加し、LCGUdonSharp `0.3.10` をインストールしてください。
+[LogicCuteGuy VPM リスト](../packages.md)（`https://vpm.logiccuteguy.com/index.json`）を追加し、LCGUdonSharp `0.3.11` をインストールしてください。
 
-手動導入は **先に Unity を閉じてください**。[LCGUdonSharp 0.3.10 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10) と [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) の両方を取得し、それぞれ `Packages/com.logiccuteguy.lcgudonsharp` と `Packages/com.unity.scriptablebuildpipeline` に展開します。各 `package.json` がパッケージフォルダー直下にあることを確認してから Unity を開きます。LCGUdonSharp を `file:` で参照する場合も SBP の埋め込みが必要です。自動生成 **Source code (zip)** は使わないでください。PackageCache の編集やコンパイル後のフックだけに依存すると、キャッシュ再生成で修正が消えます。
+手動導入は **先に Unity を閉じてください**。[LCGUdonSharp 0.3.11 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11) と [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) の両方を取得し、それぞれ `Packages/com.logiccuteguy.lcgudonsharp` と `Packages/com.unity.scriptablebuildpipeline` に展開します。各 `package.json` がパッケージフォルダー直下にあることを確認してから Unity を開きます。LCGUdonSharp を `file:` で参照する場合も SBP の埋め込みが必要です。自動生成 **Source code (zip)** は使わないでください。PackageCache の編集やコンパイル後のフックだけに依存すると、キャッシュ再生成で修正が消えます。
 
 ## セットアップ手順
 
-1. VCC/ALCOM で `0.3.10` と SBP 互換依存関係を導入するか、Unity を閉じて上記の二つの ZIP を展開します。
+1. VCC/ALCOM で `0.3.11` と SBP 互換依存関係を導入するか、Unity を閉じて上記の二つの ZIP を展開します。
 2. Unity を開き、コンパイル完了を待ちます。
 3. 必要なら **Tools > LCGUdonSharp > Install or Repair** を実行します。
 4. 通常どおりワールドをビルド・テストします。
