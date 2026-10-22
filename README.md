@@ -10,7 +10,7 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp) | `0.3.11` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/intro) |
 | [DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt) | `0.7.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/digholeit/intro) |
 | [BlendProperty](https://github.com/LogicCuteGuy/BlendProperty) | `0.2.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro) |
-| [WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL) | `0.1.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) |
+| [WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL) | `0.2.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) |
 
 All five packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
@@ -28,7 +28,7 @@ DigHoleIt **0.7.0** is available through VPM and GitHub. See the [installation g
 
 BlendProperty **0.2.1** is a documentation release with step-by-step VCC/ALCOM installation and clearer Git/ZIP alternatives. Runtime code and example assets are unchanged from 0.2.0. See the [guide](https://docs.logiccuteguy.com/unity-vrc/blendproperty/intro).
 
-WASM2HLSL **0.1.0** is the initial release: `.wasm` WebAssembly modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback. Requires LCGUdonSharp >= 0.3.10. See the [overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) and [getting started](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/getting-started) guide.
+WASM2HLSL **0.2.0** reads big constant tables from a texture: `.rodata` of 1 KB or more no longer counts toward the 64000-byte memory limit, lifting the size limit for bigger modules. `.wasm` WebAssembly modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback. Requires LCGUdonSharp >= 0.3.10. See the [overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) and [getting started](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/getting-started) guide.
 
 ## Local development
 

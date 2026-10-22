@@ -118,7 +118,7 @@ Every WebAssembly value type:
 | Limit | Why | Workaround |
 |---|---|---|
 | No recursion | HLSL has no call stack; the converter errors with the cycle. | Rewrite as a loop. |
-| ≤ 64000 bytes of memory | Linear memory is a per-pixel `uint4` register array (fxc cap 4096 registers). The size is data end + stack, not the declared pages. | `-zstack-size=4096`, small statics, no heap. |
+| ≤ 64000 bytes of writable memory | Linear memory is a per-pixel `uint4` register array (fxc cap 4096 registers). The size is data end + stack, not the declared pages. Constant data does not count (see [Big constant tables](#big-constant-tables-no-limit)). | `-zstack-size=4096`, small mutable statics, no heap. |
 | `memory.grow` always fails | Memory is fixed. | Use `no_std` without an allocator. |
 | `f64` is slow | Quest/mobile GPUs have no doubles, so every f64 op is ~100 integer instructions (div/sqrt loop 55–63 times). Shaders using f64 compile slower: ~1 min for `Example/DeepZoom`, and fxc's time grows faster than linearly, so one export using dozens of different f64 ops can take many minutes. | Use `f32` where it is precise enough. Split big f64 kernels into several exports: each export compiles only the code it reaches. |
 | Math imports run in f32 | `hlsl_sin(f64)` etc. call the GPU's float intrinsic. | Write the function in f64 yourself when you need the precision. |
@@ -126,5 +126,19 @@ Every WebAssembly value type:
 | Large modules compile slowly | fxc inlines every function. A ~6 KB kernel takes ~10 s; Rust's software libm (`f32::sin` via compiler_builtins) takes many minutes. | Use `hlsl_*` imports instead of libm; keep kernels small. |
 
 Memory is private to each pixel and resets every run; pixels cannot talk to each other. Return values are the only output.
+
+## Big constant tables (no limit)
+
+Read-only data (`.rodata`: `static` / `const` tables, strings, lookup tables) of 1 KB or more is read from a texture, so it takes no registers and can be megabytes. It happens on import, with nothing to change in the source:
+
+```rust
+static PALETTE: [u32; 16384] = make_palette(); // 64 KB: over the register limit, fine as .rodata
+```
+
+- The `.wasm` asset gets a `rom` texture (RGBA32 linear, one word per texel, 4096 wide), already set as `_WasmRom` on every export's material. The summary shows its size next to "GPU memory per call".
+- Reads cost one texture fetch per word; registers stay faster for small hot tables. **Import settings > Texture Constants From (bytes)** sets the threshold (default 1024); 0 keeps everything in registers.
+- Writing into it sets the trap flag (`.rodata` writes are undefined behaviour in Rust/C anyway). Mutable `static mut` data stays in registers.
+- It needs the segment names in the wasm `name` section, which `cargo build` and clang keep. `wasm-opt --strip` / `wasm-strip` remove them; then everything stays in registers.
+- Tested: `Tests~/run.sh` mode 8 reads a 96 KB table (words, bytes, unaligned, copied to the stack and modified) bit-for-bit like Node.
 
 Docs: [Overview](./intro.md)

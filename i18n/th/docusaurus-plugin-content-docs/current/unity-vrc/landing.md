@@ -59,9 +59,9 @@ DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree แล�
 
 Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone. [การตั้งค่า](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md)
 
-### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.1.0
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.0
 
-WASM2HLSL 0.1.0 เป็น release แรก: โมดูล `.wasm` ถูกแปลงเป็น HLSL ใน editor แล้วเรียกจาก UdonSharp ทีละพิกเซลผ่าน Blit + async GPU readback
+WASM2HLSL 0.2.0 อ่านตารางค่าคงที่ขนาดใหญ่จากเท็กซ์เจอร์: `.rodata` ที่ 1 KB ขึ้นไปไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte จึงลดขีดจำกัดขนาดสำหรับโมดูลที่ใหญ่ขึ้น โมดูล `.wasm` ถูกแปลงเป็น HLSL ใน editor แล้วเรียกจาก UdonSharp ทีละพิกเซลผ่าน Blit + async GPU readback
 
 รัน WebAssembly บน GPU ใน VRChat world เขียน kernel เป็น Rust/C/Zig แทน HLSL ด้วยมือ [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)
 

@@ -4,11 +4,19 @@ sidebar_position: 1
 
 # WASM2HLSL
 
-> เวอร์ชันเอกสาร: **0.1.0** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+> เวอร์ชันเอกสาร: **0.2.0** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
 
 **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) รัน WebAssembly บน GPU ใน VRChat world วางไฟล์ `.wasm` ลงในโปรเจกต์แล้ว editor จะแปลงเป็น HLSL จากนั้น UdonSharp `WasmGpuRunner` จะเรียกฟังก์ชันที่ export ไว้ทีละพิกเซลของ render texture แล้วอ่านผลกลับเข้า Udon
 
 เขียน kernel เป็น **Rust, C/C++, Zig, AssemblyScript หรือ TinyGo** แทน HLSL ด้วยมือ Udon ช้า (ราว 1000 เท่าช้ากว่า C#) แต่ pixel shader ที่รัน logic เดียวกันพร้อมกันหลายพันพิกเซลไม่ช้า
+
+## สิ่งใหม่ใน 0.2.0
+
+ตารางค่าคงที่ขนาดใหญ่: `.rodata` (ตาราง `static` / `const`, `include_bytes!` ขนาด 1 KB ขึ้นไป) ถูกอ่านจากเท็กซ์เจอร์แทน register ของ GPU จึงไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte อีกต่อไป โดยไม่ต้องแก้ซอร์ส importer เพิ่มเท็กซ์เจอร์ `rom` เข้า `.wasm` asset ตั้งเป็น `_WasmRom` บน material ของทุก export แล้ว และการตั้ง import ใหม่ **Texture Constants From (bytes)** กำหนดเกณฑ์ (ค่าเริ่ม 1024; 0 คือเก็บทุกอย่างใน register) summary ของ asset แสดงขนาด ROM ข้าง "GPU memory per call"
+
+ตัวอย่าง Mandelbrot ไล่สีลื่นผ่าน palette 64 KB ในเท็กซ์เจอร์ ROM แล้ว แก้ไข: ตัวอย่างเสียงไม่ขาดอีกเมื่อ instance ยุ่ง (AudioSource priority 0), write-ahead ของ Chroma ขยายหลัง hitch (ฟิลด์ใหม่ `maxLead`, output ring 131072 เฟรม) และ `WasmGpuRunner` เพิกเฉยต่อ readback ที่มาหลัง world ถูกทำลาย ไม่มี Udon exception ตอนออกจากหรือปิด world
+
+Importer version 9 ทำให้ `.wasm` ทุกตัว import ใหม่หนึ่งครั้ง และโมดูลที่ไม่มี `.rodata` ใหญ่ได้ HLSL เดิมทุกประการ ดู[CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md)
 
 ## สิ่งใหม่ใน 0.1.0
 
@@ -26,7 +34,7 @@ release แรก: แปลง `.wasm` → HLSL, คอมโพเนนต์
 
 1. เพิ่ม [LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) ใน VCC/ALCOM หรือเพิ่ม `https://vpm.logiccuteguy.com/index.json` ด้วยมือ หากเพิ่มแล้วให้ refresh รายการ
 2. เปิด **Manage Project** ของโปรเจกต์ Unity
-3. หา **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) แล้วเพิ่ม **0.1.0** VPM จะติดตั้ง dependency ของ LCGUdonSharp ให้เอง
+3. หา **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) แล้วเพิ่ม **0.2.0** VPM จะติดตั้ง dependency ของ LCGUdonSharp ให้เอง
 4. เปิดโปรเจกต์ใน Unity แล้วรอให้ import เสร็จ
 
 ### Unity Package Manager / ติดตั้งเอง
@@ -34,10 +42,10 @@ release แรก: แปลง `.wasm` → HLSL, คอมโพเนนต์
 ใน **Window > Package Manager > + > Add package from git URL** ใส่:
 
 ```text
-https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0
+https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0
 ```
 
-หรือวาง repository ที่ tag ไว้ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก `com.logiccuteguy.wasm2hlsl-0.1.0.zip` ที่มีชื่อชัดเจนจาก[release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0) ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ที่ root ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
+หรือวาง repository ที่ tag ไว้ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก `com.logiccuteguy.wasm2hlsl-0.2.0.zip` ที่มีชื่อชัดเจนจาก[release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0) ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ที่ root ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
 
 เลือกวิธีติดตั้งเพียงวิธีเดียวต่อโปรเจกต์เพื่อหลีกเลี่ยงสำเนาซ้ำ
 
@@ -76,7 +84,7 @@ Tests~/   ทดสอบความสอดคล้องบน GPU (Rust �
 
 ## การตรวจสอบ
 
-`Tests~/run.sh` build kernel Rust (ลูป collatz, hash 64 บิต, `match` → `br_table`, div/rem 32/64 บิต, sort ในหน่วยความจำ, คำนวณทศนิยม, cast `i64`↔float, `input()`) รันเป็น D3D11 compute shader 1024 ครั้ง แล้วเทียบทุกผลกับ WebAssembly ของ Node: ทุกเส้นทางจำนวนเต็มตรงเป๊ะทุกบิต เส้นทาง `hlsl_sin` ต่างไม่เกิน 1 ulp ของผลลัพธ์ ตัวอย่าง Mandelbrot ก็ตรงทุกบิตเช่นกัน
+`Tests~/run.sh` build kernel Rust (ลูป collatz, hash 64 บิต, `match` → `br_table`, div/rem 32/64 บิต, sort ในหน่วยความจำ, คำนวณทศนิยม, cast `i64`↔float, `input()`, ตาราง `.rodata` 96 KB ที่อ่านผ่าน ROM texture) รันเป็น D3D11 compute shader 1024 ครั้ง แล้วเทียบทุกผลกับ WebAssembly ของ Node: ทุกเส้นทางจำนวนเต็มตรงเป๊ะทุกบิต เส้นทาง `hlsl_sin` ต่างไม่เกิน 1 ulp ของผลลัพธ์ ตัวอย่าง Mandelbrot (palette 64 KB ใน ROM texture) ตรงกับ Node 99.7% ของพิกเซล ที่เหลือต่างเพราะ `hlsl_log2` เป็น log2 f32 ของ GPU เท่านั้น และ `Graphics.Blit` บน Unity ตรงกับ D3D11 test ทุกพิกเซล
 
 `Tests~/types.sh` ทำแบบเดียวกันกับ type อื่น เรียก 4096 ครั้งต่อ export ตรงทุกบิตกับ Node: `f64` สเกลาร์, รูปทรง lane ของ SIMD ทุกแบบ, relaxed SIMD ที่ผลไม่ขึ้นกับ implementation และ reference types ส่วน `f32x4` div/sqrt รันที่ความแม่นยำ float ของ GPU เหมือน `f32` สเกลาร์ ยังไม่ได้ทดสอบบน Quest/Vulkan
 

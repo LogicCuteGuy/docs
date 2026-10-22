@@ -12,7 +12,7 @@ sidebar_position: 2
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | คอมไพเลอร์ UdonSharp พร้อม interface, async/await, exception, collection/JSON และ packet network |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
-| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.1.0` | 2022.3 | รัน kernel WebAssembly `.wasm` บน GPU เป็น HLSL shader เรียกจาก UdonSharp พร้อม async GPU readback |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | รัน kernel WebAssembly `.wasm` บน GPU เป็น HLSL shader เรียกจาก UdonSharp พร้อม async GPU readback |
 
 ## เพิ่ม repository ใน VCC
 
@@ -85,14 +85,16 @@ Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy
 
 ### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
 
+WASM2HLSL 0.2.0 อ่านตารางค่าคงที่ขนาดใหญ่จากเท็กซ์เจอร์: `.rodata` ที่ 1 KB ขึ้นไป (`static` / `const` table, `include_bytes!`) มาจากเท็กซ์เจอร์ `rom` ที่ตั้งเป็น `_WasmRom` แทน register ของ GPU จึงไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte โดยไม่ต้องแก้ซอร์ส การตั้ง import **Texture Constants From (bytes)** กำหนดเกณฑ์ (ค่าเริ่ม 1024; 0 คือเก็บทุกอย่างใน register) แก้เสียงตัวอย่างที่ขาดตอน instance ยุ่ง, การ sync write-ahead ของ Chroma หลัง hitch (ฟิลด์ใหม่ `maxLead`, output ring 131072 เฟรม) และ Udon exception ของ `WasmGpuRunner` ตอนออกจาก world ดู[CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md)
+
 WASM2HLSL 0.1.0 แปลงโมดูล WebAssembly เป็น HLSL shader แล้วรันบน GPU จาก UdonSharp: วาง `.wasm` ใน `Assets/` แล้ว importer จะสร้าง shader/material/render texture หนึ่งชุดต่อ export ไว้ใน `.wasm` asset `WasmGpuRunner` ตั้ง argument กับ input แล้ว blit ทีละพิกเซล อ่านผลกลับผ่าน `VRCAsyncGPUReadback` เขียน kernel ด้วย Rust/C/Zig/AssemblyScript/TinyGo พร้อมแท็ก `@size` / `@traps` จากซอร์ส รองรับ `f32`/`f64`/`i64`/`v128` และ reference types โดยผลตรงทุกบิตยกเว้นการปัด `f32` ของ GPU
 
-- **เวอร์ชันล่าสุด**: 0.1.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+- **เวอร์ชันล่าสุด**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
 - **Unity**: 2022.3
 - **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.10`
 - **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
 
-ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (refresh รายการก่อน), ใช้ `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0`, embedded ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก named release asset `com.logiccuteguy.wasm2hlsl-0.1.0.zip` เลือกวิธีเดียวต่อ project และหากใช้ Git/ZIP ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (refresh รายการก่อน), ใช้ `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`, embedded ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก named release asset `com.logiccuteguy.wasm2hlsl-0.2.0.zip` เลือกวิธีเดียวต่อ project และหากใช้ Git/ZIP ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
 
 เอกสาร: [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)

@@ -118,7 +118,7 @@ Trap Check (`@traps` ในซอร์ส, inspector ของ runner หรื
 | ข้อจำกัด | เหตุผล | วิธีแก้ |
 |---|---|---|
 | ไม่มี recursion | HLSL ไม่มี call stack ตัวแปลงจะ error พร้อมบอกวงจร | เขียนเป็นลูปใหม่ |
-| หน่วยความจำ ≤ 64000 bytes | Linear memory คืออาร์เรย์ register `uint4` ต่อพิกเซล (fxc จำกัด 4096 register) ขนาดคือจุดสิ้นสุดข้อมูล + stack ไม่ใช่จำนวน page ที่ประกาศ | `-zstack-size=4096`, static เล็กๆ, ไม่มี heap |
+| หน่วยความจำที่เขียนได้ ≤ 64000 bytes | Linear memory คืออาร์เรย์ register `uint4` ต่อพิกเซล (fxc จำกัด 4096 register) ขนาดคือจุดสิ้นสุดข้อมูล + stack ไม่ใช่จำนวน page ที่ประกาศ ข้อมูลค่าคงที่ไม่นับรวม (ดูหัวข้อ **ตารางค่าคงที่ขนาดใหญ่**) | `-zstack-size=4096`, static ที่เปลี่ยนค่าได้เล็กๆ, ไม่มี heap |
 | `memory.grow` เสมอ fail | หน่วยความจำคงที่ | ใช้ `no_std` โดยไม่มี allocator |
 | `f64` ช้า | GPU มือถือ/Quest ไม่มี double จึงทุก operation ของ f64 เป็นคำสั่งจำนวนเต็มราว 100 ตัว (div/sqrt ลูป 55–63 ครั้ง) shader ที่ใช้ f64 compile ช้าด้วย: `Example/DeepZoom` ราว 1 นาที และเวลาของ fxc เพิ่มแบบเหนือเชิงเส้น export เดียวที่ใช้ f64 หลายสิบแบบจึงอาจกินหลายนาที | ใช้ `f32` ถ้าความแม่นยำพอ แบ่ง kernel f64 ใหญ่เป็นหลาย export: แต่ละ export compile เฉพาะโค้ดที่ไปถึง |
 | Math import รันเป็น f32 | `hlsl_sin(f64)` ฯลฯ เรียก float intrinsic ของ GPU | เขียนฟังก์ชันนั้นเป็น f64 เองเมื่อต้องการความแม่นยำ |
@@ -126,5 +126,19 @@ Trap Check (`@traps` ในซอร์ส, inspector ของ runner หรื
 | โมดูลใหญ่ compile ช้า | fxc inline ทุกฟังก์ชัน kernel ~6 KB ใช้ ~10 วินาที ส่วน libm ซอฟต์แวร์ของ Rust (`f32::sin` ผ่าน compiler_builtins) ใช้หลายนาที | ใช้ `hlsl_*` แทน libm และ keep kernel เล็กๆ |
 
 หน่วยความจำเป็นของส่วนตัวต่อพิกเซลและรีเซตทุกครั้งที่รัน พิกเซลคุยกันไม่ได้ ผลลัพธ์ที่ return เท่านั้นคือ output
+
+## ตารางค่าคงที่ขนาดใหญ่ (ไม่มีขีดจำกัด)
+
+ข้อมูลแบบ read-only (`.rodata`: ตาราง `static` / `const`, string, lookup table) ที่ 1 KB ขึ้นไปถูกอ่านจากเท็กซ์เจอร์ จึงไม่ใช้ register และมีได้หลาย MB เกิดขึ้นตอน import โดยไม่ต้องแก้ซอร์ส
+
+```rust
+static PALETTE: [u32; 16384] = make_palette(); // 64 KB: เกินขีดจำกัด register แต่เป็น .rodata ก็ใช้ได้
+```
+
+- `.wasm` asset ได้เท็กซ์เจอร์ `rom` (RGBA32 linear, หนึ่ง word ต่อ texel กว้าง 4096) ตั้งเป็น `_WasmRom` บน material ของทุก export แล้ว summary แสดงขนาดข้าง "GPU memory per call"
+- การอ่านคิดหนึ่ง texture fetch ต่อ word; register ยังเร็วกว่าสำหรับตารางเล็กๆ ที่ใช้บ่อย **Import settings > Texture Constants From (bytes)** กำหนดเกณฑ์ (ค่าเริ่ม 1024; 0 คือเก็บทุกอย่างใน register)
+- การเขียนลงในนั้นตั้งแฟล็ก trap (การเขียน `.rodata` เป็น undefined behaviour ใน Rust/C อยู่แล้ว) ข้อมูล `static mut` ที่เปลี่ยนค่าได้อยู่ใน register
+- ต้องมีชื่อ segment ใน wasm `name` section ซึ่ง `cargo build` และ clang เก็บไว้ `wasm-opt --strip` / `wasm-strip` จะลบทิ้ง ตอนนั้นทุกอย่างอยู่ใน register
+- ทดสอบ: `Tests~/run.sh` mode 8 อ่านตาราง 96 KB (word, byte, ไม่ตรงขอบ, คัดลอกไป stack แล้วแก้) ตรงทุกบิตกับ Node
 
 เอกสาร: [ภาพรวม](./intro.md)

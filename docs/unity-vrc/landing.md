@@ -59,9 +59,9 @@ Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrai
 
 Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components. [Setup](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md).
 
-### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.1.0
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.0
 
-WASM2HLSL 0.1.0 is the initial release: `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
+WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more no longer counts toward the 64000-byte memory limit, lifting the size limit for bigger modules. `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
 
 Run WebAssembly on the GPU in VRChat worlds — write kernels in Rust/C/Zig instead of hand-written HLSL. [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md).
 

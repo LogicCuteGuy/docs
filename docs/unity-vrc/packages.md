@@ -14,7 +14,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
-| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.1.0` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
 
 ## Add the repository in VCC
 
@@ -97,14 +97,16 @@ Docs: [Overview and setup](./blendproperty/intro.md) · [Modifiers](./blendprope
 
 ### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
 
+WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more (`static` / `const` tables, `include_bytes!`) is served from a `rom` texture set as `_WasmRom` instead of GPU registers, so it no longer counts toward the 64000-byte memory limit — no source changes needed. The **Texture Constants From (bytes)** import setting picks the threshold (default 1024; 0 keeps everything in registers). It also fixes audio examples dropping out on busy instances, Chroma write-ahead resync after a hitch (new `maxLead`, 131072-frame output ring), and a Udon exception in `WasmGpuRunner` when leaving a world. See [CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md).
+
 WASM2HLSL 0.1.0 converts WebAssembly modules into HLSL shaders and runs them on the GPU from UdonSharp: drop a `.wasm` into `Assets/`, and the importer builds a shader/material/render texture per export inside the `.wasm` asset. A `WasmGpuRunner` sets arguments and input, blits once per pixel and reads results back through `VRCAsyncGPUReadback`. Kernels are written in Rust/C/Zig/AssemblyScript/TinyGo with `@size` and `@traps` source tags; `f32`/`f64`/`i64`/`v128` and reference types are supported with bit-exact results except GPU `f32` rounding.
 
-- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+- **Latest version**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
 - **Unity**: 2022.3
 - **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.10`
 - **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
 
-Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.1.0.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.0.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
 
 Docs: [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md)

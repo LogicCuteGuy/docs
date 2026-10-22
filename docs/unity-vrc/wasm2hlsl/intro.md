@@ -4,11 +4,19 @@ sidebar_position: 1
 
 # WASM2HLSL
 
-> Documentation version: **0.1.0** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0)
+> Documentation version: **0.2.0** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
 
 **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) runs WebAssembly on the GPU in a VRChat world. Drop a `.wasm` file into the project and the editor translates it to HLSL; an UdonSharp `WasmGpuRunner` then executes the exported function once per pixel of a render texture and reads the results back into Udon.
 
 Write the kernel in **Rust, C/C++, Zig, AssemblyScript or TinyGo** instead of hand-written HLSL. Udon is slow — roughly 1000× slower than C# — but a pixel shader running the same logic over thousands of pixels in parallel is not.
+
+## What's new in 0.2.0
+
+Big constant tables: `.rodata` of 1 KB or more (`static` / `const` tables, `include_bytes!`) is read from a texture instead of GPU registers, so it no longer counts toward the 64000-byte memory limit — with no source changes. The importer adds a `rom` texture to the `.wasm` asset, already set as `_WasmRom` on every export's material, and the new **Texture Constants From (bytes)** import setting picks the threshold (default 1024; 0 keeps everything in registers). The asset summary shows the ROM size next to "GPU memory per call".
+
+The Mandelbrot example now colours smoothly through a 64 KB palette in the ROM texture. Fixes: audio examples no longer drop out on busy instances (AudioSource priority 0), Chroma's write-ahead grows after a hitch (new `maxLead`, 131072-frame output ring), and `WasmGpuRunner` ignores readbacks delivered after the world is torn down — no more Udon exception when leaving or quitting a world.
+
+Importer version 9 reimports every `.wasm` once; modules without large `.rodata` produce the same HLSL as before. See [CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md).
 
 ## What's new in 0.1.0
 
@@ -26,7 +34,7 @@ Initial release: `.wasm` → HLSL translation, the `WasmGpuRunner` U# component,
 
 1. [Add the LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) to VCC/ALCOM, or add `https://vpm.logiccuteguy.com/index.json` manually. Refresh the listing if it is already added.
 2. Open **Manage Project** for your Unity project.
-3. Find **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) and add **0.1.0**. VPM installs the LCGUdonSharp dependency automatically.
+3. Find **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) and add **0.2.0**. VPM installs the LCGUdonSharp dependency automatically.
 4. Open the project in Unity and let the package import.
 
 ### Unity Package Manager / manual
@@ -34,10 +42,10 @@ Initial release: `.wasm` → HLSL translation, the `WasmGpuRunner` U# component,
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/WASM2HLSL.git#0.1.0
+https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0
 ```
 
-Alternatively place the tagged repository at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.1.0.zip` from [the release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.1.0) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
+Alternatively place the tagged repository at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.0.zip` from [the release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
 
 Choose **one installation method per project** to avoid duplicate copies.
 
@@ -76,7 +84,7 @@ Open `Example/Showcase.unity` and press **Play**. DeepZoom / SimdPlasma: run **T
 
 ## Verified
 
-`Tests~/run.sh` builds a Rust kernel (collatz loops, 64-bit hashing, `match` → `br_table`, 32/64-bit div/rem, an in-memory sort, float math, `i64`↔float casts, `input()`), runs it as a D3D11 compute shader on 1024 invocations and compares every result with Node's WebAssembly: all integer paths are bit-exact; the `hlsl_sin` path differs by ≤ 1 ulp of the output. The Mandelbrot sample matches bit-for-bit too.
+`Tests~/run.sh` builds a Rust kernel (collatz loops, 64-bit hashing, `match` → `br_table`, 32/64-bit div/rem, an in-memory sort, float math, `i64`↔float casts, `input()`, a 96 KB `.rodata` table read through the ROM texture), runs it as a D3D11 compute shader on 1024 invocations and compares every result with Node's WebAssembly: all integer paths are bit-exact; the `hlsl_sin` path differs by ≤ 1 ulp of the output. The Mandelbrot sample (64 KB palette in the ROM texture) matches Node on 99.7% of pixels — the rest differ only because `hlsl_log2` is the GPU's f32 log2 — and a Unity `Graphics.Blit` of it is identical, pixel for pixel, to the D3D11 test.
 
 `Tests~/types.sh` does the same for the other types, 4096 calls per export, all bit-for-bit with Node: scalar `f64`, every SIMD lane shape, relaxed SIMD where the result is not implementation-defined, and reference types. `f32x4` div/sqrt run at GPU float precision, like scalar `f32`. Not yet tested on Quest/Vulkan.
 

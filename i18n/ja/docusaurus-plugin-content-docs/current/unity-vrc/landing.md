@@ -59,9 +59,9 @@ Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrai
 
 Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component. [設定](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md)。
 
-### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.1.0
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.0
 
-WASM2HLSL 0.1.0 は初回リリースです。`.wasm` モジュールはエディターで HLSL に変換され、UdonSharp から Blit + async GPU readback でピクセルごとに 1 回実行されます。
+WASM2HLSL 0.2.0 は大きな定数テーブルをテクスチャから読み、大きいモジュールのサイズ制限を緩和します（1 KB 以上の `.rodata` は 64000 バイトのメモリ制限に数えられません）。`.wasm` モジュールはエディターで HLSL に変換され、UdonSharp から Blit + async GPU readback でピクセルごとに 1 回実行されます。
 
 VRChat ワールドで WebAssembly を GPU 上で実行します。カーネルは手書き HLSL ではなく Rust/C/Zig で書けます。[概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)。
 
