@@ -15,6 +15,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
+| `com.logiccuteguy.uihud` | UIHUD | `0.1.0` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
 
 ## Add the repository in VCC
 
@@ -110,3 +111,18 @@ WASM2HLSL 0.1.0 converts WebAssembly modules into HLSL shaders and runs them on 
 Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.0.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
 
 Docs: [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md)
+
+### `com.logiccuteguy.uihud` — UIHUD
+
+UIHUD 0.1.0 adds a HUD plus slide-in menus and 20+ UI widgets for VRChat worlds and standalone Unity games. One setup covers VR, desktop and mobile: player HUD, slide-in menus, world-space panels, hotbar, wrist/mobile buttons, style presets, menu and widget animations, and runtime widget creation from Udon. Everything runs locally (`NoVariableSync`).
+
+- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **Dependencies**: `com.unity.textmeshpro` `3.0.6`, `com.unity.ugui` `1.0.0`, `com.unity.modules.physics` `1.0.0`, `com.unity.modules.xr` `1.0.0`
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`
+- **Repository**: [LogicCuteGuy/UIHUD](https://github.com/LogicCuteGuy/UIHUD)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/UIHUD.git#0.1.0`, embed at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.0.zip` release asset. Choose one installation method per project.
+
+Docs: [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md)

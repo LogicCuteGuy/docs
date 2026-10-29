@@ -95,8 +95,15 @@ const sidebars = {
         'unity-vrc/wasm2hlsl/intro',
         'unity-vrc/wasm2hlsl/getting-started',
       ],
-    },
-  ],
+    },    {
+      type: 'category',
+      label: 'UIHUD',
+      collapsed: false,
+      items: [
+        'unity-vrc/uihud/intro',
+        'unity-vrc/uihud/getting-started',
+      ],
+    },  ],
 };
 
 export default sidebars;
