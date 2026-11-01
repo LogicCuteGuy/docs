@@ -10,9 +10,9 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | เครื่องมือ Editor กว่า 15 รายการสำหรับจัดการ scene, object และ optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | คอมไพเลอร์ UdonSharp พร้อม interface, async/await, exception, collection/JSON และ packet network |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
-| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | รัน kernel WebAssembly `.wasm` บน GPU เป็น HLSL shader เรียกจาก UdonSharp พร้อม async GPU readback |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.1` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.1` | 2022.3 | รัน kernel WebAssembly `.wasm` บน GPU เป็น HLSL shader เรียกจาก UdonSharp พร้อม async GPU readback |
 
 ## เพิ่ม repository ใน VCC
 
@@ -51,13 +51,13 @@ LCGUdonSharp ติดตั้งคอมไพเลอร์จาก `Paylo
 
 DigHoleIt 0.7.0 เพิ่ม prefab Dig Pen, ปลูก/ลบ tree และ detail ตอน runtime (รวม foliage ที่ bake ไว้), smoothing แบบ sync, VRChat showcase และ Refresh Holes / Refresh Zones การตั้งค่าเป็น local แต่ edit ใน VRChat sync และ replay ให้ late joiner
 
-- เวอร์ชันล่าสุด: `0.7.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+- เวอร์ชันล่าสุด: `0.7.1` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 - Unity 2022.3 และ Built-in Render Pipeline
-- Dependency สำหรับ VRChat: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [Repository](https://github.com/LogicCuteGuy/DigHoleIt) · [Release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+- Dependency สำหรับ VRChat: `com.vrchat.worlds` `3.10.5`
+- [Repository](https://github.com/LogicCuteGuy/DigHoleIt) · [Release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 - License: MIT
 
-Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy.com/index.json) แล้วติดตั้ง **0.7.0** ผ่าน VCC/ALCOM ได้ หรือใช้ `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`, embedded repository ที่ tag นี้ หรือแตก `com.logiccuteguy.digholeit-0.7.0.zip` จาก[release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0) ห้ามใช้ source archive อัตโนมัติ หากใช้ Git/ZIP ใน VRChat project ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
+Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy.com/index.json) แล้วติดตั้ง **0.7.1** ผ่าน VCC/ALCOM ได้ หรือใช้ `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1`, embedded repository ที่ tag นี้ หรือแตก `com.logiccuteguy.digholeit-0.7.1.zip` จาก[release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1) ห้ามใช้ source archive อัตโนมัติ หากใช้ Git/ZIP ใน VRChat project ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
 
 0.6.1 แก้ Undo หลัง Bake/move/resize, seam ของ terrain hole, foliage shading และ edge collision mesh ที่ไม่ถูกต้อง
 
@@ -69,13 +69,13 @@ Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy
 
 0.2.0 แก้ความเข้ากันได้ของ VRChat panel โดย Control Panel และ Cloth Panel ใช้ `NoVariableSync` จึงอยู่ GameObject เดียวกับ Synced Control Panel ที่เป็น `Manual` ได้ พร้อมแก้ shader reference ใน baked GPU deform texture ของ example และอัปเดต VRChat scene ฟีเจอร์ GPU/native physics เดิมยังใช้ได้
 
-- **เวอร์ชันล่าสุด**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
+- **เวอร์ชันล่าสุด**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.2)
 - **Unity**: 2022.3 ขึ้นไป
 - **License**: MIT
 - **Dependency**: `com.unity.ugui` `1.0.0`; ProBuilder/Unity Splines เป็นทางเลือก และ VRChat ใช้ Worlds SDK/UdonSharp
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM, ใช้ `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1`, embedded ที่ `Packages/com.logiccuteguy.blendproperty` หรือแตก named release asset `com.logiccuteguy.blendproperty-0.2.1.zip`
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM, ใช้ `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.2`, embedded ที่ `Packages/com.logiccuteguy.blendproperty` หรือแตก named release asset `com.logiccuteguy.blendproperty-0.2.2.zip`
 
 เลือกวิธีติดตั้งเดียวต่อ project เพื่อไม่ให้มี package ซ้ำ ดู[ขั้นตอนติดตั้ง](./blendproperty/intro.md)
 
@@ -83,18 +83,18 @@ Refresh [รายการ VPM ของ LogicCuteGuy](https://vpm.logiccuteguy
 
 0.1.1 เพิ่ม live GPU modifier, cloth/soft body, fluid, hair, particle, paint/waves, destruction, ocean และ interaction Component ร่วมทำงาน native ได้เมื่อไม่มี Worlds SDK ส่วน Array/Curve ใช้ Unity Splines เสริม และ Array เพิ่ม Split Copies/Collider Per Copy การ sync control ไม่ใช่การ replicate GPU simulation ทั้งหมด ดู[Runtime/build](./blendproperty/runtime.md) และ[Physics/material](./blendproperty/physics.md)
 
-### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
+### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for UdonSharp
 
 WASM2HLSL 0.2.0 อ่านตารางค่าคงที่ขนาดใหญ่จากเท็กซ์เจอร์: `.rodata` ที่ 1 KB ขึ้นไป (`static` / `const` table, `include_bytes!`) มาจากเท็กซ์เจอร์ `rom` ที่ตั้งเป็น `_WasmRom` แทน register ของ GPU จึงไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte โดยไม่ต้องแก้ซอร์ส การตั้ง import **Texture Constants From (bytes)** กำหนดเกณฑ์ (ค่าเริ่ม 1024; 0 คือเก็บทุกอย่างใน register) แก้เสียงตัวอย่างที่ขาดตอน instance ยุ่ง, การ sync write-ahead ของ Chroma หลัง hitch (ฟิลด์ใหม่ `maxLead`, output ring 131072 เฟรม) และ Udon exception ของ `WasmGpuRunner` ตอนออกจาก world ดู[CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md)
 
 WASM2HLSL 0.1.0 แปลงโมดูล WebAssembly เป็น HLSL shader แล้วรันบน GPU จาก UdonSharp: วาง `.wasm` ใน `Assets/` แล้ว importer จะสร้าง shader/material/render texture หนึ่งชุดต่อ export ไว้ใน `.wasm` asset `WasmGpuRunner` ตั้ง argument กับ input แล้ว blit ทีละพิกเซล อ่านผลกลับผ่าน `VRCAsyncGPUReadback` เขียน kernel ด้วย Rust/C/Zig/AssemblyScript/TinyGo พร้อมแท็ก `@size` / `@traps` จากซอร์ส รองรับ `f32`/`f64`/`i64`/`v128` และ reference types โดยผลตรงทุกบิตยกเว้นการปัด `f32` ของ GPU
 
-- **เวอร์ชันล่าสุด**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
+- **เวอร์ชันล่าสุด**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
 - **Unity**: 2022.3
 - **License**: MIT
-- **VPM dependency**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.10`
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`
 - **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
 
-ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (refresh รายการก่อน), ใช้ `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`, embedded ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก named release asset `com.logiccuteguy.wasm2hlsl-0.2.0.zip` เลือกวิธีเดียวต่อ project และหากใช้ Git/ZIP ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (refresh รายการก่อน), ใช้ `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1`, embedded ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก named release asset `com.logiccuteguy.wasm2hlsl-0.2.1.zip` เลือกวิธีเดียวต่อ project และหากใช้ Git/ZIP ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
 
 เอกสาร: [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)

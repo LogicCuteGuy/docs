@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifier และข้อจำกัด
 
-> เวอร์ชันเอกสาร: **0.2.1**
+> เวอร์ชันเอกสาร: **0.2.2**
 
 [สร้าง stack](./intro.md) ก่อน Modifier ทำงานตาม **ลำดับ component** เปลี่ยนลำดับแล้วผลเปลี่ยน
 
@@ -23,7 +23,7 @@ sidebar_position: 2
 - **Simple Deform**: Twist / Bend / Taper / Stretch ส่วน **Wave** ที่ Runtime Off bake ที่ time คงที่ หากต้องการเคลื่อนไหวใช้[วิธี runtime](./runtime.md)
 - **Remesh**: Blocks / Smooth / Sharp / Voxel ส่วนที่บางกว่า voxel อาจหายไป
 
-ดู option ทั้งหมดใน[README ที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/README.md)
+ดู option ทั้งหมดใน[README ที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/README.md)
 
 ### เทียบก่อนและหลัง Bevel
 
@@ -73,4 +73,4 @@ Editor rebuild เฉพาะส่วนที่เปลี่ยน หา�
 
 Wave / Simple Deform / Lattice / Hook / Warp มี **Runtime > Off / GPU** ให้ย้าย GPU ไว้ท้าย stack จำกัดแปด operation, Lattice หนึ่งตัว และ 512 point Wave Along Normals / Warp Preserve Volume ยังไม่ live ใช้[การแปลง runtime](./runtime.md) แทนการเพิ่ม component Wave/SimpleDeform/Lattice แยกแบบเดิม
 
-[คู่มือ modifier พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedModifiers.md) มี setting และ before/after
+[คู่มือ modifier พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedModifiers.md) มี setting และ before/after

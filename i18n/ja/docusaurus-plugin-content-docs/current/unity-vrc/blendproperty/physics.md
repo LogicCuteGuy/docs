@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Physics・material・interaction
 
-> ドキュメントバージョン: **0.2.1**
+> ドキュメントバージョン: **0.2.2**
 
 `BlendUdon…` という名前を両 project で保持します。VRChat は UdonSharp、Worlds SDK がなければ native MonoBehaviour です。Physics simulation と networking は別です。
 
@@ -82,7 +82,7 @@ Standalone の Synced Panel/Network Event は local です。`BlendUdonPlayerCol
 - GPU は対応 render texture/readback が必要。Mesh readback は 1〜2 frame 遅れる場合があります。特に Quest は実機確認が必要で、この docs 更新では試していません。
 - 動かない場合: Simulate、Bake data、Read/Write、fluid の可視状態、GPU を確認。接続違いは Scope/list、remote の差は control 同期と local simulation の違いを確認。
 
-[画像付き workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedWorkflow.md)と[全 component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md)も参照してください。
+[画像付き workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedWorkflow.md)と[全 component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md)も参照してください。
 
 ## 0.2.0 への panel・example 更新
 

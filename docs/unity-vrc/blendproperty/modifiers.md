@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Modifiers and limits
 
-> Documentation version: **0.2.1**
+> Documentation version: **0.2.2**
 
 [Set up a stack](./intro.md) first. Modifiers run in **component order**; changing order changes the result.
 
@@ -23,7 +23,7 @@ sidebar_position: 2
 - **Simple Deform** provides Twist, Bend, Taper and Stretch. **Wave** with Runtime Off is baked at a fixed time; use the [runtime alternatives](./runtime.md) for motion.
 - **Remesh** provides Blocks, Smooth, Sharp and Voxel modes. Thin parts smaller than a voxel can disappear.
 
-For full option lists, use the [version-pinned README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/README.md).
+For full option lists, use the [version-pinned README](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/README.md).
 
 ### Bevel before and after
 
@@ -73,4 +73,4 @@ Only the changed editor-stack portion rebuilds. A rebuild exceeding 80 ms waits 
 
 Wave, Simple Deform, Lattice, Hook and Warp expose **Runtime > Off / GPU**. Keep GPU operations at the end of the stack. Conversion supports at most eight operations, one Lattice and 512 cage points. Wave Along Normals and Warp Preserve Volume are not live. See [runtime conversion](./runtime.md) rather than adding the old separate Wave/SimpleDeform/Lattice components.
 
-[Illustrated modifier tutorials](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedModifiers.md) cover settings and before/after results.
+[Illustrated modifier tutorials](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedModifiers.md) cover settings and before/after results.

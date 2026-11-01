@@ -10,9 +10,9 @@ sidebar_position: 2
 |---|---|---:|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | シーン管理、オブジェクト操作、最適化用の 15 以上の Editor ツール |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | インターフェース、async/await、例外、コレクション/JSON、パケット通信を追加する UdonSharp コンパイラー |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
-| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | `.wasm` WebAssembly カーネルを HLSL シェーダーとして GPU 上で実行し、UdonSharp から async GPU readback で読む |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.1` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.1` | 2022.3 | `.wasm` WebAssembly カーネルを HLSL シェーダーとして GPU 上で実行し、UdonSharp から async GPU readback で読む |
 
 ## VCC にリポジトリを追加する
 
@@ -51,13 +51,13 @@ LCGUdonSharp は Worlds SDK を変更せず、`Payload~/UdonSharp` からコン�
 
 DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除（Bake 済み foliage を含む）、同期 smoothing、VRChat showcase、Refresh Holes / Refresh Zones を追加します。設定はローカルで、VRChat edit は同期され late joiner に replay されます。
 
-- 最新版: `0.7.0` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+- 最新版: `0.7.1` — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 - Unity 2022.3、Built-in Render Pipeline
-- VRChat 依存関係: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.4`
-- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+- VRChat 依存関係: `com.vrchat.worlds` `3.10.5`
+- [リポジトリ](https://github.com/LogicCuteGuy/DigHoleIt) · [リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 - ライセンス: MIT
 
-[LogicCuteGuy VPM リスト](https://vpm.logiccuteguy.com/index.json)を更新し、VCC/ALCOM で **0.7.0** を導入できます。ほかに `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`、tag repository の埋め込み、[リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)の `com.logiccuteguy.digholeit-0.7.0.zip` の展開にも対応します。自動生成 source archive は使わないでください。VRChat の Git/ZIP 導入では先に LCGUdonSharp を[インストール](./lcgudonsharp/install.md)します。
+[LogicCuteGuy VPM リスト](https://vpm.logiccuteguy.com/index.json)を更新し、VCC/ALCOM で **0.7.1** を導入できます。ほかに `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1`、tag repository の埋め込み、[リリース](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)の `com.logiccuteguy.digholeit-0.7.1.zip` の展開にも対応します。自動生成 source archive は使わないでください。VRChat の Git/ZIP 導入では先に LCGUdonSharp を[インストール](./lcgudonsharp/install.md)します。
 
 0.6.1 は Bake/move/resize の Undo、terrain-hole seam、foliage shading、無効な edge collision mesh を修正します。
 
@@ -69,13 +69,13 @@ DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除�
 
 0.2.0 は VRChat panel の互換性を修正します。Control Panel と Cloth Panel は `NoVariableSync` を使用し、`Manual` の Synced Control Panel と同じ GameObject に置けます。Example の Bake 済み GPU deform texture の shader 参照と VRChat scene も更新します。既存の GPU/native physics は引き続き利用できます。
 
-- **最新版**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
+- **最新版**: 0.2.2 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.2)
 - **Unity**: 2022.3 以降
 - **License**: MIT
 - **依存関係**: `com.unity.ugui` `1.0.0`。ProBuilder/Unity Splines は任意。VRChat は Worlds SDK/UdonSharp
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1`、`Packages/com.logiccuteguy.blendproperty` への埋め込み、または名前付き `com.logiccuteguy.blendproperty-0.2.1.zip` release asset を使います。
+VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.2`、`Packages/com.logiccuteguy.blendproperty` への埋め込み、または名前付き `com.logiccuteguy.blendproperty-0.2.2.zip` release asset を使います。
 
 重複を避けるため project ごとに方法を一つだけ選びます。[インストール手順](./blendproperty/intro.md)を参照してください。
 
@@ -83,18 +83,18 @@ VCC/ALCOM の VPM リスト、`https://github.com/LogicCuteGuy/BlendProperty.git
 
 0.1.1 は live GPU modifier、cloth/soft body、fluid、hair、particle、paint/waves、destruction、ocean、interaction を追加します。Worlds SDK なしでも共通 component が native 動作します。Array/Curve は任意の Unity Splines、Array は Split Copies/Collider Per Copy に対応します。Control の同期と GPU simulation 全状態の同期は別です。[Runtime/build](./blendproperty/runtime.md)と [Physics/material](./blendproperty/physics.md)を参照してください。
 
-### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
+### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for UdonSharp
 
 WASM2HLSL 0.2.0 は大きな定数テーブルをテクスチャから読みます。1 KB 以上の `.rodata`（`static` / `const` テーブル、`include_bytes!`）は `_WasmRom` として設定された `rom` テクスチャから供給され、64000 バイトのメモリ制限の対象外になります（ソース変更は不要）。**Texture Constants From (bytes)** インポート設定でしきい値を決めます（デフォルト 1024、0 はすべてレジスタ内）。混雑したインスタンスでのオーディオ途切れ、hitch 後の Chroma write-ahead 再同期（新 `maxLead`、131072 フレームの出力リング）、ワールド退出時の `WasmGpuRunner` の Udon 例外も修正します。[CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md) を参照。
 
 WASM2HLSL 0.1.0 は WebAssembly モジュールを HLSL シェーダーに変換し、UdonSharp から GPU 上で実行します。`.wasm` を `Assets/` に置くと、インポーターが export ごとに shader/material/render texture を `.wasm` アセット内に生成します。`WasmGpuRunner` が引数と入力を設定してピクセルごとに 1 回 blit し、`VRCAsyncGPUReadback` で結果を読み戻します。カーネルは Rust/C/Zig/AssemblyScript/TinyGo で書き、ソースの `@size` / `@traps` タグで設定します。`f32`/`f64`/`i64`/`v128` と参照型に対応し、GPU の `f32` 丸め以外はビット一致です。
 
-- **最新版**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
+- **最新版**: 0.2.1 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
 - **Unity**: 2022.3
 - **License**: MIT
-- **VPM dependency**: `com.vrchat.worlds` `3.10.5`、`com.logiccuteguy.lcgudonsharp` `>=0.3.10`
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`
 - **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
 
-VCC/ALCOM の VPM リスト（先に更新）、`https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`、`Packages/com.logiccuteguy.wasm2hlsl` への埋め込み、または名前付き `com.logiccuteguy.wasm2hlsl-0.2.0.zip` release asset を使います。重複を避けるため project ごとに方法を一つだけ選び、Git/ZIP では先に [LCGUdonSharp](./lcgudonsharp/install.md) をインストールしてください。
+VCC/ALCOM の VPM リスト（先に更新）、`https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1`、`Packages/com.logiccuteguy.wasm2hlsl` への埋め込み、または名前付き `com.logiccuteguy.wasm2hlsl-0.2.1.zip` release asset を使います。重複を避けるため project ごとに方法を一つだけ選び、Git/ZIP では先に [LCGUdonSharp](./lcgudonsharp/install.md) をインストールしてください。
 
 ドキュメント: [概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Physics, materials and interaction
 
-> Documentation version: **0.2.1**
+> Documentation version: **0.2.2**
 
 These components keep their `BlendUdon…` names in both project types: UdonSharp in VRChat, native MonoBehaviours without the Worlds SDK. Physics simulation and its networking are separate concerns.
 
@@ -82,7 +82,7 @@ Standalone Synced Panel/Network Event act locally. `BlendUdonPlayerColliders` cr
 - GPU simulations require compatible render textures/readback. Mesh readback can lag one or two frames. Verify target hardware, especially Quest; this documentation update does not test it.
 - Nothing moves: check Simulate, bake data, source Read/Write, visible fluid domain and graphics support. Wrong links: review Scope and manually assigned lists. Wrong remote result: distinguish shared controls from local simulation state.
 
-See the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedWorkflow.md) and [full component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md).
+See the [illustrated workflow](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedWorkflow.md) and [full component guide](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md).
 
 ## Upgrading panels and example assets to 0.2.0
 

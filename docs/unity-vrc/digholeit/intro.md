@@ -4,9 +4,13 @@ sidebar_position: 1
 
 # DigHoleIt documentation
 
-> Documentation version: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+> Documentation version: **0.7.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 
 DigHoleIt turns part of a Unity Terrain into diggable voxel terrain. You place a **Dig Zone** over the terrain and bake it. Players can then dig holes, tunnels and caves, add soil back, and paint terrain layers onto the voxel surface. In VRChat, every edit syncs to all players, including late joiners.
+
+## What's new in 0.7.1
+
+Supports stock UdonSharp: LCGUdonSharp is now optional. The VPM package depends only on Worlds SDK 3.10.5.
 
 ## What's new in 0.7.0
 

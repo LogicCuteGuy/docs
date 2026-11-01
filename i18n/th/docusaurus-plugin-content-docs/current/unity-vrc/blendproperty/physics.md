@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Physics, material และ interaction
 
-> เวอร์ชันเอกสาร: **0.2.1**
+> เวอร์ชันเอกสาร: **0.2.2**
 
 Component ยังคงชื่อ `BlendUdon…` ทั้งสองประเภท project: VRChat ใช้ UdonSharp ส่วนไม่มี Worlds SDK ใช้ native MonoBehaviour ต้องแยก physics simulation ออกจาก networking
 
@@ -82,7 +82,7 @@ Standalone Synced Panel/Network Event ทำงาน local `BlendUdonPlayerColl
 - GPU ต้องมี render texture/readback ที่รองรับ Mesh readback อาจช้า 1–2 frame ต้องตรวจ hardware เป้าหมายโดยเฉพาะ Quest รอบอัปเดต docs นี้ไม่ได้ทดสอบจริง
 - ไม่เคลื่อนไหว: ตรวจ Simulate, bake data, Read/Write, fluid domain ที่มองเห็นและ GPU หาก link ผิดให้ตรวจ Scope/list หาก remote ไม่เหมือนกันให้แยก control sync กับ simulation local
 
-ดู[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedWorkflow.md) และ[คู่มือ component ทั้งหมด](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md)
+ดู[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedWorkflow.md) และ[คู่มือ component ทั้งหมด](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md)
 
 ## อัปเกรด panel และ example asset เป็น 0.2.0
 

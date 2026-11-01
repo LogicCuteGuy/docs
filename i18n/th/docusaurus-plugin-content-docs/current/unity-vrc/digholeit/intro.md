@@ -4,9 +4,13 @@ sidebar_position: 1
 
 # เอกสาร DigHoleIt
 
-> เวอร์ชันเอกสาร: **0.7.0** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+> เวอร์ชันเอกสาร: **0.7.1** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 
 DigHoleIt เปลี่ยนพื้นที่ส่วนหนึ่งของ Unity Terrain ให้เป็น voxel terrain ที่ขุดได้ วาง **Dig Zone** เหนือ terrain แล้ว Bake จากนั้นผู้เล่นสามารถขุดหลุม อุโมงค์ ถ้ำ เติมดินกลับ และระบาย terrain layer บนผิว voxel ได้ เวอร์ชัน 0.5.0 รองรับ tree/detail ใน zone, การ paint foliage ภายในหลุม บนผนังและเพดาน และการขยายความสูงของ zone อัตโนมัติ ใน VRChat การแก้ไขจะ sync ไปยังผู้เล่นทุกคนรวมถึง late joiner
+
+## มีอะไรใหม่ใน 0.7.1
+
+รองรับ UdonSharp มาตรฐาน: LCGUdonSharp เป็นตัวเลือกแล้ว แพ็กเกจ VPM ต้องการเพียง Worlds SDK 3.10.5
 
 ## สิ่งใหม่ใน 0.7.0
 

@@ -44,14 +44,14 @@ LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots]
 
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.0
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.1
 
 DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
 Version 0.7.0 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
-### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.1
+### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.2
 
 0.2.1 is a documentation release: it adds step-by-step VCC/ALCOM installation and clarifies the Git/ZIP alternatives. Runtime code and example assets are unchanged from 0.2.0.
 
@@ -59,7 +59,7 @@ Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrai
 
 Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components. [Setup](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md).
 
-### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.0
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.1
 
 WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more no longer counts toward the 64000-byte memory limit, lifting the size limit for bigger modules. `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
 

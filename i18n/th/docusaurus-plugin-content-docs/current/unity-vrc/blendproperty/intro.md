@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # BlendProperty
 
-> เวอร์ชันเอกสาร: **0.2.1** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
+> เวอร์ชันเอกสาร: **0.2.2** · [Release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.2)
 
 **Blend Property** (`com.logiccuteguy.blendproperty`) เพิ่ม modifier component แบบ Blender ให้ Unity object ที่มี **MeshFilter** Stack ทำงานจากบนลงล่าง แสดง preview ใน Editor และบันทึกผลเป็น mesh asset โดยค่าเริ่มต้น build จะเก็บ baked mesh ไม่ใช่ stack
 
 ต้องใช้ **Unity 2022.3 ขึ้นไป** ProBuilder เป็นทางเลือกและ bridge จะเปิดเมื่อมีแพ็กเกจนี้ ไม่รองรับ SkinnedMeshRenderer, bone หรือ blend shape ดู[รายการ modifier](./modifiers.md) และ[Runtime/build](./runtime.md)
+
+## มีอะไรใหม่ใน 0.2.2
+
+แก้ footprint ของ picture-tip และโหมดซิงก์ Udon เอกสารอ้างอิง UdonSharp มาตรฐาน
 
 ## สิ่งใหม่ใน 0.2.1
 
@@ -28,7 +32,7 @@ sidebar_position: 1
 
 1. [เพิ่ม LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) ใน VCC/ALCOM หรือเพิ่ม `https://vpm.logiccuteguy.com/index.json` เองใน repository settings ของแอป หากเพิ่มไว้แล้วให้ refresh listing
 2. เปิด **Manage Project** ของ Unity project แล้วเปิดใช้ LogicCuteGuy repository หากยังไม่ได้เปิด
-3. ค้นหา **Blend Property** (`com.logiccuteguy.blendproperty`) แล้วเพิ่ม **0.2.1**
+3. ค้นหา **Blend Property** (`com.logiccuteguy.blendproperty`) แล้วเพิ่ม **0.2.2**
 4. เปิด project ใน Unity และรอ import package ให้เสร็จ
 
 [รายการ VPM](../packages.md) แจก named ZIP เดียวกับ GitHub Releases Package ประกาศ dependency `com.unity.ugui` **1.0.0** ส่วน VRChat runtime deformer ต้องมี Worlds SDK และ stock UdonSharp หรือ LCGUdonSharp
@@ -38,10 +42,10 @@ sidebar_position: 1
 เปิด **Window > Package Manager > + > Add package from git URL** แล้วใส่
 
 ```text
-https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1
+https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.2
 ```
 
-หรือวาง repository ที่ tag นี้ใน `Packages/com.logiccuteguy.blendproperty` หรือแตก release ZIP `com.logiccuteguy.blendproperty-0.2.1.zip` ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจ
+หรือวาง repository ที่ tag นี้ใน `Packages/com.logiccuteguy.blendproperty` หรือแตก release ZIP `com.logiccuteguy.blendproperty-0.2.2.zip` ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ตรงใต้โฟลเดอร์แพ็กเกจ
 
 เลือก **วิธีติดตั้งเดียวต่อ project** เพื่อไม่ให้มี package ซ้ำ
 
@@ -63,7 +67,7 @@ https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1
 
 [![Unity Editor แสดง Modifier Stack Inspector และ cube ก่อนและหลังใช้ Bevel](/img/blendproperty/workflow-stack.png)](/img/blendproperty/workflow-stack.png)
 
-[เปิดภาพขนาดเต็ม](/img/blendproperty/workflow-stack.png) ภาพนำมาจาก[คู่มือต้นทางที่ตรึง tag](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedWorkflow.md) บางภาพมีเลขเวอร์ชันใน Inspector เก่ากว่า 0.2.0 ด้านล่างแยกภาพตั้งค่า Editor ออกจากผล local ClientSim ชัดเจน
+[เปิดภาพขนาดเต็ม](/img/blendproperty/workflow-stack.png) ภาพนำมาจาก[คู่มือต้นทางที่ตรึง tag](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedWorkflow.md) บางภาพมีเลขเวอร์ชันใน Inspector เก่ากว่า 0.2.0 ด้านล่างแยกภาพตั้งค่า Editor ออกจากผล local ClientSim ชัดเจน
 
 ## ตัวอย่าง
 
@@ -81,6 +85,6 @@ Stack ยังทำงานขณะแก้ shape โหมดเลือ�
 
 ## Source และ license
 
-[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/LICENSE)
+[Repository](https://github.com/LogicCuteGuy/BlendProperty) · [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/BlendProperty.md) · [MIT license](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/LICENSE)
 
-หลัง modifier แรก ใช้ปุ่ม **Add Modifier** ของ stack เลือก Generate / Deform / Edit / Normals ได้ ตั้ง physics ผ่าน **Blend Property > Physics > Physics Tab** ดู[Physics](./physics.md) และ[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedWorkflow.md)
+หลัง modifier แรก ใช้ปุ่ม **Add Modifier** ของ stack เลือก Generate / Deform / Edit / Normals ได้ ตั้ง physics ผ่าน **Blend Property > Physics > Physics Tab** ดู[Physics](./physics.md) และ[workflow พร้อมภาพ](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedWorkflow.md)

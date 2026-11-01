@@ -12,9 +12,9 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
 | `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.11` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
-| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.0` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
-| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.1` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
-| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for LCGUdonSharp | `0.2.0` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
+| `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.1` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
+| `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
+| `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.1` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
 | `com.logiccuteguy.uihud` | UIHUD | `0.1.0` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
 
 ## Add the repository in VCC
@@ -64,13 +64,13 @@ Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 
 DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
-- **Latest version**: 0.7.0 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+- **Latest version**: 0.7.1 — [release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 - **Unity**: 2022.3, Built-in Render Pipeline
-- **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.4`
+- **VRChat dependencies**: `com.vrchat.worlds` `3.10.5`
 - **License**: MIT
 - **Repository**: [LogicCuteGuy/DigHoleIt](https://github.com/LogicCuteGuy/DigHoleIt)
 
-Install **0.7.0** through VCC/ALCOM from the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json); refresh the listing first. Alternatively use `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0`, embed the tagged repository, or extract the named `com.logiccuteguy.digholeit-0.7.0.zip` from [the release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0). Do not use the automatic source archive. For Git/ZIP installs in VRChat projects, install LCGUdonSharp first using its [installation guide](./lcgudonsharp/install.md).
+Install **0.7.1** through VCC/ALCOM from the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json); refresh the listing first. Alternatively use `https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1`, embed the tagged repository, or extract the named `com.logiccuteguy.digholeit-0.7.1.zip` from [the release](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1). Do not use the automatic source archive. For Git/ZIP installs in VRChat projects, install LCGUdonSharp first using its [installation guide](./lcgudonsharp/install.md).
 
 Version 0.6.1 fixes bake/move/resize undo, terrain-hole seams, foliage shading and invalid edge collision meshes.
 
@@ -82,13 +82,13 @@ Docs: [Overview](digholeit/intro) · [Getting started](digholeit/getting-started
 
 0.2.0 fixes VRChat panel compatibility: Control Panel and Cloth Panel now use `NoVariableSync`, so they can share a GameObject with the `Manual` Synced Control Panel. It also corrects the shader references in the example's baked GPU deform textures and refreshes the VRChat scene. Existing GPU/native physics features remain available.
 
-- **Latest version**: 0.2.1 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.1)
+- **Latest version**: 0.2.2 — [release](https://github.com/LogicCuteGuy/BlendProperty/releases/tag/v0.2.2)
 - **Unity**: 2022.3 or newer
 - **License**: MIT
 - **Declared dependency**: `com.unity.ugui` `1.0.0`; optional ProBuilder/Unity Splines; Worlds SDK/UdonSharp for VRChat
 - **Repository**: [LogicCuteGuy/BlendProperty](https://github.com/LogicCuteGuy/BlendProperty)
 
-Install through the VPM listing in VCC/ALCOM, use `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.1`, embed at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.2.1.zip` release asset.
+Install through the VPM listing in VCC/ALCOM, use `https://github.com/LogicCuteGuy/BlendProperty.git#v0.2.2`, embed at `Packages/com.logiccuteguy.blendproperty`, or extract the named `com.logiccuteguy.blendproperty-0.2.2.zip` release asset.
 
 Choose one installation method per project to avoid duplicate copies; see the [step-by-step installation guide](./blendproperty/intro.md).
 
@@ -96,19 +96,19 @@ Docs: [Overview and setup](./blendproperty/intro.md) · [Modifiers](./blendprope
 
 0.1.1 adds live GPU modifiers, cloth/soft body, fluids, hair, particles, paint/waves, destruction, ocean and interaction. Shared components now run natively without the Worlds SDK. Array/Curve accept optional Unity Splines; Array adds Split Copies and Collider Per Copy. Runtime controls can be shared without replicating full GPU simulation state. See [runtime/builds](./blendproperty/runtime.md) and [physics/materials](./blendproperty/physics.md).
 
-### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for LCGUdonSharp
+### `com.logiccuteguy.wasm2hlsl` — WASM2HLSL for UdonSharp
 
 WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more (`static` / `const` tables, `include_bytes!`) is served from a `rom` texture set as `_WasmRom` instead of GPU registers, so it no longer counts toward the 64000-byte memory limit — no source changes needed. The **Texture Constants From (bytes)** import setting picks the threshold (default 1024; 0 keeps everything in registers). It also fixes audio examples dropping out on busy instances, Chroma write-ahead resync after a hitch (new `maxLead`, 131072-frame output ring), and a Udon exception in `WasmGpuRunner` when leaving a world. See [CHANGELOG.md](https://github.com/LogicCuteGuy/WASM2HLSL/blob/0.2.0/CHANGELOG.md).
 
 WASM2HLSL 0.1.0 converts WebAssembly modules into HLSL shaders and runs them on the GPU from UdonSharp: drop a `.wasm` into `Assets/`, and the importer builds a shader/material/render texture per export inside the `.wasm` asset. A `WasmGpuRunner` sets arguments and input, blits once per pixel and reads results back through `VRCAsyncGPUReadback`. Kernels are written in Rust/C/Zig/AssemblyScript/TinyGo with `@size` and `@traps` source tags; `f32`/`f64`/`i64`/`v128` and reference types are supported with bit-exact results except GPU `f32` rounding.
 
-- **Latest version**: 0.2.0 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
+- **Latest version**: 0.2.1 — [release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
 - **Unity**: 2022.3
 - **License**: MIT
-- **VPM dependency**: `com.vrchat.worlds` `3.10.5`, `com.logiccuteguy.lcgudonsharp` `>=0.3.10`
+- **VPM dependency**: `com.vrchat.worlds` `3.10.5`
 - **Repository**: [LogicCuteGuy/WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL)
 
-Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.0.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1`, embed at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.1.zip` release asset. Choose one installation method per project; install [LCGUdonSharp](./lcgudonsharp/install.md) first for Git/ZIP installs.
 
 Docs: [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md)
 

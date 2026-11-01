@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # WASM2HLSL
 
-> Documentation version: **0.2.0** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
+> Documentation version: **0.2.1** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
 
-**WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) runs WebAssembly on the GPU in a VRChat world. Drop a `.wasm` file into the project and the editor translates it to HLSL; an UdonSharp `WasmGpuRunner` then executes the exported function once per pixel of a render texture and reads the results back into Udon.
+**WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) runs WebAssembly on the GPU in a VRChat world. Drop a `.wasm` file into the project and the editor translates it to HLSL; an UdonSharp `WasmGpuRunner` then executes the exported function once per pixel of a render texture and reads the results back into Udon.
 
 Write the kernel in **Rust, C/C++, Zig, AssemblyScript or TinyGo** instead of hand-written HLSL. Udon is slow — roughly 1000× slower than C# — but a pixel shader running the same logic over thousands of pixels in parallel is not.
+
+## What's new in 0.2.1
+
+Supports stock UdonSharp, and the package display name is now **WASM2HLSL for UdonSharp**. LCGUdonSharp is no longer required.
 
 ## What's new in 0.2.0
 
@@ -26,7 +30,7 @@ Initial release: `.wasm` → HLSL translation, the `WasmGpuRunner` U# component,
 
 - **Unity** 2022.3
 - **VRChat Worlds SDK** `3.10.5`
-- **LCGUdonSharp** `com.logiccuteguy.lcgudonsharp` `>= 0.3.10` — see the [installation guide](../lcgudonsharp/install.md)
+- **UdonSharp** — stock UdonSharp from the Worlds SDK works; [LCGUdonSharp](../lcgudonsharp/install.md) `>= 0.3.10` is optional
 
 ## Installation
 
@@ -34,7 +38,7 @@ Initial release: `.wasm` → HLSL translation, the `WasmGpuRunner` U# component,
 
 1. [Add the LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) to VCC/ALCOM, or add `https://vpm.logiccuteguy.com/index.json` manually. Refresh the listing if it is already added.
 2. Open **Manage Project** for your Unity project.
-3. Find **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) and add **0.2.0**. VPM installs the LCGUdonSharp dependency automatically.
+3. Find **WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) and add **0.2.1**.
 4. Open the project in Unity and let the package import.
 
 ### Unity Package Manager / manual
@@ -42,10 +46,10 @@ Initial release: `.wasm` → HLSL translation, the `WasmGpuRunner` U# component,
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0
+https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1
 ```
 
-Alternatively place the tagged repository at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.0.zip` from [the release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
+Alternatively place the tagged repository at `Packages/com.logiccuteguy.wasm2hlsl`, or extract the named `com.logiccuteguy.wasm2hlsl-0.2.1.zip` from [the release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
 
 Choose **one installation method per project** to avoid duplicate copies.
 

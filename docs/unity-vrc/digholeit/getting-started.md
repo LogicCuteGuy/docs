@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting started: illustrated tutorial
 
-> Documentation version: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+> Documentation version: **0.7.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 
 Install DigHoleIt, bake a diggable area, sculpt it in Unity, and enable a Dig Pen for VRChat. Screenshots illustrate the editor workflow. Click an image to read it at full size.
 
@@ -16,7 +16,7 @@ The recording shows **editor authoring**, with Play mode off and unresolved Udon
 |---|---|---|
 | Unity | 2022.3 | 2022.3 |
 | Render pipeline | Built-in | Built-in |
-| Other | Worlds SDK 3.10.5 and **LCGUdonSharp** 0.3.4 or later | none |
+| Other | Worlds SDK 3.10.5; **LCGUdonSharp** optional | none |
 
 ## 1. Install the package
 
@@ -34,20 +34,20 @@ For VRChat, use **VCC or ALCOM**:
 
 *00:05 — ALCOM confirmation. VCC has a different layout with the same URL.*
 
-3. Open your project's **Manage Packages**, refresh, search for **DigHoleIt**, and install **0.7.0**. The VPM package declares Worlds SDK 3.10.5 and LCGUdonSharp 0.3.4 or later as dependencies.
+3. Open your project's **Manage Packages**, refresh, search for **DigHoleIt**, and install **0.7.1**. The VPM package declares Worlds SDK 3.10.5 as its dependency.
 4. Open Unity and wait for import and compilation. Resolve Console errors before Play or a build; see [Udon program-asset errors](troubleshooting.md#udon-program-assets).
 
 [![DigHoleIt 0.7.0 installed in ALCOM Manage Packages](/img/digholeit/tutorial/install-package.webp)](/img/digholeit/tutorial/install-package.webp)
 
 *00:23 — Installed and Latest both show 0.7.0, with a successful installation message.*
 
-For a **Git install**, first install [LCGUdonSharp](../lcgudonsharp/install.md) in VRChat projects. Use **Window > Package Manager > + > Add package from git URL**:
+For a **Git install**, use stock UdonSharp or install [LCGUdonSharp](../lcgudonsharp/install.md) (optional) in VRChat projects. Use **Window > Package Manager > + > Add package from git URL**:
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1
 ```
 
-Alternatively place the tagged repository, or the contents of the named `com.logiccuteguy.digholeit-0.7.0.zip` from the release, in `Packages/com.logiccuteguy.digholeit`. Its `package.json` must be directly inside that folder. Prefer the named package ZIP over GitHub's automatic source archive.
+Alternatively place the tagged repository, or the contents of the named `com.logiccuteguy.digholeit-0.7.1.zip` from the release, in `Packages/com.logiccuteguy.digholeit`. Its `package.json` must be directly inside that folder. Prefer the named package ZIP over GitHub's automatic source archive.
 
 ## 2. Choose an example or your own Terrain
 

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Dig Zone
 
-> เวอร์ชันเอกสาร: **0.7.0**
+> เวอร์ชันเอกสาร: **0.7.1**
 
 Dig Zone คือกล่อง axis-aligned เหนือ Unity Terrain หนึ่งอัน ภายในกล่อง terrain จะถูกแทนด้วย voxel grid ที่ขุด เติม และ paint ได้
 

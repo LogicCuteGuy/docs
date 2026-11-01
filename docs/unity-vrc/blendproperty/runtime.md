@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Runtime and builds
 
-> Documentation version: **0.2.1**
+> Documentation version: **0.2.2**
 
 The editor stack is baked and stripped by default. Version 0.1.1 adds automatic GPU modifier conversion and shared physics components that run in VRChat or standalone projects.
 
@@ -66,7 +66,7 @@ The main VRChat scene has Line/Circle Array stations using `BlendUdonRuntimeArra
 - `Example/VRChat/BlendPropertyVRChatExample.unity`: GPU modifiers, Array, cloth/soft body, fluid, hair, particles, paint/waves, destruction, ocean and controls.
 - `Example/Standalone/BlendPropertyStandaloneExample.unity`: full-stack rebuild examples. Shared physics components also work natively in standalone; the scene is not a copy of every VRChat station.
 - [Physics and interaction](./physics.md): bake commands, material limits, input and synchronization.
-- [Illustrated runtime stations](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.1/Documentation~/IllustratedRuntime.md): settings, actions and expected results.
+- [Illustrated runtime stations](https://github.com/LogicCuteGuy/BlendProperty/blob/v0.2.2/Documentation~/IllustratedRuntime.md): settings, actions and expected results.
 
 If a stack disappears in a VRChat build, use Runtime GPU rather than Keep at Runtime. Missing GPU output needs the correct bake, readable source, graphics support and pipeline checks. The docs build does not run Unity or validate two-client synchronization.
 

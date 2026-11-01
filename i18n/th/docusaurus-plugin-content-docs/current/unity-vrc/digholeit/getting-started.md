@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # เริ่มต้นใช้งาน: tutorial พร้อมภาพ
 
-> เวอร์ชันเอกสาร: **0.7.0** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.0)
+> เวอร์ชันเอกสาร: **0.7.1** · [Release notes](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
 
 ทำตามขั้นตอนเพื่อติดตั้ง DigHoleIt, Bake พื้นที่ที่ขุดได้, sculpt ใน Unity และเพิ่ม Dig Pen สำหรับ VRChat ภาพประกอบแสดงขั้นตอนใน Editor คลิกภาพเพื่ออ่าน Inspector ขนาดเต็ม
 
@@ -16,7 +16,7 @@ sidebar_position: 2
 |---|---|---|
 | Unity | 2022.3 | 2022.3 |
 | Render pipeline | Built-in | Built-in |
-| อื่น ๆ | Worlds SDK 3.10.5 และ **LCGUdonSharp** 0.3.4 ขึ้นไป | ไม่มี |
+| อื่น ๆ | Worlds SDK 3.10.5 (**LCGUdonSharp** เป็นตัวเลือก) | ไม่มี |
 
 ## 1. ติดตั้ง package
 
@@ -34,20 +34,20 @@ sidebar_position: 2
 
 *00:05 — หน้ายืนยันใน ALCOM ส่วน VCC มี layout ต่างกันแต่ใช้ URL เดียวกัน*
 
-3. เปิด **Manage Packages** ของ project แล้ว refresh ค้นหา **DigHoleIt** และติดตั้ง **0.7.0** VPM package ระบุ dependency เป็น Worlds SDK 3.10.5 และ LCGUdonSharp 0.3.4 ขึ้นไป
+3. เปิด **Manage Packages** ของ project แล้ว refresh ค้นหา **DigHoleIt** และติดตั้ง **0.7.1** VPM package ระบุ dependency เพียง Worlds SDK 3.10.5
 4. เปิด Unity รอ import และ compilation ให้เสร็จ แก้ Console error ก่อน Play หรือ build ดู[ปัญหา Udon program asset](troubleshooting.md#udon-program-assets)
 
 [![ALCOM แสดง DigHoleIt 0.7.0 ติดตั้งสำเร็จ](/img/digholeit/tutorial/install-package.webp)](/img/digholeit/tutorial/install-package.webp)
 
 *00:23 — Installed และ Latest แสดง 0.7.0 พร้อมข้อความติดตั้งสำเร็จ*
 
-หากใช้ **Git install** ใน VRChat ให้[ติดตั้ง LCGUdonSharp](../lcgudonsharp/install.md) ก่อน แล้วเปิด **Window > Package Manager > + > Add package from git URL**:
+หากใช้ **Git install** ใน VRChat ให้ใช้ UdonSharp มาตรฐาน หรือ[ติดตั้ง LCGUdonSharp](../lcgudonsharp/install.md) (ไม่บังคับ) แล้วเปิด **Window > Package Manager > + > Add package from git URL**:
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.0
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1
 ```
 
-หรือวาง tagged repository / เนื้อหาจาก `com.logiccuteguy.digholeit-0.7.0.zip` ใน release ลง `Packages/com.logiccuteguy.digholeit` โดย `package.json` ต้องอยู่ใน folder นี้โดยตรง แนะนำ named package ZIP แทน automatic source archive ของ GitHub
+หรือวาง tagged repository / เนื้อหาจาก `com.logiccuteguy.digholeit-0.7.1.zip` ใน release ลง `Packages/com.logiccuteguy.digholeit` โดย `package.json` ต้องอยู่ใน folder นี้โดยตรง แนะนำ named package ZIP แทน automatic source archive ของ GitHub
 
 ## 2. เลือก example หรือ Terrain ของคุณ
 

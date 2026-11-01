@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # WASM2HLSL
 
-> ドキュメントバージョン: **0.2.0** · [リリース](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)
+> ドキュメントバージョン: **0.2.1** · [リリース](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
 
-**WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) は VRChat ワールド内で WebAssembly を GPU 上で実行します。`.wasm` ファイルをプロジェクトに置くと、エディターがそれを HLSL に変換します。UdonSharp の `WasmGpuRunner` がエクスポート関数をレンダーテクスチャの各ピクセルで一度ずつ実行し、結果を Udon に読み戻します。
+**WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) は VRChat ワールド内で WebAssembly を GPU 上で実行します。`.wasm` ファイルをプロジェクトに置くと、エディターがそれを HLSL に変換します。UdonSharp の `WasmGpuRunner` がエクスポート関数をレンダーテクスチャの各ピクセルで一度ずつ実行し、結果を Udon に読み戻します。
 
 カーネルは手書きの HLSL ではなく **Rust、C/C++、Zig、AssemblyScript、TinyGo** で書けます。Udon は遅い（C# の約 1000 分の 1 の速度）ですが、同じロジックを数千ピクセル並列で回すピクセルシェーダーはそうではありません。
+
+## 0.2.1 の新機能
+
+標準の UdonSharp に対応し、パッケージ表示名が **WASM2HLSL for UdonSharp** になりました。LCGUdonSharp は必須ではなくなりました。
 
 ## 0.2.0 の新機能
 
@@ -26,7 +30,7 @@ Importer version 9 で全 `.wasm` が一度再インポートされ、大きな 
 
 - **Unity** 2022.3
 - **VRChat Worlds SDK** `3.10.5`
-- **LCGUdonSharp** `com.logiccuteguy.lcgudonsharp` `>= 0.3.10` — [インストールガイド](../lcgudonsharp/install.md)を参照
+- **UdonSharp** — Worlds SDK 標準の UdonSharp で動作します。[LCGUdonSharp](../lcgudonsharp/install.md) `>= 0.3.10` は任意です
 
 ## インストール
 
@@ -34,7 +38,7 @@ Importer version 9 で全 `.wasm` が一度再インポートされ、大きな 
 
 1. [LogicCuteGuy VPM リポジトリ](https://vpm.logiccuteguy.com/)を VCC/ALCOM に追加するか、`https://vpm.logiccuteguy.com/index.json` を手動で追加します。既に追加済みならリストを更新してください。
 2. Unity プロジェクトの **Manage Project** を開きます。
-3. **WASM2HLSL for LCGUdonSharp** (`com.logiccuteguy.wasm2hlsl`) を見つけて **0.2.0** を追加します。LCGUdonSharp の依存関係は VPM が自動でインストールします。
+3. **WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) を見つけて **0.2.1** を追加します。
 4. プロジェクトを Unity で開き、パッケージのインポートを待ちます。
 
 ### Unity Package Manager / 手動
@@ -42,10 +46,10 @@ Importer version 9 で全 `.wasm` が一度再インポートされ、大きな 
 **Window > Package Manager > + > Add package from git URL** で次を入力します。
 
 ```text
-https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.0
+https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1
 ```
 
-または tag 付きリポジトリを `Packages/com.logiccuteguy.wasm2hlsl` に置くか、[リリース](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.0)から名前付き `com.logiccuteguy.wasm2hlsl-0.2.0.zip` をそのフォルダーに展開します（`package.json` がルートにあること）。GitHub が自動生成する **Source code (zip)** は使わないでください。
+または tag 付きリポジトリを `Packages/com.logiccuteguy.wasm2hlsl` に置くか、[リリース](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)から名前付き `com.logiccuteguy.wasm2hlsl-0.2.1.zip` をそのフォルダーに展開します（`package.json` がルートにあること）。GitHub が自動生成する **Source code (zip)** は使わないでください。
 
 重複を避けるため project ごとに方法を一つだけ選びます。
 
