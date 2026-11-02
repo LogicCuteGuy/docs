@@ -48,7 +48,7 @@ C# インターフェース、ビルド時の async/await、同期例外処理�
 
 DigHoleIt 0.7.0 は Dig Pen prefab、実行時の木・detail の配置/削除（Bake 済み foliage を含む）、同期 smoothing、VRChat showcase、Refresh Holes / Refresh Zones を追加します。設定はローカルで、VRChat edit は同期され late joiner に replay されます。
 
-0.7.0 は VPM と GitHub で公開されています。[導入方法](./digholeit/getting-started.md)を参照してください。
+0.7.1 は VPM と GitHub で公開されています。[導入方法](./digholeit/getting-started.md)を参照してください。
 Unity Terrain に実行時の穴、トンネル、洞窟、土の追加、terrain layer のペイントを提供する voxel terrain システムです。VRChat 同期と standalone C# runtime に対応します。
 
 ### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.2

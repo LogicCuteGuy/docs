@@ -48,7 +48,7 @@ An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time
 
 DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
-Version 0.7.0 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
+Version 0.7.1 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
 ### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.2
