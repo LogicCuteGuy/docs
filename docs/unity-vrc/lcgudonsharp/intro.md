@@ -4,13 +4,18 @@ sidebar_position: 1
 
 # LCGUdonSharp Overview
 
-> Documentation version: **0.3.11** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.11)
+> Documentation version: **0.3.12** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12)
 
 **LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) is an interface-enabled UdonSharp compiler for VRChat. It extends UdonSharp with C# interfaces, build-time `async`/`await`, synchronous `try`/`catch`/`finally`, C# collections and JSON, extended language constructs, and a manual packet networking layer — while keeping every modified source file inside `Packages/com.logiccuteguy.lcgudonsharp` instead of the VRChat SDK or `Assets`.
 
 > **Status**
 >
 > Interfaces, synchronous exceptions, async lowering, and extended-language support are ready for world testing. Manual packet networking (`[LCGPacket]` / `LCGNetworkZone`) is **experimental** — its wire protocol may change between versions.
+
+## What's new in 0.3.12
+
+- The VPM dependency on the Worlds SDK is relaxed from exactly `3.10.5` to `3.x.x` (`>=3.10.5`). The compiler payload is still built from SDK 3.10.5.
+- Full changes: [0.3.11...0.3.12](https://github.com/LogicCuteGuy/LCGUdonSharp/compare/0.3.11...0.3.12).
 
 ## What's new in 0.3.11
 

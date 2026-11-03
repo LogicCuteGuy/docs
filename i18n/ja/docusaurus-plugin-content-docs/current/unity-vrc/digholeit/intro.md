@@ -4,9 +4,13 @@ sidebar_position: 1
 
 # DigHoleIt ドキュメント
 
-> ドキュメントバージョン: **0.7.1** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
+> ドキュメントバージョン: **0.7.2** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.2)
 
 DigHoleIt は Unity Terrain の一部を掘削可能な voxel terrain にします。Terrain 上へ **Dig Zone** を配置して Bake すると、プレイヤーは穴、トンネル、洞窟を掘り、土を追加し、terrain layer を voxel surface にペイントできます。0.5.0 では zone 内の木と detail、穴・壁・天井への foliage paint、zone height の自動拡張に対応しました。VRChat では late joiner を含む全プレイヤーへ編集が同期されます。
+
+## 0.7.2 の新機能
+
+- VPM 依存関係の Worlds SDK を、正確に `3.10.5` から `3.x.x`（`>=3.10.5`）に緩和しました。VRChat SDK 3.10.6 以降にもインストールできます。
 
 ## 0.7.1 の新機能
 

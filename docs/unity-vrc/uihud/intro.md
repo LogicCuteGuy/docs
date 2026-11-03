@@ -4,9 +4,13 @@ sidebar_position: 1
 
 # UIHUD
 
-> Documentation version: **0.1.1** · [Release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.1)
+> Documentation version: **0.1.2** · [Release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.2)
 
 **UIHUD** (`com.logiccuteguy.uihud`) adds a HUD plus slide-in menus and UI widgets to Unity projects. One setup covers **VR, Desktop and Mobile**, in VRChat worlds (UdonSharp) and in standalone Unity games with no VRChat SDK installed.
+
+## What's new in 0.1.2
+
+- The VPM dependency on the Worlds SDK is relaxed to `3.x.x` (`>=3.10.5`), so the package installs on VRChat SDK 3.10.6 and later.
 
 ## What's new in 0.1.1
 
@@ -34,7 +38,7 @@ sidebar_position: 1
 
 1. [Add the LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) to VCC/ALCOM, or add `https://vpm.logiccuteguy.com/index.json` manually. Refresh the listing if it is already added.
 2. Open **Manage Project** for your Unity project.
-3. Find **UIHUD** (`com.logiccuteguy.uihud`) and add **0.1.1**.
+3. Find **UIHUD** (`com.logiccuteguy.uihud`) and add **0.1.2**.
 4. Open the project in Unity and let the package import.
 
 ### Unity Package Manager / manual
@@ -42,10 +46,10 @@ sidebar_position: 1
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/UIHUD.git#0.1.1
+https://github.com/LogicCuteGuy/UIHUD.git#0.1.2
 ```
 
-Alternatively place the tagged repository at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.1.zip` from [the release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.1) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
+Alternatively place the tagged repository at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.2.zip` from [the release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.2) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
 
 Choose **one installation method per project** to avoid duplicate copies.
 

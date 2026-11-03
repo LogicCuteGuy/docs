@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # How it works
 
-> Documentation version: **0.7.1**
+> Documentation version: **0.7.2**
 
 ```
 Terrain ──Bake──► DigZoneData (byte SDF grid, chunk meshes, splat/height textures)

@@ -4,11 +4,15 @@ sidebar_position: 1
 
 # WASM2HLSL
 
-> เวอร์ชันเอกสาร: **0.2.1** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1)
+> เวอร์ชันเอกสาร: **0.2.2** · [Release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.2)
 
 **WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) รัน WebAssembly บน GPU ใน VRChat world วางไฟล์ `.wasm` ลงในโปรเจกต์แล้ว editor จะแปลงเป็น HLSL จากนั้น UdonSharp `WasmGpuRunner` จะเรียกฟังก์ชันที่ export ไว้ทีละพิกเซลของ render texture แล้วอ่านผลกลับเข้า Udon
 
 เขียน kernel เป็น **Rust, C/C++, Zig, AssemblyScript หรือ TinyGo** แทน HLSL ด้วยมือ Udon ช้า (ราว 1000 เท่าช้ากว่า C#) แต่ pixel shader ที่รัน logic เดียวกันพร้อมกันหลายพันพิกเซลไม่ช้า
+
+## มีอะไรใหม่ใน 0.2.2
+
+- ปรับ dependency ของ Worlds SDK เป็น `3.x.x` (`>=3.10.5`) จึงติดตั้งบน VRChat SDK 3.10.6 ขึ้นไปได้
 
 ## มีอะไรใหม่ใน 0.2.1
 
@@ -29,7 +33,7 @@ release แรก: แปลง `.wasm` → HLSL, คอมโพเนนต์
 ## ข้อกำหนด
 
 - **Unity** 2022.3
-- **VRChat Worlds SDK** `3.10.5`
+- **VRChat Worlds SDK** `3.10.5` หรือใหม่กว่า
 - **UdonSharp** — ใช้ UdonSharp มาตรฐานจาก Worlds SDK ได้ [LCGUdonSharp](../lcgudonsharp/install.md) `>= 0.3.10` เป็นตัวเลือก
 
 ## การติดตั้ง
@@ -38,7 +42,7 @@ release แรก: แปลง `.wasm` → HLSL, คอมโพเนนต์
 
 1. เพิ่ม [LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) ใน VCC/ALCOM หรือเพิ่ม `https://vpm.logiccuteguy.com/index.json` ด้วยมือ หากเพิ่มแล้วให้ refresh รายการ
 2. เปิด **Manage Project** ของโปรเจกต์ Unity
-3. หา **WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) แล้วเพิ่ม **0.2.1**
+3. หา **WASM2HLSL for UdonSharp** (`com.logiccuteguy.wasm2hlsl`) แล้วเพิ่ม **0.2.2**
 4. เปิดโปรเจกต์ใน Unity แล้วรอให้ import เสร็จ
 
 ### Unity Package Manager / ติดตั้งเอง
@@ -46,10 +50,10 @@ release แรก: แปลง `.wasm` → HLSL, คอมโพเนนต์
 ใน **Window > Package Manager > + > Add package from git URL** ใส่:
 
 ```text
-https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.1
+https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.2
 ```
 
-หรือวาง repository ที่ tag ไว้ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก `com.logiccuteguy.wasm2hlsl-0.2.1.zip` ที่มีชื่อชัดเจนจาก[release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.1) ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ที่ root ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
+หรือวาง repository ที่ tag ไว้ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก `com.logiccuteguy.wasm2hlsl-0.2.2.zip` ที่มีชื่อชัดเจนจาก[release](https://github.com/LogicCuteGuy/WASM2HLSL/releases/tag/0.2.2) ลงโฟลเดอร์นั้น โดยให้ `package.json` อยู่ที่ root ห้ามใช้ **Source code (zip)** ที่ GitHub สร้างอัตโนมัติ
 
 เลือกวิธีติดตั้งเพียงวิธีเดียวต่อโปรเจกต์เพื่อหลีกเลี่ยงสำเนาซ้ำ
 

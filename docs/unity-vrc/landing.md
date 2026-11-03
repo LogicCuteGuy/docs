@@ -32,9 +32,9 @@ All seven packages are published in the [LogicCuteGuy VPM Listing](./packages.md
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.11
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.12
 
-LCGUdonSharp 0.3.11 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
+LCGUdonSharp 0.3.12 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
 
 LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](./lcgudonsharp/install.md); manual installs require **both** release ZIPs.
 
@@ -44,11 +44,11 @@ LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots]
 
 An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
 
-### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.1
+### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.2
 
 DigHoleIt 0.7.0 adds Dig Pen prefabs, runtime tree/detail planting and erasing (including baked foliage), networked smoothing, a VRChat showcase, and Refresh Holes / Refresh Zones. Settings are local; VRChat edits are synchronized and replayed for late joiners.
 
-Version 0.7.1 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
+Version 0.7.2 is available through VPM and GitHub. See [installation](./digholeit/getting-started.md).
 Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrain-layer painting, with synchronized VRChat edits and a separate standalone C# runtime.
 
 ### [BlendProperty](./blendproperty/intro.md) — `com.logiccuteguy.blendproperty` v0.2.2
@@ -59,17 +59,17 @@ Diggable voxel terrain for Unity: runtime holes, tunnels, caves, soil and terrai
 
 Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components. [Setup](./blendproperty/intro.md) · [Runtime](./blendproperty/runtime.md) · [Physics](./blendproperty/physics.md).
 
-### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.1
+### [WASM2HLSL](./wasm2hlsl/intro.md) — `com.logiccuteguy.wasm2hlsl` v0.2.2
 
-WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more no longer counts toward the 64000-byte memory limit, lifting the size limit for bigger modules. `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
+WASM2HLSL 0.2.2 relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or more no longer counts toward the 64000-byte memory limit, lifting the size limit for bigger modules. `.wasm` modules are translated to HLSL in the editor and executed once per pixel from UdonSharp via Blit + async GPU readback.
 
 Run WebAssembly on the GPU in VRChat worlds — write kernels in Rust/C/Zig instead of hand-written HLSL. [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md).
 
-### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.1.1
+### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.1.2
 
 HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games. One setup works on VR, desktop and mobile: player HUD, slide-in menus, world-space panels, hotbar, style presets, and runtime widgets from Udon.
 
-UIHUD **0.1.1** stretches the toggle checkmark to fill its checkbox and adds a screenshot showcase to the README.
+UIHUD **0.1.2** relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). 0.1.1 stretched the toggle checkmark to fill its checkbox and added a screenshot showcase to the README.
 
 [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md).
 

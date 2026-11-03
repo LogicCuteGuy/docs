@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # はじめに：画像付きチュートリアル
 
-> ドキュメントバージョン: **0.7.1** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.1)
+> ドキュメントバージョン: **0.7.2** · [リリースノート](https://github.com/LogicCuteGuy/DigHoleIt/releases/tag/v0.7.2)
 
 DigHoleIt のインストール、掘れる範囲の Bake、Unity での sculpt、VRChat 用 Dig Pen の設定を順番に説明します。スクリーンショットで Editor の操作を確認できます。画像をクリックすると原寸で確認できます。
 
@@ -16,7 +16,7 @@ DigHoleIt のインストール、掘れる範囲の Bake、Unity での sculpt�
 |---|---|---|
 | Unity | 2022.3 | 2022.3 |
 | Render pipeline | Built-in | Built-in |
-| その他 | Worlds SDK 3.10.5（**LCGUdonSharp** は任意） | なし |
+| その他 | Worlds SDK 3.10.5 以降（**LCGUdonSharp** は任意） | なし |
 
 ## 1. Package をインストール
 
@@ -34,7 +34,7 @@ VRChat では **VCC または ALCOM** を使います。
 
 *00:05 — ALCOM の確認画面。VCC は配置が異なりますが URL は同じです。*
 
-3. Project の **Manage Packages** を開き、更新して **DigHoleIt** を検索し、**0.7.1** をインストールします。VPM package が依存するのは Worlds SDK 3.10.5 のみです。
+3. Project の **Manage Packages** を開き、更新して **DigHoleIt** を検索し、**0.7.2** をインストールします。VPM package が依存するのは Worlds SDK 3.x.x（`>=3.10.5`）のみです。
 4. Unity を開き、import と compile の完了を待ちます。Play/build の前に Console エラーを解決します。[Udon program asset エラー](troubleshooting.md#udon-program-assets)を参照してください。
 
 [![ALCOM で DigHoleIt 0.7.0 のインストールが完了した画面](/img/digholeit/tutorial/install-package.webp)](/img/digholeit/tutorial/install-package.webp)
@@ -44,10 +44,10 @@ VRChat では **VCC または ALCOM** を使います。
 **Git install** の VRChat project では、標準の UdonSharp を使うか、任意で [LCGUdonSharp](../lcgudonsharp/install.md) を導入します。**Window > Package Manager > + > Add package from git URL** を使います:
 
 ```text
-https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.1
+https://github.com/LogicCuteGuy/DigHoleIt.git#v0.7.2
 ```
 
-または tagged repository、もしくは release の `com.logiccuteguy.digholeit-0.7.1.zip` の内容を `Packages/com.logiccuteguy.digholeit` に配置します。`package.json` はこの folder の直下に置きます。GitHub の自動 source archive より、名前付き package ZIP を推奨します。
+または tagged repository、もしくは release の `com.logiccuteguy.digholeit-0.7.2.zip` の内容を `Packages/com.logiccuteguy.digholeit` に配置します。`package.json` はこの folder の直下に置きます。GitHub の自動 source archive より、名前付き package ZIP を推奨します。
 
 ## 2. Example または自分の Terrain を選ぶ
 

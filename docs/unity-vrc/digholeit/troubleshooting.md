@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Troubleshooting
 
-> Documentation version: **0.7.1**
+> Documentation version: **0.7.2**
 
 ## Udon program assets
 
