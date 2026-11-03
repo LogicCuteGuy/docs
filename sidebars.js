@@ -103,6 +103,13 @@ const sidebars = {
         'unity-vrc/uihud/intro',
         'unity-vrc/uihud/getting-started',
       ],
+    },    {
+      type: 'category',
+      label: 'LCG Localization',
+      collapsed: false,
+      items: [
+        'unity-vrc/lcglocalization/intro',
+      ],
     },  ],
 };
 

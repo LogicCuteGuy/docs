@@ -27,7 +27,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-All six packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
+All seven packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -65,11 +65,19 @@ WASM2HLSL 0.2.0 reads big constant tables from a texture: `.rodata` of 1 KB or m
 
 Run WebAssembly on the GPU in VRChat worlds — write kernels in Rust/C/Zig instead of hand-written HLSL. [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md).
 
-### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.1.0
+### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.1.1
 
 HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games. One setup works on VR, desktop and mobile: player HUD, slide-in menus, world-space panels, hotbar, style presets, and runtime widgets from Udon.
 
+UIHUD **0.1.1** stretches the toggle checkmark to fill its checkbox and adds a screenshot showcase to the README.
+
 [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md).
+
+### [LCG Localization](./lcglocalization/intro.md) — `com.logiccuteguy.lcglocalization` v0.1.0
+
+Text and asset localization for UdonSharp: Unity String and Asset Tables bake into Udon, with dropdowns, callbacks, Smart variables and fallbacks. Works with the VRChat SDK's UdonSharp and with LCGUdonSharp.
+
+[Overview](./lcglocalization/intro.md).
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 

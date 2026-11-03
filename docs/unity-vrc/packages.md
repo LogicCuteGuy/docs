@@ -15,7 +15,8 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.1` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.1` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
-| `com.logiccuteguy.uihud` | UIHUD | `0.1.0` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
+| `com.logiccuteguy.uihud` | UIHUD | `0.1.1` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
+| `com.logiccuteguy.lcglocalization` | LCG Localization | `0.1.0` | 2022.3 | Text and asset localization for UdonSharp, baking Unity Localization tables into Udon |
 
 ## Add the repository in VCC
 
@@ -116,13 +117,30 @@ Docs: [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-
 
 UIHUD 0.1.0 adds a HUD plus slide-in menus and 20+ UI widgets for VRChat worlds and standalone Unity games. One setup covers VR, desktop and mobile: player HUD, slide-in menus, world-space panels, hotbar, wrist/mobile buttons, style presets, menu and widget animations, and runtime widget creation from Udon. Everything runs locally (`NoVariableSync`).
 
-- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.0)
+0.1.1 stretches the toggle checkmark to fill its checkbox and adds a screenshot showcase to the README.
+
+- **Latest version**: 0.1.1 — [release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.1)
 - **Unity**: 2022.3
 - **License**: MIT
 - **Dependencies**: `com.unity.textmeshpro` `3.0.6`, `com.unity.ugui` `1.0.0`, `com.unity.modules.physics` `1.0.0`, `com.unity.modules.xr` `1.0.0`
 - **VPM dependency**: `com.vrchat.worlds` `3.10.5`
 - **Repository**: [LogicCuteGuy/UIHUD](https://github.com/LogicCuteGuy/UIHUD)
 
-Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/UIHUD.git#0.1.0`, embed at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.0.zip` release asset. Choose one installation method per project.
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/UIHUD.git#0.1.1`, embed at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.1.zip` release asset. Choose one installation method per project.
 
 Docs: [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md)
+
+### `com.logiccuteguy.lcglocalization` — LCG Localization
+
+LCG Localization 0.1.0 is the initial release. It bakes Unity String and Asset Tables into Udon, with direct manager calls, dropdowns, callbacks, Smart variables, sprite/texture/audio/prefab variants and fallbacks. It works with the VRChat SDK's UdonSharp; LCGUdonSharp is optional.
+
+- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/LCGLocalization/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **Dependencies**: `com.unity.localization` `1.4.5`, `com.unity.scriptablebuildpipeline` `1.21.25`
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`), `com.unity.scriptablebuildpipeline` `1.x.x` (`>=1.21.26`)
+- **Repository**: [LogicCuteGuy/LCGLocalization](https://github.com/LogicCuteGuy/LCGLocalization)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/LCGLocalization.git#0.1.0`. Choose one installation method per project.
+
+Docs: [Overview](./lcglocalization/intro.md)
