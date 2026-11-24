@@ -152,6 +152,7 @@ ClientSim Net 0.1.0 is the initial release. It adds remote puppet players to VRC
 
 - **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/ClientSimNet/releases/tag/0.1.0)
 - **Unity**: 2022.3
+- **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `>=3.10.0`
 - **Repository**: [LogicCuteGuy/ClientSimNet](https://github.com/LogicCuteGuy/ClientSimNet)
 

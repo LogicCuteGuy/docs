@@ -23,6 +23,10 @@ sidebar_position: 1
 - **Unity** 2022.3
 - **VRChat Worlds SDK** 3.10.0 or newer (`com.vrchat.worlds`)
 
+## License
+
+MIT.
+
 ## Installation
 
 ### VCC / ALCOM
