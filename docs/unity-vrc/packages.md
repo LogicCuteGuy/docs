@@ -17,7 +17,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.2` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
 | `com.logiccuteguy.uihud` | UIHUD | `0.1.2` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
 | `com.logiccuteguy.lcglocalization` | LCG Localization | `0.1.0` | 2022.3 | Text and asset localization for UdonSharp, baking Unity Localization tables into Udon |
-| `com.logiccuteguy.clientnetsim` | ClientSim Net | `0.1.0` | 2022.3 | Multiplayer network simulator for VRChat ClientSim: remote puppet players, latency/jitter/loss, ownership, late join and a network debugger |
+| `com.logiccuteguy.clientnetsim` | ClientSim Net | `0.1.1` | 2022.3 | Multiplayer network simulator for VRChat ClientSim: remote puppet players, latency/jitter/loss, ownership, late join and a network debugger |
 
 ## Add the repository in VCC
 
@@ -148,14 +148,14 @@ Docs: [Overview](./lcglocalization/intro.md)
 
 ### `com.logiccuteguy.clientnetsim` — ClientSim Net
 
-ClientSim Net 0.1.0 is the initial release. It adds remote puppet players to VRChat's ClientSim, each running its own copy of the world, with latency, jitter and loss, real `RequestSerialization`/`OnDeserialization`, network event targets and rate limits, ownership, late join, pickups with ObjectSync, a network debugger and a sample test world.
+ClientSim Net 0.1.1 shows the other players as named capsules in every world; 0.1.0 was the initial release. It adds remote puppet players to VRChat's ClientSim, each running its own copy of the world, with latency, jitter and loss, real `RequestSerialization`/`OnDeserialization`, network event targets and rate limits, ownership, late join, pickups with ObjectSync, a network debugger and a sample test world.
 
-- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/ClientSimNet/releases/tag/0.1.0)
+- **Latest version**: 0.1.1 — [release](https://github.com/LogicCuteGuy/ClientSimNet/releases/tag/0.1.1)
 - **Unity**: 2022.3
 - **License**: MIT
 - **VPM dependency**: `com.vrchat.worlds` `>=3.10.0`
 - **Repository**: [LogicCuteGuy/ClientSimNet](https://github.com/LogicCuteGuy/ClientSimNet)
 
-Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/ClientSimNet.git#0.1.0`. Choose one installation method per project.
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/ClientSimNet.git#0.1.1`. Choose one installation method per project.
 
 Docs: [Overview](./clientsimnet/intro.md) · [Using ClientSim Net](./clientsimnet/usage.md)
