@@ -8,6 +8,8 @@ sidebar_position: 1
 
 **ClientSim Net** (`com.logiccuteguy.clientnetsim`) is a multiplayer network simulator for VRChat's ClientSim. Stock ClientSim has no latency, no `OnDeserialization`, and runs `Owner`/`Others` events locally, so most networking bugs stay hidden until you upload. ClientSim Net adds remote puppet players to one Unity editor so you can test them in Play mode.
 
+[![A showcase world with one signed station per networking use case](/img/clientsimnet/showcase.png)](/img/clientsimnet/showcase.png)
+
 ## What's new in 0.1.1
 
 Every player's world now also shows the other players (you included) as a named capsule at their own-client position, so you can see who is where when viewing as a puppet. The capsules are a picture only: no collider, no latency.
@@ -21,6 +23,8 @@ Every player's world now also shows the other players (you included) as a named 
 - **Pickups and PlayerObjects**: pickups with and without `VRCObjectSync`, per-player `VRCPlayerObject` copies.
 - **Tools**: in-game menu page, **Net Debugger** timeline window, per-player console, saved stats, and a scripting API (`NetSimApi`) with a `clientsim_net` unity-mcp tool.
 - **Sample world**: a lit plaza with 14 signed stations, one per networking use case.
+
+[![Two remote players standing in front of the showcase stations](/img/clientsimnet/puppets.png)](/img/clientsimnet/puppets.png)
 
 ## Requirements
 
@@ -56,6 +60,8 @@ Choose **one installation method per project** to avoid duplicate copies. Do not
 2. Press **Play**. ClientSim Net starts with ClientSim.
 3. Open **VRChat SDK > ClientSim Net**, pick a network preset (**Normal** for realism, **Perfect** for deterministic checks) and **Add player**.
 4. Click objects as yourself, then use the 👁 button per player (or Alt+1..9, Alt+0 for you) to view their copy of the world and see what they see.
+
+[![The ClientSim Net page in the in-game menu](/img/clientsimnet/menu.png)](/img/clientsimnet/menu.png)
 
 Shortcuts: Alt+[ / Alt+] cycle players, Alt+T toggles third person, Alt+C toggles **Control** (ClientSim's own player acts as the viewed puppet).
 

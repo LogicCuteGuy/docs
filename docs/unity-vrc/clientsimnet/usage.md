@@ -68,6 +68,8 @@ For AI agents, the package ships `AGENTS.md` and a Claude skill (`Tools~/claude-
 
 ## Net Debugger
 
+[![The Net Debugger timeline and message list](/img/clientsimnet/debugger.png)](/img/clientsimnet/debugger.png)
+
 The **Net Debugger** shows a 30 s timeline of bytes on the wire per 0.1 s, stacked by kind (Sync, Event, Owner, Pose). Click or drag to select a sample; the tabs below list its messages (sender, receiver, size, latency, payload), per-player totals and per-object state. Red marks a limit hit, a lost message or an object out of sync; **CLOGGED** means your outbound traffic is over ~11 KB/s. **Save** writes `Library/ClientSimNet/netstats-<time>.json`, which **Load…** reopens later, even outside Play mode.
 
 ## Scenario checklist
