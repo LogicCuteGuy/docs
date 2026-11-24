@@ -110,6 +110,15 @@ const sidebars = {
       items: [
         'unity-vrc/lcglocalization/intro',
       ],
+    },
+    {
+      type: 'category',
+      label: 'ClientSim Net',
+      collapsed: false,
+      items: [
+        'unity-vrc/clientsimnet/intro',
+        'unity-vrc/clientsimnet/usage',
+      ],
     },  ],
 };
 

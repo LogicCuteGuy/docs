@@ -79,6 +79,12 @@ Text and asset localization for UdonSharp: Unity String and Asset Tables bake in
 
 [Overview](./lcglocalization/intro.md).
 
+### [ClientSim Net](./clientsimnet/intro.md) — `com.logiccuteguy.clientnetsim` v0.1.0
+
+Multiplayer network simulator for VRChat's ClientSim: remote puppet players with their own world copy, latency/jitter/loss, real synced-variable and event delivery, ownership, late join, pickups, and a network debugger. Catches networking bugs in one editor before you upload.
+
+[Overview](./clientsimnet/intro.md) · [Using ClientSim Net](./clientsimnet/usage.md).
+
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 
 ---
