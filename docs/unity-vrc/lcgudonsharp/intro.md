@@ -4,50 +4,21 @@ sidebar_position: 1
 
 # LCGUdonSharp Overview
 
-> Documentation version: **0.3.12** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12)
+> Documentation version: **0.5.0** · [Release notes](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0)
 
-**LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) is an interface-enabled UdonSharp compiler for VRChat. It extends UdonSharp with C# interfaces, build-time `async`/`await`, synchronous `try`/`catch`/`finally`, C# collections and JSON, extended language constructs, and a manual packet networking layer — while keeping every modified source file inside `Packages/com.logiccuteguy.lcgudonsharp` instead of the VRChat SDK or `Assets`.
+**LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) is an interface-enabled UdonSharp compiler for VRChat. It extends UdonSharp with C# interfaces, build-time `async`/`await`, synchronous `try`/`catch`/`finally`, C# collections and JSON, extended language constructs — by hooking the VRChat SDK's UdonSharp instead of replacing it. No SDK file is modified.
 
 > **Status**
 >
-> Interfaces, synchronous exceptions, async lowering, and extended-language support are ready for world testing. Manual packet networking (`[LCGPacket]` / `LCGNetworkZone`) is **experimental** — its wire protocol may change between versions.
+> Interfaces, synchronous exceptions, async lowering, and extended-language support are ready for world testing.
 
-## What's new in 0.3.12
+## What's new in 0.5.0
 
-- The VPM dependency on the Worlds SDK is relaxed from exactly `3.10.5` to `3.x.x` (`>=3.10.5`). The compiler payload is still built from SDK 3.10.5.
-- Full changes: [0.3.11...0.3.12](https://github.com/LogicCuteGuy/LCGUdonSharp/compare/0.3.11...0.3.12).
-
-## What's new in 0.3.11
-
-LCGUdonSharp 0.3.11 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
-
-## What's new in 0.3.10
-
-LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](./install.md); manual installs require **both** release ZIPs.
-
-## What's new in 0.3.9
-
-LCGUdonSharp 0.3.9 adds [text and asset localization](./localization.md): Unity String/Asset Tables baked into Udon, local language selection and fallbacks, dropdowns/callbacks, validated Smart Strings, and sprite/texture/audio/prefab variants. It also adds EN/TH/JA samples, legacy JSON tools, Unity Localization 1.4.5 and Scriptable Build Pipeline 1.21.25 dependencies, and build/worker-thread compatibility fixes. Rebuild the world after editing tables or updating.
-
-## What's new in 0.3.8
-
-LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots](./scriptableobjects.md), runtime type tests and checked casts, cycle/depth validation, and a local equipment example. Rebuild all Udon programs and rebake scene/prefab data after updating because snapshot layouts now include runtime type tags.
-
-## What's new in 0.3.7
-
-Custom `ScriptableObject` assets now become read-only Udon data snapshots. Typed serialized fields, inherited fields and asset arrays are supported; array reads return defensive copies. Inspector asset assignments survive heap readback, and native SDK ScriptableObject types retain their existing behavior.
-
-See [ScriptableObject Data](./scriptableobjects.md) for supported types, restrictions and the local shop example. Import the optional examples after compiler setup completes. Rebuild worlds after changing asset data or its schema.
-
-## What's new in 0.3.6
-
-- Object motion now uses a bounded latest-state queue with per-recipient batching, congestion backoff, remote interpolation and bounded prediction.
-- Zone entry and `OnPlayerRestored` recover scene-field and object snapshots with bounded retries that stop when the player exits.
-- Disconnect ownership recovery preserves valid member ownership and repairs reassignment through ownership callbacks; player departure matching prefers identity over reused or invalid IDs.
-- Packet receivers can recover their binding from serialized compiled programs after a domain reload clears the source-program cache.
-- New native/LCG lamp, moving-cube and opt-in high-bandwidth examples include wired prefabs and Thai setup guidance.
-
-Recompile all UdonSharp programs and rebuild the world after updating. Older builds cannot decode the 0.3.6 motion batch envelope.
+- **Hook, not replace.** The LCG compiler compiles into the SDK's `UdonSharp.Editor`/`UdonSharp.Runtime` through `.asmref` files, and Harmony redirects the stock compile entry points to it. The installer, `Payload~`, backups and the **Tools > LCGUdonSharp** menu are gone.
+- Requires Worlds SDK `>=3.10.6 <3.11.0`; includes the SDK 3.10.6 compiler fixes.
+- **Breaking:** compiler-side networking is removed (`SendLCGNetworkEvent`, `ForceSendPacket`, `LCGNetwork.RequestObjectSync`, the network diagnostics setting). Localization moved to [LCG Localization](../lcglocalization/intro.md) in 0.4.0.
+- The async frame capacity setting moved to **Project Settings > Udon Sharp > LCGUdonSharp**.
+- Upgrading from 0.4.x: see [Installation & Setup](./install.md#upgrading-from-04x-or-earlier).
 
 ## Features
 
@@ -58,9 +29,7 @@ Recompile all UdonSharp programs and rebuild the world after updating. Older bui
 | **Synchronous Exceptions** | Compiler-managed `try`/`catch`/`finally`, explicit `throw`s, rethrow, and guarded null, index, and integral divide/modulo failures — without relying on unavailable Udon exception opcodes. |
 | **Extended Language** | `ref`/`out` (including `out var` and recursion), closed generics, interface diamonds, LINQ lambdas with captures, proven `dynamic`, array-backed `Span<T>`. |
 | **C# Collections & JSON** | Exact `List<T>` and `Dictionary<TKey,TValue>` syntax lowered to `DataList`/`DataDictionary`, plus a VRCJson-backed `System.Text.Json` facade and manual synced-collection payloads. |
-| **Manual Packet Networking** *(experimental)* | `[LCGPacket]` fields and methods with versioned frames, authority checks, replay protection, field coalescing, verified-sender callbacks, targeted PlayerObject delivery. |
-| **Network Zones** | `LCGNetworkZone` scopes packet recipients and ownership to a trigger volume; manual object-sync replaces `VRC_ObjectSync`, Continuous behaviours without synced fields are supported, and native sync passthrough is available as an explicit instance-wide compatibility option. |
-| **Clean Installation** | Automatic, idempotent setup with backup/restore — no modified files inside `com.vrchat.worlds` or `Assets/`. Installer state lives in `ProjectSettings/LogicCuteGuy.LCGUdonSharp.json`; SDK backups live under `Library/LogicCuteGuy.LCGUdonSharp`. |
+| **Hook, not replace** | The SDK's bundled UdonSharp stays installed and unmodified; LCGUdonSharp joins its assemblies through `.asmref` files and redirects compilation with Harmony. |
 
 ## Key terms
 
@@ -70,37 +39,25 @@ Recompile all UdonSharp programs and rebuild the world after updating. Older bui
 | **U# assembly definition** (`UdonSharpAssemblyDefinition`) | An asset that registers one `.asmdef` for UdonSharp compilation through its `sourceAssembly` field. This is not a compiled program asset. |
 | **Assembly scanning** | `Assembly-CSharp` is always included. Every other assembly containing U# behaviours needs a U# assembly-definition asset. |
 | **Extern** | A Unity/SDK method mapped to a built-in Udon node. Faults raised inside an extern cannot be caught by compiler-managed `try`/`catch`. |
-| **Packet frame** | A versioned serialized message sent by a `[LCGPacket]` field write or packet-method call. |
 
 ## How It Works
 
-### 1. Automatic installer
-
-After the package is imported, a small bootstrap assembly (`Editor/LCGUdonSharpInstaller.cs`) runs automatically:
+### 1. Compiler hook
 
 ```text
-1. Verify VRChat Worlds SDK 3.10.5 is installed
-2. Back up SDK-bundled Integrations/UdonSharp
-   → Library/LogicCuteGuy.LCGUdonSharp/Backups
-3. Install the interface-enabled compiler at
-   → Packages/com.logiccuteguy.lcgudonsharp/UdonSharp
-4. Remove the SDK-bundled copy so Unity sees
-   exactly one set of UdonSharp.* assemblies
+Packages/com.logiccuteguy.lcgudonsharp
+├─ Editor/UdonSharp.Editor.asmref   → compiles into the SDK's UdonSharp.Editor
+│  ├─ Compiler/                     LCG compiler (namespace UdonSharp.LCGCompiler)
+│  ├─ Serialization/                List/Dictionary + ScriptableObject data serializers
+│  └─ LCGUdonSharpHook.cs           Harmony entry hook
+└─ Runtime/UdonSharp.Runtime.asmref → adds VRCAsync, UdonException, System.Text.Json facade
 ```
 
-Setup is idempotent — if an SDK/package refresh restores the bundled copy, setup runs again. On any SDK version other than `3.10.5`, setup stops instead of modifying an untested package.
-
-Everything setup writes outside the package source:
-
-| Path | Purpose |
-|---|---|
-| `ProjectSettings/LogicCuteGuy.LCGUdonSharp.json` | Installer state, SDK version, and automatic-setup suspension flag. |
-| `Library/LogicCuteGuy.LCGUdonSharp/Backups` | SDK-bundled UdonSharp backups used by repair and restore. |
-| `Library/LogicCuteGuy.LCGUdonSharp` | Installer workspace. |
+On every domain reload the hook patches the stock `UdonSharpCompilerV1.Compile`, `CompileSync` and `WaitForCompile` so they run the LCG compiler, resets its assembly cache with the stock one, maps List/Dictionary/ScriptableObject data fields to Udon types, and registers their serializers. If an SDK update renames a hooked method, the hook logs a `MissingMethodException` and stock UdonSharp compiles instead.
 
 ### 2. Compiler extensions
 
-The compiler keeps the original `UdonSharp` namespaces and assembly names, then adds lowering passes:
+The LCG compiler is UdonSharp's compiler with these lowering passes added:
 
 ```text
 Your C# source
@@ -111,21 +68,11 @@ Your C# source
    ├─ ref/out, closures,
    │  closed generics,
    │  dynamic, Span<T> ───► concrete array/offset/length locals + loops
-   ├─ List/Dictionary/JSON ► DataList/DataDictionary + VRCJson helpers
-   └─ [LCGPacket] ────────► versioned packet frames + mailbox delivery
+   └─ List/Dictionary/JSON ► DataList/DataDictionary + VRCJson helpers
    │
    ▼
 Udon assembly (runs in VRChat)
 ```
-
-### 3. Manual packet networking
-
-`[LCGPacket]` does not use native Udon variable sync. Instead:
-
-- Assigning a packet field queues a send — repeated assignments in one frame are coalesced to the latest value; unchanged values are skipped; `ForceSendPacket(nameof(field))` bypasses suppression.
-- Packet methods are delivered through a PlayerObject mailbox; `SendCustomNetworkEvent(...)` is lowered to packet delivery only when the target method has `[LCGPacket]`.
-- Frames are versioned and validated with authority checks and replay protection.
-- Owners provide snapshots when players are restored; departing-player state is discarded.
 
 ## Guides
 
@@ -135,13 +82,12 @@ Udon assembly (runs in VRChat)
 - [Synchronous Exception Handling](./exceptions.md)
 - [Extended Language](./extended-language.md)
 - [Collections, JSON, Bytes & Bits](./collections-json.md)
-- [Manual Packet Networking & Network Zones](./networking.md)
 - [Examples](./examples.md)
 - [Troubleshooting](./troubleshooting.md)
 
 ## Acknowledgements
 
-LCGUdonSharp builds on [UdonSharp](https://github.com/MerlinSan/UdonSharp), originally created by Merlin, and on the VRChat Worlds SDK. The compiler retains UdonSharp's original namespaces and assembly names so existing projects continue to work unchanged.
+LCGUdonSharp builds on [UdonSharp](https://github.com/MerlinSan/UdonSharp), originally created by Merlin, and on the VRChat Worlds SDK. It hooks the SDK's UdonSharp rather than replacing it, so existing projects keep the SDK's assemblies and asset GUIDs.
 
 ## License
 
