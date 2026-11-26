@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ScriptableObject Data
 
-> Documentation version: **0.3.12**
+> Documentation version: **0.5.0**
 
 Ordinary custom Unity `ScriptableObject` assets can be assigned directly to typed UdonSharp behaviour fields. No special base class, attribute or manual copying is needed. The compiler bakes serialized data into read-only Udon snapshots; it does not run the custom asset as a Unity object in Udon.
 
@@ -48,7 +48,7 @@ Repeated references within one baked graph share a snapshot. Separate top-level 
 
 ```csharp
 // Fields and method inside an UdonSharpBehaviour.
-// Data classes are provided by the optional equipment sample.
+// Data classes come from the 0.3.12 equipment example.
 public ItemDefinition item;
 
 public override void Interact()
@@ -84,12 +84,6 @@ Native array methods `GetValue`, `SetValue`, `Clone` and `GetType` are rejected 
 
 Copy values into ordinary gameplay fields when they must change or synchronize. Mutating a returned local array changes only that copy.
 
-## Equipment example in 0.3.8
+## Examples
 
-`ScriptableObjectEquipmentExample.prefab` is at `(12, 0, 3)` in `TestLCGUdonSharp.unity`. The base-typed `item` holds `TrainingSword.asset`; `catalog` also contains `FireSpell.asset`. Each references its own economy asset. The sword costs 35 coins and has 45 damage; the spell costs 20 coins and has 80 power / 12 mana. Interact with the board to purchase and use the adjacent switch or `SelectNext` to change selection. `TestDataFeatures` checks nested reads, inherited fields, type tests, successful/null/invalid casts, and defensive copies of nested polymorphic arrays. Purchases are local and not synchronized.
-
-## Shop example
-
-Import **LCGUdonSharp Examples** after compiler setup completes. The sample contains `Example/ScriptableObjects/ScriptableObjectShopExample.prefab`, `StrawberryMilk.asset` and `GreenTea.asset`. In `TestLCGUdonSharp.unity`, interact with the pink board at `(7, 0, 3)`: purchases reduce 100 coins to 65 and then 30, and the third purchase is refused. Replace `item` and `catalog` in the Inspector before building. `TestArrayCopy` checks that a modified local description array leaves the snapshot intact. Purchases are local and not synchronized.
-
-See [Examples](./examples.md), [Installation](./install.md), and the [tagged upstream guide](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.8/Example/ScriptableObjects/README.md).
+0.5.0 ships without examples. The shop and equipment examples can be read at [tag 0.3.12](https://github.com/LogicCuteGuy/LCGUdonSharp/tree/0.3.12/Example/ScriptableObjects). See [Examples](./examples.md).

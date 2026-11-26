@@ -2,50 +2,52 @@
 sidebar_position: 2
 ---
 
-# インストールとセットアップ
+# インストールと設定
 
-> ドキュメントバージョン: **0.3.12** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12)
+> ドキュメントバージョン: **0.5.0** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0)
 
-> **0.3.2 からの更新**
->
-> `0.3.2` は配布パッケージに問題があり、新規プロジェクトでコンパイラーペイロードが不足する場合があります。`0.3.12` へ更新してください。Unity の更新後、installer が修復します。
+LCGUdonSharp 0.5.0 は Worlds SDK の UdonSharp を置き換えずにフックします。インストーラーや修復の操作はなく、ファイルのコピーやバックアップも行いません。
 
 ## 要件
 
-LCGUdonSharp 0.3.10 は Unity のコンパイル前に VPM で埋め込み **SBP compatibility 1.21.26** を導入し、新規・更新時の VRChat SDK `ExtensionMethods` 衝突を防ぎます。Unity SBP 1.21.25 を基にソース・GUID・Unity Companion License を保持し、`Library` 再生成後も残ります。Unity Localization 1.4.5 は引き続き対応します。[インストール](./install.md)を参照してください。手動導入には **両方** のリリース ZIP が必要です。
+- **Unity 2022.3**
+- **VRChat Worlds SDK 3.10.6**（`>=3.10.6 <3.11.0`）。コンパイラーはこの SDK の UdonSharp の内部実装に合わせています。
 
-- Unity **2022.3**
-- VRChat Worlds SDK **3.10.5**（対応バージョン。`0.3.12` 以降は異なるバージョンでも拒否されず、未検証の警告を表示してインストールされます）
+## VCC または ALCOM でインストール（推奨）
 
-## 推奨: VCC または ALCOM
+[LogicCuteGuy の VPM リスト](../packages.md)（`https://vpm.logiccuteguy.com/index.json`）を追加し、**LCGUdonSharp** `0.5.0` をインストールまたは更新します。その後 Unity を開いてコンパイルを待ちます。
 
-[LogicCuteGuy VPM リスト](../packages.md)（`https://vpm.logiccuteguy.com/index.json`）を追加し、LCGUdonSharp `0.3.12` をインストールしてください。
+手動の場合は、[名前付きのリリース ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0) を `Packages/com.logiccuteguy.lcgudonsharp` に展開し、`package.json` がそのフォルダー直下にあることを確認します。GitHub が自動生成する **Source code (zip)** は使わないでください。SBP 互換パッケージは不要になりました。
 
-手動導入は **先に Unity を閉じてください**。[LCGUdonSharp 0.3.12 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12) と [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) の両方を取得し、それぞれ `Packages/com.logiccuteguy.lcgudonsharp` と `Packages/com.unity.scriptablebuildpipeline` に展開します。各 `package.json` がパッケージフォルダー直下にあることを確認してから Unity を開きます。LCGUdonSharp を `file:` で参照する場合も SBP の埋め込みが必要です。自動生成 **Source code (zip)** は使わないでください。PackageCache の編集やコンパイル後のフックだけに依存すると、キャッシュ再生成で修正が消えます。
+## 0.4.x 以前からの更新 {/* #upgrading-from-04x-or-earlier */}
 
-## セットアップ手順
+0.4.x 以前は SDK 付属の UdonSharp を削除し、このパッケージ内のコピーを使っていました。プログラムアセットは SDK 側コピーの元の GUID を参照するため、そのコピーを元の状態で復元する必要があります。
 
-1. VCC/ALCOM で `0.3.12` と SBP 互換依存関係を導入するか、Unity を閉じて上記の二つの ZIP を展開します。
-2. Unity を開き、コンパイル完了を待ちます。
-3. 必要なら **Tools > LCGUdonSharp > Install or Repair** を実行します。
-4. 通常どおりワールドをビルド・テストします。
+1. Unity を閉じます。
+2. LCGUdonSharp を `0.5.0` に更新します。古いコンパイラーのコピーは削除されます。
+3. VCC/ALCOM で `com.vrchat.worlds` を再インストールし、`Integrations/UdonSharp` を元の meta ファイル付きで復元します。
+4. Unity を開き、**VRChat SDK > Udon Sharp > Refresh All UdonSharp Assets** を実行します。
 
-自動コンパイラー設定の完了後、Unity Package Manager のパッケージサンプルから **LCGUdonSharp Examples** をインポートしてください。リリース ZIP のサンプルは `Samples~/Examples` にあり、リポジトリーのガイドでは `Example/` と表記します。新しいショップは [ScriptableObject データ](./scriptableobjects.md) を参照してください。
+0.5.0 で削除: `SendLCGNetworkEvent`、`ForceSendPacket`、`LCGNetwork.RequestObjectSync`、**LCG network diagnostics** の設定、**Tools > LCGUdonSharp** メニュー。ローカライズは [LCG Localization](../lcglocalization/intro) にあります。
 
-## メニュー
+## メニューと設定
 
-| コマンド | 用途 |
+| コマンド | 説明 |
 |---|---|
-| **Tools > LCGUdonSharp > Install or Repair** | セットアップを再実行します。 |
-| **Tools > LCGUdonSharp > Restore VRChat UdonSharp and Disable Auto Setup** | SDK 版を復元し、自動セットアップを停止します。アンインストール前に実行してください。 |
-| **Assets > Create > U# Script** | U# スクリプトと program asset を同時に作成します。 |
+| **Edit > Project Settings > Udon Sharp > LCGUdonSharp** | async タスクのフレーム容量（Behaviour ごとに 1〜256）。`ProjectSettings/LogicCuteGuy.LCGUdonSharp.json` に保存します。 |
+| **Assets > Create > U# Script** | U# スクリプトと対のプログラムアセットを作成します。 |
 | **Assets > Create > U# Assembly Definition** | 選択した `.asmdef` を UdonSharp に登録します。 |
-| **VRChat SDK > Udon Sharp > Refresh All UdonSharp Assets** | すべての program asset を再コンパイルします。 |
+| **VRChat SDK > Udon Sharp > Refresh All UdonSharp Assets** | すべてのプログラムアセットを再コンパイルします。 |
 
-`.asmdef` 内のスクリプトが Unity ではコンパイルされても UdonSharp に無視される場合は、U# assembly definition を作成してから全アセットを更新してください。
+## 診断
 
-## 0.3.9 のローカライズ
+Unity ではコンパイルできるのに UdonSharp が認識しない場合は、`.asmdef` が未登録の可能性があります。`.asmdef` を選択して **Assets > Create > U# Assembly Definition** を実行し、すべてのアセットを更新してください。
 
-LCGUdonSharp 0.3.9 は [テキストとアセットのローカライズ](./localization.md) を追加します。Unity String/Asset Tables の Udon ベイク、ローカル言語選択とフォールバック、ドロップダウン・通知、検証付き Smart Strings、画像・音声・プレハブの切り替えに対応します。EN/TH/JA サンプル、従来の JSON ツール、Unity Localization 1.4.5 と Scriptable Build Pipeline 1.21.25 の依存関係、ビルド・ワーカースレッドの互換性修正も含まれます。テーブル変更や更新後はワールドを再ビルドしてください。
+## アンインストール
 
-現在の導入: Unity Localization **1.4.5** と VPM による埋め込み `com.unity.scriptablebuildpipeline` **1.21.26**。Unity **1.21.25** を基にした互換配布であり、Unity の新しい公式 SBP リリースではありません。Manifest の UPM 宣言は 1.21.25 のままで、VPM 互換依存関係は 1.21.26 に固定されています。Unity のコンパイル前に導入してください。[インストール](./install.md)を参照。
+パッケージを削除します。SDK の UdonSharp は変更していないので、次のドメイン再読み込み後はそのままコンパイルできます。LCG 専用の構文を使うスクリプトは、標準コンパイラーのエラーになります。
+
+## 関連ページ
+
+- [トラブルシューティング](./troubleshooting.md)
+- [サンプル](./examples.md)

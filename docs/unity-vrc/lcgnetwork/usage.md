@@ -30,77 +30,11 @@ The same rules as native networking apply:
 
 ## Zones
 
-| Field | Meaning |
-|---|---|
-| **Exit Mode** | What a player sees after leaving: `Freeze` keeps the last state, `RestoreDefaults` resets synced variables and object positions, `DisableChildren` deactivates the zone's children. |
-| **Allow Native Sync Passthrough** | Accept continuous or unsupported native sync inside the zone instead of failing the build. |
+Put networked objects under an `LCGNetworkZone` to limit them to the players inside it. See [Zones](./zones.md) for exit modes, what the build adds, object sync and build errors.
 
-Inside a zone, the build also:
+## UdonSharp, Udon Graph and Udon Assembly
 
-- adds `LCGZoneOwnershipGuard` to networked objects, so players outside the zone cannot take ownership;
-- replaces `VRC Object Sync` with `LCGManualObjectSync`, which syncs on demand and while the object is held. Call `LCGNetwork.RequestObjectSync(gameObject)` after moving an object from code.
-
-`LCGRuntime` (the router) and `LCGRuntimePlayer` (each player's mailbox, a PlayerObject) are generated automatically. Do not add them yourself.
-
-## Udon Graph and Udon Assembly
-
-Use the normal networking nodes or instructions. Set the behaviour's sync mode to **Manual** to sync variables. A complete Udon Assembly example is in the **LCG Network Examples** sample: `UdonAssembly/LCGAsmLamp.uasm`.
-
-## UdonSharp extras
-
-These work with the VRChat SDK's UdonSharp:
-
-```csharp
-using UdonSharp;
-using UnityEngine;
-using VRC.SDK3.UdonNetworkCalling;
-using VRC.SDKBase;
-using VRC.Udon;
-
-[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
-public class Lamp : UdonSharpBehaviour
-{
-    public LCGRuntime lcg;                                    // filled at build; leave empty
-    [HideInInspector] public VRCPlayerApi __lcgPacketSender;  // sender while a handler runs
-
-    [LCGPacket(Authority = LCGPacketAuthority.ObjectOwner, Callback = nameof(OnLightChanged))]
-    private bool lightOn;
-
-    private void Toggle()
-    {
-        lightOn = !lightOn;
-        RequestSerialization();      // sends every [LCGPacket] field of this behaviour
-    }
-
-    public void OnLightChanged() { /* runs on receivers */ }
-
-    [LCGPacket(Authority = LCGPacketAuthority.Any), NetworkCallable]
-    public void ReceivePing(string message) { }
-
-    public void PingOwner()
-    {
-        VRCPlayerApi owner = Networking.GetOwner(gameObject);
-        lcg.SendToPlayer((UdonBehaviour)(Component)this, owner, nameof(ReceivePing), new object[] { "hi" });
-    }
-}
-```
-
-- **Authority**: `Any` accepts any zone member, `ObjectOwner` only the object's owner, `Master` only the instance master.
-- **Methods with parameters** also need `[NetworkCallable]`, which supplies the parameter names. A missing attribute is a build error.
-- **`__lcgPacketSender`** is optional. Declare it to read the sender inside a handler; `NetworkCalling.CallingPlayer` works too.
-
-[LCGUdonSharp](/unity-vrc/lcgudonsharp/intro) builds on the SDK's UdonSharp, so all of this works the same there.
-
-## Runtime ABI (explicit sends)
-
-For sends that the hook does not cover, any coding style can call the runtime directly. Receivers expose `__lcgRuntime` (UdonBehaviour), `__lcgReceiverId` (int), `__lcgZoneId` (int) and `__lcgPacketSender` (VRCPlayerApi), and the build fills them.
-
-To send, set these variables on `__lcgRuntime`: `__lcgSenderReceiver`, `__lcgSenderReceiverId`, `__lcgSenderZoneId` and `__lcgSenderAddress`. Then either:
-
-- **a field**: `__lcgSenderType` and `__lcgSenderValue`, then the event `__lcgSendField`;
-- **a method**: `__lcgSenderArgCount`, `__lcgSenderArgTypeN`/`__lcgSenderArgN`, and `__lcgSenderTargetMode` (a `NetworkEventTarget`, or -1 with `__lcgSenderPlayer`), then the event `__lcgSendMethod`.
-
-The ABI is experimental and may change.
+Use the normal networking code, nodes or instructions. Set the behaviour's sync mode to **Manual** to sync variables. See [UdonSharp extras and runtime ABI](./udonsharp-and-runtime.md) for `[LCGPacket]`, sending to one player and explicit sends.
 
 ## Limits
 

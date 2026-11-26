@@ -32,7 +32,9 @@ All twelve packages are published in the [LogicCuteGuy VPM Listing](./packages.m
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.12
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.5.0
+
+LCGUdonSharp **0.5.0** hooks the VRChat SDK's UdonSharp instead of replacing it. There is no installer and no SDK file is modified. It requires Worlds SDK `>=3.10.6 <3.11.0`. Compiler-side networking is removed (see [LCG Network System](./lcgnetwork/intro.md)), the SBP compatibility package is no longer needed, and the release contains no examples. Upgrading from 0.4.x or earlier needs extra steps: see [installation](./lcgudonsharp/install.md). The notes below about earlier versions are history.
 
 LCGUdonSharp 0.3.12 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
 
@@ -42,7 +44,7 @@ LCGUdonSharp 0.3.9 adds [text and asset localization](./lcgudonsharp/localizatio
 
 LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots](./lcgudonsharp/scriptableobjects.md), runtime type tests and checked casts, cycle/depth validation, and a local equipment example. Rebuild all Udon programs and rebake scene/prefab data after updating because snapshot layouts now include runtime type tags.
 
-An interface-enabled UdonSharp compiler for VRChat — C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON, extended language features, and manual packet networking with bounded object-motion batching and zone recovery.
+An UdonSharp compiler extension for VRChat: C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON and extended language features.
 
 ### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.2
 
@@ -65,11 +67,11 @@ WASM2HLSL 0.2.2 relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). WASM2
 
 Run WebAssembly on the GPU in VRChat worlds — write kernels in Rust/C/Zig instead of hand-written HLSL. [Overview](./wasm2hlsl/intro.md) · [Getting started](./wasm2hlsl/getting-started.md).
 
-### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.1.2
+### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.2.0
 
 HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games. One setup works on VR, desktop and mobile: player HUD, slide-in menus, world-space panels, hotbar, style presets, and runtime widgets from Udon.
 
-UIHUD **0.1.2** relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). 0.1.1 stretched the toggle checkmark to fill its checkbox and added a screenshot showcase to the README.
+UIHUD **0.2.0** fixes menu and HUD behaviour (typing no longer triggers menu keys, VR menus open level), adds Show HUD toggle sync and expands the examples. 0.1.2 relaxed the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). 0.1.1 stretched the toggle checkmark to fill its checkbox and added a screenshot showcase to the README.
 
 [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md).
 

@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Collections, JSON, Bytes & Bits
 
-> Documentation version: **0.3.12**
+> Documentation version: **0.5.0**
 
 LCGUdonSharp lowers exact `List<T>` and `Dictionary<TKey,TValue>` syntax to VRChat `DataList`, `DataDictionary`, and `DataToken` operations. Existing code that directly uses the SDK data types or `VRCJson` remains unchanged.
 
@@ -76,5 +76,5 @@ Normal SDK-supported binary APIs remain available: `byte[]`, bitwise operators, 
 ## See also
 
 - [Extended Language](./extended-language.md)
-- [Examples](./examples.md) — `ListTypesExample` demonstrates collections, JSON, synchronization, bytes, and bits
+- [Examples](./examples.md) — where to find the older example code
 - [Synchronous Exception Handling](./exceptions.md) — JSON exceptions use the same compiler-managed mechanism

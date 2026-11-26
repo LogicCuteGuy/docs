@@ -4,86 +4,56 @@ sidebar_position: 1
 
 # ภาพรวม LCGUdonSharp
 
-> เวอร์ชันเอกสาร: **0.3.12** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12)
+> เวอร์ชันเอกสาร: **0.5.0** · [บันทึกประจำรุ่น](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0)
 
-**LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) คือคอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, `async`/`await` ตอน build, `try`/`catch`/`finally` แบบ synchronous, C# collection และ JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเอง ไฟล์ที่แก้ไขทั้งหมดอยู่ใน `Packages/com.logiccuteguy.lcgudonsharp` โดยไม่แก้ Worlds SDK หรือ `Assets`
+**LCGUdonSharp** (`com.logiccuteguy.lcgudonsharp`) คือคอมไพเลอร์ UdonSharp สำหรับ VRChat ที่เพิ่ม C# interface, `async`/`await` ตอน build, `try`/`catch`/`finally` แบบ synchronous, C# collection และ JSON และความสามารถภาษาเพิ่มเติม โดย hook เข้ากับ UdonSharp ของ VRChat SDK แทนการแทนที่ ไม่มีการแก้ไฟล์ของ SDK
 
 > **สถานะ**
 >
-> Interface, synchronous exception, async lowering และความสามารถภาษาเพิ่มเติมพร้อมสำหรับทดสอบใน world ส่วน `[LCGPacket]` / `LCGNetworkZone` ยังเป็นฟีเจอร์ทดลองและ protocol อาจเปลี่ยนระหว่างเวอร์ชัน
+> Interface, synchronous exception, async lowering และความสามารถภาษาเพิ่มเติมพร้อมสำหรับทดสอบใน world
 
-## สิ่งใหม่ใน 0.3.12
+## สิ่งใหม่ใน 0.5.0
 
-- ปรับ dependency ของ Worlds SDK จาก `3.10.5` แบบตายตัวเป็น `3.x.x` (`>=3.10.5`) payload ของคอมไพเลอร์ยัง build จาก SDK 3.10.5
+- **Hook ไม่ใช่แทนที่** คอมไพเลอร์ LCG compile เข้าไปใน `UdonSharp.Editor` / `UdonSharp.Runtime` ของ SDK ผ่านไฟล์ `.asmref` แล้วใช้ Harmony เปลี่ยนจุดเริ่ม compile ของเดิมมาที่ตัวเอง installer, `Payload~`, ไฟล์สำรอง และเมนู **Tools > LCGUdonSharp** ถูกนำออก
+- ต้องใช้ Worlds SDK `>=3.10.6 <3.11.0` และรวมการแก้ไขคอมไพเลอร์ของ SDK 3.10.6
+- **เปลี่ยนแบบไม่เข้ากันกับของเดิม:** ระบบ network ฝั่งคอมไพเลอร์ถูกนำออก (`SendLCGNetworkEvent`, `ForceSendPacket`, `LCGNetwork.RequestObjectSync` และการตั้งค่า network diagnostics) ส่วน Localization ย้ายไปที่ [LCG Localization](../lcglocalization/intro) ตั้งแต่ 0.4.0
+- การตั้งค่าความจุ async frame ย้ายไปที่ **Project Settings > Udon Sharp > LCGUdonSharp**
+- อัปเกรดจาก 0.4.x: ดู[การติดตั้งและตั้งค่า](./install.md#upgrading-from-04x-or-earlier)
 
-## สิ่งใหม่ใน 0.3.11
+## ความสามารถ
 
-LCGUdonSharp 0.3.11 เตือนแทนการบล็อกเมื่อ VRChat Worlds SDK ที่ติดตั้งอยู่ไม่ตรงกับเวอร์ชันที่รองรับ `3.10.5`: payload (build จาก SDK 3.10.5) ยังติดตั้งตามเดิม พร้อมแจ้งว่า **Tools > LCGUdonSharp > Restore** ย้อนกลับไปยัง UdonSharp ต้นฉบับที่สำรองไว้ นอกจากนี้ยังประกาศตัวอย่าง **LCGUdonSharp Examples** ใน `package.json` ทำให้ Package Manager แสดงรายการ ให้นำเข้าหลังติดตั้งคอมไพเลอร์อัตโนมัติเสร็จ
-
-## สิ่งใหม่ใน 0.3.10
-
-LCGUdonSharp 0.3.10 ติดตั้ง dependency แบบ embedded **SBP compatibility 1.21.26** ผ่าน VPM ก่อน Unity compile เพื่อกัน VRChat SDK `ExtensionMethods` ชนทั้งตอนติดตั้งใหม่และอัปเกรด ใช้ฐาน Unity SBP 1.21.25 โดยรักษา source/GUID และ Unity Companion License และยังอยู่หลังสร้าง `Library` ใหม่ Unity Localization 1.4.5 ยังรองรับ ดู[การติดตั้ง](./install.md) การติดตั้งเองต้องใช้ release ZIP **ทั้งสองไฟล์**
-
-## สิ่งใหม่ใน 0.3.9
-
-LCGUdonSharp 0.3.9 เพิ่ม [Localization ของข้อความและ asset](./localization.md): bake Unity String/Asset Tables เป็น Udon, เลือกภาษาแบบ local พร้อม fallback, dropdown/callback, Smart Strings ที่ตรวจ syntax และสลับ sprite/texture/เสียง/prefab เพิ่มตัวอย่าง EN/TH/JA, เครื่องมือ JSON เดิม, dependency Unity Localization 1.4.5 และ Scriptable Build Pipeline 1.21.25 พร้อมแก้ compatibility ตอน build และ compiler worker thread ต้อง build world ใหม่หลังแก้ table หรืออัปเดต
-
-## สิ่งใหม่ใน 0.3.8
-
-LCGUdonSharp 0.3.8 เพิ่ม [snapshot ข้อมูล ScriptableObject](./scriptableobjects.md) แบบซ้อนและ polymorphic พร้อม type test และ checked cast, ตรวจ cycle/ความลึก และตัวอย่างอุปกรณ์แบบ local ต้อง build Udon program ทั้งหมดและ bake ข้อมูล scene/prefab ใหม่หลังอัปเดต เพราะ snapshot ใช้ layout ใหม่ที่มี runtime type tag
-
-## สิ่งใหม่ใน 0.3.7
-
-รองรับ asset `ScriptableObject` ที่สร้างเองเป็น snapshot ข้อมูลแบบอ่านอย่างเดียวใน Udon อ่าน serialized field ตามชนิดข้อมูล, field ที่สืบทอด และ array ของ asset ได้ การอ่าน array จะคืนสำเนาเพื่อป้องกันการแก้ข้อมูลต้นฉบับ การอ่าน heap กลับยังรักษา asset ที่กำหนดใน Inspector และชนิด native ของ SDK ทำงานตามเดิม
-
-ดูชนิดข้อมูลที่รองรับ ข้อจำกัด และตัวอย่างร้านค้าแบบ local ใน [ข้อมูล ScriptableObject](./scriptableobjects.md) นำเข้าตัวอย่างเสริมหลัง setup คอมไพเลอร์เสร็จ และ build world ใหม่เมื่อแก้ข้อมูลหรือ schema ของ asset
-
-## สิ่งใหม่ใน 0.3.6
-
-- Object motion ใช้ bounded queue ที่เก็บ state ล่าสุดแยกตาม recipient พร้อม batch delivery, congestion backoff, remote interpolation และ bounded prediction
-- ตอนเข้า zone และ `OnPlayerRestored` ระบบกู้ scene field/object snapshot ด้วย retry ที่จำกัดและหยุดเมื่อ player ออก
-- การกู้ ownership หลัง disconnect จะรักษา ownership ของ member ที่ยังถูกต้องและซ่อมการโอนผ่าน ownership callback โดยจับคู่ผู้เล่นที่ออกด้วย identity ก่อน ID ที่อาจซ้ำหรือไม่ valid
-- Packet receiver bind กลับจาก serialized compiled program ได้เมื่อ domain reload ล้าง source program cache
-- เพิ่มตัวอย่าง native/LCG lamp, moving cube, high-bandwidth แบบ opt-in, prefab ที่ต่อครบ และคู่มือตั้งค่าภาษาไทย
-
-หลังอัปเดตให้ compile UdonSharp program ทั้งหมดและ build world ใหม่ เพราะ build รุ่นเก่า decode motion batch envelope ของ 0.3.6 ไม่ได้
-
-## ความสามารถหลัก
-
-| ความสามารถ | รายละเอียด |
+| ความสามารถ | สิ่งที่ได้ |
 |---|---|
-| C# Interface | Method, parameter, return value, property, หลาย implementation และ interface array |
-| Async/Await | แปลง `Task.Yield()`, `Task.Delay(int)` และ VRChat SDK await ตอน build |
-| Synchronous Exception | `try`/`catch`/`finally`, throw, rethrow และ guard สำหรับ null, index และหารด้วยศูนย์ |
-| Extended Language | `ref`/`out`, closed generic, LINQ closure, `dynamic`, `Span<T>` บน array |
-| Collection และ JSON | แปลง `List<T>` / `Dictionary<TKey,TValue>` เป็น VRChat data container พร้อม API แบบ `System.Text.Json` |
-| Manual Packet Network | Frame มีเวอร์ชัน, ตรวจ authority, ป้องกัน replay, รวมการส่ง และส่งถึง player ที่ระบุ |
-| Network Zone | `LCGNetworkZone` จำกัด packet และ ownership ตาม trigger volume รองรับ Continuous behaviour ที่ไม่มี synced field และมี native sync passthrough แบบ instance-wide ให้เปิดใช้อย่างชัดเจน |
-| การติดตั้งแบบสะอาด | Setup อัตโนมัติที่ทำซ้ำได้ พร้อม backup/restore โดยไม่แก้ SDK |
+| **C# Interface** | interface ที่ประกาศใน source และ implement ด้วยคลาส `UdonSharpBehaviour` รองรับการเรียกเมธอด พารามิเตอร์ ค่าคืน property การ implement หลายแบบ และ array ของ interface |
+| **Async/Await** | แปลงตอน build สำหรับ `await Task.Yield()`, `await Task.Delay(int)` และ SDK await หนึ่งอย่างต่อ behaviour (ดาวน์โหลด string/image, video, GPU readback, serialization, Creator Economy) |
+| **Synchronous Exception** | `try`/`catch`/`finally`, `throw`, rethrow และการป้องกัน null, index และการหาร/modulo จำนวนเต็ม ที่คอมไพเลอร์จัดการเอง |
+| **ความสามารถภาษา** | `ref`/`out` (รวม `out var` และ recursion), closed generic, interface diamond, LINQ lambda ที่ capture ตัวแปร, `dynamic` ที่พิสูจน์ชนิดได้, `Span<T>` ที่อิง array |
+| **C# Collection และ JSON** | `List<T>` และ `Dictionary<TKey,TValue>` ถูกแปลงเป็น `DataList`/`DataDictionary` พร้อม `System.Text.Json` facade บน VRCJson |
 
-## คำสำคัญ
+## ทำงานอย่างไร
 
-- **Program asset (`UdonSharpProgramAsset`)**: `.asset` ที่จับคู่กับ U# script หนึ่งไฟล์ โดยอยู่โฟลเดอร์เดียวกันและใช้ชื่อฐานเดียวกัน
-- **U# assembly definition (`UdonSharpAssemblyDefinition`)**: asset อีกชนิดที่ลงทะเบียน `.asmdef` ให้ UdonSharp compile
-- **Assembly scanning**: `Assembly-CSharp` ถูกสแกนเสมอ assembly อื่นต้องมี U# assembly definition
-- **Extern**: Unity/SDK method ที่ตรงกับ Udon node ในตัว ข้อผิดพลาดภายใน extern ไม่สามารถจับด้วย `try`/`catch`
+```text
+Packages/com.logiccuteguy.lcgudonsharp
+├─ Editor/UdonSharp.Editor.asmref   → UdonSharp.Editor (SDK)
+│  ├─ Compiler/                     LCG compiler (namespace UdonSharp.LCGCompiler)
+│  ├─ Serialization/                List/Dictionary + ScriptableObject data serializers
+│  └─ LCGUdonSharpHook.cs           Harmony entry hook
+└─ Runtime/UdonSharp.Runtime.asmref → VRCAsync, UdonException, System.Text.Json facade
+```
 
-## วิธีทำงาน
-
-Bootstrap installer ตรวจ Worlds SDK `3.10.5`, สำรอง UdonSharp ที่มากับ SDK ไว้ใน `Library/LogicCuteGuy.LCGUdonSharp/Backups` และเปิดใช้คอมไพเลอร์ของแพ็กเกจ สถานะถูกเก็บใน `ProjectSettings/LogicCuteGuy.LCGUdonSharp.json`
-
-คอมไพเลอร์แปลง interface call, async continuation, exception control flow, collection/JSON, C# เพิ่มเติม และ `[LCGPacket]` เป็นคำสั่งที่ Udon ใช้งานได้
+ทุกครั้งที่ reload domain ตัว hook จะ patch `UdonSharpCompilerV1.Compile`, `CompileSync` และ `WaitForCompile` ของเดิมให้เรียกคอมไพเลอร์ LCG ถ้า SDK อัปเดตแล้วเปลี่ยนชื่อเมธอดที่ถูก hook จะมี log `MissingMethodException` และ UdonSharp ของเดิมจะ compile แทน
 
 ## คู่มือ
 
 - [การติดตั้งและตั้งค่า](./install.md)
-- [C# Interface](./interfaces.md)
-- [Async / Await](./async-await.md)
+- [Interface](./interfaces.md)
+- [Async/Await](./async-await.md)
 - [Synchronous Exception](./exceptions.md)
-- [ความสามารถภาษาเพิ่มเติม](./extended-language.md)
-- [Collection, JSON, Byte และ Bit](./collections-json.md)
-- [Manual Packet Network](./networking.md)
+- [ความสามารถภาษา](./extended-language.md)
+- [Collection, JSON, Bytes และ Bits](./collections-json.md)
 - [ตัวอย่าง](./examples.md)
 - [การแก้ปัญหา](./troubleshooting.md)
 
-MIT © 2026 LogicCuteGuy
+## License
+
+MIT © 2026 LogicCuteGuy ดูประวัติรุ่นใน [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md)

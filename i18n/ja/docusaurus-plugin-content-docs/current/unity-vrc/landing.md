@@ -32,7 +32,9 @@ slug: /
 ### [Help Tools (ヘルプツール)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ライトマップのスケーリング、アセット分析、シェーダーマッピング、および階層の整理のための 15 以上のプロフェッショナルなエディターユーティリティのコレクション。
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.12
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.5.0
+
+LCGUdonSharp **0.5.0** は VRChat SDK の UdonSharp を置き換えずにフックします。インストーラーはなく、SDK のファイルも変更しません。Worlds SDK `>=3.10.6 <3.11.0` が必要です。コンパイラー側のネットワーク機能は削除され（[LCG Network System](./unity-vrc/lcgnetwork/intro) を参照）、SBP 互換パッケージは不要になり、リリースにサンプルはありません。0.4.x 以前からの更新には追加の手順が必要です。[インストール](./lcgudonsharp/install.md)を参照してください。以下の以前のバージョンの説明は履歴です。
 
 LCGUdonSharp 0.3.12 は、インストール済みの VRChat Worlds SDK が対応バージョン `3.10.5` と異なる場合に、ブロックではなく**警告**するようになりました。ペイロード（SDK 3.10.5 でビルド）はそのままインストールされ、**Tools > LCGUdonSharp > Restore** でバックアップ済みの元の UdonSharp に戻せる旨が表示されます。また `package.json` に **LCGUdonSharp Examples** サンプルを宣言したため、Package Manager に表示されます。自動コンパイラインストール完了後にインポートしてください。
 
@@ -42,7 +44,7 @@ LCGUdonSharp 0.3.9 は [テキストとアセットのローカライズ](./lcgu
 
 LCGUdonSharp 0.3.8 は入れ子・多態的な [ScriptableObject データスナップショット](./lcgudonsharp/scriptableobjects.md)、実行時の型判定とチェック付きキャスト、循環・深度の検証、ローカル装備サンプルに対応します。型タグ付きの新しいレイアウトを使用するため、更新後は全 Udon プログラムを再ビルドし、シーンとプレハブのデータを再ベイクしてください。
 
-C# インターフェース、ビルド時の async/await、同期例外処理、コレクション/JSON、拡張言語機能、bounded object-motion batching と zone recovery を備えた手動パケット通信に対応する VRChat 向け UdonSharp コンパイラーです。
+VRChat 向けの UdonSharp コンパイラー拡張です。C# インターフェース、ビルド時の async/await、同期的な try/catch/finally、コレクション/JSON、拡張言語機能を追加します。
 
 ### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.2
 
@@ -64,6 +66,32 @@ Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 comp
 WASM2HLSL 0.2.0 は大きな定数テーブルをテクスチャから読み、大きいモジュールのサイズ制限を緩和します（1 KB 以上の `.rodata` は 64000 バイトのメモリ制限に数えられません）。`.wasm` モジュールはエディターで HLSL に変換され、UdonSharp から Blit + async GPU readback でピクセルごとに 1 回実行されます。
 
 VRChat ワールドで WebAssembly を GPU 上で実行します。カーネルは手書き HLSL ではなく Rust/C/Zig で書けます。[概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)。
+
+### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.2.0
+
+VRChat ワールドとスタンドアロン Unity ゲーム向けの HUD、スライドインメニュー、UI ウィジェットです。1 つの設定で VR、デスクトップ、モバイルに対応します。プレイヤー HUD、スライドインメニュー、ワールドパネル、ホットバー、スタイルプリセット、Udon からの実行時ウィジェットを使えます。
+
+UIHUD **0.2.0** はメニューと HUD の動作を修正し（入力中にメニューキーが反応せず、VR のメニューは水平に開きます）、Show HUD トグルの同期を追加し、サンプルを拡充しました。0.1.2 は Worlds SDK への依存関係を `3.x.x`（`>=3.10.5`）に緩和しました。0.1.1 はトグルのチェックマークをチェックボックス全体に広げ、README にスクリーンショット集を追加しました。
+
+[概要](./uihud/intro.md) · [はじめに](./uihud/getting-started.md)
+
+### [LCG Localization](./lcglocalization/intro.md) — `com.logiccuteguy.lcglocalization` v0.1.0
+
+UdonSharp 向けのテキストとアセットのローカライズです。Unity の String Table と Asset Table を Udon にベイクし、ドロップダウン、コールバック、Smart 変数、フォールバックに対応します。VRChat SDK の UdonSharp と LCGUdonSharp で動作します。
+
+[概要](./lcglocalization/intro.md)
+
+### [ClientSim Net](./clientsimnet/intro.md) — `com.logiccuteguy.clientnetsim` v0.1.2
+
+VRChat の ClientSim 向けマルチプレイヤーネットワークシミュレーターです。自分のワールドのコピーを持つリモートのパペットプレイヤー、遅延/ジッター/ロス、実際の同期変数とイベントの配信、所有権、途中参加、ピックアップ、ネットワークデバッガーを備えます。アップロード前に、1 つのエディターでネットワークの不具合を見つけられます。
+
+[概要](./clientsimnet/intro.md) · [ClientSim Net の使い方](./clientsimnet/usage.md)
+
+### [LCG Network System](./lcgnetwork/intro.md) — `com.logiccuteguy.lcgnetwork` v0.1.0
+
+VRChat ワールド向けのゾーン単位ネットワークです。通常の UdonSharp、Udon Graph、Udon Assembly の通信がビルド時にゾーン経由になり、同期変数とイベントはゾーン内のプレイヤーにだけ届きます。プレビュー版です。
+
+[概要](./lcgnetwork/intro.md) · [LCG Network の使い方](./lcgnetwork/usage.md)
 
 ### [OpenWorld](./openworld/intro.md) — `com.logiccuteguy.openworld` v0.0.1
 

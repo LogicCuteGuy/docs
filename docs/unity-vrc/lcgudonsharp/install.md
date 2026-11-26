@@ -19,7 +19,7 @@ Add the [LogicCuteGuy VPM listing](../packages.md) (`https://vpm.logiccuteguy.co
 
 For a manual install, extract the [named release ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0) into `Packages/com.logiccuteguy.lcgudonsharp` with `package.json` directly inside that folder. Do not use GitHub's automatic **Source code (zip)** archive. No SBP compatibility package is needed any more.
 
-After Unity compiles, import **LCGUdonSharp Examples** from the package's samples in Package Manager.
+0.5.0 ships without example files, so there is no sample to import. See [Examples](./examples.md).
 
 ## Upgrading from 0.4.x or earlier
 

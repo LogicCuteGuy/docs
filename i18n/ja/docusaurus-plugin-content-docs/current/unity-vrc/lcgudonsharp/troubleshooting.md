@@ -4,34 +4,21 @@ sidebar_position: 10
 
 # トラブルシューティング
 
-> ドキュメントバージョン: **0.3.12**
+> ドキュメントバージョン: **0.5.0** · [リリースノート](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0)
 
-| 問題 | 解決方法 |
+| 症状 | 対処 |
 |---|---|
-| “The associated script cannot be loaded” | `.cs` と同名の `UdonSharpProgramAsset` を追加します。 |
-| Unity では compile されるが UdonSharp が無視する | `.asmdef` を指す `UdonSharpAssemblyDefinition` を作成します。 |
-| 新規インストールに compiler payload がない | 問題のある `0.3.2` から `0.3.12` へ更新し、**Install or Repair** を実行します。 |
-| Release ZIP をインストールできない | 名前付き `com.logiccuteguy.lcgudonsharp-0.3.12.zip` を使い、**Source code (zip)** は使わないでください。 |
-| Worlds SDK のバージョンが 3.10.5 と異なる | `0.3.12` 以降、installer はブロックせず**警告**します。ペイロード（SDK 3.10.5 でビルド）はそのままインストールされます。**Tools > LCGUdonSharp > Restore** でバックアップ済みの元の UdonSharp に戻せます。 |
-| `UdonSharp.*` assembly が重複する | **Tools > LCGUdonSharp > Install or Repair** を実行します。 |
-| 更新後に packet field が同期しない | 全 U# program を再コンパイルし、ワールドを再ビルドします。 |
-| `LCGNetworkZone` 周辺で build が失敗する | 標準 `[UdonSynced]` field は **Allow Native Sync Passthrough** を有効にしない限り拒否されます。Synced field のない Continuous behaviour は安全です。Udon Graph、重なる親子 zone、同じ hierarchy の PlayerObject template も拒否されます。 |
-| アンインストールしたい | 先に **Restore VRChat UdonSharp and Disable Auto Setup** を実行します。 |
+| “The associated script cannot be loaded” | `.cs` に同名の `UdonSharpProgramAsset` がありません。**Assets > Create > U# Script** で両方を同時に作成するか、`.asset` を `.cs` と一緒にコピーします。 |
+| 読み込み時に `LCGUdonSharpHook` が `MissingMethodException` を出す | インストール済みの Worlds SDK でフック対象のメソッドが変わりました。`>=3.10.6 <3.11.0` の SDK を使ってください。それまでは標準の UdonSharp がコンパイルし、LCG 専用の構文はエラーになります。 |
+| 0.4.x から更新後、プログラムアセットのスクリプトが外れた | SDK の UdonSharp の meta に新しい GUID が付いています。VCC で `com.vrchat.worlds` を再インストールし、すべてのアセットを更新します。 |
+| リリース ZIP でインストールできない | `com.logiccuteguy.lcgudonsharp-0.5.0.zip` を使ってください。GitHub が自動生成する **Source code (zip)** は使えません。 |
+| アンインストールしたい | パッケージを削除します。ほかに戻す操作はありません。 |
+| Unity ではコンパイルできるが UdonSharp が認識しない | アセンブリが未登録です。`Assembly-CSharp` は常にスキャンされます。`.asmdef` 内のスクリプトには、その `.asmdef` を参照する `UdonSharpAssemblyDefinition` が必要です。 |
 
-問題報告には Unity version、Worlds SDK version、最小の再現コードを含めてください: [GitHub Issues](https://github.com/LogicCuteGuy/LCGUdonSharp/issues)
+## コンパイラーの不具合を報告する
 
-## 0.3.9 のローカライズ
+[プロジェクトのリポジトリ](https://github.com/LogicCuteGuy/LCGUdonSharp)に、Unity のバージョン、Worlds SDK のバージョン、再現する最小のコードを添えて報告してください。
 
-LCGUdonSharp 0.3.9 は [テキストとアセットのローカライズ](./localization.md) を追加します。Unity String/Asset Tables の Udon ベイク、ローカル言語選択とフォールバック、ドロップダウン・通知、検証付き Smart Strings、画像・音声・プレハブの切り替えに対応します。EN/TH/JA サンプル、従来の JSON ツール、Unity Localization 1.4.5 と Scriptable Build Pipeline 1.21.25 の依存関係、ビルド・ワーカースレッドの互換性修正も含まれます。テーブル変更や更新後はワールドを再ビルドしてください。
+## 関連ページ
 
-## 0.3.10 の SDK/SBP コンパイル衝突
-
-LCGUdonSharp 0.3.10 は Unity のコンパイル前に VPM で埋め込み **SBP compatibility 1.21.26** を導入し、新規・更新時の VRChat SDK `ExtensionMethods` 衝突を防ぎます。Unity SBP 1.21.25 を基にソース・GUID・Unity Companion License を保持し、`Library` 再生成後も残ります。Unity Localization 1.4.5 は引き続き対応します。[インストール](./install.md)を参照してください。手動導入には **両方** のリリース ZIP が必要です。
-
-手動導入は **先に Unity を閉じてください**。[LCGUdonSharp 0.3.10 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.10) と [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) の両方を取得し、それぞれ `Packages/com.logiccuteguy.lcgudonsharp` と `Packages/com.unity.scriptablebuildpipeline` に展開します。各 `package.json` がパッケージフォルダー直下にあることを確認してから Unity を開きます。LCGUdonSharp を `file:` で参照する場合も SBP の埋め込みが必要です。自動生成 **Source code (zip)** は使わないでください。PackageCache の編集やコンパイル後のフックだけに依存すると、キャッシュ再生成で修正が消えます。
-
-## 0.3.11 の未検証 SDK 警告
-
-`0.3.12` 以降、インストール済みの VRChat Worlds SDK が対応バージョン `3.10.5` と異なる場合、installer はブロックではなく**警告**します。ペイロード（SDK 3.10.5 でビルド）はそのままインストールされ、**Tools > LCGUdonSharp > Restore** でバックアップ済みの元の UdonSharp に戻せます。同じリリースで **LCGUdonSharp Examples** サンプルが `package.json` に宣言され、Package Manager に表示されます。自動コンパイラインストール完了後にインポートしてください。
-
-手動導入は **先に Unity を閉じてください**。[LCGUdonSharp 0.3.12 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12) と [SBP compatibility 1.21.26 ZIP](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/sbp-compatibility-1.21.26) の両方を取得し、それぞれ `Packages/com.logiccuteguy.lcgudonsharp` と `Packages/com.unity.scriptablebuildpipeline` に展開します。各 `package.json` がパッケージフォルダー直下にあることを確認してから Unity を開きます。LCGUdonSharp を `file:` で参照する場合も SBP の埋め込みが必要です。
+- [インストールと設定](./install.md)

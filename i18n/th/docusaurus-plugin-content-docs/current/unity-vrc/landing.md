@@ -32,7 +32,9 @@ slug: /
 ### [Help Tools (เครื่องมือช่วยเหลือ)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ชุดเครื่องมือ Editor ระดับมืออาชีพกว่า 15 รายการ สำหรับการปรับขนาด Lightmap, การวิเคราะห์การใช้งาน Asset, การจัดการ Shader และการจัดระเบียบ Hierarchy
 
-### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.3.12
+### [LCGUdonSharp](./lcgudonsharp/intro.md) — `com.logiccuteguy.lcgudonsharp` v0.5.0
+
+LCGUdonSharp **0.5.0** hook เข้ากับ UdonSharp ของ VRChat SDK แทนการแทนที่ ไม่มี installer และไม่แก้ไฟล์ของ SDK ต้องใช้ Worlds SDK `>=3.10.6 <3.11.0` ระบบ network ฝั่งคอมไพเลอร์ถูกนำออก (ดู [LCG Network System](./unity-vrc/lcgnetwork/intro)) ไม่ต้องใช้แพ็กเกจ SBP compatibility แล้ว และ release ไม่มีตัวอย่าง การอัปเกรดจาก 0.4.x หรือเก่ากว่าต้องทำขั้นตอนเพิ่ม ดู[การติดตั้ง](./lcgudonsharp/install.md) บันทึกของรุ่นก่อนหน้าด้านล่างเป็นประวัติ
 
 LCGUdonSharp 0.3.12 เตือนแทนการบล็อกเมื่อ VRChat Worlds SDK ที่ติดตั้งอยู่ไม่ตรงกับเวอร์ชันที่รองรับ `3.10.5`: payload (build จาก SDK 3.10.5) ยังติดตั้งตามเดิม พร้อมแจ้งว่า **Tools > LCGUdonSharp > Restore** ย้อนกลับไปยัง UdonSharp ต้นฉบับที่สำรองไว้ นอกจากนี้ยังประกาศตัวอย่าง **LCGUdonSharp Examples** ใน `package.json` ทำให้ Package Manager แสดงรายการ ให้นำเข้าหลังติดตั้งคอมไพเลอร์อัตโนมัติเสร็จ
 
@@ -42,7 +44,7 @@ LCGUdonSharp 0.3.9 เพิ่ม [Localization ของข้อความ�
 
 LCGUdonSharp 0.3.8 เพิ่ม [snapshot ข้อมูล ScriptableObject](./lcgudonsharp/scriptableobjects.md) แบบซ้อนและ polymorphic พร้อม type test และ checked cast, ตรวจ cycle/ความลึก และตัวอย่างอุปกรณ์แบบ local ต้อง build Udon program ทั้งหมดและ bake ข้อมูล scene/prefab ใหม่หลังอัปเดต เพราะ snapshot ใช้ layout ใหม่ที่มี runtime type tag
 
-คอมไพเลอร์ UdonSharp สำหรับ VRChat ที่รองรับ C# interface, async/await ตอน build, exception แบบ synchronous, collection/JSON, ความสามารถภาษาเพิ่มเติม และระบบ packet network แบบกำหนดเองพร้อม bounded object-motion batching และ zone recovery
+ส่วนเสริมคอมไพเลอร์ UdonSharp สำหรับ VRChat: C# interface, async/await ตอน build, try/catch/finally แบบ synchronous, collection/JSON และความสามารถภาษาเพิ่มเติม
 
 ### [DigHoleIt](./digholeit/intro.md) — `com.logiccuteguy.digholeit` v0.7.2
 
@@ -64,6 +66,32 @@ Mesh modifier stack และ GPU physics สำหรับ Unity พร้อ�
 WASM2HLSL 0.2.0 อ่านตารางค่าคงที่ขนาดใหญ่จากเท็กซ์เจอร์: `.rodata` ที่ 1 KB ขึ้นไปไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte จึงลดขีดจำกัดขนาดสำหรับโมดูลที่ใหญ่ขึ้น โมดูล `.wasm` ถูกแปลงเป็น HLSL ใน editor แล้วเรียกจาก UdonSharp ทีละพิกเซลผ่าน Blit + async GPU readback
 
 รัน WebAssembly บน GPU ใน VRChat world เขียน kernel เป็น Rust/C/Zig แทน HLSL ด้วยมือ [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)
+
+### [UIHUD](./uihud/intro.md) — `com.logiccuteguy.uihud` v0.2.0
+
+HUD, เมนูแบบเลื่อนเข้า และ UI widget สำหรับ world ของ VRChat และเกม Unity แบบ standalone ตั้งค่าครั้งเดียวใช้ได้ทั้ง VR, desktop และมือถือ ได้แก่ HUD ของผู้เล่น, เมนูแบบเลื่อนเข้า, panel ใน world, hotbar, style preset และ widget ตอน runtime จาก Udon
+
+UIHUD **0.2.0** แก้พฤติกรรมของเมนูและ HUD (การพิมพ์ไม่ไปกดปุ่มเมนูแล้ว และเมนูใน VR เปิดในแนวระดับ) เพิ่มการทำให้ toggle Show HUD ตรงกับสถานะ และเพิ่มตัวอย่าง 0.1.2 ผ่อน dependency ของ Worlds SDK เป็น `3.x.x` (`>=3.10.5`) ส่วน 0.1.1 ทำให้เครื่องหมายถูกของ toggle ยืดเต็มช่อง checkbox และเพิ่มภาพหน้าจอตัวอย่างใน README
+
+[ภาพรวม](./uihud/intro.md) · [เริ่มต้นใช้งาน](./uihud/getting-started.md)
+
+### [LCG Localization](./lcglocalization/intro.md) — `com.logiccuteguy.lcglocalization` v0.1.0
+
+แปลข้อความและ asset สำหรับ UdonSharp: bake Unity String Table และ Asset Table เป็น Udon พร้อม dropdown, callback, ตัวแปร Smart และ fallback ใช้ได้กับ UdonSharp ของ VRChat SDK และ LCGUdonSharp
+
+[ภาพรวม](./lcglocalization/intro.md)
+
+### [ClientSim Net](./clientsimnet/intro.md) — `com.logiccuteguy.clientnetsim` v0.1.2
+
+ตัวจำลอง network แบบหลายผู้เล่นสำหรับ ClientSim ของ VRChat: ผู้เล่น remote แบบ puppet ที่มีสำเนา world ของตัวเอง, latency/jitter/loss, การส่งตัวแปร sync และ event จริง, ownership, late join, pickup และ network debugger ช่วยจับบั๊ก networking ใน editor ตัวเดียวก่อน upload
+
+[ภาพรวม](./clientsimnet/intro.md) · [การใช้งาน ClientSim Net](./clientsimnet/usage.md)
+
+### [LCG Network System](./lcgnetwork/intro.md) — `com.logiccuteguy.lcgnetwork` v0.1.0
+
+networking แบบจำกัดตามโซนสำหรับ world ของ VRChat โดยจัดเส้นทาง networking ปกติของ UdonSharp, Udon Graph และ Udon Assembly ผ่านโซนตอน build ตัวแปร sync และ event จึงไปถึงเฉพาะผู้เล่นข้างใน เป็นรุ่น preview
+
+[ภาพรวม](./lcgnetwork/intro.md) · [การใช้งาน LCG Network](./lcgnetwork/usage.md)
 
 ### [OpenWorld](./openworld/intro.md) — `com.logiccuteguy.openworld` v0.0.1
 

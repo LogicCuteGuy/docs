@@ -47,36 +47,7 @@ Inspector には **Reverse**、**Drop To Ground**、**Flatten**、**Clear**、**
 
 コライダーは `_ZoneColliders` オブジェクトの子で、形状と同じレイヤーになります。次のベイクで置き換えられるため、手動で編集しないでください。凹多角形は三角形ごとに凸コライダーを 1 つ使うので、複雑な形は避けてください。
 
-## 4. UdonSharp から使う
+## 4. 次のステップ
 
-**Scripting Ref** がオンなら、`_ZoneColliders` オブジェクトの `ZoneArea` を参照します。
-
-```csharp
-using LogicCuteGuy.ZoneDraw;
-using UdonSharp;
-using UnityEngine;
-
-public class ZoneSign : UdonSharpBehaviour
-{
-    public ZoneArea area;
-    public GameObject sign;
-
-    private void Update()
-    {
-        sign.SetActive(area.IsLocalPlayerInside());
-    }
-}
-```
-
-| メソッド | 内容 |
-|---|---|
-| `Contains(Vector3)` | ワールド座標が Zone の内側かどうか。Barrier では常に false。 |
-| `IsPlayerInside(VRCPlayerApi)`、`IsLocalPlayerInside()` | プレイヤーの位置に対する同じ判定。 |
-| `EnableColliders()`、`DisableColliders()` | すべてのコライダーをオン/オフします（ゲートを開くなど）。 |
-| `EnableGround()`、`DisableGround()`、`IsGroundEnabled()` | 床だけを制御します。 |
-| `EnableCeiling()`、`DisableCeiling()`、`IsCeilingEnabled()` | 天井だけを制御します。 |
-| `ShowVisual()`、`HideVisual()` | 表示用メッシュを表示/非表示にします。 |
-
-これらの呼び出しはローカルです。ゲートの状態を共有するには、自分のスクリプトで同期してください。
-
-`Contains` は形状全体で 1 つの高さ範囲（最も低い点から、最も高い点 + Height まで）を使います。急な斜面では、範囲を複数の Zone に分けてください。
+- [ベイクの仕組み](./baking.md): 各設定で生成されるコライダー。
+- [ZoneArea のスクリプト](./scripting.md): プレイヤーが中にいるかの判定と、UdonSharp からのゲート操作。

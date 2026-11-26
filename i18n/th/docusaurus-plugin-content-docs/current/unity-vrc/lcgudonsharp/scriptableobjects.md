@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ข้อมูล ScriptableObject
 
-> เวอร์ชันเอกสาร: **0.3.12**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 กำหนด asset Unity `ScriptableObject` ที่สร้างเองให้ field ของ UdonSharp behaviour ตามชนิดได้โดยตรง ไม่ต้องใช้ base class พิเศษ, attribute หรือคัดลอกข้อมูลเอง คอมไพเลอร์แปลง serialized data เป็น snapshot แบบอ่านอย่างเดียวใน Udon
 
@@ -48,7 +48,7 @@ reference ที่ซ้ำในกราฟเดียวกันแชร�
 
 ```csharp
 // Fields and method inside an UdonSharpBehaviour.
-// Data classes are provided by the optional equipment sample.
+// Data classes come from the 0.3.12 equipment example.
 public ItemDefinition item;
 
 public override void Interact()
@@ -84,12 +84,6 @@ public override void Interact()
 
 คัดลอกค่าไปยัง field สถานะเกมปกติหากต้องแก้ไขหรือ sync การแก้ array ที่อ่านออกมาเปลี่ยนเฉพาะสำเนานั้น
 
-## ตัวอย่างอุปกรณ์ใน 0.3.8
+## ตัวอย่าง
 
-`ScriptableObjectEquipmentExample.prefab` อยู่ที่ `(12, 0, 3)` ใน `TestLCGUdonSharp.unity` field `item` แบบ base type ถือ `TrainingSword.asset` และ `catalog` มี `FireSpell.asset` ด้วย แต่ละรายการอ้างอิง economy asset ของตัวเอง ดาบราคา 35 coin และ damage 45 ส่วนเวทราคา 20 coin, power 80 / mana 12 กดบอร์ดเพื่อซื้อ ใช้สวิตช์ข้างๆ หรือ `SelectNext` เปลี่ยนรายการ `TestDataFeatures` ตรวจ nested read, inherited field, type test, cast ที่สำเร็จ/null/ผิดชนิด และ defensive copy ของ nested polymorphic array การซื้อเป็นแบบ local ไม่ sync
-
-## ตัวอย่างร้านค้า
-
-นำเข้า **LCGUdonSharp Examples** หลัง setup คอมไพเลอร์เสร็จ ภายในมี `Example/ScriptableObjects/ScriptableObjectShopExample.prefab`, `StrawberryMilk.asset` และ `GreenTea.asset` กดบอร์ดสีชมพูที่ `(7, 0, 3)` ใน `TestLCGUdonSharp.unity` แล้วเงิน 100 จะเหลือ 65 และ 30 การซื้อครั้งที่สามถูกปฏิเสธ เปลี่ยน `item` และ `catalog` ใน Inspector ก่อน build ได้ `TestArrayCopy` ตรวจว่าการแก้ array local ไม่กระทบ snapshot การซื้อเป็นแบบ local และไม่ sync ระหว่างผู้เล่น
-
-ดู [ตัวอย่าง](./examples.md), [การติดตั้ง](./install.md) และ [คู่มือต้นทางที่ตรึงเวอร์ชัน](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.8/Example/ScriptableObjects/README.md)
+0.5.0 ไม่มีตัวอย่างมาให้ อ่านตัวอย่างร้านค้าและอุปกรณ์ได้ที่ [tag 0.3.12](https://github.com/LogicCuteGuy/LCGUdonSharp/tree/0.3.12/Example/ScriptableObjects) ดู[ตัวอย่าง](./examples.md)

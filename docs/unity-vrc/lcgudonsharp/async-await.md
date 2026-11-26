@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Async / Await
 
-> Documentation version: **0.3.12**
+> Documentation version: **0.5.0**
 
 LCGUdonSharp lowers `async`/`await` at build time to frame-pool continuations — no runtime task machinery. Supported awaits: parameterless `async void` methods, straight-line `await Task.Yield()`, constant positive `await Task.Delay(int)`, and **one VRChat SDK await per behaviour**.
 
@@ -43,7 +43,7 @@ public override void OnImageLoadSuccess(IVRCImageDownload result)
 
 ### Supported SDK awaits
 
-| Await | Example |
+| Await | 0.3.12 example |
 |---|---|
 | `VRCAsync.LoadStringAsync(url, out result)` | `AsyncStringDownloadExample` — the `out` overload copies the SDK result into an instance field before the continuation. |
 | `VRCAsync.LoadImageAsync(...)` | `AsyncImageDownloadExample` — correlated by `IVRCImageDownload` request identity. |
@@ -58,9 +58,9 @@ public override void OnImageLoadSuccess(IVRCImageDownload result)
 - String completion is correlated by URL — don't start another request with the same URL on the behaviour while one is pending.
 - Locals, parameters, nested awaits, explicit returns, and assigning `Task<T>` results directly still produce build diagnostics.
 
-Full details in [Example/AsyncAwait/README.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/Example/AsyncAwait/README.md).
+More details for the older 0.3.12 examples are in [Example/AsyncAwait/README.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.12/Example/AsyncAwait/README.md).
 
 ## See also
 
 - [Synchronous Exception Handling](./exceptions.md) — note: `await` inside `try` is rejected
-- [Examples](./examples.md) — `Example/AsyncAwait` covers every supported await
+- [Examples](./examples.md) — where to find the 0.3.12 `AsyncAwait` examples

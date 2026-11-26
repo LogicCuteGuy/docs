@@ -37,29 +37,11 @@ sidebar_position: 2
 
 ## 4. 公開する
 
-**Tools > StreamData > Publish** を開き、ホストを選びます。
+**Tools > StreamData > Publish** を開いてホストを選びます。
 
-### GitHub Pages
-
-GitHub Pages (`*.github.io`) は VRChat の信頼済み URL 一覧に含まれるため、初期設定のプレイヤーでも読み込めます。
-
-1. `gh auth login` で一度サインインします。**Check gh Login** で状態を確認できます。
-2. **Repo** に `owner/name` を入力するか、**Select** を使います。**Create Repo** は新しい公開リポジトリを作成します。
-3. **Enable Pages** をクリックします。
-4. **World Folder** を設定します。1 つのリポジトリに、ワールドごとのフォルダーで複数のワールドを置けます。
-5. **Publish Now** をクリックします。
-
-:::warning 公開内容は誰でも閲覧でき、初期設定では自動公開されます
-公開 Pages リポジトリのファイルは誰でも閲覧できます。ホストを設定すると、**Export Before Build** と **Publish On Build** は**初期状態でオン**です。Build & Test を含むすべての VRChat ビルドで書き出しと公開が行われます。公開に失敗するとビルドは停止します。手動で公開する場合はオフにしてください。
+:::warning 公開は誰でも閲覧でき、既定で自動です
+ホストを設定すると、Build & Test を含むすべての VRChat ビルドでエクスポートと公開が行われます。最初のビルドの前に[ストリームデータの公開](./publishing.md)を読んでください。
 :::
-
-公開処理は古いファイルを削除しません。以前の書き出しでアップロードしたワールドが、まだ要求する可能性があるためです。
-
-### 自前のホスト
-
-`openworld-host` という小さな Rust サーバーを使えます。ソースは [OpenWorld](https://github.com/LogicCuteGuy/OpenWorld) パッケージの `Server~` にあります。URL とデプロイトークンを入力します。トークンはあなたの PC にのみ保存されます。**Package for Host** をクリックし、zip の中身を任意の静的ホストにアップロードすることもできます。
-
-独自ドメインは VRChat の信頼済み URL 一覧に含まれないため、プレイヤーは **Allow Untrusted URLs** をオンにする必要があります。GitHub Pages を優先し、自前のホストを **Backup Base Url** にする方法もあります。VRChat はリダイレクトに追従しないので、URL はファイルを直接指してください。
 
 ## 実行時の動作
 

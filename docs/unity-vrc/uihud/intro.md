@@ -4,9 +4,19 @@ sidebar_position: 1
 
 # UIHUD
 
-> Documentation version: **0.1.2** · [Release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.2)
+> Documentation version: **0.2.0** · [Release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.2.0)
 
 **UIHUD** (`com.logiccuteguy.uihud`) adds a HUD plus slide-in menus and UI widgets to Unity projects. One setup covers **VR, Desktop and Mobile**, in VRChat worlds (UdonSharp) and in standalone Unity games with no VRChat SDK installed.
+
+## What's new in 0.2.0
+
+- Menu keys and hotbar keys 1–9 are ignored while you type in a UIHUD text input.
+- The main button never opens or closes world panels.
+- VR menus open level, even when your head is tilted. Opening a menu that is already open keeps it in place.
+- A **Show HUD** toggle can stay in step with your code: use the value variable `hudVisibleValue` and the event `_ApplyHudToggle`.
+- Tables cut long cells with `...` (`maxCellChars`, 16 by default).
+- Values your scripts set are kept when a hidden page is shown for the first time.
+- The examples add more world panels, including a synced poll and a shop.
 
 ## What's new in 0.1.2
 
@@ -38,7 +48,7 @@ sidebar_position: 1
 
 1. [Add the LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) to VCC/ALCOM, or add `https://vpm.logiccuteguy.com/index.json` manually. Refresh the listing if it is already added.
 2. Open **Manage Project** for your Unity project.
-3. Find **UIHUD** (`com.logiccuteguy.uihud`) and add **0.1.2**.
+3. Find **UIHUD** (`com.logiccuteguy.uihud`) and add **0.2.0**.
 4. Open the project in Unity and let the package import.
 
 ### Unity Package Manager / manual
@@ -46,10 +56,10 @@ sidebar_position: 1
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/UIHUD.git#0.1.2
+https://github.com/LogicCuteGuy/UIHUD.git#0.2.0
 ```
 
-Alternatively place the tagged repository at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.2.zip` from [the release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.2) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
+Alternatively place the tagged repository at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.2.0.zip` from [the release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.2.0) into that folder, with `package.json` at its root. Do not use GitHub's automatic **Source code (zip)** archive.
 
 Choose **one installation method per project** to avoid duplicate copies.
 
@@ -59,8 +69,8 @@ Choose **one installation method per project** to avoid duplicate copies.
 2. Press Play and press **M** (desktop), the wrist button (VR), or the **MENU** button (mobile) to open the menu.
 3. Select the `UIHUD` manager to rename menus, change sides, and manage HUD items; select a menu canvas to edit pages and widgets.
 
-See [Getting started](./getting-started.md) for the Inspector workflow, widgets, world panels, styling, and the Udon API.
+See [Getting started](./getting-started.md) for the Inspector workflow and widgets, [Menus, hotbar and world panels](./menus-and-layout.md) for layout, and [Scripting](./scripting.md) for the Udon API.
 
 ## Samples
 
-Import **Window > Package Manager > UIHUD > Samples > Examples**, then open `Assets/Samples/UIHUD/…/Examples/UIHUD Examples.unity` and press Play. It covers every widget, both menus, runtime widgets, animations, a synced world panel, and 5 commented example scripts.
+Import **Window > Package Manager > UIHUD > Samples > Examples**, then open `Assets/Samples/UIHUD/…/Examples/UIHUD Examples.unity` and press Play. It covers every widget, both menus, runtime widgets, animations, world panels with a synced counter and poll, and 7 commented example scripts.

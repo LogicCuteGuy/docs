@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Synchronous Exception Handling
 
-> Documentation version: **0.3.12**
+> Documentation version: **0.5.0**
 
 Compiler-managed `try`/`catch`/`finally` with explicit `throw`s, rethrow, and guarded null, index, and integral divide/modulo failures — without relying on unavailable Udon exception opcodes.
 
@@ -46,7 +46,7 @@ inside protected code **and its same-behaviour call graph**.
 > In 0.3.8, incompatible explicit casts between custom ScriptableObject data types raise a compiler-managed `InvalidCastException`. Incompatible `as` returns null. This does not make native Unity/SDK cast failures catchable. See [ScriptableObject Data](./scriptableobjects.md).
 >
 
-`await` inside `try` is rejected with a targeted diagnostic; existing asynchronous callback/result behavior is unchanged. See [`ExceptionHandlingExample.cs`](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/Example/ExtendedLanguage/ExceptionHandlingExample.cs).
+`await` inside `try` is rejected with a targeted diagnostic; existing asynchronous callback/result behavior is unchanged. See [`ExceptionHandlingExample.cs`](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.12/Example/ExtendedLanguage/ExceptionHandlingExample.cs).
 
 ## See also
 

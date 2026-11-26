@@ -47,36 +47,7 @@ The Inspector also has **Reverse**, **Drop To Ground**, **Flatten**, **Clear**, 
 
 The colliders are children of a `_ZoneColliders` object and use the shape's layer. Don't edit them by hand, because the next bake replaces them. A concave polygon uses one convex collider per triangle, so keep complex shapes simple.
 
-## 4. Use it from UdonSharp
+## 4. Next steps
 
-With **Scripting Ref** on, reference the `ZoneArea` on the `_ZoneColliders` object.
-
-```csharp
-using LogicCuteGuy.ZoneDraw;
-using UdonSharp;
-using UnityEngine;
-
-public class ZoneSign : UdonSharpBehaviour
-{
-    public ZoneArea area;
-    public GameObject sign;
-
-    private void Update()
-    {
-        sign.SetActive(area.IsLocalPlayerInside());
-    }
-}
-```
-
-| Method | Does |
-|---|---|
-| `Contains(Vector3)` | Whether a world position is inside a zone. Always false for barriers. |
-| `IsPlayerInside(VRCPlayerApi)`, `IsLocalPlayerInside()` | The same test for a player's position. |
-| `EnableColliders()`, `DisableColliders()` | Turn every collider on or off, for example to open a gate. |
-| `EnableGround()`, `DisableGround()`, `IsGroundEnabled()` | Control the floor only. |
-| `EnableCeiling()`, `DisableCeiling()`, `IsCeilingEnabled()` | Control the ceiling only. |
-| `ShowVisual()`, `HideVisual()` | Show or hide the render mesh. |
-
-These calls are local. To share a gate's state, sync it in your own script.
-
-`Contains` uses one height range for the whole shape, from the lowest point to the highest point plus Height. On steep ground, split the area into several zones.
+- [How baking works](./baking.md): which colliders each setting produces.
+- [Scripting with ZoneArea](./scripting.md): check whether a player is inside, and open gates from UdonSharp.

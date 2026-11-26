@@ -11,11 +11,11 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | Package ID | Display Name | Latest | Unity | Description |
 |---|---|---|---|---|
 | `com.logiccuteguy.helptools` | LogicCuteGuy Help Tools | `1.0.1` | 2022.3.22f1 | 15+ editor utilities for scene management, object manipulation, and optimization |
-| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.3.12` | 2022.3 | Interface-enabled UdonSharp compiler — interfaces, async/await, exceptions, collections/JSON, packet networking |
+| `com.logiccuteguy.lcgudonsharp` | LCGUdonSharp | `0.5.0` | 2022.3 | Adds interfaces, async/await, try/catch, collections/JSON and extended C# to the SDK's UdonSharp through compiler hooks |
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.2` | 2022.3 | Diggable voxel zones for Unity Terrain, with synced runtime edits, foliage, packaged examples and seamless terrain-hole edges |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Mesh modifier stacks and GPU physics for Unity, with shared VRChat/native standalone components |
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.2` | 2022.3 | Runs `.wasm` WebAssembly kernels on the GPU as HLSL shaders, executed per pixel from UdonSharp with async GPU readback |
-| `com.logiccuteguy.uihud` | UIHUD | `0.1.2` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
+| `com.logiccuteguy.uihud` | UIHUD | `0.2.0` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
 | `com.logiccuteguy.lcglocalization` | LCG Localization | `0.1.0` | 2022.3 | Text and asset localization for UdonSharp, baking Unity Localization tables into Udon |
 | `com.logiccuteguy.clientnetsim` | ClientSim Net | `0.1.2` | 2022.3 | Multiplayer network simulator for VRChat ClientSim: remote puppet players, latency/jitter/loss, ownership, late join and a network debugger |
 | `com.logiccuteguy.lcgnetwork` | LCG Network System | `0.1.0` | 2022.3 | Zone-scoped networking for VRChat worlds: normal UdonSharp, Udon Graph and Udon Assembly networking routed through zones |
@@ -49,6 +49,8 @@ Docs: [Overview](helptools/intro) · [Installation](helptools/install)
 
 ### `com.logiccuteguy.lcgudonsharp` — LCGUdonSharp
 
+LCGUdonSharp **0.5.0** hooks the VRChat SDK's UdonSharp instead of replacing it. There is no installer and no SDK file is modified. It requires Worlds SDK `>=3.10.6 <3.11.0`. Compiler-side networking is removed (see [LCG Network System](./lcgnetwork/intro.md)), the SBP compatibility package is no longer needed, and the release contains no examples. Upgrading from 0.4.x or earlier needs extra steps: see [installation](./lcgudonsharp/install.md). The notes below about earlier versions are history.
+
 0.3.12 warns instead of blocking when the installed VRChat Worlds SDK differs from the supported `3.10.5`: the payload (built from SDK 3.10.5) still installs, with a reminder that **Tools > LCGUdonSharp > Restore** reverts to the backed-up original UdonSharp. It also declares the **LCGUdonSharp Examples** sample in `package.json`, so Unity's Package Manager lists it — import it after automatic compiler installation completes.
 
 LCGUdonSharp 0.3.10 installs an embedded **SBP compatibility 1.21.26** dependency through VPM before Unity compiles, preventing the VRChat SDK `ExtensionMethods` collision on fresh installs and upgrades. It is based on Unity SBP 1.21.25, preserves upstream source/GUIDs and the Unity Companion License, and survives `Library` regeneration. Unity Localization 1.4.5 remains supported. See [installation](./lcgudonsharp/install.md); manual installs require **both** release ZIPs.
@@ -57,12 +59,12 @@ LCGUdonSharp 0.3.9 adds [text and asset localization](./lcgudonsharp/localizatio
 
 LCGUdonSharp 0.3.8 adds nested and polymorphic [ScriptableObject data snapshots](./lcgudonsharp/scriptableobjects.md), runtime type tests and checked casts, cycle/depth validation, and a local equipment example. Rebuild all Udon programs and rebake scene/prefab data after updating because snapshot layouts now include runtime type tags.
 
-- **Latest version**: 0.3.12 — [release](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.3.12)
+- **Latest version**: 0.5.0 — [release](https://github.com/LogicCuteGuy/LCGUdonSharp/releases/tag/0.5.0)
 - **License**: MIT
-- **VPM dependency**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`; supported version `3.10.5`; since 0.3.11 other versions install with an untested-SDK warning)
+- **VPM dependency**: `com.vrchat.worlds` `>=3.10.6` (the compiler supports `>=3.10.6 <3.11.0`)
 - **Repository**: [LogicCuteGuy/LCGUdonSharp](https://github.com/LogicCuteGuy/LCGUdonSharp)
 
-Adds interfaces, compiler-managed exceptions, async lowering, C# collection/JSON lowering, extended language features, and experimental packet networking to UdonSharp. Version 0.3.6 adds bounded object-motion batching, snapshot and disconnect recovery, ownership repair, and wired native/LCG load examples. Rebuild worlds after updating because older builds cannot decode the new motion batch envelope. The compiler is installed from `Payload~/UdonSharp` without modifying the Worlds SDK package. See [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md) for release history.
+An UdonSharp compiler extension for VRChat: C# interfaces, build-time async/await, synchronous try/catch/finally, lowered collections/JSON and extended language features. See [CHANGELOG.md](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/CHANGELOG.md) for release history.
 
 Docs: [Overview](lcgudonsharp/intro) · [Installation](lcgudonsharp/install)
 
@@ -124,16 +126,16 @@ UIHUD 0.1.0 adds a HUD plus slide-in menus and 20+ UI widgets for VRChat worlds 
 
 0.1.2 relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). 0.1.1 stretched the toggle checkmark to fill its checkbox and added a screenshot showcase to the README.
 
-- **Latest version**: 0.1.2 — [release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.1.2)
+- **Latest version**: 0.2.0 — [release](https://github.com/LogicCuteGuy/UIHUD/releases/tag/0.2.0)
 - **Unity**: 2022.3
 - **License**: MIT
 - **Dependencies**: `com.unity.textmeshpro` `3.0.6`, `com.unity.ugui` `1.0.0`, `com.unity.modules.physics` `1.0.0`, `com.unity.modules.xr` `1.0.0`
 - **VPM dependency**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
 - **Repository**: [LogicCuteGuy/UIHUD](https://github.com/LogicCuteGuy/UIHUD)
 
-Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/UIHUD.git#0.1.2`, embed at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.1.2.zip` release asset. Choose one installation method per project.
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), use `https://github.com/LogicCuteGuy/UIHUD.git#0.2.0`, embed at `Packages/com.logiccuteguy.uihud`, or extract the named `com.logiccuteguy.uihud-0.2.0.zip` release asset. Choose one installation method per project.
 
-Docs: [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md)
+Docs: [Overview](./uihud/intro.md) · [Getting started](./uihud/getting-started.md) · [Menus, hotbar and world panels](./uihud/menus-and-layout.md) · [Scripting](./uihud/scripting.md)
 
 ### `com.logiccuteguy.lcglocalization` — LCG Localization
 

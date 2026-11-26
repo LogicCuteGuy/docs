@@ -47,36 +47,7 @@ sidebar_position: 2
 
 collider เป็นลูกของวัตถุ `_ZoneColliders` และใช้ layer เดียวกับรูปทรง อย่าแก้ด้วยมือ เพราะการ bake ครั้งถัดไปจะเขียนทับ รูปหลายเหลี่ยมแบบเว้าใช้ convex collider หนึ่งอันต่อสามเหลี่ยม จึงควรวาดรูปให้ไม่ซับซ้อน
 
-## 4. ใช้จาก UdonSharp
+## 4. ขั้นถัดไป
 
-เมื่อเปิด **Scripting Ref** ให้อ้างถึง `ZoneArea` บนวัตถุ `_ZoneColliders`
-
-```csharp
-using LogicCuteGuy.ZoneDraw;
-using UdonSharp;
-using UnityEngine;
-
-public class ZoneSign : UdonSharpBehaviour
-{
-    public ZoneArea area;
-    public GameObject sign;
-
-    private void Update()
-    {
-        sign.SetActive(area.IsLocalPlayerInside());
-    }
-}
-```
-
-| เมธอด | ทำอะไร |
-|---|---|
-| `Contains(Vector3)` | ตำแหน่งในโลกอยู่ใน zone หรือไม่ สำหรับ barrier จะเป็น false เสมอ |
-| `IsPlayerInside(VRCPlayerApi)`, `IsLocalPlayerInside()` | การเช็กแบบเดียวกันกับตำแหน่งของผู้เล่น |
-| `EnableColliders()`, `DisableColliders()` | เปิดหรือปิด collider ทั้งหมด เช่น ใช้เปิดประตูรั้ว |
-| `EnableGround()`, `DisableGround()`, `IsGroundEnabled()` | ควบคุมเฉพาะพื้น |
-| `EnableCeiling()`, `DisableCeiling()`, `IsCeilingEnabled()` | ควบคุมเฉพาะเพดาน |
-| `ShowVisual()`, `HideVisual()` | แสดงหรือซ่อน render mesh |
-
-คำสั่งเหล่านี้มีผลเฉพาะเครื่องตัวเอง ถ้าต้องการให้ทุกคนเห็นสถานะประตูตรงกัน ต้องซิงก์ในสคริปต์ของคุณ
-
-`Contains` ใช้ช่วงความสูงเดียวกับทั้งรูปทรง คือจากจุดต่ำสุดถึงจุดสูงสุดบวก Height ถ้าพื้นลาดชันมาก ให้แบ่งพื้นที่เป็นหลาย zone
+- [การ bake ทำงานอย่างไร](./baking.md): แต่ละการตั้งค่าสร้าง collider แบบไหน
+- [เขียนสคริปต์กับ ZoneArea](./scripting.md): ตรวจว่าผู้เล่นอยู่ข้างในหรือไม่ และเปิดประตูจาก UdonSharp

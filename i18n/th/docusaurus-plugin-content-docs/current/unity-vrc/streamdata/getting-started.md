@@ -39,27 +39,9 @@ material เดิมของคุณจะไม่ถูกแก้ build �
 
 เปิด **Tools > StreamData > Publish** แล้วเลือกโฮสต์
 
-### GitHub Pages
-
-GitHub Pages (`*.github.io`) อยู่ในรายการ URL ที่ VRChat เชื่อถือ ผู้เล่นที่ใช้ค่าเริ่มต้นจึงโหลดได้
-
-1. ล็อกอินหนึ่งครั้งด้วย `gh auth login` ปุ่ม **Check gh Login** ใช้ดูสถานะ
-2. ใส่ **Repo** เป็น `owner/name` หรือใช้ **Select** ปุ่ม **Create Repo** จะสร้าง repository สาธารณะใหม่
-3. กด **Enable Pages**
-4. ตั้ง **World Folder** repository เดียวเก็บได้หลายโลก โลกละหนึ่งโฟลเดอร์
-5. กด **Publish Now**
-
-:::warning ไฟล์ที่เผยแพร่เป็นสาธารณะ และเผยแพร่อัตโนมัติเป็นค่าเริ่มต้น
-ไฟล์ใน Pages repository สาธารณะใครก็ดูได้ เมื่อตั้งโฮสต์แล้ว **Export Before Build** และ **Publish On Build** จะ **เปิดเป็นค่าเริ่มต้น** ทุกครั้งที่ build VRChat รวมถึง Build & Test จะ export และเผยแพร่ ถ้าเผยแพร่ไม่สำเร็จ build จะหยุด ถ้าต้องการเผยแพร่เองให้ปิดสองตัวเลือกนี้
+:::warning การเผยแพร่เป็นสาธารณะ และเป็นอัตโนมัติโดยค่าเริ่มต้น
+เมื่อตั้งโฮสต์แล้ว การ build ของ VRChat ทุกครั้ง รวมถึง Build & Test จะ export และเผยแพร่ อ่าน [การเผยแพร่ข้อมูล stream](./publishing.md) ก่อน build ครั้งแรก
 :::
-
-การเผยแพร่จะไม่ลบไฟล์เก่า เพราะโลกที่อัปโหลดด้วย export ครั้งก่อนอาจยังเรียกไฟล์เหล่านั้นอยู่
-
-### โฮสต์ของคุณเอง
-
-ใช้ `openworld-host` ได้ เป็นเซิร์ฟเวอร์ Rust ขนาดเล็ก ซอร์สอยู่ใน `Server~` ของแพ็กเกจ [OpenWorld](https://github.com/LogicCuteGuy/OpenWorld) ใส่ URL และ deploy token โดย token ถูกเก็บในเครื่องของคุณเท่านั้น หรือกด **Package for Host** แล้วอัปโหลดไฟล์ใน zip ไปยัง static host ใดก็ได้
-
-โดเมนของคุณเองไม่อยู่ในรายการ URL ที่ VRChat เชื่อถือ ผู้เล่นต้องเปิด **Allow Untrusted URLs** อีกทางคือใช้ GitHub Pages เป็นหลัก แล้วใส่โฮสต์ของคุณใน **Backup Base Url** VRChat ไม่ตาม redirect ดังนั้น URL ต้องชี้ไปที่ไฟล์โดยตรง
 
 ## ขณะเล่น
 

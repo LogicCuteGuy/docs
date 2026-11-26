@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # C# Interfaces
 
-> Documentation version: **0.3.12**
+> Documentation version: **0.5.0**
 
 Define a plain C# interface and implement it on `UdonSharpBehaviour` classes. Method calls dispatch through the interface — with parameters, return values, properties, multiple implementations, and interface arrays.
 
@@ -50,9 +50,9 @@ Unity cannot serialize interface fields. Store the concrete components on your b
 Interface support targets the common polymorphism patterns used in worlds:
 
 - Supported: method dispatch with parameters/returns, properties, multiple implementations per class, interface arrays, closed generic interface diamonds.
-- Rejected at build time (with diagnostics): constructs outside the supported contract — see `Example/GenericRestrictions` for the accepted/rejected pairs.
+- Rejected at build time (with diagnostics): constructs outside the supported contract — see the 0.3.12 [`GenericRestrictions`](https://github.com/LogicCuteGuy/LCGUdonSharp/tree/0.3.12/Example/GenericRestrictions) example for the accepted/rejected pairs.
 
 ## See also
 
 - [Extended Language](./extended-language.md) — closed generics and interface diamonds
-- [Examples](./examples.md) — `Example/Interfaces` runs `INumberOperation` end to end
+- [Examples](./examples.md) — where to find the older `INumberOperation` example

@@ -94,6 +94,8 @@ const sidebars = {
       items: [
         'unity-vrc/wasm2hlsl/intro',
         'unity-vrc/wasm2hlsl/getting-started',
+        'unity-vrc/wasm2hlsl/runner-api',
+        'unity-vrc/wasm2hlsl/examples',
       ],
     },    {
       type: 'category',
@@ -102,6 +104,8 @@ const sidebars = {
       items: [
         'unity-vrc/uihud/intro',
         'unity-vrc/uihud/getting-started',
+        'unity-vrc/uihud/menus-and-layout',
+        'unity-vrc/uihud/scripting',
       ],
     },    {
       type: 'category',
@@ -109,6 +113,9 @@ const sidebars = {
       collapsed: false,
       items: [
         'unity-vrc/lcglocalization/intro',
+        'unity-vrc/lcglocalization/unity-tables',
+        'unity-vrc/lcglocalization/assets',
+        'unity-vrc/lcglocalization/legacy-json',
       ],
     },
     {
@@ -118,6 +125,8 @@ const sidebars = {
       items: [
         'unity-vrc/lcgnetwork/intro',
         'unity-vrc/lcgnetwork/usage',
+        'unity-vrc/lcgnetwork/zones',
+        'unity-vrc/lcgnetwork/udonsharp-and-runtime',
       ],
     },
     {
@@ -127,6 +136,8 @@ const sidebars = {
       items: [
         'unity-vrc/clientsimnet/intro',
         'unity-vrc/clientsimnet/usage',
+        'unity-vrc/clientsimnet/scripting-api',
+        'unity-vrc/clientsimnet/scenarios',
       ],
     },
     {
@@ -136,6 +147,9 @@ const sidebars = {
       items: [
         'unity-vrc/openworld/intro',
         'unity-vrc/openworld/getting-started',
+        'unity-vrc/openworld/how-it-works',
+        'unity-vrc/openworld/validation-and-build',
+        'unity-vrc/openworld/server-tools',
       ],
     },
     {
@@ -145,6 +159,8 @@ const sidebars = {
       items: [
         'unity-vrc/streamdata/intro',
         'unity-vrc/streamdata/getting-started',
+        'unity-vrc/streamdata/publishing',
+        'unity-vrc/streamdata/how-it-works',
       ],
     },
     {
@@ -154,6 +170,8 @@ const sidebars = {
       items: [
         'unity-vrc/zonedraw/intro',
         'unity-vrc/zonedraw/getting-started',
+        'unity-vrc/zonedraw/baking',
+        'unity-vrc/zonedraw/scripting',
       ],
     },
   ],

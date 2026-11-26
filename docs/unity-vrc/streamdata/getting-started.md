@@ -39,27 +39,9 @@ Set **Base Url** to a localhost address such as `http://localhost:8765/`, export
 
 Open **Tools > StreamData > Publish** and choose a host.
 
-### GitHub Pages
-
-GitHub Pages (`*.github.io`) is on VRChat's trusted URL list, so it works for players with default settings.
-
-1. Sign in once with `gh auth login`. **Check gh Login** shows the status.
-2. Enter **Repo** as `owner/name`, or use **Select**. **Create Repo** makes a new public repository.
-3. Click **Enable Pages**.
-4. Set **World Folder**. One repository can hold all your worlds, one folder each.
-5. Click **Publish Now**.
-
 :::warning Publishing is public, and automatic by default
-Files in a public Pages repository are visible to anyone. Once a host is set, **Export Before Build** and **Publish On Build** are **on by default**: every VRChat build, including Build & Test, exports and publishes. If publishing fails, the build stops. Turn them off to publish manually.
+Once a host is set, every VRChat build, including Build & Test, exports and publishes. See [Publishing stream data](./publishing.md) before your first build.
 :::
-
-Publishing never deletes old files, because a world uploaded with an older export may still request them.
-
-### Your own host
-
-You can use `openworld-host`, a small Rust server whose source is in the [OpenWorld](https://github.com/LogicCuteGuy/OpenWorld) package under `Server~`. Enter its URL and deploy token. The token is stored only on your PC. You can also click **Package for Host** and upload the zip's contents to any static host.
-
-Your own domain isn't on VRChat's trusted URL list. Players must turn on **Allow Untrusted URLs**. You can use your host as **Backup Base Url** with GitHub Pages first. VRChat doesn't follow redirects, so URLs must point straight at the files.
 
 ## At runtime
 

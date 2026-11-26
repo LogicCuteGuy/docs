@@ -98,3 +98,9 @@ public class ShopSign : UdonSharpBehaviour
 Language choice is local to each player. It is not synced or saved between visits.
 
 If your script is in its own assembly definition, reference `LogicCuteGuy.LCGLocalization.Runtime` and give that assembly a U# assembly definition.
+
+## Next steps
+
+- [Unity String Tables](./unity-tables.md): setup, language switching and Smart Strings.
+- [Localized assets](./assets.md): sprites, textures, audio and GameObjects.
+- [JSON tables](./legacy-json.md): the legacy text-only workflow.

@@ -4,7 +4,7 @@ sidebar_position: 6.5
 
 # ScriptableObject データ
 
-> ドキュメントバージョン: **0.3.12**
+> ドキュメントバージョン: **0.5.0**
 
 通常の独自 Unity `ScriptableObject` アセットを、型付きの UdonSharp behaviour フィールドに直接割り当てられます。特別な基底クラス、属性、手動コピーは不要です。コンパイラーはシリアライズ済みデータを読み取り専用の Udon スナップショットへ変換します。
 
@@ -48,7 +48,7 @@ public class Shop : UdonSharpBehaviour
 
 ```csharp
 // Fields and method inside an UdonSharpBehaviour.
-// Data classes are provided by the optional equipment sample.
+// Data classes come from the 0.3.12 equipment example.
 public ItemDefinition item;
 
 public override void Interact()
@@ -84,12 +84,6 @@ public override void Interact()
 
 変更や同期が必要な値は通常のゲーム状態フィールドへコピーしてください。返された配列を変更しても、そのコピーだけが変わります。
 
-## 0.3.8 の装備サンプル
+## サンプル
 
-`ScriptableObjectEquipmentExample.prefab` は `TestLCGUdonSharp.unity` の `(12, 0, 3)` にあります。基底型の `item` に `TrainingSword.asset` を割り当て、`catalog` は `FireSpell.asset` も含みます。それぞれ固有の economy アセットを参照します。剣は 35 コイン・45 damage、魔法は 20 コイン・80 power / 12 mana です。ボードで購入し、隣のスイッチまたは `SelectNext` で選択を切り替えます。`TestDataFeatures` は入れ子の読み取り、継承フィールド、型判定、成功・null・無効なキャスト、多態的な入れ子配列の防御的コピーを確認します。購入はローカルで同期しません。
-
-## ショップの例
-
-コンパイラー設定の完了後、**LCGUdonSharp Examples** をインポートします。`Example/ScriptableObjects/ScriptableObjectShopExample.prefab`、`StrawberryMilk.asset`、`GreenTea.asset` が含まれます。`TestLCGUdonSharp.unity` の `(7, 0, 3)` にあるピンクのボードを操作すると、所持金 100 が 65、30 となり、3 回目の購入は拒否されます。ビルド前に Inspector の `item` と `catalog` を変更できます。`TestArrayCopy` はローカル配列の変更がスナップショットに影響しないことを確認します。購入はローカル動作で、同期しません。
-
-[サンプル](./examples.md)、[インストール](./install.md)、[上流のバージョン固定ガイド](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.8/Example/ScriptableObjects/README.md) も参照してください。
+0.5.0 にはサンプルが含まれません。ショップと装備のサンプルは[タグ 0.3.12](https://github.com/LogicCuteGuy/LCGUdonSharp/tree/0.3.12/Example/ScriptableObjects)で読めます。[サンプル](./examples.md)を参照してください。

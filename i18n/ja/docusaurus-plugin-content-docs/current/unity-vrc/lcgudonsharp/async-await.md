@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Async / Await
 
-> ドキュメントバージョン: **0.3.12**
+> ドキュメントバージョン: **0.5.0**
 
 LCGUdonSharp は `async`/`await` をビルド時に frame-pool continuation へ変換します。対応範囲は引数なしの `async void`、直線的な `Task.Yield()`、正の定数を使う `Task.Delay(int)`、behaviour ごとに 1 つの VRChat SDK await です。
 
@@ -36,4 +36,4 @@ public override async void Interact()
 - ローカル変数や引数の保持、nested await、明示的 return、`Task<T>` 結果の直接代入は診断エラーになります。
 - `try` 内の `await` は使用できません。
 
-[上流の AsyncAwait サンプル](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/Example/AsyncAwait/README.md)
+[上流の AsyncAwait サンプル（0.3.12）](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.12/Example/AsyncAwait/README.md)

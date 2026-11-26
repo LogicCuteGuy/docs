@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Async / Await
 
-> เวอร์ชันเอกสาร: **0.3.12**
+> เวอร์ชันเอกสาร: **0.5.0**
 
 LCGUdonSharp แปลง `async`/`await` เป็น frame-pool continuation ตอน build โดยรองรับ `async void` ที่ไม่มี parameter, `Task.Yield()` แบบลำดับตรง, `Task.Delay(int)` ที่ใช้ค่าคงที่บวก และ VRChat SDK await หนึ่งรายการต่อ behaviour
 
@@ -36,4 +36,4 @@ Callback แบบเดิมทำงานก่อน แล้ว continuat
 - การเก็บ local/parameter, nested await, explicit return และกำหนดผล `Task<T>` โดยตรงจะเกิด diagnostic
 - ใช้ `await` ภายใน `try` ไม่ได้
 
-[ตัวอย่าง AsyncAwait ต้นทาง](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/main/Example/AsyncAwait/README.md)
+[ตัวอย่าง AsyncAwait ต้นทาง (0.3.12)](https://github.com/LogicCuteGuy/LCGUdonSharp/blob/0.3.12/Example/AsyncAwait/README.md)
