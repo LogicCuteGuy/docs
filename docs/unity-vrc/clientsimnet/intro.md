@@ -4,15 +4,17 @@ sidebar_position: 1
 
 # ClientSim Net
 
-> Documentation version: **0.1.1** · [Release](https://github.com/LogicCuteGuy/ClientSimNet/releases/tag/0.1.1)
+> Documentation version: **0.1.2** · [Release](https://github.com/LogicCuteGuy/ClientSimNet/releases/tag/0.1.2)
 
 **ClientSim Net** (`com.logiccuteguy.clientnetsim`) is a multiplayer network simulator for VRChat's ClientSim. Stock ClientSim has no latency, no `OnDeserialization`, and runs `Owner`/`Others` events locally, so most networking bugs stay hidden until you upload. ClientSim Net adds remote puppet players to one Unity editor so you can test them in Play mode.
 
 [![A showcase world with one signed station per networking use case](/img/clientsimnet/showcase.png)](/img/clientsimnet/showcase.png)
 
-## What's new in 0.1.1
+## What's new in 0.1.2
 
-Every player's world now also shows the other players (you included) as a named capsule at their own-client position, so you can see who is where when viewing as a puppet. The capsules are a picture only: no collider, no latency.
+Each remote player's world now has its own copy of every player's PlayerObjects. Synced state, network events, interacts and `Networking.FindComponentInPlayerObjects` run on that player's own client, so you can test a "you → Bob" flow (clicking Bob's card sends him an `Owner` event, Bob validates and writes) without rewiring anything. A networked object at the scene root, such as a root-level PlayerObject template, is now copied into every world too.
+
+0.1.1: every player's world now also shows the other players (you included) as a named capsule at their own-client position, so you can see who is where when viewing as a puppet. The capsules are a picture only: no collider, no latency.
 
 ## Features
 
@@ -41,7 +43,7 @@ MIT.
 
 1. [Add the LogicCuteGuy VPM repository](https://vpm.logiccuteguy.com/) to VCC/ALCOM, or add `https://vpm.logiccuteguy.com/index.json` manually. Refresh the listing if it is already added.
 2. Open **Manage Project** for your Unity project.
-3. Find **ClientSim Net** (`com.logiccuteguy.clientnetsim`) and add **0.1.1**.
+3. Find **ClientSim Net** (`com.logiccuteguy.clientnetsim`) and add **0.1.2**.
 4. Open the project in Unity and let the package import.
 
 ### Unity Package Manager / manual
@@ -49,10 +51,10 @@ MIT.
 In **Window > Package Manager > + > Add package from git URL**, enter:
 
 ```text
-https://github.com/LogicCuteGuy/ClientSimNet.git#0.1.1
+https://github.com/LogicCuteGuy/ClientSimNet.git#0.1.2
 ```
 
-Choose **one installation method per project** to avoid duplicate copies. Do not use GitHub's automatic **Source code (zip)** archive; use the named `com.logiccuteguy.clientnetsim-0.1.1.zip` from the release.
+Choose **one installation method per project** to avoid duplicate copies. Do not use GitHub's automatic **Source code (zip)** archive; use the named `com.logiccuteguy.clientnetsim-0.1.2.zip` from the release.
 
 ## Quick start
 

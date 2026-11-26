@@ -90,7 +90,7 @@ The **Net Debugger** shows a 30 s timeline of bytes on the wire per 0.1 s, stack
 | 12 | Owner leaves | Ownership falls back; nothing waits for the departed player |
 | 13 | Pickup theft | Theft or `DisallowTheft` behaves as designed |
 | 14 | Preset **Bad** (300 ms, 5% loss) | Continuous visuals tolerate loss; manual state converges |
-| 15 | PlayerObjects | Each player has an `<name> [id]` copy; others request changes through `Owner` events, never write |
+| 15 | PlayerObjects | Each player has an `<name> [id]` copy, present in every player's world; others request changes through `Owner` events, never write |
 | 16 | Unsynced pickup | Moves only on the holder's client; compare with an ObjectSync pickup |
 
 When you claim networked code works, say which scenarios you ran and at which preset. List untested scenarios as untested.
@@ -100,6 +100,6 @@ When you claim networked code works, say which scenarios you ran and at which pr
 - Sync sizes are an estimate per type, not real wire bytes.
 - Player APIs other than `TeleportTo` (Immobilize, SetWalkSpeed, …) on a puppet do nothing.
 - Remote Udon `Physics.Raycast` queries your scene; the puppet's body is not in its own world.
-- PlayerObjects and `VRCInstantiate` spawns live in your scene.
+- `VRCInstantiate` spawns land in your scene. (PlayerObjects get their own copy in every world since 0.1.2.)
 - No `VRCObjectPool` spawning by puppets: take ownership of the pool object instead.
 - SDK internals are reached by reflection. After an SDK update, run **Test Runner > EditMode > ClientSimNet.Tests** first.

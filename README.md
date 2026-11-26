@@ -13,7 +13,7 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [WASM2HLSL](https://github.com/LogicCuteGuy/WASM2HLSL) | `0.2.2` | [Overview](https://docs.logiccuteguy.com/unity-vrc/wasm2hlsl/intro) |
 | [UIHUD](https://github.com/LogicCuteGuy/UIHUD) | `0.1.2` | [Overview](https://docs.logiccuteguy.com/unity-vrc/uihud/intro) |
 | [LCG Localization](https://github.com/LogicCuteGuy/LCGLocalization) | `0.1.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcglocalization/intro) |
-| [ClientSim Net](https://github.com/LogicCuteGuy/ClientSimNet) | `0.1.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro) |
+| [ClientSim Net](https://github.com/LogicCuteGuy/ClientSimNet) | `0.1.2` | [Overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro) |
 
 All eight packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
@@ -37,7 +37,7 @@ UIHUD **0.1.2** relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). The p
 
 LCG Localization **0.1.0** is the initial release of text and asset localization for UdonSharp, baking Unity Localization tables into Udon. See the [overview](https://docs.logiccuteguy.com/unity-vrc/lcglocalization/intro).
 
-ClientSim Net **0.1.1** (initial release 0.1.0) is a multiplayer network simulator for VRChat's ClientSim: remote puppet players, latency/jitter/loss, real synced-variable delivery, ownership, late join and a network debugger. See the [overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro).
+ClientSim Net **0.1.2** (initial release 0.1.0) is a multiplayer network simulator for VRChat's ClientSim: remote puppet players, latency/jitter/loss, real synced-variable delivery, ownership, late join and a network debugger. See the [overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro).
 
 ## Local development
 
