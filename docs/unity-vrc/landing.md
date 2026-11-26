@@ -27,7 +27,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-All nine packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
+All twelve packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -90,6 +90,24 @@ Multiplayer network simulator for VRChat's ClientSim: remote puppet players with
 Zone-scoped networking for VRChat worlds. Normal UdonSharp, Udon Graph and Udon Assembly networking is routed through zones at build time, so synced variables and events reach only the players inside. Preview.
 
 [Overview](./lcgnetwork/intro.md) · [Using LCG Network](./lcgnetwork/usage.md).
+
+### [OpenWorld](./openworld/intro.md) — `com.logiccuteguy.openworld` v0.0.1
+
+Chunk-grid world engine for VRChat: chunk streaming, impostors, GPU-instanced Blocks and runtime editing.
+
+[Overview](./openworld/intro.md) · [Getting started](./openworld/getting-started.md).
+
+### [StreamData](./streamdata/intro.md) — `com.logiccuteguy.streamdata` v0.0.1
+
+Streams a VRChat world's textures and lightmaps from the web after it loads, with publishing to GitHub Pages or your own host.
+
+[Overview](./streamdata/intro.md) · [Getting started](./streamdata/getting-started.md).
+
+### [ZoneDraw](./zonedraw/intro.md) — `com.logiccuteguy.zonedraw` v0.1.0
+
+Click-to-draw invisible barrier walls and trigger zones, baked to plain colliders, with an UdonSharp API.
+
+[Overview](./zonedraw/intro.md) · [Getting started](./zonedraw/getting-started.md).
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 

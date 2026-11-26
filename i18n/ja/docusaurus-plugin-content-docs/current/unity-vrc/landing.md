@@ -27,7 +27,7 @@ slug: /
 
 ## 利用可能なプロジェクト
 
-5 つの package はすべて [LogicCuteGuy VPM リスト](./packages.md)（`https://vpm.logiccuteguy.com/index.json`）で公開されています。DigHoleIt は Git tag と名前付き GitHub Release package も公開しています。
+すべての package は [LogicCuteGuy VPM リスト](./packages.md)（`https://vpm.logiccuteguy.com/index.json`）で公開されています。DigHoleIt は Git tag と名前付き GitHub Release package も公開しています。
 
 ### [Help Tools (ヘルプツール)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ライトマップのスケーリング、アセット分析、シェーダーマッピング、および階層の整理のための 15 以上のプロフェッショナルなエディターユーティリティのコレクション。
@@ -64,6 +64,24 @@ Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 comp
 WASM2HLSL 0.2.0 は大きな定数テーブルをテクスチャから読み、大きいモジュールのサイズ制限を緩和します（1 KB 以上の `.rodata` は 64000 バイトのメモリ制限に数えられません）。`.wasm` モジュールはエディターで HLSL に変換され、UdonSharp から Blit + async GPU readback でピクセルごとに 1 回実行されます。
 
 VRChat ワールドで WebAssembly を GPU 上で実行します。カーネルは手書き HLSL ではなく Rust/C/Zig で書けます。[概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)。
+
+### [OpenWorld](./openworld/intro.md) — `com.logiccuteguy.openworld` v0.0.1
+
+VRChat 向けのチャンクグリッド型ワールドエンジン。チャンクストリーミング、インポスター、GPU インスタンシングの Block、ランタイム編集。
+
+[概要](./openworld/intro.md) · [はじめに](./openworld/getting-started.md)
+
+### [StreamData](./streamdata/intro.md) — `com.logiccuteguy.streamdata` v0.0.1
+
+ワールドの読み込み後にテクスチャとライトマップを Web からストリーミング。GitHub Pages や自前のホストへの公開にも対応。
+
+[概要](./streamdata/intro.md) · [はじめに](./streamdata/getting-started.md)
+
+### [ZoneDraw](./zonedraw/intro.md) — `com.logiccuteguy.zonedraw` v0.1.0
+
+クリックで見えないバリア壁やトリガーゾーンを描画し、通常のコライダーにベイク。UdonSharp API 付き。
+
+[概要](./zonedraw/intro.md) · [はじめに](./zonedraw/getting-started.md)
 
 バージョン、依存関係、リポジトリについては[パッケージ一覧](./packages.md)をご覧ください。
 

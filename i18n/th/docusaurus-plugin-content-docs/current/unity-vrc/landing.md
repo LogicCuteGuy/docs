@@ -27,7 +27,7 @@ slug: /
 
 ## โปรเจกต์ที่พร้อมใช้งาน
 
-แพ็กเกจทั้งห้ามีใน [รายการ VPM ของ LogicCuteGuy](./packages.md) (`https://vpm.logiccuteguy.com/index.json`) และ DigHoleIt ยังมี Git tag กับแพ็กเกจ GitHub Release แบบมีชื่อ
+แพ็กเกจทั้งหมดมีใน [รายการ VPM ของ LogicCuteGuy](./packages.md) (`https://vpm.logiccuteguy.com/index.json`) และ DigHoleIt ยังมี Git tag กับแพ็กเกจ GitHub Release แบบมีชื่อ
 
 ### [Help Tools (เครื่องมือช่วยเหลือ)](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 ชุดเครื่องมือ Editor ระดับมืออาชีพกว่า 15 รายการ สำหรับการปรับขนาด Lightmap, การวิเคราะห์การใช้งาน Asset, การจัดการ Shader และการจัดระเบียบ Hierarchy
@@ -64,6 +64,24 @@ Mesh modifier stack และ GPU physics สำหรับ Unity พร้อ�
 WASM2HLSL 0.2.0 อ่านตารางค่าคงที่ขนาดใหญ่จากเท็กซ์เจอร์: `.rodata` ที่ 1 KB ขึ้นไปไม่นับรวมในขีดจำกัดหน่วยความจำ 64000 byte จึงลดขีดจำกัดขนาดสำหรับโมดูลที่ใหญ่ขึ้น โมดูล `.wasm` ถูกแปลงเป็น HLSL ใน editor แล้วเรียกจาก UdonSharp ทีละพิกเซลผ่าน Blit + async GPU readback
 
 รัน WebAssembly บน GPU ใน VRChat world เขียน kernel เป็น Rust/C/Zig แทน HLSL ด้วยมือ [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)
+
+### [OpenWorld](./openworld/intro.md) — `com.logiccuteguy.openworld` v0.0.1
+
+เอนจินโลกแบบแบ่งกริดเป็น chunk สำหรับ VRChat: สตรีม chunk, impostor, Block แบบ GPU instancing และแก้ไขขณะเล่น
+
+[ภาพรวม](./openworld/intro.md) · [เริ่มต้นใช้งาน](./openworld/getting-started.md)
+
+### [StreamData](./streamdata/intro.md) — `com.logiccuteguy.streamdata` v0.0.1
+
+สตรีม texture และ lightmap ของโลก VRChat จากเว็บหลังโลกโหลดเสร็จ พร้อมเผยแพร่ขึ้น GitHub Pages หรือโฮสต์ของคุณเอง
+
+[ภาพรวม](./streamdata/intro.md) · [เริ่มต้นใช้งาน](./streamdata/getting-started.md)
+
+### [ZoneDraw](./zonedraw/intro.md) — `com.logiccuteguy.zonedraw` v0.1.0
+
+คลิกเพื่อวาดกำแพงล่องหนและพื้นที่ trigger แล้ว bake เป็น collider ปกติ พร้อม API สำหรับ UdonSharp
+
+[ภาพรวม](./zonedraw/intro.md) · [เริ่มต้นใช้งาน](./zonedraw/getting-started.md)
 
 ดูเวอร์ชัน การพึ่งพา และ repository ได้ที่[รายการแพ็กเกจ](./packages.md)
 

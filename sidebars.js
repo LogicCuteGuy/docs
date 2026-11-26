@@ -128,7 +128,35 @@ const sidebars = {
         'unity-vrc/clientsimnet/intro',
         'unity-vrc/clientsimnet/usage',
       ],
-    },  ],
+    },
+    {
+      type: 'category',
+      label: 'OpenWorld',
+      collapsed: false,
+      items: [
+        'unity-vrc/openworld/intro',
+        'unity-vrc/openworld/getting-started',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'StreamData',
+      collapsed: false,
+      items: [
+        'unity-vrc/streamdata/intro',
+        'unity-vrc/streamdata/getting-started',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'ZoneDraw',
+      collapsed: false,
+      items: [
+        'unity-vrc/zonedraw/intro',
+        'unity-vrc/zonedraw/getting-started',
+      ],
+    },
+  ],
 };
 
 export default sidebars;

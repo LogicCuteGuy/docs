@@ -13,6 +13,9 @@ sidebar_position: 2
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.2` | 2022.3 | 同期 runtime edit、foliage、package example、seam のない terrain hole edge に対応した掘削可能な voxel zone |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Unity mesh modifier stack と GPU physics、VRChat/native standalone 共通 component |
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.2` | 2022.3 | `.wasm` WebAssembly カーネルを HLSL シェーダーとして GPU 上で実行し、UdonSharp から async GPU readback で読む |
+| `com.logiccuteguy.openworld` | OpenWorld | `0.0.1` | 2022.3 | VRChat 向けのチャンクグリッド型ワールドエンジン。チャンクストリーミング、インポスター、GPU インスタンシングの Block、ランタイム編集 |
+| `com.logiccuteguy.streamdata` | StreamData | `0.0.1` | 2022.3 | ワールドの読み込み後にテクスチャとライトマップを Web からストリーミング。GitHub Pages や自前のホストへの公開にも対応 |
+| `com.logiccuteguy.zonedraw` | ZoneDraw | `0.1.0` | 2022.3 | クリックで見えないバリア壁やトリガーゾーンを描画し、通常のコライダーにベイク。UdonSharp API 付き |
 
 ## VCC にリポジトリを追加する
 
@@ -98,3 +101,45 @@ WASM2HLSL 0.1.0 は WebAssembly モジュールを HLSL シェーダーに変換
 VCC/ALCOM の VPM リスト（先に更新）、`https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.2`、`Packages/com.logiccuteguy.wasm2hlsl` への埋め込み、または名前付き `com.logiccuteguy.wasm2hlsl-0.2.2.zip` release asset を使います。重複を避けるため project ごとに方法を一つだけ選び、Git/ZIP では先に [LCGUdonSharp](./lcgudonsharp/install.md) をインストールしてください。
 
 ドキュメント: [概要](./wasm2hlsl/intro.md) · [はじめに](./wasm2hlsl/getting-started.md)
+
+### `com.logiccuteguy.openworld` — OpenWorld
+
+OpenWorld 0.0.1 は最初のリリースです。 VRChat 向けのチャンクグリッド型ワールドエンジン。チャンクストリーミング、インポスター、GPU インスタンシングの Block、ランタイム編集
+
+- **最新バージョン**: 0.0.1 — [リリース](https://github.com/LogicCuteGuy/OpenWorld/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **ライセンス**: MIT
+- **VPM の依存関係**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`), `com.logiccuteguy.streamdata` `>=0.0.1`
+- **リポジトリ**: [LogicCuteGuy/OpenWorld](https://github.com/LogicCuteGuy/OpenWorld)
+
+VCC/ALCOM の VPM 一覧からインストールしてください（先に一覧を更新してください）。StreamData も追加されます。手動インストールは[概要](./openworld/intro.md)を参照してください。Git URL は使わないでください。StreamData が追加されず、読み取り専用の Git パッケージでは DigHoleIt 地形のアセットを作成できません。
+
+ドキュメント: [概要](./openworld/intro.md) · [はじめに](./openworld/getting-started.md)
+
+### `com.logiccuteguy.streamdata` — StreamData
+
+StreamData 0.0.1 は最初のリリースです。 ワールドの読み込み後にテクスチャとライトマップを Web からストリーミング。GitHub Pages や自前のホストへの公開にも対応
+
+- **最新バージョン**: 0.0.1 — [リリース](https://github.com/LogicCuteGuy/StreamData/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **ライセンス**: MIT
+- **VPM の依存関係**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **リポジトリ**: [LogicCuteGuy/StreamData](https://github.com/LogicCuteGuy/StreamData)
+
+VCC/ALCOM の VPM 一覧からインストールするか（先に一覧を更新してください）、`https://github.com/LogicCuteGuy/StreamData.git#0.0.1` を使います。インストール方法はプロジェクトごとに 1 つだけにしてください。
+
+ドキュメント: [概要](./streamdata/intro.md) · [はじめに](./streamdata/getting-started.md)
+
+### `com.logiccuteguy.zonedraw` — ZoneDraw
+
+ZoneDraw 0.1.0 は最初のリリースです。 クリックで見えないバリア壁やトリガーゾーンを描画し、通常のコライダーにベイク。UdonSharp API 付き
+
+- **最新バージョン**: 0.1.0 — [リリース](https://github.com/LogicCuteGuy/ZoneDraw/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **ライセンス**: MIT
+- **VPM の依存関係**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **リポジトリ**: [LogicCuteGuy/ZoneDraw](https://github.com/LogicCuteGuy/ZoneDraw)
+
+VCC/ALCOM の VPM 一覧からインストールするか（先に一覧を更新してください）、`https://github.com/LogicCuteGuy/ZoneDraw.git#0.1.0` を使います。インストール方法はプロジェクトごとに 1 つだけにしてください。
+
+ドキュメント: [概要](./zonedraw/intro.md) · [はじめに](./zonedraw/getting-started.md)

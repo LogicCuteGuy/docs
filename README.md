@@ -14,8 +14,11 @@ Documentation site for LogicCuteGuy's Unity and VRChat packages, published at [d
 | [UIHUD](https://github.com/LogicCuteGuy/UIHUD) | `0.1.2` | [Overview](https://docs.logiccuteguy.com/unity-vrc/uihud/intro) |
 | [LCG Localization](https://github.com/LogicCuteGuy/LCGLocalization) | `0.1.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/lcglocalization/intro) |
 | [ClientSim Net](https://github.com/LogicCuteGuy/ClientSimNet) | `0.1.2` | [Overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro) |
+| [OpenWorld](https://github.com/LogicCuteGuy/OpenWorld) | `0.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/openworld/intro) |
+| [StreamData](https://github.com/LogicCuteGuy/StreamData) | `0.0.1` | [Overview](https://docs.logiccuteguy.com/unity-vrc/streamdata/intro) |
+| [ZoneDraw](https://github.com/LogicCuteGuy/ZoneDraw) | `0.1.0` | [Overview](https://docs.logiccuteguy.com/unity-vrc/zonedraw/intro) |
 
-All eight packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
+All eleven packages are available through the [LogicCuteGuy VPM listing](https://vpm.logiccuteguy.com/index.json). DigHoleIt can also be installed from its published Git tag or named GitHub Release package.
 
 LCGUdonSharp **0.5.0** hooks the VRChat SDK's UdonSharp instead of replacing it: no installer, no SDK files modified, Worlds SDK `>=3.10.6 <3.11.0`. Compiler-side networking and the SBP compatibility dependency are removed. Upgrading from 0.4.x: reinstall `com.vrchat.worlds` first, see [installation](https://docs.logiccuteguy.com/unity-vrc/lcgudonsharp/install).
 
@@ -38,6 +41,8 @@ UIHUD **0.1.2** relaxes the Worlds SDK dependency to `3.x.x` (`>=3.10.5`). The p
 LCG Localization **0.1.0** is the initial release of text and asset localization for UdonSharp, baking Unity Localization tables into Udon. See the [overview](https://docs.logiccuteguy.com/unity-vrc/lcglocalization/intro).
 
 ClientSim Net **0.1.2** (initial release 0.1.0) is a multiplayer network simulator for VRChat's ClientSim: remote puppet players, latency/jitter/loss, real synced-variable delivery, ownership, late join and a network debugger. See the [overview](https://docs.logiccuteguy.com/unity-vrc/clientsimnet/intro).
+
+OpenWorld **0.0.1**, StreamData **0.0.1** and ZoneDraw **0.1.0** are initial releases. [OpenWorld](https://docs.logiccuteguy.com/unity-vrc/openworld/intro) is a chunk-grid world engine, [StreamData](https://docs.logiccuteguy.com/unity-vrc/streamdata/intro) streams textures and lightmaps from the web (OpenWorld depends on it), and [ZoneDraw](https://docs.logiccuteguy.com/unity-vrc/zonedraw/intro) draws barriers and trigger zones. All three are MIT.
 
 ## Local development
 

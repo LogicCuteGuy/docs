@@ -13,6 +13,9 @@ sidebar_position: 2
 | `com.logiccuteguy.digholeit` | DigHoleIt | `0.7.2` | 2022.3 | โซน voxel ที่ขุดได้สำหรับ Unity Terrain พร้อม runtime edit แบบ sync, foliage, package example และขอบ terrain hole แบบไม่มี seam |
 | `com.logiccuteguy.blendproperty` | Blend Property | `0.2.2` | 2022.3+ | Mesh modifier stack และ GPU physics สำหรับ Unity พร้อม component ร่วม VRChat/native standalone |
 | `com.logiccuteguy.wasm2hlsl` | WASM2HLSL for UdonSharp | `0.2.2` | 2022.3 | รัน kernel WebAssembly `.wasm` บน GPU เป็น HLSL shader เรียกจาก UdonSharp พร้อม async GPU readback |
+| `com.logiccuteguy.openworld` | OpenWorld | `0.0.1` | 2022.3 | เอนจินโลกแบบแบ่งกริดเป็น chunk สำหรับ VRChat: สตรีม chunk, impostor, Block แบบ GPU instancing และแก้ไขขณะเล่น |
+| `com.logiccuteguy.streamdata` | StreamData | `0.0.1` | 2022.3 | สตรีม texture และ lightmap ของโลก VRChat จากเว็บหลังโลกโหลดเสร็จ พร้อมเผยแพร่ขึ้น GitHub Pages หรือโฮสต์ของคุณเอง |
+| `com.logiccuteguy.zonedraw` | ZoneDraw | `0.1.0` | 2022.3 | คลิกเพื่อวาดกำแพงล่องหนและพื้นที่ trigger แล้ว bake เป็น collider ปกติ พร้อม API สำหรับ UdonSharp |
 
 ## เพิ่ม repository ใน VCC
 
@@ -98,3 +101,45 @@ WASM2HLSL 0.1.0 แปลงโมดูล WebAssembly เป็น HLSL shader
 ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (refresh รายการก่อน), ใช้ `https://github.com/LogicCuteGuy/WASM2HLSL.git#0.2.2`, embedded ที่ `Packages/com.logiccuteguy.wasm2hlsl` หรือแตก named release asset `com.logiccuteguy.wasm2hlsl-0.2.2.zip` เลือกวิธีเดียวต่อ project และหากใช้ Git/ZIP ให้[ติดตั้ง LCGUdonSharp](./lcgudonsharp/install.md) ก่อน
 
 เอกสาร: [ภาพรวม](./wasm2hlsl/intro.md) · [เริ่มต้นใช้งาน](./wasm2hlsl/getting-started.md)
+
+### `com.logiccuteguy.openworld` — OpenWorld
+
+OpenWorld 0.0.1 เป็นรุ่นแรกที่เผยแพร่ เอนจินโลกแบบแบ่งกริดเป็น chunk สำหรับ VRChat: สตรีม chunk, impostor, Block แบบ GPU instancing และแก้ไขขณะเล่น
+
+- **เวอร์ชันล่าสุด**: 0.0.1 — [release](https://github.com/LogicCuteGuy/OpenWorld/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **สัญญาอนุญาต**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`), `com.logiccuteguy.streamdata` `>=0.0.1`
+- **Repository**: [LogicCuteGuy/OpenWorld](https://github.com/LogicCuteGuy/OpenWorld)
+
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (รีเฟรชรายการก่อน) ซึ่งจะเพิ่ม StreamData ให้ด้วย ถ้าจะติดตั้งเองดูที่[ภาพรวม](./openworld/intro.md) อย่าใช้ Git URL เพราะจะไม่เพิ่ม StreamData และแพ็กเกจแบบ Git เป็นแบบอ่านอย่างเดียว จึงสร้าง asset พื้นดินของ DigHoleIt ไม่ได้
+
+เอกสาร: [ภาพรวม](./openworld/intro.md) · [เริ่มต้นใช้งาน](./openworld/getting-started.md)
+
+### `com.logiccuteguy.streamdata` — StreamData
+
+StreamData 0.0.1 เป็นรุ่นแรกที่เผยแพร่ สตรีม texture และ lightmap ของโลก VRChat จากเว็บหลังโลกโหลดเสร็จ พร้อมเผยแพร่ขึ้น GitHub Pages หรือโฮสต์ของคุณเอง
+
+- **เวอร์ชันล่าสุด**: 0.0.1 — [release](https://github.com/LogicCuteGuy/StreamData/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **สัญญาอนุญาต**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **Repository**: [LogicCuteGuy/StreamData](https://github.com/LogicCuteGuy/StreamData)
+
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (รีเฟรชรายการก่อน) หรือใช้ `https://github.com/LogicCuteGuy/StreamData.git#0.0.1` และเลือกวิธีติดตั้งเพียงวิธีเดียวต่อโปรเจกต์
+
+เอกสาร: [ภาพรวม](./streamdata/intro.md) · [เริ่มต้นใช้งาน](./streamdata/getting-started.md)
+
+### `com.logiccuteguy.zonedraw` — ZoneDraw
+
+ZoneDraw 0.1.0 เป็นรุ่นแรกที่เผยแพร่ คลิกเพื่อวาดกำแพงล่องหนและพื้นที่ trigger แล้ว bake เป็น collider ปกติ พร้อม API สำหรับ UdonSharp
+
+- **เวอร์ชันล่าสุด**: 0.1.0 — [release](https://github.com/LogicCuteGuy/ZoneDraw/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **สัญญาอนุญาต**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **Repository**: [LogicCuteGuy/ZoneDraw](https://github.com/LogicCuteGuy/ZoneDraw)
+
+ติดตั้งผ่านรายการ VPM ใน VCC/ALCOM (รีเฟรชรายการก่อน) หรือใช้ `https://github.com/LogicCuteGuy/ZoneDraw.git#0.1.0` และเลือกวิธีติดตั้งเพียงวิธีเดียวต่อโปรเจกต์
+
+เอกสาร: [ภาพรวม](./zonedraw/intro.md) · [เริ่มต้นใช้งาน](./zonedraw/getting-started.md)

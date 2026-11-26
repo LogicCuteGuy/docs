@@ -19,6 +19,9 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.lcglocalization` | LCG Localization | `0.1.0` | 2022.3 | Text and asset localization for UdonSharp, baking Unity Localization tables into Udon |
 | `com.logiccuteguy.clientnetsim` | ClientSim Net | `0.1.2` | 2022.3 | Multiplayer network simulator for VRChat ClientSim: remote puppet players, latency/jitter/loss, ownership, late join and a network debugger |
 | `com.logiccuteguy.lcgnetwork` | LCG Network System | `0.1.0` | 2022.3 | Zone-scoped networking for VRChat worlds: normal UdonSharp, Udon Graph and Udon Assembly networking routed through zones |
+| `com.logiccuteguy.openworld` | OpenWorld | `0.0.1` | 2022.3 | Chunk-grid world engine for VRChat: chunk streaming, impostors, GPU-instanced Blocks and runtime editing |
+| `com.logiccuteguy.streamdata` | StreamData | `0.0.1` | 2022.3 | Streams a VRChat world's textures and lightmaps from the web after it loads, with publishing to GitHub Pages or your own host |
+| `com.logiccuteguy.zonedraw` | ZoneDraw | `0.1.0` | 2022.3 | Click-to-draw invisible barrier walls and trigger zones, baked to plain colliders, with an UdonSharp API |
 
 ## Add the repository in VCC
 
@@ -174,3 +177,45 @@ LCG Network System 0.1.0 is the initial release (preview), split out of LCGUdonS
 Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/LCGNetwork.git#0.1.0`. Choose one installation method per project.
 
 Docs: [Overview](./lcgnetwork/intro.md) · [Using LCG Network](./lcgnetwork/usage.md)
+
+### `com.logiccuteguy.openworld` — OpenWorld
+
+OpenWorld 0.0.1 is the initial release. Chunk-grid world engine for VRChat: chunk streaming, impostors, GPU-instanced Blocks and runtime editing.
+
+- **Latest version**: 0.0.1 — [release](https://github.com/LogicCuteGuy/OpenWorld/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`), `com.logiccuteguy.streamdata` `>=0.0.1`
+- **Repository**: [LogicCuteGuy/OpenWorld](https://github.com/LogicCuteGuy/OpenWorld)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), which also adds StreamData. For manual installs, see the [Overview](./openworld/intro.md). Don't use a Git URL: it doesn't add StreamData, and a read-only Git package can't create the DigHoleIt terrain asset.
+
+Docs: [Overview](./openworld/intro.md) · [Getting started](./openworld/getting-started.md)
+
+### `com.logiccuteguy.streamdata` — StreamData
+
+StreamData 0.0.1 is the initial release. Streams a VRChat world's textures and lightmaps from the web after it loads, with publishing to GitHub Pages or your own host.
+
+- **Latest version**: 0.0.1 — [release](https://github.com/LogicCuteGuy/StreamData/releases/tag/0.0.1)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **Repository**: [LogicCuteGuy/StreamData](https://github.com/LogicCuteGuy/StreamData)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/StreamData.git#0.0.1`. Choose one installation method per project.
+
+Docs: [Overview](./streamdata/intro.md) · [Getting started](./streamdata/getting-started.md)
+
+### `com.logiccuteguy.zonedraw` — ZoneDraw
+
+ZoneDraw 0.1.0 is the initial release. Click-to-draw invisible barrier walls and trigger zones, baked to plain colliders, with an UdonSharp API.
+
+- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/ZoneDraw/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependencies**: `com.vrchat.worlds` `3.x.x` (`>=3.10.5`)
+- **Repository**: [LogicCuteGuy/ZoneDraw](https://github.com/LogicCuteGuy/ZoneDraw)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/ZoneDraw.git#0.1.0`. Choose one installation method per project.
+
+Docs: [Overview](./zonedraw/intro.md) · [Getting started](./zonedraw/getting-started.md)
