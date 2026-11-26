@@ -113,6 +113,15 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'LCG Network System',
+      collapsed: false,
+      items: [
+        'unity-vrc/lcgnetwork/intro',
+        'unity-vrc/lcgnetwork/usage',
+      ],
+    },
+    {
+      type: 'category',
       label: 'ClientSim Net',
       collapsed: false,
       items: [

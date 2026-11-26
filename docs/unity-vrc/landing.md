@@ -27,7 +27,7 @@ Welcome to the central repository for **LogicCuteGuy** Unity and VRChat developm
 
 ## Available Projects
 
-All seven packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
+All nine packages are published in the [LogicCuteGuy VPM Listing](./packages.md) (`https://vpm.logiccuteguy.com/index.json`). DigHoleIt also publishes a Git tag and named GitHub Release package.
 
 ### [Help Tools](./helptools/intro.md) — `com.logiccuteguy.helptools` v1.0.1
 A collection of 15+ professional editor utilities for lightmap scaling, asset analysis, shader mapping, and hierarchical organization.
@@ -84,6 +84,12 @@ Text and asset localization for UdonSharp: Unity String and Asset Tables bake in
 Multiplayer network simulator for VRChat's ClientSim: remote puppet players with their own world copy, latency/jitter/loss, real synced-variable and event delivery, ownership, late join, pickups, and a network debugger. Catches networking bugs in one editor before you upload.
 
 [Overview](./clientsimnet/intro.md) · [Using ClientSim Net](./clientsimnet/usage.md).
+
+### [LCG Network System](./lcgnetwork/intro.md) — `com.logiccuteguy.lcgnetwork` v0.1.0
+
+Zone-scoped networking for VRChat worlds. Normal UdonSharp, Udon Graph and Udon Assembly networking is routed through zones at build time, so synced variables and events reach only the players inside. Preview.
+
+[Overview](./lcgnetwork/intro.md) · [Using LCG Network](./lcgnetwork/usage.md).
 
 See the [full package list](./packages.md) for versions, dependencies, and repositories.
 

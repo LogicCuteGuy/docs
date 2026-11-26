@@ -18,6 +18,7 @@ Packages published through the **LogicCuteGuy VPM Listing**, plus packages insta
 | `com.logiccuteguy.uihud` | UIHUD | `0.1.2` | 2022.3 | HUD + slide-in menus and UI widgets for VRChat worlds and standalone Unity games, on VR, desktop and mobile |
 | `com.logiccuteguy.lcglocalization` | LCG Localization | `0.1.0` | 2022.3 | Text and asset localization for UdonSharp, baking Unity Localization tables into Udon |
 | `com.logiccuteguy.clientnetsim` | ClientSim Net | `0.1.1` | 2022.3 | Multiplayer network simulator for VRChat ClientSim: remote puppet players, latency/jitter/loss, ownership, late join and a network debugger |
+| `com.logiccuteguy.lcgnetwork` | LCG Network System | `0.1.0` | 2022.3 | Zone-scoped networking for VRChat worlds: normal UdonSharp, Udon Graph and Udon Assembly networking routed through zones |
 
 ## Add the repository in VCC
 
@@ -159,3 +160,17 @@ ClientSim Net 0.1.1 shows the other players as named capsules in every world; 0.
 Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/ClientSimNet.git#0.1.1`. Choose one installation method per project.
 
 Docs: [Overview](./clientsimnet/intro.md) · [Using ClientSim Net](./clientsimnet/usage.md)
+
+### `com.logiccuteguy.lcgnetwork` — LCG Network System
+
+LCG Network System 0.1.0 is the initial release (preview), split out of LCGUdonSharp. Synced variables and network events of objects under an `LCGNetworkZone` reach only the players inside it. Normal `RequestSerialization`, `SendCustomNetworkEvent` and `NetworkCalling.CallingPlayer` are rerouted at build time for UdonSharp, Udon Graph and Udon Assembly; `[LCGPacket]` works with the SDK's UdonSharp. Not yet verified in a multi-client VRChat build.
+
+- **Latest version**: 0.1.0 — [release](https://github.com/LogicCuteGuy/LCGNetwork/releases/tag/0.1.0)
+- **Unity**: 2022.3
+- **License**: MIT
+- **VPM dependency**: `com.vrchat.worlds` `3.x.x` (`>=3.8.1`)
+- **Repository**: [LogicCuteGuy/LCGNetwork](https://github.com/LogicCuteGuy/LCGNetwork)
+
+Install through the VPM listing in VCC/ALCOM (refresh the listing first), or use `https://github.com/LogicCuteGuy/LCGNetwork.git#0.1.0`. Choose one installation method per project.
+
+Docs: [Overview](./lcgnetwork/intro.md) · [Using LCG Network](./lcgnetwork/usage.md)
